@@ -1,0 +1,197 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "css": {
+      "name": "css",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "docs": {
+      "name": "docs",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "fonts": {
+      "name": "fonts",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "images": {
+      "name": "images",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "js": {
+      "name": "js",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "pages": {
+      "name": "pages",
+      "isOrdered": true,
+      "folders": {
+        "mydoc": {
+          "name": "mydoc",
+          "isOrdered": true,
+          "folders": {},
+          "files": {
+            "mydoc_about_ruby_gems_bundler": 0,
+            "mydoc_about": 1,
+            "mydoc_adding_tooltips": 2,
+            "mydoc_alerts": 3,
+            "mydoc_atom_text_editor": 4,
+            "mydoc_build_arguments": 5,
+            "mydoc_build_scripts": 6,
+            "mydoc_code_samples": 7,
+            "mydoc_collections": 8,
+            "mydoc_commenting_on_files": 9,
+            "mydoc_conditional_logic": 10,
+            "mydoc_content_reuse": 11,
+            "mydoc_excluding_files": 12,
+            "mydoc_faq": 13,
+            "mydoc_generating_pdfs": 14,
+            "mydoc_git_collaboration": 15,
+            "mydoc_glossary": 16,
+            "mydoc_help_api": 17,
+            "mydoc_hyperlinks": 18,
+            "mydoc_icons": 19,
+            "mydoc_images": 20,
+            "mydoc_installing_bundler": 21,
+            "mydoc_install_jekyll_on_mac": 22,
+            "mydoc_install_jekyll_on_windows": 23,
+            "mydoc_introduction": 24,
+            "mydoc_iterm_profiles": 25,
+            "mydoc_kb_layout": 26,
+            "mydoc_labels": 27,
+            "mydoc_lists": 28,
+            "mydoc_navtabs": 29,
+            "mydoc_pages": 30,
+            "mydoc_posts": 31,
+            "mydoc_publishing_github_pages": 32,
+            "mydoc_push_build_to_server": 33,
+            "mydoc_release_notes_50": 34,
+            "mydoc_release_notes_60": 35,
+            "mydoc_search_configuration": 36,
+            "mydoc_series": 37,
+            "mydoc_seriesdemo1": 38,
+            "mydoc_seriesdemo2": 39,
+            "mydoc_seriesdemo3": 40,
+            "mydoc_seriesdemo4": 41,
+            "mydoc_sidebar_navigation": 42,
+            "mydoc_special_layouts": 43,
+            "mydoc_support": 44,
+            "mydoc_supported_features": 45,
+            "mydoc_syntax_highlighting": 46,
+            "mydoc_tables": 47,
+            "mydoc_tags": 48,
+            "mydoc_tag_archives_overview": 49,
+            "mydoc_themes": 50,
+            "mydoc_troubleshooting": 51,
+            "mydoc_webstorm_text_editor": 52,
+            "mydoc_workflow_maps": 53,
+            "mydoc_yaml_tutorial": 54
+          }
+        },
+        "news": {
+          "name": "news",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "product1": {
+          "name": "product1",
+          "isOrdered": true,
+          "folders": {},
+          "files": {
+            "p1_sample2": 0,
+            "p1_sample1": 1,
+            "p1_sample3": 2,
+            "p1_sample4": 3,
+            "p1_sample5": 4,
+            "p1_sample6": 5,
+            "p1_sample7": 6
+          }
+        },
+        "product2": {
+          "name": "product2",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "tags": {
+          "name": "tags",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "dglb": {
+          "name": "dglb",
+          "isOrdered": true,
+          "folders": {},
+          "files": {
+            "dglbarch": 0
+          }
+        }
+      },
+      "files": {}
+    },
+    "pdf": {
+      "name": "pdf",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "pdfconfigs": {
+      "name": "pdfconfigs",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "var": {
+      "name": "var",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "_data": {
+      "name": "_data",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "_includes": {
+      "name": "_includes",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "_layouts": {
+      "name": "_layouts",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "_posts": {
+      "name": "_posts",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "_tooltips": {
+      "name": "_tooltips",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "404": 1,
+    "index": 0
+  }
+}
