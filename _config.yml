@@ -103,11 +103,10 @@ sidebars:
 - home_sidebar
 - mydoc_sidebar
 - product1_sidebar
-- product2_sidebar
+- articles_sidebar
 - other
-- Articles
 
-description: "A site for me to things that I think may be worth sharing (someday.)"
+description: "A site for me to put things that I think may be worth sharing (someday.)"
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only

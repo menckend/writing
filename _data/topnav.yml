@@ -3,10 +3,10 @@
 topnav:
 - title: Topnav
   items:
-    - title: GitHub
-      external_url: https://github.com/tomjoht/documentation-theme-jekyll
-    - title: News
-      url: /news
+    #- title: GitHub
+    #  external_url: https://github.com/tomjoht/documentation-theme-jekyll
+    #- title: News
+    #  url: /news
 
 #Topnav dropdowns
 topnav_dropdowns:
@@ -22,6 +22,8 @@ topnav_dropdowns:
           external_url: http://stackoverflow.com/questions/tagged/jekyll
         - title: Jekyll on my blog
           external_url: http://idratherbewriting.com/category-jekyll/
+    - title: Articles
+        url: /articles/landing_page.html
     - title: Products
       folderitems:
         - title: Jekyll Documentation Theme
