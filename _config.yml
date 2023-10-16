@@ -3,7 +3,7 @@ repository: menckend/writing
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Content
+topnav_title: Contents
 # this appears on the top navigation bar next to the home button
 
 site_title: menckenania
@@ -102,8 +102,9 @@ defaults:
 sidebars:
 - home_sidebar
 #- mydoc_sidebar
-- product1_sidebar
+#- product1_sidebar
 - articles_sidebar
+- othercontent_sidebar
 #- other
 
 description: "A site for me to put things that I think may be worth sharing (someday.)"

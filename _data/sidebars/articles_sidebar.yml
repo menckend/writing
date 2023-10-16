@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Articles
-  version: 1.0
+  #version: 1.0
   folders:
 
   - title:
@@ -21,11 +21,11 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Global Load Balancing
+  - title: DNS-based Global Load Balancing
     output: web
 
     folderitems:
-    - title: dGLB Reference Architecture
+    - title: Generalized Reference Architecture
       url: /articles_dglbdarch.html
       output: web
 
