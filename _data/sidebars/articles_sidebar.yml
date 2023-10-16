@@ -20,14 +20,25 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: DNS-based Global Load Balancing
+  - title: Global Load Balancing
     output: web
 
     folderitems:
-    - title: A Generalized Reference Architecutre
-      url: /p1_sample4.html
+    - title: dGLB Reference Architecture
+      url: /articles_dglbdarch.html
+      output: web
+    - title: more GLB
+      url: /p1_sample5.html
       output: web, pdf
-    - title: Another article
+
+  - title: Capacity Abstraction
+    output: web
+
+    folderitems:
+    - title: One thing
+      url: /articles_dglbdarch.html
+      output: web
+    - title: Another thing
       url: /p1_sample5.html
       output: web, pdf
 
