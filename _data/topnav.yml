@@ -29,7 +29,7 @@ topnav_dropdowns:
     - title: Content
       folderitems:
         - title: My Articles
-          url: /mydoc/mydoc_about.html
+          url: /articles_landing_page.html
     #- title: Products
     #  folderitems:
     #    - title: Jekyll Documentation Theme

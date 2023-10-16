@@ -1,9 +1,10 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
+
 entries:
-- title: Articles
+- title: Sidebar
   product: Articles
-  version: 1.0
+  #version: 1.0
   folders:
 
   - title:
@@ -19,41 +20,15 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Introduction
-    output: web, pdf
+  - title: The articles
+    output: web
     folderitems:
-
-    - title: Overview
+    - title: Articles home
       url: /articles_landing_page.html
       output: web
 
-  - title: Simple Workflow
-    output: web, pdf
-    folderitems:
-
-    - title: Sample 1
-      url: /articles_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /articles_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /articels_sample3.html
-      output: web, pdf
-
-  - title: Complex Workflow
-    output: web, pdf
-    folderitems:
-
-    - title: Sample 6
-      url: /articles_sample6.html
-      output: web, pdf
-
-    - title: Sample 7
-      url: /articles_sample7.html
-      output: web, pdf
-
+    - title: dGLB Reference Architecture
+      url: /articles_dglb.html
+      output: web
 
 # Copyright 2021 Google LLC
