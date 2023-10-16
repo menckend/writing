@@ -28,8 +28,8 @@ topnav_dropdowns:
     #      external_url: https://talk.jekyllrb.com
     - title: Content
       folderitems:
-        - title: Articles
-          url: /articles/landing_page.html
+        - title: My Articles
+          url: /mydoc/mydoc_about.html
     #- title: Products
     #  folderitems:
     #    - title: Jekyll Documentation Theme
