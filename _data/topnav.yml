@@ -23,6 +23,7 @@ topnav_dropdowns:
         - title: Jekyll on my blog
           external_url: http://idratherbewriting.com/category-jekyll/
     - title: Articles
+      folderitems:
         url: /articles/landing_page.html
     - title: Products
       folderitems:
