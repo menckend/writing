@@ -15,6 +15,7 @@ entries:
       url: /titlepage.html
       output: pdf
       type: frontmatter
+
     - title:
       url: /tocpage.html
       output: pdf
@@ -27,9 +28,10 @@ entries:
     - title: dGLB Reference Architecture
       url: /articles_dglbdarch.html
       output: web
+
     - title: more GLB
       url: /p1_sample5.html
-      output: web, pdf
+      output: web
 
   - title: Capacity Abstraction
     output: web
@@ -38,8 +40,9 @@ entries:
     - title: One thing
       url: /articles_dglbdarch.html
       output: web
+
     - title: Another thing
       url: /p1_sample5.html
-      output: web, pdf
+      output: web
 
 # Copyright 2021 Google LLC
