@@ -2,7 +2,7 @@
 title: DNS-based Global Load Balancing
 keywords: sample
 summary: "A Generalized Reference Architecture for DNS-based Global Load Balancing"
-#sidebar: referencearch_sidebar
+sidebar: home
 permalink: glbdarch.html
 folder: Reference Architectures
 ---
