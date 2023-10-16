@@ -31,7 +31,7 @@ topnav_dropdowns:
         - title: Articles
           url: /articles_landing_page.html
 
-        - title: Other content
+        - title: Other_content
           url: /othercontent_landing_page.html
 
     #- title: Products
