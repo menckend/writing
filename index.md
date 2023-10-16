@@ -1,16 +1,16 @@
 ---
-title: "The Contents"
+title: "Welcome to menckenania"
 keywords: 
 tags: [getting_started]
 sidebar: home_sidebar
 permalink: index.html
-summary: One thing at a time, kiddo.
+summary: 
 ---
 
 
-## Baby steps...
+## Make yourself at home
 
-... to five o'clock.
+You'll find content through the header and sidebar navigation menus.
 
 
 {% include links.html %}
