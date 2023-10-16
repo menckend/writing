@@ -20,15 +20,15 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: The articles
+  - title: DNS-based Global Load Balancing
     output: web
-    folderitems:
-    - title: Articles home
-      url: /articles_landing_page.html
-      output: web
 
-    - title: dGLB Reference Architecture
-      url: /articles_dglbdarch.html
-      output: web
+    folderitems:
+    - title: A Generalized Reference Architecutre
+      url: /p1_sample4.html
+      output: web, pdf
+    - title: Another article
+      url: /p1_sample5.html
+      output: web, pdf
 
 # Copyright 2021 Google LLC
