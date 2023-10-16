@@ -28,7 +28,7 @@ entries:
       output: web
 
     - title: dGLB Reference Architecture
-      url: /articles_dglb.html
+      url: /articles_dglbdarch.html
       output: web
 
 # Copyright 2021 Google LLC
