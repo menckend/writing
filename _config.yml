@@ -1,4 +1,4 @@
-repository: tomjoht/documentation-theme-jekyll
+repository: menckend/writing
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
@@ -109,7 +109,7 @@ sidebars:
 description: "A site for me to put things that I think may be worth sharing (someday.)"
 # the description is used in the feed.xml file
 
- needed for sitemap.xml file only
+# needed for sitemap.xml file only
  url: http://menckend.githubio.com
  baseurl: /writing
 
