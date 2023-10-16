@@ -17,8 +17,13 @@ entries:
     #- title: Product 1
     #  url: /p1_landing_page.html
     #  output: web
+
     - title: Articles
       url: /articles_landing_page.html
+      output: web
+
+    - title: Other Content
+      url: /othercontent_landing_page.html
       output: web
 
 # Copyright 2021 Google LLC
