@@ -1,24 +1,24 @@
-repository: menckend/writing
+repository: tomjoht/documentation-theme-jekyll
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: the things
+topnav_title: Jekyll Documentation Theme
 # this appears on the top navigation bar next to the home button
 
-site_title: menckenania
+site_title: Jekyll theme for documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: @menckend
+company_name: Copyright 2021 Google LLC
 # this appears in the footer
 
-github_editme_path: menckend/writing/gh-pages
+github_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-#google_analytics: UA-66296557-1
+google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
 host: 127.0.0.1
@@ -33,9 +33,9 @@ exclude:
   - vendor
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Send feedback here
+feedback_subject_line: Jekyll documentation theme
 
-feedback_email: mencken@gmail.com
+feedback_email: tomjoht@gmail.com
 # used as a contact email for the Feedback link in the top navigation bar
 
 # feedback_disable: true
@@ -101,9 +101,9 @@ defaults:
 
 sidebars:
 - home_sidebar
-#- mydoc_sidebar
-#- product1_sidebar
-#- product2_sidebar
+- mydoc_sidebar
+- product1_sidebar
+- product2_sidebar
 - other
 
 description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
@@ -112,8 +112,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 # needed for sitemap.xml file only
 # url: http://idratherbewriting.com
 # baseurl: /documentation-theme-jekyll
-url: menckend.github.io
-baseurl: /writing
+
 
 github: [metadata]
 
