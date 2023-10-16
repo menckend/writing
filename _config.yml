@@ -100,11 +100,11 @@ defaults:
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
-- home_sidebar
-- mydoc_sidebar
+#- home_sidebar
+#- mydoc_sidebar
 - product1_sidebar
 - articles_sidebar
-- other
+#- other
 
 description: "A site for me to put things that I think may be worth sharing (someday.)"
 # the description is used in the feed.xml file
