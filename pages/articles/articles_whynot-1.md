@@ -1,6 +1,5 @@
 ---
 title: Why not
-keywords: sample
 summary: "There must be some reason"
 sidebar: articles_sidebar
 permalink: articles_whynot-1.html
