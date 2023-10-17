@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Articles
-  version: 1.0
+  #version: 1.0
   folders:
 
   - title:
@@ -33,7 +33,7 @@ entries:
       url: /p1_sample5.html
       output: web
 
-  - title: Capacity Abstraction
+  - title: Definite or indefinite
     output: web
 
     folderitems:

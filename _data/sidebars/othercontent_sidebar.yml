@@ -21,20 +21,28 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title:
-    output: pdf
-    type: frontmatter
+  - title: Manifestos
+    output: web
+
     folderitems:
+    - title: Capacity Manifesto
+      url: /articles_dglbdarch.html
+      output: web
 
-    - title:
-      url: /titlepage.html
-      output: pdf
-      type: frontmatter
+    - title: MTU Manifesto
+      url: /p1_sample5.html
+      output: web
 
-    - title:
-      url: /tocpage.html
-      output: pdf
-      type: frontmatter
+  - title: Capacity Abstraction
+    output: web
 
+    folderitems:
+    - title: One thing
+      url: /articles_dglbdarch.html
+      output: web
+
+    - title: Another thing
+      url: /p1_sample5.html
+      output: web
 
 # Copyright 2021 Google LLC
