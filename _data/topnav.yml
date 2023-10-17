@@ -17,8 +17,8 @@ topnav_dropdowns:
         - title: Articles
           url: /articles_landing_page.html
 
-        - title: Other Content
-          url: /othercontent_landing_page.html
+        - title: More Content
+          url: /morecontent_landing_page.html
 
 
 # Copyright 2021 Google LLC
