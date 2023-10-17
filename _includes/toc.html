@@ -18,10 +18,55 @@ $('#toc').on('click', 'a', function() {
 });
 </script>
 
+details {
+  font:
+    16px "Open Sans",
+    Calibri,
+    sans-serif;
+  width: 620px;
+}
+
+details > summary {
+  padding: 2px 6px;
+  width: 15em;
+  background-color: #ddd;
+  border: none;
+  box-shadow: 3px 3px 4px black;
+  cursor: pointer;
+  list-style: none;
+}
+
+details > p {
+  border-radius: 0 0 10px 10px;
+  background-color: #ddd;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 3px 3px 4px black;
+}
+
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Toggle TOC/summary>
+  <p>
   <div id="toc"></div>
+  </p>
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
