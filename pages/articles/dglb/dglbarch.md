@@ -1,5 +1,5 @@
 ---
-title: DNS-based Global Load Balancing
+title: Global Load Balancing Architecture
 summary: "A Generalized Reference Architecture for DNS-based Global Load Balancing"
 sidebar: articles_sidebar
 permalink: articles_dglbdarch.html
