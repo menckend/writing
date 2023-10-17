@@ -3,7 +3,7 @@
 
 entries:
 - title: Sidebar
-  product: Other_Content
+  product: More Content
   #version: 1.0
   folders:
 
@@ -21,28 +21,28 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Manifestos
+  - title: Capacity Abstraction Manifesto
     output: web
 
     folderitems:
-    - title: Capacity Manifesto
-      url: /articles_dglbdarch.html
+    - title: Introduction
+      url: /morecontent_capman-intro.html
       output: web
 
-    - title: MTU Manifesto
-      url: /p1_sample5.html
-      output: web
+    - title: Preamble
+      url: /morecontent_capman-preamble.html
+            output: web
 
-  - title: Capacity Abstraction
+  - title: The MTU Manifesto
     output: web
 
     folderitems:
     - title: One thing
-      url: /articles_dglbdarch.html
+      url: /morecontent_mtuman_onething.html
       output: web
 
     - title: Another thing
-      url: /p1_sample5.html
+      url: /morecontent_mtuman_anotherthing.html
       output: web
 
 # Copyright 2021 Google LLC
