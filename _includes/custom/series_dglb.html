@@ -3,9 +3,11 @@
         {% assign pages = site.pages | sort:"weight"  %}
         {% for pg in pages %}
         {% if pg.series == "dGLB series" %}
-        {% if pg.weight > page.weight %}
+        {% if pg.weight == {{ page.weight | plus: 1 }} %}
         <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next: {{pg.title}}</button></a>
-        {% break %}
+        {% endif %}
+        {% if pg.weight == {{ page.weight | minus: 1 }} %}
+        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous: {{pg.title}}</button></a>
         {% endif %}
         {% endif %}
         {% endfor %}
