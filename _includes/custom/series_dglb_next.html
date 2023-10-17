@@ -16,12 +16,12 @@
     </a>
     &nbsp;
     <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to <span class="caret"></span></button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
         <ol class="dropdown-menu">
             {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
             {% if pg.url == page.url %}
-            <li> <b>→</b>{{pg.weight}}. {{pg.title}}</li>
+            <li> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
             {% else %}
             <li>
                 <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
