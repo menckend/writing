@@ -107,7 +107,8 @@
               "isOrdered": true,
               "folders": {},
               "files": {
-                "dglbarch": 0
+                "dglbarch": 0,
+                "dglbarch-intro": 1
               }
             }
           },
