@@ -6,10 +6,10 @@
             {% for p in pages %}
                {% if p.series == "dGLB series" %}
                   {% if p.url == page.url %}
-                     <a href="{{p.url | remove: "/"}}"> → {{p.title}}</a>
+                     <li class="active"> → {{p.title}}</li>
                   {% else %}
                   <li>
-                      <a href="{{p.url | remove: "/"}}">{{p.title}}</a>
+                      <li class="active"> {{p.title}}</li>
                   </li>
                   {% endif %}
                {% endif %}
