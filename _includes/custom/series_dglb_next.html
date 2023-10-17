@@ -3,17 +3,6 @@
         {% assign pages = site.pages | sort:"weight"  %}
         {% for pg in pages %}
         {% if pg.series == "dGLB series" %}
-        {% if pg.weight ==> (page.weight-1) %}
-        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous page</button></a>
-        {% break %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-    </a>
-    <a>
-        {% assign pages = site.pages | sort:"weight"  %}
-        {% for pg in pages %}
-        {% if pg.series == "dGLB series" %}
         {% if pg.weight > page.weight %}
         <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next page</button></a>
         {% break %}
