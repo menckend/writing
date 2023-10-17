@@ -25,7 +25,7 @@ entries:
     output: web
 
     folderitems:
-    - title: Why is this here?
+    - title: Why did I write this?
       url: /articles_dglbdarch-intro.html
       output: web
 
@@ -33,11 +33,11 @@ entries:
       url: /articles_dglbdarch.html
       output: web
 
-  - title: Nothing here yet
+  - title: My Next Article Will Be Right Here
     output: web
 
     folderitems:
-    - title: Why not?
+    - title: But Not Yet
       url: /articles_whynot-1.html
       output: web
 

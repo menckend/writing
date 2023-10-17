@@ -1,0 +1,16 @@
+<div class="seriesContext">
+    <a>
+        {% assign pages = site.pages | sort:"weight"  %}
+        {% for pg in pages %}
+        {% if pg.series == "dGLB series" %}
+        {% if pg.weight ==> (page.weight-1) %}
+        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous page in article</button></a>
+        {% break %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </a>
+    &nbsp;
+</div>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}
