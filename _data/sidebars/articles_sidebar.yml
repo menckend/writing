@@ -21,11 +21,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Why not?
-    url: /articles_whynot-1.html
-    output: web
-
-  - title: DNS-based Global Load Balancing
+  - title: Global Load Balancing
     output: web
 
     folderitems:
@@ -33,11 +29,7 @@ entries:
       url: /articles_dglbdarch.html
       output: web
 
-    - title: more GLB
-      url: /p1_sample5.html
-      output: web
-
-  - title: Definite or indefinite
+  - title: Nothing here yet
     output: web
 
     folderitems:
