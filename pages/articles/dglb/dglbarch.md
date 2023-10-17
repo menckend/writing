@@ -4,7 +4,11 @@ summary: "A Generalized Reference Architecture for DNS-based Global Load Balanci
 sidebar: articles_sidebar
 permalink: articles_dglbdarch.html
 folder: articles/\gldb
+series: "dGLB series"
+weight: 2
 ---
+
+{% include custom/series_dglb_next.html %}
 
 Global load balancing is a service that directs inbound connections to a nominal application/service to instances of the actual application/service, typically at geographically dispersed locations. GLB is distinguished from ALB in that it deals effectively with distributing traffic across multiple physical locations, rather than just across application-instances within a single location. This document attempts to establish a generalized reference architecture for GLB enabled by DNS (dGLB.)
 
