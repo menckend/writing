@@ -6,6 +6,7 @@ permalink: articles_dglbdarch-intro.html
 folder: articles\/glbd
 series: "dGLB series"
 weight: 1
+toc: false
 ---
 
 {% include custom/series_dglb_next.html %}
