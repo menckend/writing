@@ -4,7 +4,7 @@
         {% for pg in pages %}
         {% if pg.series == "dGLB series" %}
         {% if pg.weight > page.weight %}
-        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next: {{pg.title}}</button></a>
+        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next page in article</button></a>
         {% break %}
         {% endif %}
         {% endif %}
@@ -15,7 +15,7 @@
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to: <span class="caret"></span></button>
         <ol class="dropdown-menu">
             {% for pg in pages %}
-            {% if pg.series == "dGLD series" %}
+            {% if pg.series == "dGLB series" %}
             {% if pg.url == page.url %}
             <li class="active"> → {{pg.weight}}. {{pg.title}}</li>
             {% else %}
