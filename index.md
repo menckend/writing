@@ -7,10 +7,6 @@ permalink: index.html
 summary: 
 ---
 
-
-## Make yourself at home
-
 You'll find content through the header and sidebar navigation menus.
-
 
 {% include links.html %}

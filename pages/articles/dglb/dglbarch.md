@@ -2,9 +2,9 @@
 title: DNS-based Global Load Balancing
 keywords: article
 summary: "A Generalized Reference Architecture for DNS-based Global Load Balancing"
-sidebar: articles
+sidebar: articles_sidebar
 permalink: articles_dglbdarch.html
-folder: articles
+folder: articles/\gldb
 ---
 
 Global load balancing is a service that directs inbound connections to a nominal application/service to instances of the actual application/service, typically at geographically dispersed locations. GLB is distinguished from ALB in that it deals effectively with distributing traffic across multiple physical locations, rather than just across application-instances within a single location. This document attempts to establish a generalized reference architecture for GLB enabled by DNS (dGLB.)
@@ -27,8 +27,8 @@ By executing these functions, the GLB devices are able to distribute "connection
 
 ## Conceptual Architecture Diagram
 
-![image](./dglb/dglb-conceptual-key.drawio.svg)
-![image](./dglb/dglb-conceptual-1.drawio.svg)
+![image](./dglb-conceptual-key.drawio.svg)
+![image](./dglb-conceptual-1.drawio.svg)
 
 # Essential Functions of the dGLB Appliances
 
@@ -75,8 +75,8 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 
 # Functional Architecture Diagram
 
-![image](./dglb/dglb-functional-key.drawio.svg)
-![image](./dglb/dglb-functional-1.drawio.svg)
+![image](./dglb-functional-key.drawio.svg)
+![image](./dglb-functional-1.drawio.svg)
 
 # Network Flow Table
 
@@ -103,7 +103,7 @@ The following table enumerates the flows labeled in the previous diagram along w
 
 The structure of the DNS zones maintained by the DNS authoritative nameservers global load-balancers is illustrated in the following figures.
 ![image](./dglb-zones-key.drawio.svg)
-![image](dglb-zones-1.drawio.svg)
+![image](./dglb-zones-1.drawio.svg)
 
 ***
 

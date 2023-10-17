@@ -1,5 +1,5 @@
 ---
-title: I mean, really.  Why not?
+title: Why not
 keywords: sample
 summary: "There must be some reason"
 sidebar: articles_sidebar
