@@ -4,7 +4,7 @@ keywords: article
 summary: "A Generalized Reference Architecture for DNS-based Global Load Balancing"
 sidebar: articles
 permalink: articles_dglbdarch.html
-folder: articles\/dglb
+folder: articles
 ---
 
 Global load balancing is a service that directs inbound connections to a nominal application/service to instances of the actual application/service, typically at geographically dispersed locations. GLB is distinguished from ALB in that it deals effectively with distributing traffic across multiple physical locations, rather than just across application-instances within a single location. This document attempts to establish a generalized reference architecture for GLB enabled by DNS (dGLB.)
@@ -27,8 +27,8 @@ By executing these functions, the GLB devices are able to distribute "connection
 
 ## Conceptual Architecture Diagram
 
-![image](./dglb-conceptual-key.drawio.svg)
-![image](dglb-conceptual-1.drawio.svg)
+![image](./dglb/dglb-conceptual-key.drawio.svg)
+![image](./dglb/dglb-conceptual-1.drawio.svg)
 
 # Essential Functions of the dGLB Appliances
 
@@ -75,8 +75,8 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 
 # Functional Architecture Diagram
 
-![image](./dglb-functional-key.drawio.svg)
-![image](./dglb-functional-1.drawio.svg)
+![image](./dglb/dglb-functional-key.drawio.svg)
+![image](./dglb/dglb-functional-1.drawio.svg)
 
 # Network Flow Table
 
@@ -112,6 +112,5 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers g
 The process of DNS resolution from client-device, to recursive-resolver, to authoritative nameserver, back to recursive-resolver, to glb, back to recursive resolver, and back to client-device is depicted in the following flowcharts:
 ![image](./dglb-resolution-flowchart.drawio.svg)
 ![image](./dglb-resolution-flowchart4.drawio.svg)
-
 
 {% include links.html %}
