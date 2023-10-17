@@ -8,13 +8,9 @@ folder: articles/\gldb
 
 Global load balancing is a service that directs inbound connections to a nominal application/service to instances of the actual application/service, typically at geographically dispersed locations. GLB is distinguished from ALB in that it deals effectively with distributing traffic across multiple physical locations, rather than just across application-instances within a single location. This document attempts to establish a generalized reference architecture for GLB enabled by DNS (dGLB.)
 
-# Contents
+## Overview
 
-...later...
-
-# Overview
-
-## Functional Description
+### Functional Description
 
 In this architecture, a DNS-based global-load-balancing (dGLB) service provides a mechanism for distributing incoming connections across a given application/service to two or more different locations where clusters of the application/service are being front-ended by application load balancers (ALBs.)  The GLB devices implement several core functions:
 
@@ -24,28 +20,34 @@ In this architecture, a DNS-based global-load-balancing (dGLB) service provides 
 
 By executing these functions, the GLB devices are able to distribute "connections" to a given FQDN across backend targets.  dGLB is ***only*** in-path for the DNS phase of client-to-server connectivity, which makes for extremely low capacity requirements on the GLB devices, but significantly limits to granularity and accuracy with which load-balancing can be implemented.
 
-## Conceptual Architecture Diagram
+### Conceptual Architecture Diagram
 
 ![image](./dglb-conceptual-key.drawio.svg)
 ![image](./dglb-conceptual-1.drawio.svg)
 
-# Essential Functions of the dGLB Appliances
+***
 
-There are several critical functions to be performed by the dLGB appliances, although not all are required for each use case
+## Common Use Cases
 
-* Responding authoritatively to DNS queries for the FQDN of a load-balanced service to direct traffic *from* a subset of client-devices
-* Performing health-checks on the load-balancing targets that have been configured for each load-balanced service’s FQDN
-* 
+Because dGLB provides a relatively coarse-grained mechanism for traffic distribution, it is of relatively low utility for balancing (the irony isn't lost on anyone) workload distribution across targets. Use cases are instead best differentiated by the resiliency models they enable.
 
-## Respond Authoritatively to DNS Queries for FQDNs of Load-balanced Services
+### Active/Standby
 
-# Elements of the Architecture
+In the active/standby use-case, the FQDN for a globally-load-balanced service will have exactly two targets. One of the targets (steady-state) is tasked for use during steady-state operating mode, and the other target (recovery) is tasked for use *only* if the steady-state instance fails. The dGLBs are configured with policy to ensure that they reply to DNS queries use the "steady-state" target's data as long as the steady-state target is passing healtchecks with the dGLB, and to respond using the "recovery" instance's data only when it passes healthchecks AND the "steady-state" instance fails healthchecks. This use-case is generally a good match for disaster-recovery scenarios.
 
-## Conventions
+### All Active
+
+In the active/active use-case, the FQDN for a globally-load-balanced service will have two or more targets. The dGLB will be configured to alternate using the data of *each* target that is passing healtchekcs when responding to queries for the FQDNs of load-balanced services. The manner of alternation may vary greatly depending on the functionality of the specific dGLB platform and the nuances of the deployed workload.
+
+***
+
+## Elements of the Architecture
+
+### Conventions
 
 The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instances of this element may be instantiated, with a parenthesized alphabetic character index to differentiate between instances.  For example, an element definition with a label of "cl(<em>a-n</em>)"  could may be instantiated multiple times.  In such a case, individual instances would be named:  "cl(a)", "cl(b)", cl(c)", etc..
 
-## Element Definitions
+### Element Definitions
 
 | Element Label | Element Name | Element Description |
 | ------------- | ------------ | ------------------- |
@@ -111,5 +113,37 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers g
 The process of DNS resolution from client-device, to recursive-resolver, to authoritative nameserver, back to recursive-resolver, to glb, back to recursive resolver, and back to client-device is depicted in the following flowcharts:
 ![image](./dglb-resolution-flowchart.drawio.svg)
 ![image](./dglb-resolution-flowchart4.drawio.svg)
+
+## DNS Time To Live Guidelines
+
+* All other factors being equal, a lower TTL is preferred
+    * This minimizes time to re-direct traffic away from a failed site
+    * Should always be at least long enough that DNS operations don't become a hindrance to application/service access
+* For active/standby site configurations
+    * No special considerations
+* For multi-active-site GLB configurations
+    * Persistence should be enabled
+        * Timer **has** to be higher than the TTL of the DNS record itself.
+            * Otherwise, persistence could expire before it actually gets invoked.
+* If the GLB's target-pool is populated with FQDNs (and not IP addresses), the TTL value used in the GLB DNS responses to clients *must* not exceed that of the A records for the target FQDNs.
+    * If, for example, a 3rd-party dGLB is configured with an FQDN that load-balances to multiple AWS application-load-balancers
+        * AWS DNS always responds to resolution requests for ALB's FQDNs with a TTL of 60 seconds.
+        * If the dGLB is configured with a 30-second persistence timer, the clients (recursive resolvers) would keep the A records cached past the 30 seconds, and the GLB would expire the persistence-able entry before it received another query
+
+***
+
+## Limitations
+
+### Coarseness of Load-balancing Granularity and Impact on Session Persistence
+
+Because DNS-based GLBs are only in path for DNS, they are only able to act on data in the DNS queries it receives when categorizing the client-side of connections that it is load-balancing.  The source-IP address of the DNS queries that it receives for the FQDN's of GLB'ed services is the primary mechanism for that type of categorization.  In this architecture, the IP addresses of the recursive resolvers (not the clients) are exposed to the GLBs.  The upshot of this is that with session persistence enabled, the GLBs are required to make the **same**  load-balancing decision for each recursive resolver that it receives DNS queries from. This is not a problem in the short term, with relatively low requirements for multi-active site-level load-balancing, but that use-case is expected to increase in the near future.
+
+### Presentation of Downstream ALBs as IP addresses or FQDNs
+
+The F5 DNS global-load-balancing platform is not able to perform health-checks of downstream ALBs if the GLB configuration specifies the ALB pool using FQDNs (rather than IP addresses.)  This is problematic if the downstream ALBs need to be accessed by FQDN, as is the case with AWS Application Load Balancers (ALBs.)  This limitation on the F5 platform can be circumvented by installing an additional module on the GLB instance (the "LTM" module, specifically), which **is**  able to perform health-checks on behalf of the GTM.
+
+### 1:1 Relationship between FQDNs and load-balanced services
+
+ALBs may have a 1:many FQDN:load-balanced-service relationship, whereas GLBs have a 1:1 FQDN:load-balanced-service relationship.  Application load-balancers (ALBs) typically present to the consumer with one ore more IP address, which *may* be abstracted as an FQDN.  A single client-facing FQDN can be sufficient for an ALB to act as a load-balancer for *multiple* different applications.  Because it is inline for the actual *application* data plane, the ALB *can* perform application-layer inspection to classify requests for different URIs to different back-end resource pool.  It can likewise instantiate TCP listeners on multiple ports using the same IP address, and map each TCP port to a different backend resource pool.   In this scenario, an ALB with a single FQDN and single virtual-IP address can independently distribute traffic for **multiple** backend load-balanced services.   While a single FQDN can suffice for ALBs to independently manage load-balancing for multiple services, the same is not true of GLBs.  This is true is all cases, but is especially significant for Kubernetes workload.
 
 {% include links.html %}

@@ -29,6 +29,10 @@ entries:
       url: /articles_dglbdarch.html
       output: web
 
+    - title: Why is this here?
+      url: /articles_dglbdarch-intro.html
+      output: web
+
   - title: Nothing here yet
     output: web
 

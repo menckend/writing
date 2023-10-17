@@ -8,12 +8,6 @@
       "folders": {},
       "files": {}
     },
-    "docs": {
-      "name": "docs",
-      "isOrdered": true,
-      "folders": {},
-      "files": {}
-    },
     "fonts": {
       "name": "fonts",
       "isOrdered": true,
@@ -98,45 +92,34 @@
             "mydoc_yaml_tutorial": 54
           }
         },
-        "news": {
-          "name": "news",
-          "isOrdered": true,
-          "folders": {},
-          "files": {}
-        },
-        "product1": {
-          "name": "product1",
-          "isOrdered": true,
-          "folders": {},
-          "files": {
-            "p1_sample2": 0,
-            "p1_sample1": 1,
-            "p1_sample3": 2,
-            "p1_sample4": 3,
-            "p1_sample5": 4,
-            "p1_sample6": 5,
-            "p1_sample7": 6
-          }
-        },
-        "product2": {
-          "name": "product2",
-          "isOrdered": true,
-          "folders": {},
-          "files": {}
-        },
         "tags": {
           "name": "tags",
           "isOrdered": true,
           "folders": {},
           "files": {}
         },
-        "dglb": {
-          "name": "dglb",
+        "articles": {
+          "name": "articles",
+          "isOrdered": true,
+          "folders": {
+            "dglb": {
+              "name": "dglb",
+              "isOrdered": true,
+              "folders": {},
+              "files": {
+                "dglbarch": 0
+              }
+            }
+          },
+          "files": {
+            "articles_whynot-1": 0
+          }
+        },
+        "morecontent": {
+          "name": "morecontent",
           "isOrdered": true,
           "folders": {},
-          "files": {
-            "dglbarch": 0
-          }
+          "files": {}
         }
       },
       "files": {}
