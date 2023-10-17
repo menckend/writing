@@ -18,11 +18,12 @@ $('#toc').on('click', 'a', function() {
 });
 </script>
 
-<details>
-  <summary>
-    <button type="button" class="btn btn-primary">Toggle Table of Contents</button>
-  </summary>
-<div id="toc"></div>
-</details>
+
+<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Table of Contents <span class="caret"></span></button>
+        <ol class="dropdown-menu">
+            <li>
+                <div id="toc"></div>
+            </li>
+        </ol>
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
