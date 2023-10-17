@@ -37,12 +37,8 @@ entries:
     output: web
 
     folderitems:
-    - title: One thing
-      url: /articles_dglbdarch.html
-      output: web
-
-    - title: Another thing
-      url: /p1_sample5.html
+    - title: Why not?
+      url: /articles_whynot-1.html
       output: web
 
 # Copyright 2021 Google LLC
