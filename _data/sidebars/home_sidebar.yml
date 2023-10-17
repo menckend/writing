@@ -21,7 +21,6 @@ entries:
     - title: Articles
       url: /articles_landing_page.html
       output: web
-
     - title: Other_Content
       url: /othercontent_landing_page.html
       output: web
