@@ -16,7 +16,7 @@
     </a>
     &nbsp;
     <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to: <span class="caret"></span></button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to <span class="caret"></span></button>
         <ol class="dropdown-menu">
             {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
@@ -24,7 +24,7 @@
             <li class="active"> → {{pg.weight}}. {{pg.title}}</li>
             {% else %}
             <li>
-                <a href="{{pg.url | remove: '/'}}">{{pg.title}}</a>
+                <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
             </li>
             {% endif %}
             {% endif %}
