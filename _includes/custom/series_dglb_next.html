@@ -4,7 +4,7 @@
         {% for pg in pages %}
         {% if pg.series == "dGLB series" %}
         {% if pg.weight > page.weight %}
-        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next: {{pg.title}}</button></a>
+        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page</button></a>
         {% break %}
         {% endif %}
         {% endif %}
