@@ -6,6 +6,7 @@
                 {% if pg.weight < page.weight %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page</button></a>
                     {% break %}
+                {% endif %}
                 {% if pg.weight > page.weight %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page</button></a>
                     {% break %}
