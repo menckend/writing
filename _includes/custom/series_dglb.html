@@ -6,9 +6,9 @@
             {% for p in pages %}
             {% if p.series == "dGLB series" %}
             {% if p.url == page.url %}
-            <li class="active"> → {{p.weight}}. {{p.title}}</li>
+            <li > → {{p.weight}}. {{p.title}}</li>
             {% endif %}
-            <li>
+            <li> 
                 <a href="{{p.url | remove: "/"}}">{{p.weight}}. {{p.title}}</a>
             </li>
             {% endif %}
