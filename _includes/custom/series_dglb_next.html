@@ -19,9 +19,7 @@
             {% if pg.url == page.url %}
             <li class="active"> → {{pg.weight}}. {{pg.title}}</li>
             {% else %}
-            <li>
-                <a href="{{pg.url | remove: '/'}}">{{pg.title}}</a>
-            </li>
+            <li class="active"> {{pg.weight}}. {{p.title}}</li>
             {% endif %}
             {% endif %}
             {% endfor %}
