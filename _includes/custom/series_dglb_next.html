@@ -1,15 +1,26 @@
 <div class="seriesContext">
+    <a>
+        {% assign pages = site.pages | sort:"weight"  %}
+        {% for pg in pages %}
+        {% if pg.series == "dGLB series" %}
+        {% if pg.weight > page.weight %}
+        <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next: {{pg.title}}</button></a>
+        {% break %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </a>
+    &nbsp;
     <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">dGLB series <span class="caret"></span></button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to: <span class="caret"></span></button>
         <ol class="dropdown-menu">
-            {% assign pages = site.pages | sort:"weight"  %}
-            {% for p in pages %}
-            {% if p.series == "dGLB series" %}
-            {% if p.url == page.url %}
-            <li class="active"> → {{p.weight}}. {{p.title}}</li>
+            {% for pg in pages %}
+            {% if pg.series == "dGLB series" %}
+            {% if pg.url == page.url %}
+            <li class="active"> → {{pg.weight}}. {{pg.title}}</li>
             {% else %}
             <li>
-                <a href="{{p.url | remove: "/"}}">{{p.weight}}. {{p.title}}</a>
+                <a href="{{pg.url | remove: '/'}}">{{pg.title}}</a>
             </li>
             {% endif %}
             {% endif %}
@@ -17,3 +28,5 @@
         </ol>
     </div>
 </div>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}
