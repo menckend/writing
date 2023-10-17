@@ -74,12 +74,12 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 | "rrset5(a-<em>n</em>)" | GLB service FQDN synthetic CNAME records | A "synthetic" CNAME record resource record set maintained on the global load-balancers (glb1).  Each globally load-balanced service must have a corresponding configuration on glb that is "keyed" to a fully qualified domain name (FQDN) in the global load-balancing domain (glbd.)  If the entries in the nominal load-balancing target pool for the GLB service's FQDN are FQDNs, the glb will respond to resolution requests for the GLB service's FQDN with dynamically generated CNAME records, aliasing the GLB's service's FQDN to the FQDN of an item from the configured list of load-balancing targets. |
 | "rrset6(a-<em>n</em>)" | ALB FQDN A records | An A record resource set maintained on the authoritative nameservers for any FQDNs that are included in the glbpool.  (E.g. "alb1.example.com") |
 
-# Functional Architecture Diagram
+## Functional Architecture Diagram
 
 ![image](./dglb-functional-key.drawio.svg)
 ![image](./dglb-functional-1.drawio.svg)
 
-# Network Flow Table
+## Network Flow Table
 
 The following table enumerates the flows labeled in the previous diagram along with their descriptions.
 
@@ -100,7 +100,7 @@ The following table enumerates the flows labeled in the previous diagram along w
 
 ***
 
-# DNS Zone Structure/Content Diagram
+## DNS Zone Structure/Content Diagram
 
 The structure of the DNS zones maintained by the DNS authoritative nameservers global load-balancers is illustrated in the following figures.
 ![image](./dglb-zones-key.drawio.svg)
@@ -108,7 +108,7 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers g
 
 ***
 
-# DNS Resolution Process Flowchart
+## DNS Resolution Process Flowchart
 
 The process of DNS resolution from client-device, to recursive-resolver, to authoritative nameserver, back to recursive-resolver, to glb, back to recursive resolver, and back to client-device is depicted in the following flowcharts:
 ![image](./dglb-resolution-flowchart.drawio.svg)

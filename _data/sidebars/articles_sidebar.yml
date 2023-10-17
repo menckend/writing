@@ -25,12 +25,12 @@ entries:
     output: web
 
     folderitems:
-    - title: Generalized Reference Architecture
-      url: /articles_dglbdarch.html
-      output: web
-
     - title: Why is this here?
       url: /articles_dglbdarch-intro.html
+      output: web
+
+    - title: Generalized Reference Architecture
+      url: /articles_dglbdarch.html
       output: web
 
   - title: Nothing here yet
