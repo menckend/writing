@@ -31,7 +31,7 @@ entries:
 
     - title: Preamble
       url: /morecontent_capman-preamble.html
-            output: web
+      output: web
 
   - title: The MTU Manifesto
     output: web
