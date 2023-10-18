@@ -1,20 +1,30 @@
 <div class="seriesContext">
+	if {% page.series %}
+    {% assign anchor-series = page.series  %}
     <a>
-        {% assign pages = site.pages | sort:"weight"  %}
         {% for pg in pages %}
-            {% if pg.series == "dGLB series" %}
+            {% if pg.series == anchor-series %}
                 {% assign pg-weight-num = pg.weight | plus: 0 %}
                 {% assign page-weight-num = page.weight | plus: 0 %}
                 {% assign page-weight-lessone = page-weight-num | minus: 1 %}
                 {% if pg-weight-num == page-weight-lessone %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
-                {% endif %}
-                {% if pg-weight-num == page-weight-addone %}
-                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
+                    {% break %}
                 {% endif %}
             {% endif %}
         {% endfor %}
-    </a>
+        {% for pg in pages %}
+            {% if pg.series == "dGLB series" %}
+                {% assign pg-weight-num = pg.weight | plus: 0 %}
+                {% assign page-weight-num = page.weight | plus: 0 %}
+                {% assign page-weight-addone = page-weight-num | plus: 1 %}
+                {% if pg-weight-num == page-weight-addone %}
+                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+	</a>
     &nbsp;
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
@@ -22,7 +32,7 @@
             {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
             {% if pg.url == page.url %}
-            <li> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
+            <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
             {% else %}
             <li>
                 <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
@@ -32,6 +42,5 @@
             {% endfor %}
         </ol>
     </div>
+	{% endif %}
 </div>
-
-{% comment %} Copyright 2021 Google LLC {% endcomment %}
