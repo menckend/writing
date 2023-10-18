@@ -12,19 +12,12 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Articles
+    - title: Content
       folderitems:
-        - title: Global Load Balancing
-          url: /dglb_landing_page.html
+        - title: Articles
+          url: /articles_landing_page.html
 
-        - title: Next article
-          url: /morecontent_landing_page.html
-  - title: Rants
-      folderitems:
-        - title: Rant number 1
-          url: /dglb_landing_page.html
-
-        - title: Rant number 2
+        - title: More Content
           url: /morecontent_landing_page.html
 
 
