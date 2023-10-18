@@ -21,8 +21,8 @@ entries:
     - title: Articles
       url: /articles_landing_page.html
       output: web
-    - title: More Content
-      url: /morecontent_landing_page.html
+    - title: Rants
+      url: /rants_landing_page.html
       output: web
 
 # Copyright 2021 Google LLC

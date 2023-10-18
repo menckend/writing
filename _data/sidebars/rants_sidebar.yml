@@ -1,0 +1,44 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Rants
+  #version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Rant 1
+    output: web
+
+    folderitems:
+    - title: Rant 1 Chapter 1
+      url: /articles_dglbdarch-intro.html
+      output: web
+
+    - title: Rant 1 Chapter 2
+      url: /articles_dglbdarch.html
+      output: web
+
+  - title: My Next Rant
+    output: web
+
+    folderitems:
+    - title: But Not Yet
+      url: /articles_whynot-1.html
+      output: web
+
+# Copyright 2021 Google LLC
