@@ -3,10 +3,10 @@
         {% assign pages = site.pages | sort:"weight"  %}
         {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
-                {% assign pg-weight-num = pg.weight | to_i %}
+                {% assign pg-weight-num = pg.weight | plus: 0 %}
                 {% assign page-weight-num = page.weight | plus: 0 %}
                 {% if pg-weight-num == page-weight-num | minus: 1 }}  %}
-                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page {{% pg-weight-num %}} {{% pg.weight %}} </button> </a>
+                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
                     {% break %}
                 {% endif %}
             {% endif %}
@@ -16,7 +16,7 @@
                 {% assign pg-weight-num = pg.weight | to_i %}
                 {% assign page-weight-num = page.weight | plus: 0 %}
                 {% if pg-weight-num == page-weight-num | plus: 1 %}
-                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page {{% pg-weight-num %}} {{% pg.weight %}} </button></a>
+                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page</button></a>
                     {% break %}
                 {% endif %}
             {% endif %}
