@@ -31,9 +31,6 @@
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
         <ol class="dropdown-menu">
             {% for pg in site.pages %}
-            <li>
-                <a >{{pg.weight}}. {{pg.title}}  {{pg.series}} {{page.series}}</a>
-            </li>
             {% if pg.series == page.series %}
             {% if pg.url == page.url %}
             <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
