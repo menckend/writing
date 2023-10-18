@@ -3,9 +3,10 @@ title: "Welcome to menckenania"
 keywords: 
 sidebar: home_sidebar
 permalink: index.html
-summary: 
+summary: Nothing fancy, just a place for my 'content'
+toc: false
 ---
-
-You'll find content through the header and sidebar navigation menus.
+<break></break>
+You'll find my 'content' through the header and sidebar navigation menus.
 
 {% include links.html %}

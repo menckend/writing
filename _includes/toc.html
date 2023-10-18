@@ -11,7 +11,7 @@ $('#toc').on('click', 'a', function() {
   var target = $(this.getAttribute('href'))
     , scroll_target = target.offset().top
 
-  $(window).scrollTop(scroll_target - 10);
+  $(window).scrollTop(scroll_target - 0);
   return false
 })
 
@@ -34,5 +34,6 @@ details > summary {
   <summary > Toggle Page TOC</summary>
   <div id="toc"></div>
 </details>
+
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
