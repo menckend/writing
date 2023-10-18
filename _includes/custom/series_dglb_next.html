@@ -3,15 +3,13 @@
         {% assign pages = site.pages | sort:"weight"  %}
         {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
-                {% assign pgnumlist = pg.weight | plus: 0 %}
-                {% assign pgnumme = page.weight | plus: 0 %}
-                {% if pggnumlist ==  {{ pgnumme | minus: 1 }}  %}
+                {% assign pgn-weight-num = pg.weight | plus: 0 %}
+                {% assign page-weight-num = page.weight | plus: 0 %}
+                {% if pggnumlist ==  pg-weight-num | minus: 1 }}  %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page</button></a>
-                    {% break %}
                 {% endif %}
-                {% if pg.weight > page.weight %}
+                {% if pg-weight-num == page-weight-num | plus: 1 %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page</button></a>
-                    {% break %}
                 {% endif %}
             {% endif %}
         {% endfor %}
