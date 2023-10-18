@@ -31,7 +31,7 @@
             {% for pg in pages %}
             {% if pg.series == "dGLB series" %}
             {% if pg.url == page.url %}
-            <li> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
+            <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
             {% else %}
             <li>
                 <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
