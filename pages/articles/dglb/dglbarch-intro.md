@@ -1,5 +1,5 @@
 ---
-title: Why Did I Write This...?
+title: Why?  What's the Point?
 summary: "...because I needed it, and couldn't find it. So, I made it."
 sidebar: articles_sidebar
 permalink: articles_dglbdarch-intro.html
