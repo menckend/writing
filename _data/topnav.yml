@@ -12,13 +12,10 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Content
+    - title: Articles
       folderitems:
-        - title: Articles
-          url: /articles_landing_page.html
+        - title: Global Load Balancing
+          url: /dglb_landing_page.html
 
-        - title: More Content
-          url: /morecontent_landing_page.html
-
-
-# Copyright 2021 Google LLC
+        - title: Next Article
+          url: /dglb_landing_page.html
