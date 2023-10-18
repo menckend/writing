@@ -6,7 +6,7 @@
                 {% assign pgn-weight-num = pg.weight | plus: 0 %}
                 {% assign page-weight-num = page.weight | plus: 0 %}
                 {% if pg-weight-num ==  pg-weight-num | minus: 1 }}  %}
-                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page:  {% pg-weight-num %} </button> </a>
+                    <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page:  {{% pg-weight-num %}} </button> </a>
                     {% break %}
                 {% endif %}
             {% endif %}
