@@ -19,8 +19,7 @@ topnav_dropdowns:
 
         - title: Next Article
           url: /dglb_landing_page.html
-  folders:
-    - title: Rants
+      - title: Rants
       folderitems:
         - title: Rant No. 1
           url: /dglb_landing_page.html
