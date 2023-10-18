@@ -2,13 +2,13 @@
 {% assign seriesornot = site.page.series %}
 {% if seriesornot != "series" %}
     {% assign anchor-series = page.series  %}
+    {% assign page-weight-num = page.weight | plus: 0 %}
+    {% assign page-weight-lessone = page-weight-num | minus: 1 %}
+    {% assign page-weight-addone = page-weight-num | plus: 1 %}
     <a>
         {% for pg in site.pages %}
             {% if pg.series == anchor-series %}
                 {% assign pg-weight-num = pg.weight | plus: 0 %}
-                {% assign page-weight-num = page.weight | plus: 0 %}
-                {% assign page-weight-lessone = page-weight-num | minus: 1 %}
-                {% assign page-weight-addone = site.page-weight-num | plus: 1 %}
                 {% if pg-weight-num == page-weight-lessone %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
                 {% endif %}
