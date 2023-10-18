@@ -1,8 +1,6 @@
-<script>
 <div class="seriesContext">
-    <a> {{ site.page.series}} </a>
-    {% assign seriesornot = site.page.series}
-	{% if seriesornot != '' %}
+{% assign seriesornot = site.page.series %}
+{% if seriesornot != '' %}
     {% assign anchor-series = page.series  %}
     <a>
         {% for pg in site.pages %}
@@ -45,6 +43,5 @@
             {% endfor %}
         </ol>
     </div>
-	{% endif %}
+{% endif %}
 </div>
-</script>
