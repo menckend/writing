@@ -1,8 +1,11 @@
+<script>
+$( document ).ready(function() {
+
 <div class="seriesContext">
-	if {% page.series != '' %}
+	if {% site.page.series != '' %}
     {% assign anchor-series = page.series  %}
     <a>
-        {% for pg in pages %}
+        {% for pg in site.pages %}
             {% if pg.series == anchor-series %}
                 {% assign pg-weight-num = pg.weight | plus: 0 %}
                 {% assign page-weight-num = page.weight | plus: 0 %}
@@ -44,3 +47,4 @@
     </div>
 	{% endif %}
 </div>
+</script>

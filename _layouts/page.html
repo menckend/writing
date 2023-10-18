@@ -30,59 +30,10 @@ layout: default
 
 <div class="post-content">
 
-   {% if page.summary %}
-    <div class="summary">{{page.summary}}</div>
-   {% endif %}
-
     {% if page.series %}
-        <div class="seriesContext">
-	        if {% page.series != '' %}
-            {% assign anchor-series = page.series  %}
-            <a>
-                {% for pg in site.pages %}
-                    {% if pg.series == anchor-series %}
-                        {% assign pg-weight-num = pg.weight | plus: 0 %}
-                        {% assign page-weight-num = page.weight | plus: 0 %}
-                        {% assign page-weight-lessone = page-weight-num | minus: 1 %}
-                        {% if pg-weight-num == page-weight-lessone %}
-                            <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
-                            {% break %}
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-                {% for pg in pages %}
-                    {% if pg.series == "dGLB series" %}
-                        {% assign pg-weight-num = pg.weight | plus: 0 %}
-                        {% assign page-weight-num = page.weight | plus: 0 %}
-                        {% assign page-weight-addone = page-weight-num | plus: 1 %}
-                        {% if pg-weight-num == page-weight-addone %}
-                            <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
-                            {% break %}
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-	        </a>
-            &nbsp;
-            <div class="btn-group">
-                <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
-                <ol class="dropdown-menu">
-                    {% for pg in pages %}
-                    {% if pg.series == "dGLB series" %}
-                    {% if pg.url == page.url %}
-                    <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
-                    {% else %}
-                    <li>
-                        <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
-                    </li>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-                </ol>
-            </div>
-        </div>
-	{% endif %}
-</div>
+    {% include series_allinone.html %}
     {% endif %}
+
     {% unless page.toc == false %}
     {% include toc.html %}
     {% endunless %}
