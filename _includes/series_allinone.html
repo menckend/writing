@@ -6,7 +6,7 @@
         {% for pg in site.pages %}
             {% if pg.series == anchor-series %}
                 {% assign pg-weight-num = pg.weight | plus: 0 %}
-                {% assign page-weight-num = page.weight | plus: 0 %}
+                {% assign page-weight-num = site.page.weight | plus: 0 %}
                 {% assign page-weight-lessone = page-weight-num | minus: 1 %}
                 {% if pg-weight-num == page-weight-lessone %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
@@ -15,10 +15,10 @@
             {% endif %}
         {% endfor %}
         {% for pg in pages %}
-            {% if pg.series == "dGLB series" %}
+            {% if pg.series == page.series %}
                 {% assign pg-weight-num = pg.weight | plus: 0 %}
-                {% assign page-weight-num = page.weight | plus: 0 %}
-                {% assign page-weight-addone = page-weight-num | plus: 1 %}
+                {% assign page-weight-num = site.page.weight | plus: 0 %}
+                {% assign page-weight-addone = site.page-weight-num | plus: 1 %}
                 {% if pg-weight-num == page-weight-addone %}
                     <a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                     {% break %}
@@ -31,7 +31,7 @@
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
         <ol class="dropdown-menu">
             {% for pg in pages %}
-            {% if pg.series == "dGLB series" %}
+            {% if pg.series == page.series %}
             {% if pg.url == page.url %}
             <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
             {% else %}
