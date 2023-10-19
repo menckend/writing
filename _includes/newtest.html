@@ -1,17 +1,16 @@
 <p> Listing page-index, library name, and document name for every single page.</p>
 
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
-{% assign libnames = {{ site.pages | map: 'libname'}} %}
-{% assign docnames = {{ site.pages | map: 'docname'}} %}
+{% assign libnames = site.pages | map: 'libname' %}
+{% assign docnames = site.pages | map: 'docname' %}
 
 <!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
   {% if forloop.index == 17 %}
   <p> V1 page details: {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}  </p>
-  {% assign nhan = handles[forloop.index] %}
   {% assign nlib = libnames[forloop.index] %}
   {% assign ndocc = docnames[forloop.index] %}
-  <p> V3 Page details:  {{ forloop.index }}_{{ nhan }}_{{ nlib }}_{{ ndocc }}  </p>
+  <p> V3 Page details:  {{ forloop.index }}_{{ nlib }}_{{ ndocc }}  </p>
   {% endif %}
 {% endfor %}
 
