@@ -1,8 +1,8 @@
 <p> Listing page-index, library name, and document name for every single page.</p>
 
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
-{% assign libnames = site.pages | map: 'libname' | join: ',' | split: ','  %}
-{% assign docnames = site.pages | map: 'docname' | join: ',' | split: ',' %}
+{% assign libnames = site.pages | map: 'libname' | join: '#' | split: '#'  %}
+{% assign docnames = site.pages | map: 'docname' | join: '#' | split: '#' %}
 {% assign pagetitles = site.pages | map: 'title' | join: '#' | split: '#' %}
 {% assign pagecount = site.pages | size %}
 
