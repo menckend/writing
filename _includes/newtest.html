@@ -1,13 +1,14 @@
 <p> Listing page-index, library name, and document name for every single page.</p>
-<!--
 
-//-->
+<!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
 {% assign libnames = {{ site.pages | map: 'libname'}} %}
 {% assign docnames = {{ site.pages | map: 'docname'}} %}
 {% assign handles = {{ site.pages | map: 'handle'}} %}
 
+
+<!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
-  <p> Page details: {{ forloop.index }} _ {{ counter }} "_" {{ handles[forloop.index] }} " _ " {{libnames[forloop.index] }} "_" {{ docnames[forloop.index] }} %}} </p>
+  <p> Page details: {{ forloop.index }} _ {{ counter }} _ {{ handles[forloop.index] }} _ {{libnames[forloop.index] }} _ {{ docnames[forloop.index] }} </p>
 {% endfor %}
 
 <p> If it worked, they'd be directly above this line.</p>
