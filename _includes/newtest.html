@@ -12,16 +12,18 @@
   {% assign docc = page.docname %}
   <p> V2 Page details: {{ forloop.index }}_{{ han }}_{{ lib }}_{{ docc }}  </p>
 
-  {% assign han = handles[forloop.index] %}
-  {% assign lib = libnames[forloop.index] %}
-  {% assign docc = docnames[forloop.index] %}
-  <p> V3 Page details:  {{ forloop.index }}_{{ han }}_{{ lib }}_{{ docc }}  </p>
+  {% assign nhan = handles[forloop.index] %}
+  {% assign nlib = libnames[forloop.index] %}
+  {% assign ndocc = docnames[forloop.index] %}
+  <p> V3 Page details:  {{ forloop.index }}_{{ nhan }}_{{ nlib }}_{{ ndocc }}  </p>
 
 {% endfor %}
 
-<!-- Pages 6-7 have the temporary data fields in them -->
-Now, what's up with the arrays not working? 
+<!-- Once arrays are working, need to build an array of concatenated libname_docname strings
+  then apply uniq to that array, then "split" that array to get the unique library types-->
 
+Now, what's up with the arrays not working? 
+ {{assign liblist = libnames | uniq }}
 
 <p> If it worked, they'd be directly above this line.</p>
 
