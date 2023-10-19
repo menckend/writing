@@ -7,8 +7,11 @@
 
 {% for pagenum in pagecount %}
   <p> {{ site.pages | size %}} </p>
-  {{ pagenum }} _  {{pageliblist[pagenum]}} _ {{pagedoclist[pagenum]}}
+  <p> {{ pagenum }} _  {{pageliblist[pagenum]}} _ {{pagedoclist[pagenum]}} </p>
 {% endfor %}
+
+<p>
+{{ site.pages | map: "docname"}}
 
 <p> If it worked, they'd be directly above this line.</p>
 
