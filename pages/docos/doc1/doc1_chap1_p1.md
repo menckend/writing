@@ -21,7 +21,7 @@ Trying to get a list of all pages': libnam, docname, chapnum, chapnam, pagenum, 
 {% assign pageliblist = site.pages | map: libname %}
 {% assign pagedoclist = site.pages | map: docname %}
 
-{{pageliblist}}
-{{pagedoclist}}
+{{ pageliblist }}
+{{ pagedoclist }}
 
 {% include links.html %}
