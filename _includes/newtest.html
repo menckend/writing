@@ -8,8 +8,10 @@
 {% increment counter %}
 {% for page in site.pages %}
   {% increment counter %}
-  <p> {{ counter }} </p>
-  <p> {{ counter "_" page.handle " _ " page.libbame "_" page.docname "_" page.size %}} </p>
+    {%assign thandle = page | map "handle" %}
+    {%assign tlibname = page | map "libname" %}
+    {%assign tdocname = page | map "docname" %}
+    <p> {{ counter "_" thandle " _ " tlibname "_" tdocname "_"%}} </p>
 {% endfor %}
 
 
