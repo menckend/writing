@@ -4,10 +4,9 @@
 
 <p> Listing page-index, library name, and document name for every single page.
 
-{% for pagenum in pagecoun %}
+{% for pagenum in pagecount %}
   {{ pagenum }} _  {{pageliblist[pagenum]}} _ {{pagedoclist[pagenum]}}
 {% endfor %}
 
 <p> If it worked, they'd be directly above this line.</p>
 
-{% comment %} Copyright 2021 Google LLC {% endcomment %}
