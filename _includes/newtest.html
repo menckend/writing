@@ -8,17 +8,26 @@
 <!-- Looping through the site.pages object and grabbing directly from each page object-->
 {% for page in site.pages %}
   {{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index] }}
+  {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}
 {% endfor %}
 
 <p>Pagecount is: {{ pagecount }} </p>
-<p>Libraryvaluecount is: {{ libnames | size }} </p>
-<p>docnamevaluecount is: {{ docnames | size }} </p>
 <p>Unique List of Libraries is:
 {% assign uniquelibs = libnames | uniq %}
 {{ uniquelibs }} </p>
+
+<p>Libraryvaluecount is: {{ libnames | size }} </p>
+<p>docnamevaluecount is: {{ docnames | size }} </p>
+<p>Was really hoping those (^) were going to be the same size as the pagecoun.  Maybe empty elements don't get counted.  All that matters is the populated elements are accessible by index.</p>
+
+
+
+
+
 <!-- Once arrays are working, need to build an array of concatenated libname_docname strings
   then apply uniq to that array, then "split" that array to get the unique library types-->
 <p>Trying something else here:</p>
-{% assign topnav_drops = {{ site.pages | map: 'libname' | join: ',' | split: ',' | uniq }} %}
+
+
 {{ topnav_drops }}
 
