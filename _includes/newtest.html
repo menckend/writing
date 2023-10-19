@@ -1,6 +1,6 @@
 {% assign pagelist = site.pages %}
 {% assign pageliblist = site.pages.libname %}
-{% assign pagedoclist = site.pages.docname %}
+{% assign pagedoclist = site.pages | map: "docname" %}
 
 <p> tried to assign libnames and docnames</p>
 
