@@ -5,6 +5,7 @@
 <p> Listing page-index, library name, and document name for every single page.
 
 {% for pagenum in pagecount %}
+  <p> {{ site.pages | size %}} </p>
   {{ pagenum }} _  {{pageliblist[pagenum]}} _ {{pagedoclist[pagenum]}}
 {% endfor %}
 
