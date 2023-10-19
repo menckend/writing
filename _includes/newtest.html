@@ -5,19 +5,13 @@
 
 <p> Listing page-index, library name, and document name for every single page.</p>
 
-<p>
 {% increment counter %}
 {% for page in site.pages %}
   {% increment counter %}
-  <a> {{ counter }} </a>
-  <a> {{ counter "_" page.handle " _ " page.libbame "_" page.docname "_" page.size %}} </a>
+  <p> {{ counter }} </p>
+  <p> {{ counter "_" page.handle " _ " page.libbame "_" page.docname "_" page.size %}} </p>
 {% endfor %}
-<p>
 
-
-<p>
-{{ pageliblist[0] }}
-</p>
 
 <p> If it worked, they'd be directly above this line.</p>
 
