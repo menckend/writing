@@ -12,6 +12,9 @@
 
 <p>Pagecount is: {{ pagecount }} </p>
 
+<p>Unique List of Libraries is:
+{% assign uniquelibs = libnames | uniq %}
+{{ uniquelibs }} </p>
 <!-- Once arrays are working, need to build an array of concatenated libname_docname strings
   then apply uniq to that array, then "split" that array to get the unique library types-->
 <p>Trying something else here:</p>
