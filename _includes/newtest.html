@@ -17,7 +17,7 @@
 {% assign topnav_dropdowns = libnames %}
 
 {% for unilib in uniquelibs %}
-{% assign unilib_entries_forloop.index0 = site.pages | where:'libname', entry | map: 'docname' | join: ',' | split: ',' | uniq %}
+{% assign unilib_entries_forloop.index0 = site.pages | where:'libname', entry | map: 'docname' | join: '#' | split: '#' | uniq %}
 {% for entry in unilib_entries %}
 <p>{{ unilib }}.{{ entry }} </p>
 {% endfor %}
