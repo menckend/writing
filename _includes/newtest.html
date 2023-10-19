@@ -6,7 +6,7 @@
 
 <!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
-  {% if forloop.index == 17 %)
+  {% if forloop.index == 17 %}
   <p> V1 page details: {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}  </p>
   {% assign nhan = handles[forloop.index] %}
   {% assign nlib = libnames[forloop.index] %}
@@ -17,10 +17,12 @@
 
 <!-- Once arrays are working, need to build an array of concatenated libname_docname strings
   then apply uniq to that array, then "split" that array to get the unique library types-->
-
+<p>
 Now, what's up with the arrays not working? 
  {{% assign liblist = libnames | uniq %}}
-{{ liblist }}
+Liblist: {{ liblist }}
+libnames array: {{ libnames}}  
+</p>
 
 <p> If it worked, they'd be directly above this line.</p>
 
