@@ -3,12 +3,13 @@
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
 {% assign libnames = site.pages | map: 'libname' | join: ',' | split: ','  %}
 {% assign docnames = site.pages | map: 'docname' | join: ',' | split: ',' %}
+{% assign pagetitles = site.pages | map: 'title' | join: '#' | split: '#' %}
 {% assign pagecount = site.pages | size %}
 
 <!-- Looping through the site.pages object and grabbing directly from each page object-->
 {% for page in site.pages %}
-  {{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index] }}
-  {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}
+  <p>{{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index]}}_{{ pagetitles[forloop.index]}}</p>
+  <p>{{ forloop.index }}_{{ page.libname }}_{{ page.docname }}_{{ page.title }}</p>
 {% endfor %}
 
 <p>Pagecount is: {{ pagecount }} </p>
