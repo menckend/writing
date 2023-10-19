@@ -12,10 +12,13 @@ permalink: doc1_chap1_page1.html
 folder: docos\/doc1
 
 toc: false
+
+sidebar: articles_sidebar
 ---
 
 ## What's going on?
-Trying to get a list of all pages': libnam, docname, chapnum, chapnam, pagenum, and title
+Testing a way to get at different permutations of "libname", "docname", "chapnum", "chapnam", "pagenum", etc... for populating topnav and sidebars.
+
 
 {% include newtest.html %}
 
