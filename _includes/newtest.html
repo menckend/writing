@@ -3,15 +3,25 @@
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
 {% assign libnames = {{ site.pages | map: 'libname'}} %}
 {% assign docnames = {{ site.pages | map: 'docname'}} %}
-{% assign handles = {{ site.pages | map: 'handle'}} %}
-
 
 <!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
-  <p> V1 page details: index-{{ forloop.index }}_-handle-{{ page.handle }}_library-{{ page.libname }}_docname-{{ page.docname }}  </p>
-  <p> V2 Page details: {{ forloop.index }}_{{ assign han = page.handle }}_{{ assign lib = page.libname }}_{{ assign docc = page.docname }}  </p>
-  <p> V3 Page details: {{ forloop.index }}_{{ assign han = handles[forloop.index] }}_{{ assign lib = libnames[forloop.index] }}_{{ assign docc = docnames[forloop.index] }}  </p>
+  <p> V1 page details: {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}  </p>
+
+  {% assign lib = page.libname %}
+  {% assign docc = page.docname %}
+  <p> V2 Page details: {{ forloop.index }}_{{ han }}_{{ lib }}_{{ docc }}  </p>
+
+  {% assign han = handles[forloop.index] %}
+  {% assign lib = libnames[forloop.index] %}
+  {% assign docc = docnames[forloop.index] %}
+  <p> V3 Page details:  {{ forloop.index }}_{{ han }}_{{ lib }}_{{ docc }}  </p>
+
 {% endfor %}
+
+<!-- Pages 6-7 have the temporary data fields in them -->
+Now, what's up with the arrays not working? 
+{{% assign 
 
 <p> If it worked, they'd be directly above this line.</p>
 
