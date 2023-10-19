@@ -17,9 +17,18 @@ sidebar: articles_sidebar
 ---
 
 ## What's going on?
+
 Testing a way to get at different permutations of "libname", "docname", "chapnum", "chapnam", "pagenum", etc... for populating topnav and sidebars.
 
+## Results
 
 {% include newtest.html %}
+
+
+## Nothing else.
+
+We're done here.
+
+
 
 {% include links.html %}

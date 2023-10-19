@@ -1,8 +1,9 @@
+
 {% assign pagecount = site.pages | size %}
 {% assign pageliblist = site.pages | map: "libname" %}
 {% assign pagedoclist = site.pages | map: "docname" %}
 
-<p> Listing page-index, library name, and document name for every single page.
+<p> Listing page-index, library name, and document name for every single page.</p>
 
 {% for pagenum in pagecount %}
   <p> {{ site.pages | size %}} </p>
