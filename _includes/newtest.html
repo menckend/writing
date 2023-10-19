@@ -8,19 +8,21 @@
 
 <!-- Looping through the site.pages object and grabbing directly from each page object-->
 {% for page in site.pages %}
-<p> {{ forloop.index }} | {{ page.title }} | {{ pagetitles[forloop.index0] }}
+<p> {{ forloop.index0 }} | {{ page.title }} | {{ pagetitles[forloop.index0] }}
+<p>{{ forloop.index0 }}: {{ libnames[forloop.index0] }} : {{ docnames[forloop.index0]}} : {{ pagetitles[forloop.index0]}}</p>
+
 {% endfor %}
 
-    <p>{{ forloop.index }}_{{ libnames[forloop.index0] }}_{{ docnames[forloop.index0]}}_{{ pagetitles[forloop.index0]}} ---------------- {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}_{{ page.title }}</p>
-
 <p>Pagecount is: {{ pagecount }} </p>
-<p>Unique List of Libraries is:
+<p>Unique List of Libraries is:</p>
 {% assign uniquelibs = libnames | uniq %}
-{{ uniquelibs }} </p>
+{% for ulibname in uniquelibs %}
+<p>{{ uniquelibs[forloop.index0] }} </p>
 
 <p>Libraryvaluecount is: {{ libnames | size }} </p>
 <p>docnamevaluecount is: {{ docnames | size }} </p>
-<p>Was really hoping those (^) were going to be the same size as the pagecoun.  Maybe empty elements don't get counted.  All that matters is the populated elements are accessible by index.</p>
+
+
 
 
 
