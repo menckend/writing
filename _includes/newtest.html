@@ -18,10 +18,11 @@
 <!-- Once arrays are working, need to build an array of concatenated libname_docname strings
   then apply uniq to that array, then "split" that array to get the unique library types-->
 <p>
-Now, what's up with the arrays not working? 
- {{% assign liblist = libnames | uniq %}}
-Liblist: {{ liblist }}
-libnames array: {{ libnames}}  
+Trying something else here:
+
+{% assign subpage = site.pages | where: 'libname', library3 %}
+{{ subpage[0].title }} {{ subpage[0].library }}
+  
 </p>
 
 <p> If it worked, they'd be directly above this line.</p>
