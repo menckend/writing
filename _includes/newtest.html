@@ -17,13 +17,11 @@
 
 <!-- Once arrays are working, need to build an array of concatenated libname_docname strings
   then apply uniq to that array, then "split" that array to get the unique library types-->
-<p>
-Trying something else here:
-
+<p>Trying something else here:</p>
 {% assign subpage = site.pages | where: 'libname', library3 %}
-{{ subpage[0].title }} {{ subpage[0].library }}
-  
-</p>
 
+<p>{{ subpage[0].title }}</p>
+<p>{{ subpage[0].library }}</p>
+<p></p>
 <p> If it worked, they'd be directly above this line.</p>
 
