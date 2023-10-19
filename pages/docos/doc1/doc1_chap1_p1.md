@@ -15,10 +15,9 @@ toc: false
 ---
 
 ## What's going on?
-
 Trying to get a list of all pages': libnam, docname, chapnum, chapnam, pagenum, and title
 
-{% assign allpagesfm = site.pages | map: 'libname' "#" map: 'docname' # map: 'chapnum' # map: 'chapnam' # map: 'pagenum' # map 'title' | split: '#' %}
-{{allpagesfm}}
+{% assign pagelist = site.pages %}
+{{pagelist}}
 
 {% include links.html %}
