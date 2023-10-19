@@ -8,8 +8,8 @@
 {% for page in site.pages %}
   {% if forloop.index == 17 %}
   <p> V1 page details: {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}  </p>
-  {% assign nlib = libnames[forloop.index] %}
-  {% assign ndocc = docnames[forloop.index] %}
+  {% assign nlib = libnames[17] %}
+  {% assign ndocc = docnames[17] %}
   <p> V3 Page details:  {{ forloop.index }}_{{ nlib }}_{{ ndocc }}  </p>
   {% endif %}
 {% endfor %}
@@ -19,8 +19,8 @@
 <p>Trying something else here:</p>
 {% assign subpage = site.pages | where: 'libname', library3 %}
 
-<p>{{ subpage[0].title }}</p>
-<p>{{ subpage[0].library }}</p>
+<p>{{ subpage[17].title }}</p>
+<p>{{ subpage[17].library }}</p>
 <p></p>
 <p> If it worked, they'd be directly above this line.</p>
 
