@@ -8,8 +8,7 @@
 
 <!-- Looping through the site.pages object and grabbing directly from each page object-->
 {% for page in site.pages %}
-  <p>{{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index]}}_{{ pagetitles[forloop.index]}}</p>
-  <p>{{ forloop.index }}_{{ page.libname }}_{{ page.docname }}_{{ page.title }}</p>
+  <p>{{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index]}}_{{ pagetitles[forloop.index]}} ---------------- {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}_{{ page.title }}</p>
 {% endfor %}
 
 <p>Pagecount is: {{ pagecount }} </p>
