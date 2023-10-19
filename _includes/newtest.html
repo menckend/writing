@@ -8,7 +8,7 @@
 
 <!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
-  <p> Page details: {{ forloop.index }} _ {{ counter }} _ {{ handles[forloop.index] }} _ {{libnames[forloop.index] }} _ {{ docnames[forloop.index] }} </p>
+  <p> Page details: {{ forloop.index }}_{{ page.handle }}_{{ page.libname }}_{{ page.docname }}  {{</p>
 {% endfor %}
 
 <p> If it worked, they'd be directly above this line.</p>
