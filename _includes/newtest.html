@@ -5,13 +5,13 @@
 
 <p> Listing page-index, library name, and document name for every single page.</p>
 
-{% for pagenum in pagecount %}
+{% for page in site.pages %}
   <p> {{ site.pages | size %}} </p>
   <p> {{ pagenum }} _  {{pageliblist[pagenum]}} _ {{pagedoclist[pagenum]}} </p>
 {% endfor %}
 
 <p>
-{{ pageliblist }}
+{{ pageliblist[4] }}
 </p>
 
 <p> If it worked, they'd be directly above this line.</p>
