@@ -8,7 +8,9 @@
 
 <!-- Working with the chopped-up front matter to infer the unique "libary"|"document" pairs which will be used to define the topnav elements  -->
 {% for page in site.pages %}
-  <p> Page details: {{ forloop.index }}_{{ page.handle }}_{{ page.libname }}_{{ page.docname }}  {{</p>
+  <p> V1 page details: {{ forloop.index }}_{{ page.handle }}_{{ page.libname }}_{{ page.docname }}  </p>
+  <p> V2 Page details: {{ forloop.index }}_{{ assign han = page.handle }}_{{ assign lib = page.libname }}_{{ assign docc = page.docname }}  </p>
+  <p> V3 Page details: {{ forloop.index }}_{{ assign han = handles[forloop.index] }}_{{ assign lib = libnames[forloop.index] }}_{{ assign docc = docnames[forloop.index] }}  </p>
 {% endfor %}
 
 <p> If it worked, they'd be directly above this line.</p>
