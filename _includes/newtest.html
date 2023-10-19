@@ -8,7 +8,7 @@
 
 <!-- Looping through the site.pages object and grabbing directly from each page object-->
 {% for page in site.pages %}
-<p> {{ forloop.index }} | {{ page.title }} | {{ pagetitles[forloop.index] }}
+<p> {{ forloop.index }} | {{ page.title }} | {{ pagetitles[forloop.index | plus: 1] }}
 {% endfor %}
 
     <p>{{ forloop.index }}_{{ libnames[forloop.index] }}_{{ docnames[forloop.index]}}_{{ pagetitles[forloop.index]}} ---------------- {{ forloop.index }}_{{ page.libname }}_{{ page.docname }}_{{ page.title }}</p>
