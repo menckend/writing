@@ -18,9 +18,19 @@
 {% assign uniquelibs = libnames | uniq %}
 {% for ulibname in uniquelibs %}
 <p>{{ uniquelibs[forloop.index0] }} </p>
+{% endfor %}
 
 <p>Libraryvaluecount is: {{ libnames | size }} </p>
 <p>docnamevaluecount is: {{ docnames | size }} </p>
 
 
+
+
+
+
+{% assign topnav = site.data[page.topnav] %}
+{% assign topnav_dropdowns = site.data[page.topnav].topnav_dropdowns %}
+
+                {% for entry in topnav.topnav %}
+                {% for item in entry.items %}
 
