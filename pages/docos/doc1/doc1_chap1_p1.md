@@ -17,11 +17,6 @@ toc: false
 ## What's going on?
 Trying to get a list of all pages': libnam, docname, chapnum, chapnam, pagenum, and title
 
-{% assign pagelist = site.pages %}
-{% assign pageliblist = site.pages | map: libname %}
-{% assign pagedoclist = site.pages | map: docname %}
-
-{{ pageliblist }}
-{{ pagedoclist }}
+{% include newtest.html %}
 
 {% include links.html %}

@@ -2,8 +2,15 @@
 {% assign pageliblist = site.pages | map: libname %}
 {% assign pagedoclist = site.pages | map: docname %}
 
+<p> tried to assign libnames and docnames</p>
+
 {{ pageliblist }}
 {{ pagedoclist }}
 
+<p> If it worked, they'd be directly above this line.</p>
+
+<p> And here's the entire site.pages array </p>
+
+{{ pagelist }}
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
