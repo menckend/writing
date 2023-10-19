@@ -1,14 +1,14 @@
 <p> Listing page-index, library name, and document name for every single page.</p>
 
 {% assign counter = 1 %}
-
+{% increment counter = counter | plus: 1 %}
 
 
 
 {% for page in site.pages %}
-  {% assign thandle = page | map "handle" %}
-  {% assign tlibname = page | map "libname" %}
-  {% assign tdocname = page | map "docname" %}
+  {% assign thandle = page | map: "handle" %}
+  {% assign tlibname = page | map: "libname" %}
+  {% assign tdocname = page | map: "docname" %}
   <p> Page details: {{ forloop.index }} "_" {{ counter "_" thandle " _ " tlibname "_" tdocname "_"%}} </p>
 {% endfor %}
 
