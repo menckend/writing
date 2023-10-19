@@ -1,0 +1,9 @@
+{% assign pagelist = site.pages %}
+{% assign pageliblist = site.pages | map: libname %}
+{% assign pagedoclist = site.pages | map: docname %}
+
+{{ pageliblist }}
+{{ pagedoclist }}
+
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}
