@@ -7,7 +7,7 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
-{% assign unilib_entries = emptyArray: [] %}
+{% assign unilib_entries = emptyArray %}
 {% assign tempvar = emptyArray  %}
 
 <!-- Loop through the list of unique library names -->
@@ -26,8 +26,9 @@
 
 <p> super-temporary testing </p>
 <p> 
-{% assign testarray = '' | split: ',' %}
+{% assign testarray = emptyArray %}
 {% assign testarray = testarray | push: 'item1' | push: 'item2' %}
+{% testarray %}
 {% for item in testarray %}
 {{ item }}
 {% endfor %}
