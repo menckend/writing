@@ -6,17 +6,14 @@
 
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
-<p> Number of unique library names: {{ uniquelibs | size }}</p>
-<p> The full array of the unique libraries: {{ uniquelibs }}</p>
-<p>.</p>
 
 {% assign unilib_entries = '','','' | split: ',' %}
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
-  <!-- {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} -->
+  {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% for entry in testentry %}
-    <p> {{ unilib }}. {{ entry }} </p>
+  <p> {{ unilib }}. {{ entry }} </p>
   {% endfor %}
 {% endfor %}
