@@ -25,7 +25,7 @@
   {% for item in temparray %}
     {% assign appendectomy = unilib | append: '.' | append: temparray[forloop.index0] %}
     {% assign libsdotdocs = libsdotdocs | push: unilib | append: appendectomy %}
-    {{ appendectomy }}
+    <p>{{ appendectomy }}<p>
   {% endfor %}
 {% endfor %}
 <p></p>
