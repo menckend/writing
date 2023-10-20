@@ -16,17 +16,26 @@
 
 <p> super-temporary testing </p>
 
-{% assign libsdotdocs = site.emptyArray}
-{% assign temparray = site.emptyArray}
+{% assign libsdotdocs = site.emptyArray | compact}
+{% assign temparray = site.emptyArray | compact}
 
 {% for unilib in uniquelibs %}
-  {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
+  {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq | compact%}
+  {% assign loopref = unilib %}
   {% for item in temparray %}
-    <p>{{unilib}}.{{item}}<p>
-    {% assign libsdotdocs = libsdotdocs | push: unilib | append: '#' | append: item}
+    <p> {{ loopref }}.{{ item }} <p>
+    {% assign libsdotdocs = libsdotdocs | push: loopref | append: '#' | append: item}
   {% endfor %}
 {% endfor %}
 <p>{{ libsdotdocs}}</p>
+<p>
+
+{% for entry libsdotdocs %}
+  {% assign temparray = entry | }
+
+{% endfor}
+
+</p>
 <p></p>
 <p></p>
 
