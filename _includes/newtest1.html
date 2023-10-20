@@ -23,8 +23,8 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% assign temparray = temparray | compact %}
   {% for item in temparray %}
-    {% assign appendectomy = uniquelibs[unilib] | append: '.' | append: item %}
-    {% assign libsdotdocs = libsdotdocs | push: uniquelibs[unilib] | append: appendectomy %}
+    {% assign appendectomy = unilib | append: '.' | append: temparray[forloop.index0] %}
+    {% assign libsdotdocs = libsdotdocs | push: unilib | append: appendectomy %}
     {{ appendectomy }}
   {% endfor %}
 {% endfor %}
