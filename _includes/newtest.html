@@ -6,12 +6,11 @@
 {% assign pagetitles = site.pages | map: 'title' | join: '#' | split: '#' %}
 {% assign pagecount = site.pages | size %}
 
-
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 <p> Number of unique library names: {{ uniquelibs | size }}</p>
 <p> The full array of the unique libraries: {{ uniquelibs}}</p>
-<p> The first few items in the array:  0_ {{ uniquelibs[0] }} , 1_{{ uniquelibs[1], 2_{{uniquelibs[2] }} </p>
+<p> The first few items in the array:  0_ {{ uniquelibs[0] }}, 1_{{ uniquelibs[1] }}, 2_{{uniquelibs[2] }} </p>
 
 {% for unilib in uniquelibs %}
   <p> loop # {{ forloop.index0 }} of the unilib arrary:  {{ unilib }}</p>
