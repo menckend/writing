@@ -18,7 +18,7 @@
   <p> Unique docnames, into an array that needs to be enumerated:  {{ testy_entries }} </p>
 
   {% assign tempvar = site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
-  <p> {{ tempvar }} </p>
+  <p> {{ tempvar[0] }} </p>
 {% endfor %}
 
 <!--
