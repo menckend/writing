@@ -4,7 +4,7 @@
 {% assign pagetitles = site.pages | map: 'title' %}
 {% assign pagecount = site.pages | size %}
 
-<!-- Create some empty arrays to use later (be sure that emptyArray is defined in _config.yml -->)
+<!-- Create some empty arrays to use later (be sure that emptyArray is defined in _config.yml -->
 {% assign unilib_entries = site.emptyArrary %}
 {% assign tempvar =  site.emptyArrary  %}
 
@@ -23,7 +23,7 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% for item in temparray %}
     {{ unilib }}.{{ item }}
-    {% assign libsdotdocs = libsdotdocs | push: 'unilib' | append: '.' | append: item %}
+    {% assign libsdotdocs = libsdotdocs | push: unilib | append: '.' | append: item %}
   {% endfor %}
 {% endfor %}
 <p></p>
