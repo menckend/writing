@@ -26,7 +26,7 @@
 
 <p> super-temporary testing </p>
 <p> 
-{% assign testarray = site.emptyArray %}
+{% assign testarray =  '' | split: ',' %}
 {% assign testarray = testarray | push: 'item1' | push: 'item2' %}
 {% for item in testarray %}
 {{ item }}
