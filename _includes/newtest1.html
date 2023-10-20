@@ -7,29 +7,23 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
-{% assign unilib_entries = '' | split: ',' %}
-{% assign tempvar =  '' | split: ','  %}
+{% assign unilib_entries = site.emptyArrary %}
+{% assign tempvar =  site.emptyArrary  %}
+
+
+
 
 
 <p> super-temporary testing </p>
-<p> </p>
-{% assign testarray =  '' | split: ',' %}
-{% assign testarray = testarray | push: 'item1' | push: 'item2' %}
-{{ testarray }}
-{% for item in testarray %}
-{{ item }}
-{% endfor %}
+
+{% assign libsdotdocs = site.emptyArray}
+
+{% for unilib in uniquelibs %}
+  {% assign unilib_entry = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
+  <p>{{ unilib_entry }}<p>
+
 <p></p>
 <p></p>
-{% assign varname1 = 'mencken' %}
-{% assign varname2 = 'davidson' %}
-<p> Printing varname1 and varname2 : {{ varname1 }}{{varname2}} </p>
-
-{% assign newvar = varname1 %}
-<p> Assigned newvar as varname1:  {{ newvar }} </p>
-
-{% assign [{{varname1}}] = varname1 %}
-<p> Tried to create a variable named with the value of varname1:  {{ mencken }} </p>
 
 
 <p> --------end of testing-------- </p>
