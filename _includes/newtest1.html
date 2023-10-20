@@ -4,13 +4,12 @@
 {% assign pagetitles = site.pages | map: 'title' %}
 {% assign pagecount = site.pages | size %}
 
-<!-- building the actual data for the topnavs -->
-{% assign uniquelibs = libnames | uniq | compact %}
-
-
+<!-- Create some empty arrays to use later (be sure that emptyArray is defined in _config.yml -->)
 {% assign unilib_entries = site.emptyArrary %}
 {% assign tempvar =  site.emptyArrary  %}
 
+<!-- Build the list of unique library names (each gets its own dropdown in topnav) -->
+{% assign uniquelibs = libnames | uniq | compact %}
 
 
 
@@ -32,7 +31,7 @@
 
 {% for thing in libsdotdocs %}
 <p>{{ thing }}</p>
-
+{% endfor %}
 <p>
 
 </p>
