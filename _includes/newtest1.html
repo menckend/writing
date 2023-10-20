@@ -11,17 +11,7 @@
 {% for unilib in uniquelibs %} -->
   {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
 
-  {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
-  {% for entry in testentry %}
-    <p> {{ unilib }}. {{ entry }} </p>
-  {% endfor %} 
-
-
-  <p> wacky-assignment: {{ unilib_entries[forloop.index0] }} </p>
-
-
-
-  <p> Try using the forloop.index0 value as an index for retreiving an array: {{ uniquelibs.[forloop.index0] }} </p>
+  <p> Did we succeed in pushing the joined set of document names into unilib_entries[{{forloop.index0}}]?: {{unilib_entries[forloop.index0}} </p>
   {% for ue in unilib_entries %}
     <p> {{ unilib }}. {{ entry }} </p>
   {% endfor %}
