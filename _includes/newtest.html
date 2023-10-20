@@ -2,8 +2,8 @@
 
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
 {% assign libnames = site.pages | map: 'libname'  %}
-{% assign docnames = site.pages | map: 'docname' | join: '#' | split: '#' %}
-{% assign pagetitles = site.pages | map: 'title' | join: '#' | split: '#' %}
+{% assign docnames = site.pages | map: 'docname' %}
+{% assign pagetitles = site.pages | map: 'title' %}
 {% assign pagecount = site.pages | size %}
 
 <!-- building the actual data for the topnavs -->
@@ -25,7 +25,7 @@
 
 
 
-<!-- Looping through the site.pages object and grabbing directly from each page object-->
+<!-- Looping through the site.pages object and grabbing directly from each page object
 {% for page in site.pages %}
 {% endfor %}
 <p>{{ forloop.index0 }} | {{ libnames[forloop.index0] }}:{{ page.libname }} | {{ docnames[forloop.index0]}}:{{ page.docname }} | {{ pagetitles[forloop.index0]}}:{{ page.title }} </p>
