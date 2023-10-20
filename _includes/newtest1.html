@@ -8,6 +8,7 @@
 {% assign uniquelibs = libnames | uniq | compact %}
 
 {% assign unilib_entries = emptyArray: [] %}
+{% assign tempvar = '' %}
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
@@ -17,8 +18,10 @@
   <p> Unique docnames joined and put into a single string in index of an arry: {{ unilib_entries[forloop.index0}} </p>
   <p> Unique docnames, into an array that needs to be enumerated:  {{ testy_entries }} </p>
 
-  {% assign tempvar = site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
-  <p> {{ tempvar[0] }} </p>
+  {% for hoodoo in testy_entries`%}
+  {% assign tempvar = tempvar | append hoodoo | append '#'  %}
+  {% endfor %}
+  <p> {{ tempvar }} </p>
 {% endfor %}
 
 <!--
