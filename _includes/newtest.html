@@ -8,13 +8,13 @@
 
 
 <!-- building the actual data for the topnavs -->
-{% assign uniquelibs = libnames | join: '#' | split: '#' | uniq  %}
+{% assign uniquelibs = libnames | uniq | compact %}
 <p> Number of unique library names: {{ uniquelibs | size }}</p>
 <p> The full array of the unique libraries: {{ uniquelibs}}</p>
-<p> The first few items in the array:  0_ {{ uniquelibs[0] }} , 1_{{ uniquelibs[1], 2_{{uniquelibs[2]}} </p>
+<p> The first few items in the array:  0_ {{ uniquelibs[0] }} , 1_{{ uniquelibs[1], 2_{{uniquelibs[2] }} </p>
 
 {% for unilib in uniquelibs %}
-  <p> loop # {{ forloop.index }} of the unilib arrary:  {{ unilib }}</p>
+  <p> loop # {{ forloop.index0 }} of the unilib arrary:  {{ unilib }}</p>
   {% assign unilib_entries[_forloop.index] = site.pages | where: 'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %}
   <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %} </p> 
   {% for entry in unilib_entries %}
