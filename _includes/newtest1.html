@@ -25,7 +25,7 @@
   {% for item in temparray %}
     {{ unilib }}.{{ item }}
     {% assign appendectomy = {{ unilib }} | append '.' | append {{ item }} %}
-    {% assign libsdotdocs = libsdotdocs | push: {{ unilib }} | append: appendectomy %}
+    {% assign libsdotdocs = libsdotdocs | push: {{unilib}} | append: appendectomy %}
   {% endfor %}
 {% endfor %}
 <p></p>
