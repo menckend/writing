@@ -12,13 +12,11 @@
 
 {% assign unilib_entries = '','','' | split: ',' %}
 
-
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
   <!-- {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} -->
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
-  <p> {{ testentry }}</p>
   {% for entry in testentry %}
-    <p> {{ unilib }}.{{ entry }} </p>
+    <p> {{ unilib }}. {{ entry }} </p>
   {% endfor %}
 {% endfor %}
