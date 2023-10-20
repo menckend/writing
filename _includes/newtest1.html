@@ -17,10 +17,12 @@
 <p> super-temporary testing </p>
 
 {% assign libsdotdocs = site.emptyArray}
+{% assign temparray = site.emptyArray}
 
 {% for unilib in uniquelibs %}
-  {% assign unilib_entry = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
-  <p>{{ unilib_entry }}<p>
+  {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
+  {% for item in temparray %}
+    <p>{{unilib}}.{{item}}}<p>
 
 <p></p>
 <p></p>
