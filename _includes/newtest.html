@@ -7,11 +7,12 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
-{% assign unilib_entries = ' ' | split: ',' | compact %}
+{% assign unilib_entries = '' | split: ',' | compact %}
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
   {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
+->
 
   <!--
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
@@ -31,5 +32,11 @@
   {% endfor %}
   -->
 
-
 {% endfor %}
+
+<!--
+push - add element to end (== append)
+pop - remove last element (== truncate [?])
+shift - remove first element (== pop, or rather, pop gets [results in] the element, this is the result [impact] upon the array.)
+unshift - add element to beginning (== push)
+-->
