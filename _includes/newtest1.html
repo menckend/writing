@@ -20,11 +20,11 @@
 {% assign temparray = site.emptyArray | compact %}
 
 {% for unilib in uniquelibs %}
-  {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq | compact%}
+  {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq | compact %}
   {% assign loopref = unilib %}
   {% for item in temparray %}
     <p> {{ loopref }}.{{ item }} <p>
-    {% assign libsdotdocs = libsdotdocs | push: loopref | append: '#' | append: item}
+    {% assign libsdotdocs = libsdotdocs | push: loopref | append: '#' | append: item %}
   {% endfor %}
 {% endfor %}
 <p>{{ libsdotdocs}}</p>
