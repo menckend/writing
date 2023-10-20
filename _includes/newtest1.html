@@ -23,12 +23,14 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% for item in temparray %}
     <p>{{unilib}}.{{item}}<p>
-    {% assign libsdotdocs = libsdotdocs | push: unilib | append: '#' | append item}
+    {% assign libsdotdocs = libsdotdocs | push: unilib | append: '#' | append: item}
   {% endfor %}
 {% endfor %}
-{{ libsdotdocs}}
+<p>{{ libsdotdocs}}</p>
 <p></p>
 <p></p>
+
+
 
 
 <p> --------end of testing-------- </p>
