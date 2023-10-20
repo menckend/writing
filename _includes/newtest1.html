@@ -23,10 +23,10 @@
 <p></p>
 {% assign varname1 = mencken %}
 {% assign varname2 = davidson %}
-<p> Printing varname1 and varname2 one after the other: {{ varname1}}{{varname2}} </p>
+<p> Printing varname1 : {{ varname1 }} </p>
 
 {% assign [{{varname1}}] = 'did it' %}
-<p> Printing a variable named 'mencken': {{ mencken }}  </p>
+<p> Printing a variable named {{ varname1 }}: {{ mencken }}  </p>
 
 
 
