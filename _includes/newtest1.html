@@ -7,11 +7,14 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
+assign unilib_entries = emptyArray: []
+
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %} -->
   {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
 
   <p> Did we succeed in pushing the joined set of document names into unilib_entries[{{forloop.index0}}]?: {{unilib_entries[forloop.index0}} </p>
+  <p> 
   {% for ue in unilib_entries %}
     <p> {{ unilib }}. {{ entry }} </p>
   {% endfor %}
