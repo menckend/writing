@@ -13,9 +13,9 @@
 
 {% for unilib in uniquelibs %}
   <p> loop # {{ forloop.index0 }} of the unilib arrary:  {{ unilib }}</p>
-  {% assign unilib_entries[_forloop.index0] = site.pages | where: 'libname', 'unilib' | map: 'docname' | uniq %}
+  {% assign unilib_entries[_forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   <p>Iterating through uniqelibs, currently on {{ unilib }}</p>
-  <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %}{{ entries }} </p> 
+  <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} {{ entries }} </p> 
   {% for entry in unilib_entries %}
     <p>{{ unilib }}.{{ entry }} </p>
   {% endfor %}
