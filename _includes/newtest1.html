@@ -17,7 +17,7 @@
   <p> Unique docnames joined and put into a single string in index of an arry: {{ unilib_entries[forloop.index0}} </p>
   <p> Unique docnames, into an array that needs to be enumerated:  {{ testy_entries }} </p>
 
-  {{ assign tempvar = site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' }}
+  {% assign tempvar = site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
   <p> {{ tempvar }} </p>
 {% endfor %}
 
