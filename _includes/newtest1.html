@@ -22,7 +22,8 @@
 {% for unilib in uniquelibs %}
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% for item in temparray %}
-    <p>{{unilib}}.{{item}}}<p>
+    <p>{{unilib}}.{{item}}<p>
+    {% assign libsdotdocs = libsdotdocs | push: unilib | concat: '#' | concat item}
   {% endfor %}
 {% endfor %}
 <p></p>
