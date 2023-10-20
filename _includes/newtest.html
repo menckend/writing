@@ -16,11 +16,10 @@
 <p> {{ uniquelibs | size }} {{ uniquelibs}} {{ uniquelibs[0] }} {{ uniquelibs[1] }} </p>
 
 {% for unilib in uniquelibs %}
-<p>unilib contents:  {{ unilib }}</p>
-{% assign unilib_entries[_forloop.index0] = site.pages | where:'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %}
-<p>unilib entries:  {% assign entries = site.pages | where:'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %} </p> 
-{% for entry in unilib_entries %}
-<p>{{ unilib }}.{{ entry }} </p>
-{% endfor %}
+  {% assign unilib_entries[_forloop.index0] = site.pages | where:'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %}
+  <p>unilib entries:  {% assign entries = site.pages | where:'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %} </p> 
+  {% for entry in unilib_entries %}
+    <p>{{ unilib }}.{{ entry }} </p>
+  {% endfor %}
 {% endfor %}
 
