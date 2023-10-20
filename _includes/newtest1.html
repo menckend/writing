@@ -24,7 +24,7 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq | compact %}
   {% assign loopref = unilib %}
   {% for item in temparray %}
-    {{ loopref }}.{{ item }}
+    {{ unilib }}.{{ item }}
     {% assign libsdotdocs = libsdotdocs | push: unilib | append: '.' | append: item %}
   {% endfor %}
 {% endfor %}
