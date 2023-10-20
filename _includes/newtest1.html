@@ -23,7 +23,8 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% for item in temparray %}
     <p>{{unilib}}.{{item}}}<p>
-
+  {% endor %}
+{% endor %}
 <p></p>
 <p></p>
 
