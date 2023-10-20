@@ -14,11 +14,5 @@
  Loop through the list of unique library names 
  {% for unilib in uniquelibs %} 
   {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %} 
-  
-  <p> Try using the forloop.index0 value as an index for retreiving an array: {{ uniquelibs.[forloop.index0] }} </p>
-  {% for ue in unilib_entries %}
-    <p> {{ unilib }}. {{ entry }} </p>
-  {% endfor %}
-  
 
  {% endfor %} 
