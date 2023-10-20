@@ -10,19 +10,16 @@
 {% assign uniquelibs = libnames | uniq | compact %}
 <p> Number of unique library names: {{ uniquelibs | size }}</p>
 <p> The full array of the unique libraries: {{ uniquelibs }}</p>
-<p> The first few items in the array:  idx0_ {{ uniquelibs[0] }}, idx1_{{ uniquelibs[1] }}, idx2_{{uniquelibs[2] }} </p>
 
 {% for unilib in uniquelibs %}
-  <p> loop # {{ forloop.index }} of the unilib arrary:  {{ unilib }}</p>
-  {% assign unilib_entries[_forloop.index] = site.pages | where: 'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %}
+  <p> loop # {{ forloop.index0 }} of the unilib arrary:  {{ unilib }}</p>
+  {% assign unilib_entries[_forloop.index0] = site.pages | where: 'libname', 'unilib' | map: 'docname' | join: '#' | split: '#' | uniq %}
   <p>Iterating through uniqelibs, currently on {{ unilib }}</p>
   <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | join: '#' | split: '#' | uniq %} </p> 
   {% for entry in unilib_entries %}
     <p>{{ unilib }}.{{ entry }} </p>
   {% endfor %}
 {% endfor %}
-
-
 
 
 <!-- Looping through the site.pages object and grabbing directly from each page object
