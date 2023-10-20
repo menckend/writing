@@ -8,12 +8,11 @@
 {% assign uniquelibs = libnames | uniq | compact %}
 
 {% assign unilib_entries = emptyArray: [] %}
-{% assign testy_entries = emptyArray: [] %}
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
   {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
-  {% assign testy_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
+  {% assign testy_entries = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
 
   <p> Unique docnames joined and put into a single string in index of an arry: {{ unilib_entries[forloop.index0}} </p>
   <p> Unique docnames, into an array that needs to be enumerated:  {{ testy_entries }} </p>
