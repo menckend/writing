@@ -7,8 +7,8 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
-{% assign unilib_entries = emptyArray %}
-{% assign tempvar = emptyArray  %}
+{% assign unilib_entries = site.emptyArray %}
+{% assign tempvar = site.emptyArray  %}
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
@@ -28,7 +28,6 @@
 <p> 
 {% assign testarray = site.emptyArray %}
 {% assign testarray = testarray | push: 'item1' | push: 'item2' %}
-{% testarray %}
 {% for item in testarray %}
 {{ item }}
 {% endfor %}
