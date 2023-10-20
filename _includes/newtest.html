@@ -1,5 +1,3 @@
-<p> Listing page-index, library name, and document name for every single page.</p>
-
 <!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
 {% assign libnames = site.pages | map: 'libname'  %}
 {% assign docnames = site.pages | map: 'docname' %}
@@ -10,6 +8,7 @@
 {% assign uniquelibs = libnames | uniq | compact %}
 <p> Number of unique library names: {{ uniquelibs | size }}</p>
 <p> The full array of the unique libraries: {{ uniquelibs }}</p>
+<p>.</p>
 
 {% for unilib in uniquelibs %}
   <p> loop # {{ forloop.index0 }} of the unilib arrary:  {{ unilib }}</p>
