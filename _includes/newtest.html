@@ -11,10 +11,9 @@
 {% endfor %}
 <p>{{ forloop.index0 }} | {{ libnames[forloop.index0] }}:{{ page.libname }} | {{ docnames[forloop.index0]}}:{{ page.docname }} | {{ pagetitles[forloop.index0]}}:{{ page.title }} </p>
 
-
 <!-- building the actual data for the topnavs -->
-{% assign uniquelibs = libnames | join: '#' | split: '#' | uniq %}
-<p> {{ uniquelibs[0] }} {{ uniquelibs[1] }} </p>
+{% assign uniquelibs = libnames | join: '#' | split: '#' | uniq  %}
+<p> {{ uniquelibs | size }} {{ uniquelibs}} {{ uniquelibs[0] }} {{ uniquelibs[1] }} </p>
 
 {% for unilib in uniquelibs %}
 <p>unilib contents:  {{ unilib }}</p>
