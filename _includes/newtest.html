@@ -19,7 +19,7 @@
   <!-- This seems dodgy, I'm trying to use the value of the forloopindex0 variable as part of the unilib.entries -->
   {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
-  
+  <p> {{ testentry }}</p>
   <!-- <p>Iterating through uniqelibs, currently on {{ unilib }}</p>-->
   <!-- <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} {{ entries }} </p> -->
   {% for entry in testenry %}
