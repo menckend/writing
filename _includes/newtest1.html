@@ -22,9 +22,11 @@
 {% for unilib in uniquelibs %}
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% assign temparray = temparray | compact %}
+  {% assign appendectom = site.emptyArray %}
+  {% assign outercounter = forloop.index0 }
   {% for item in temparray %}
-    {% assign appendectomy = unilib | append: '.' | append: temparray[forloop.index0] %}
-    {% assign libsdotdocs = libsdotdocs | push: unilib | append: appendectomy %}
+    {% assign appendectomy = uniquelibs[outercounter] | append: '.' | append: temparray[forloop.index0] %}
+    {% assign libsdotdocs = libsdotdocs | push: appendectomy %}
     <p>{{ appendectomy }}<p>
   {% endfor %}
 {% endfor %}
