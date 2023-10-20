@@ -7,6 +7,7 @@
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
+
 {% assign unilib_entries = site.emptyArrary %}
 {% assign tempvar =  site.emptyArrary  %}
 
@@ -15,7 +16,7 @@
 
 
 <p> super-temporary testing </p>
-
+<p></p>
 {% assign libsdotdocs = site.emptyArray | compact %}
 {% assign temparray = site.emptyArray | compact %}
 
@@ -23,13 +24,13 @@
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq | compact %}
   {% assign loopref = unilib %}
   {% for item in temparray %}
-    <p> {{ loopref }}.{{ item }} <p>
-    {% assign libsdotdocs = libsdotdocs | push: loopref | append: '#' | append: item %}
+    {{ loopref }}.{{ item }}
+    {% assign libsdotdocs = libsdotdocs | push: unilib | append: '.' | append: item %}
   {% endfor %}
 {% endfor %}
+<p></p>
 <p>{{ libsdotdocs}}</p>
 <p>
-
 
 </p>
 <p></p>
