@@ -11,8 +11,7 @@
 
 <!-- Loop through the list of unique library names
 {% for unilib in uniquelibs %}
-  {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %}
-->
+<!--  {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %} -->
 
   <!--
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
