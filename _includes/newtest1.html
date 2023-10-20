@@ -19,7 +19,7 @@
   <p> Unique docnames, into an array that needs to be enumerated:  {{ testy_entries }} </p>
 
   {% for hoodoo in testy_entries`%}
-  {% assign tempvar = tempvar | append hoodoo | append '#'  %}
+  {% assign tempvar = tempvar | append: hoodoo | append: '#'  %}
   {% endfor %}
   <p> {{ tempvar }} </p>
 {% endfor %}
