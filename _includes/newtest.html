@@ -14,7 +14,8 @@
 
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | join: '#' | split: '#' | uniq %}
-<p> {{ uniquelibs }} </p>
+<p> {{ uniquelibs[0] }} {{ uniquelibs[1] }} </p>
+
 {% for unilib in uniquelibs %}
 <p>unilib contents:  {{ unilib }}</p>
 {% assign unilib_entries[_forloop.index0] = site.pages | where:'libname', entry | map: 'docname' | join: '#' | split: '#' | uniq %}
