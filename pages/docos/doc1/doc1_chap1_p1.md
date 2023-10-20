@@ -22,7 +22,6 @@ Testing a way to get at different permutations of "libname", "docname", "chapnum
 
 ## Results
 
-{% include newtest.html %}
 
 
 ## Nothing else.
