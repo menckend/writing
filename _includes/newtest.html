@@ -5,12 +5,12 @@
 {% assign pagecount = site.pages | size %}
 
 <!-- building the actual data for the topnavs -->
-{% assign uniquelibs = libnames | uniq | compact %}
+<!-- {% assign uniquelibs = libnames | uniq | compact %} -->
 
 <!-- {% assign unilib_entries = '' | split: ',' | compact %} -->
 
 <!-- Loop through the list of unique library names -->
-{% for unilib in uniquelibs %}
+<!-- {% for unilib in uniquelibs %} -->
 <!--  {% assign unilib_entries = unilib_entries | push: site.pages | where: 'libname', unilib | map: 'docname' | uniq | join '_' %} -->
 
   <!--
@@ -31,7 +31,7 @@
   {% endfor %}
   -->
 
-{% endfor %}
+<!-- {% endfor %} -->
 
 <!--
 push - add element to end (== append)
