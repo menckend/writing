@@ -27,7 +27,7 @@
 <p> super-temporary testing </p>
 <p> 
 {% assign testarray = emptyArray %}
-{% assign testarray = testarray | push: 'item1' | push 'item2' %}
+{% assign testarray = testarray | push: 'item1' | push: 'item2' %}
 {% for item in testarray %}
 {{ item }}
 {% endfor %}
