@@ -15,20 +15,10 @@
 
 <!-- Loop through the list of unique library names -->
 {% for unilib in uniquelibs %}
-  <!-- Try to get an array of all the unique document names in pages for each of the unique library names that we're looping through -->
-  <!-- This seems dodgy, I'm trying to use the value of the forloopindex0 variable as part of the unilib.entries -->
-  {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
+  <!-- {% assign unilib_entries[forloop.index0] = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} -->
   {% assign testentry = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   <p> {{ testentry }}</p>
-  <!-- <p>Iterating through uniqelibs, currently on {{ unilib }}</p>-->
-  <!-- <p> The whole entry for unilib.{{ forloop.index }}:  {% assign entries = site.pages | where: 'libname', unilib | map: 'docname' | uniq %} {{ entries }} </p> -->
   {% for entry in testentry %}
     <p> {{ unilib }}.{{ entry }} </p>
   {% endfor %}
 {% endfor %}
-
-<!-- Looping through the site.pages object and grabbing directly from each page object
-{% for page in site.pages %}
-{% endfor %}
-<p>{{ forloop.index0 }} | {{ libnames[forloop.index0] }}:{{ page.libname }} | {{ docnames[forloop.index0]}}:{{ page.docname }} | {{ pagetitles[forloop.index0]}}:{{ page.title }} </p>
-//-->
