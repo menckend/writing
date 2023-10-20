@@ -6,14 +6,12 @@
 {% assign pagetitles = site.pages | map: 'title' | join: '#' | split: '#' %}
 {% assign pagecount = site.pages | size %}
 
-<!-- Looping through the site.pages object and grabbing directly from each page object-->
-{% for page in site.pages %}
-{% endfor %}
-<p>{{ forloop.index0 }} | {{ libnames[forloop.index0] }}:{{ page.libname }} | {{ docnames[forloop.index0]}}:{{ page.docname }} | {{ pagetitles[forloop.index0]}}:{{ page.title }} </p>
 
 <!-- building the actual data for the topnavs -->
 {% assign uniquelibs = libnames | join: '#' | split: '#' | uniq  %}
-<p> {{ uniquelibs | size }} {{ uniquelibs}} {{ uniquelibs[0] }} {{ uniquelibs[1] }} </p>
+<p> Number of unique library names: {{ uniquelibs | size }}</p>
+<p> The full array of the unique libraries: {{ uniquelibs}}</p>
+<p> The first few items in the array:  0_ {{ uniquelibs[0] }} , 1_{{ uniquelibs[1], 2_{{uniquelibs[2]}} </p>
 
 {% for unilib in uniquelibs %}
   <p> loop # {{ forloop.index }} of the unilib arrary:  {{ unilib }}</p>
@@ -24,3 +22,11 @@
   {% endfor %}
 {% endfor %}
 
+
+
+
+<!-- Looping through the site.pages object and grabbing directly from each page object-->
+{% for page in site.pages %}
+{% endfor %}
+<p>{{ forloop.index0 }} | {{ libnames[forloop.index0] }}:{{ page.libname }} | {{ docnames[forloop.index0]}}:{{ page.docname }} | {{ pagetitles[forloop.index0]}}:{{ page.title }} </p>
+//-->
