@@ -24,7 +24,7 @@
                     {% assign folderitems = site.emptyArray %}
                     {% assign folderitems = site.pages | where: 'libname', folders[forloop.index0] | map: 'docname' | uniq | compact  %}
                         {% for folderitem in folderitems %}
-                        <li class="dropdownActive"><a href="{{ folderitm }}.html">{{ folderitem }}</a></li>
+                        <li class="dropdownActive"><a href="{{ folderitem }}.html">{{ folderitem }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
