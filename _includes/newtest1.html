@@ -1,24 +1,26 @@
-<!-- Building arrays/lists/hashes/whatevers of the page-hierarchy tags in the frontmatter of all the pages -->
+
+
+<!-- --------------------------------------------------------------------- -->
+
+<!-- Get arrays of the document hierarchy tags from the frontmatter of all the pages -->
 {% assign libnames = site.pages | map: 'libname'  %}
 {% assign docnames = site.pages | map: 'docname' %}
 {% assign pagetitles = site.pages | map: 'title' %}
 {% assign pagecount = site.pages | size %}
 
+
 <!-- Create some empty arrays to use later (be sure that emptyArray is defined in _config.yml -->
 {% assign unilib_entries = site.emptyArrary %}
 {% assign tempvar =  site.emptyArrary  %}
 
-<!-- Build the list of unique library names (each gets its own dropdown in topnav) -->
+
+<!-- Get an array of all the UNIQUE "libname" values (each gets its own dropdown in topnav) -->
 {% assign uniquelibs = libnames | uniq | compact %}
 
 
-
-
-<p> super-temporary testing </p>
-<p></p>
+<!-- build a list of all the documents in each library (will populate the menus in each of the topnav dropdowns) -->
 {% assign libsdotdocs = site.emptyArray | compact %}
 {% assign temparray = site.emptyArray | compact %}
-
 {% for unilib in uniquelibs %}
   {% assign temparray = site.pages | where: 'libname', unilib | map: 'docname' | uniq %}
   {% assign temparray = temparray | compact %}
@@ -27,28 +29,17 @@
   {% for item in temparray %}
     {% assign appendectomy = uniquelibs[outercounter] | append: '.' | append: temparray[forloop.index0] %}
     {% assign libsdotdocs = libsdotdocs | push: appendectomy %}
-    <p>{{ appendectomy }}<p>
   {% endfor %}
 {% endfor %}
-<p></p>
 
 
-{% for thing in libsdotdocs %}
-<p>{{ thing }}</p>
+<!-- Loop through the unique library names -->
+{% for unilib in uniquelibs %}
+  <!-- Build the topnav dropdown button for the current library -->
+  {% assign mydocs = site.pages where: 'libname', unilib | map 'docname' | uniq  %}
 {% endfor %}
-
-<p></p>
-<p></p>
-<p></p>
+<!-- --------------------------------------------------------------------- -->
 
 
 
 
-<p> --------end of testing-------- </p>
-
-<!--
-push - add element to end (== append)
-pop - remove last element (== truncate [?])
-shift - remove first element (== pop, or rather, pop gets [results in] the element, this is the result [impact] upon the array.)
-unshift - add element to beginning (== push)
--->
