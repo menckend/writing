@@ -22,7 +22,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ folder }}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     {% assign folderitems = site.emptyArray %}
-                    {% assign folderitems = site.pages where: 'libname', folders[forloop.index0] | map: 'docname' | uniq | compact  %}
+                    {% assign folderitems = site.pages | where: 'libname', folders[forloop.index0] | map: 'docname' | uniq | compact  %}
                         {% for folderitem in folderitems %}
                         <li class="dropdownActive"><a href="{{ folderitem | remove: "/"}}">{{ folderitem }}</a></li>
                         {% endfor %}
