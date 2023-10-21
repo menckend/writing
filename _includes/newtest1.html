@@ -34,10 +34,6 @@
 
 
 <!-- Loop through the unique library names -->
-{% for unilib in uniquelibs %}
-  <!-- Build the topnav dropdown button for the current library -->
-  {% assign mydocs = site.pages where: 'libname', unilib | map 'docname' | uniq  %}
-{% endfor %}
 <!-- --------------------------------------------------------------------- -->
 
 
