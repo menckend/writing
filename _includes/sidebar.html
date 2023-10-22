@@ -10,7 +10,7 @@ First:
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{page.libname}}</li>
 
-  {% assign thesedocs = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | map: 'docname' | uniq | compact}
+  {% assign thesedocs = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | map: 'docname' | uniq | compact %}
   <li> {{thesedocs}}</li>
   <li>
       <a title="{{     }}" href="#">{{     }}</a>
