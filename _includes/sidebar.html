@@ -8,8 +8,9 @@
     {% assign chapnums = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
     {% assign chapnames = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
     <ul> {{ chapnums }}
+      {% for chapnum in chapnums %}
         <li class="subfolders">
-        <a title=" {{ chapnames[forloopindex.0] }} " href="#"> visible text {{ chapnames[forloopindex.0] }}</a>
+        <a title="{{chapnames[forloopindex.0]}}" href="#">visible text {{chapnames[forloopindex.0]}} </a>
           <ul>
           {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'pagename' | uniq | compact %}
           {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
