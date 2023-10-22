@@ -1,24 +1,14 @@
-<!--
-From within the sidebar.html file, the main page's front-matter is not accessible, but page.url *is* accessible.
-Have to build out the sidebar menu structure by querying/looping through site.pages frontmatter
-
-First:
-    Get unique list of libraries
-
--->
 
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{page.libname}}</li>
-
   {% assign thesedocs = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | map: 'docname' | uniq | compact %}
-  <li> {{thesedocs}}</li>
+  {% for thisdoc in thesedocs %}
   <li>
-      <a title="{{     }}" href="#">{{     }}</a>
+      <a title="{{thisdoc}}" href="#">{{thisdoc}}</a>
       <ul>
-  
-  </li>
-
-
+        <li class="active"><a title="{{page.chapname}}" href="{{page.url | remove: "/"}}">{{page.chapname}}</a></li>
+      </ul>
+  {% endfor %}
   
   <li>
     <a title="Static Chapter" href="static_chapter.html">Static Chapter</a>
