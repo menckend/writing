@@ -7,7 +7,7 @@
     <a title="{{adoc}}" href="#">{{adoc}}</a>
     {% assign chapnums = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
     {% assign chapnames = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
-    <ul>
+    <ul> {{chapnames}}
       {% for chapnum in chapnums %}
         <li class="subfolders">
         <a title=" {{ chapnames[forloopindex.0] }} " href="#">{{ chapnames[forloopindex.0] }}</a>
