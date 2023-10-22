@@ -12,8 +12,9 @@
         <li class="subfolders">
         <a title="{{ chapnames[forloop.index0] }}" href="#"> {{chapnames[forloop.index0]}} </a>
           <ul>
-          {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'pagename' | uniq | compact %}
+          {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'title' | uniq | compact %}
           {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'url' | uniq | compact %}
+          
           {% for apage in pagenames %}
             <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">visible {{apage}}</a></li>
           {% endfor %} 
