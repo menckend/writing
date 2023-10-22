@@ -7,16 +7,16 @@
     <a title="{{adoc}}" href="#">{{adoc}}</a>
     {% assign chapnums = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
     {% assign chapnames = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
-    <ul>{{chapnames}}
+    <ul>
       {% for chapnum in chapnums %}
         <li class="subfolders">
-        <a title="{{chapnames[forloopindex.0]}}" href="#">visible text {{chapnames[forloopindex.0]}} </a>
+        <a title="{{chapnames}}" href="#">visible text {{chapnames}} </a>
           <ul>
           {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'pagename' | uniq | compact %}
           {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
           {% for apage in pagenames %}
             <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
-          {% endfor %}
+          {% endfor %} 
           </ul>
         </li>
       {% endfor %}
