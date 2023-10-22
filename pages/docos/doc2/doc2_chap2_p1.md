@@ -2,12 +2,10 @@
 libname: library1
 docname: doc2
 chapnum: 2
-chapnam: "The second chapter"
+chapnam: "l1d2ch2"
 pagenum: 1
-
-title: "This page has a name.  It's name is Phil"
-summary: "This is a description of the page named Phil.  It doesn't tell you much, and you shouldn't trust what it does tell you."
-sidebar: doc2
+title: "l1d2ch2p1"
+summary: "l1d2ch2p1"
 permalink: doc2_chap2_page1.html
 folder: docos\/doc2
 

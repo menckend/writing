@@ -4,8 +4,8 @@ docname: doc3
 chapnum: 1
 chapnam: "l3d3ch1"
 pagenum: 1
-
 title: "l3d3ch1p1"
+summary: "This is l3d3ch1p1"
 permalink: doc3_chap1_page1.html
 folder: docos\/doc3
 

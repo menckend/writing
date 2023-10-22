@@ -4,10 +4,8 @@ docname: doc3
 chapnum: 2
 chapnam: "l3d3ch2"
 pagenum: 1
-
 title: "l3d3ch2p1"
-summary: "This is a description of the page named Phil.  It doesn't tell you much, and you shouldn't trust what it does tell you."
-sidebar: doc3
+summary: "This is l3d3ch2"
 permalink: doc3_chap2_page1.html
 folder: docos\/doc3
 

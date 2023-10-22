@@ -6,7 +6,7 @@ chapnam: "l1d1ch1"
 pagenum: 1
 
 title: "l1d1ch1p1
-summary: "This is a description of the page named Phil.  It doesn't tell you much, and you shouldn't trust what it does tell you."
+summary: "l1d1ch1 summary "
 sidebar: newside
 permalink: doc1_chap1_page1.html
 folder: docos\/doc1
