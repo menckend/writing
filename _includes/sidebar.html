@@ -4,24 +4,24 @@
 
   {% assign ulibnames = site.pages | map: 'libname' | uniq | compact %}
   {% for ulib in ulibnames %}
-    {% assign lvl0counter == forloop.index0 %}
-    {% assign libdocnames = site.pages | where: 'libname', ulibnames[1vl0counter] | map: 'docname' | uniq | compact %}
+    {% assign libcounter == forloop.index0 %}
+    {% assign docnames = site.pages | where: 'libname', ulib | map: 'docname' | uniq | compact %}
     {% for adoc in libdocnames %}
-      {% assign lvl1counter = forloop.index0 %}
+      {% assign doccounter = forloop.index0 %}
       <li>
-        <a title="{{libdocnames[lvl1counter]}}" href="#">{{libdocnames[lvl1counter]}}</a>
-      {% assign chapnums =  site.pages | where: 'libname', ulibnames[lvl0counter] | where: 'docname', libdocnames[lvl1counter] | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
-      {% assign chapnames = site.pages | where: 'libname', ulibnames[lvl0counter] | where: 'docname', libdocnames[lvl1counter] | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
+        <a title="{{adoc}}" href="#">{{adoc}}</a>
+      {% assign chapnums =  site.pages | where: 'libname', ulib | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
+      {% assign chapnames = site.pages | where: 'libname', ulib | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
       <ul>
       {% for chapnum in chapnums %}
-      {% assign lvl2counter = forloop.index0 %}
+      {% assign chapcounter = forloop.index0 %}
           <li class="subfolders">
-          <a title="{{ chapnames[lvl2counter] }}" href="#"> {{ chapnames[lv2counter] }}</a>
+          <a title="{{ chapnames[chapcounter] }}" href="#"> {{ chapnames[chapcounter] }}</a>
             <ul>
-            {% assign pagenames = site.pages | where: 'libname', ulibnames[lvl0counter] | where: 'docname', libdocnames[lvl1counter] | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'title' | uniq | compact %}
-            {% assign pageurls = site.pages | where: 'libname', ulibnames[lvl0counter] | where: 'docname', libdocnames[lvl1counter] | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'url' | uniq | compact %}
+            {% assign pagenames = site.pages | where: 'libname', ulib | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
+            {% assign pageurls = site.pages | where: 'libname', ulib | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
             {% for apage in pagenames %}
-              {% if page.libname == ulibnames[lvl0counter] and page.docname == libdocnames[lvl1counter] and page.chapnum == chapnums[[lvl2counter]] and page.title == apage %}
+              {% if page.libname == ulib and page.docname == adoc and page.chapnum == chapnums[[forloop.index0]] and page.title == apage %}
                 <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
               {% else %}
                 <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
