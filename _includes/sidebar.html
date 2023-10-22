@@ -1,4 +1,4 @@
-<--
+<!--
 From within the sidebar.html file, the main page's front-matter is not accessible, but page.url *is* accessible.
 Have to build out the sidebar menu structure by querying/looping through site.pages frontmatter
 
@@ -9,7 +9,7 @@ First:
 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">page.url</li>
+  <li class="sidebarTitle">{{page.url}}</li>
   {% assign documents = site.pages | sort: 'docname' | map: 'docname' | uniq | compact %}
   <li></li>
   
