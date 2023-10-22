@@ -7,12 +7,18 @@ First:
 
 -->
 
-
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{page.libname}}</li>
-  {% assign documents = site.pages | sort: 'docname' | map: 'docname' | uniq | compact %}
-  <li></li>
+
+  {% assign thesedocs = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | map: 'docname' | uniq | compact}
+  <li> {{thesedocs}}</li>
+  <li>
+      <a title="{{     }}" href="#">{{     }}</a>
+      <ul>
   
+  </li>
+
+
   
   <li>
     <a title="Static Chapter" href="static_chapter.html">Static Chapter</a>
