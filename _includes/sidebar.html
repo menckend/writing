@@ -9,7 +9,7 @@ First:
 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">{{page.url}} {{page.title}} {{page.name}}</li>
+  <li class="sidebarTitle">{{page.url}} {{page.title}} {{page.name}} {{page.docname}}</li>
   {% assign documents = site.pages | sort: 'docname' | map: 'docname' | uniq | compact %}
   <li></li>
   
