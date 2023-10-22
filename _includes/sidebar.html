@@ -1,13 +1,20 @@
 
-
 <ul id="mysidebar" class="nav">
-
-  <li class="sidebarTitle">{{page.docname}}</li>
+  <li class="sidebarTitle">{{page.docname}} __</li>
   <!-- Need to loop through all the unique chapname values in this document -->
   {% assign chapters = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapname' | uniq | compact %}
-  <li>{{page.chapname}}</li>
-  <li>ChapterSlug</li>
   <li>
+    <a title="Static Chapter" href="static_chapter.html">Static Chapter</a>
+    <ul>
+      <li><a title="Page Title">Page Title</a>
+        <li class="subfolders">
+          <a title="Static subfolder">Static Subfolder</a>
+          <ul>
+            <li><a title="static subolder item">static subfolder item</a></li>
+          </ul>
+       </li>
+    </ul>
+  </li>
   {% for chappie in chapters %}
     <a title="{{chappie}}" href="#">{{chappie}}.html</a>
     <ul>
@@ -31,59 +38,3 @@
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">{{site.page.docname}} </li>
-  <li>
-      <a title="{{folder.title}}" href="#">{{folder.title}}</a>
-      <ul>
-          <li><a title="{{folderitem.title}}" href="{{folderitem.external_url}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
-          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
-          <li class="subfolders">
-              <a title="{{subfolders.title}}" href="#">{{ subfolders.title }}</a>
-              <ul>
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">{{subfolderitem.title}}</a></li>
-                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
-              </ul>
-          </li>
-      </ul>
-   </li>
-      <!-- if you aren't using the accordion, uncomment this block:
-         <p class="external">
-             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
-         </p>
-         -->
-</ul>
