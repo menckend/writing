@@ -1,48 +1,30 @@
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">Sidebar title</li>
+  <li class="sidebarTitle">{{page.libname}}</li>
+  {% assign thesedocs = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
+  {% for adoc in thesedocs %}
   <li>
-      <a title="Folder 1"#">Folder 1</a>
-      <ul>
-          <li><a title="Item 1" href="Item 1" target="Item 1">Item 1/a></li>
-          <li><a title="Item 2" href="Item 2" target="Item 2">Item 2/a></li>
-          <li class="subfolders">
-              <a title="Subfolder 1" href="#">Subfolder 1</a>
-              <ul>
-                  <li><a title="item1" href="item1" target="_blank" rel="noopener">item1</a></li>
-                  <li><a title="item2" href="item2" target="_blank" rel="noopener">item2</a></li>
-                  <li><a title="item3" href="item3" target="_blank" rel="noopener">item3</a></li>
-              </ul>
-              <a title="Subfolder 2" href="#">Subfolder 2</a>
-              <ul>
-                  <li><a title="item1" href="item1" target="_blank" rel="noopener">item1</a></li>
-                  <li><a title="item2" href="item2" target="_blank" rel="noopener">item2</a></li>
-                  <li><a title="item3" href="item3" target="_blank" rel="noopener">item3</a></li>
-              </ul>
-          </li>
-      </ul>
+    <a title="{{adoc}}" href="#">{{adoc}}</a>
+    {% assign thesechaps = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapname' | uniq | compact %}
+    <ul>
+      {% for achap in thesechaps %}
+        <li class="subfolders">
+        <a title="{{achap}}" href="#">{{achap}}</a>
+          <ul>
+          {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapname', {{achap}} | sort: 'pagenum' | map: 'pagename' | uniq | comact %}
+          {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapname', {{achap}} | sort: 'pagenum' | map: 'url' | uniq | comact %}
+          {% for apage in pagenames %}
+            <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+          {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
   </li>
-  <li>
-      <a title="Folder 2"#">Folder 2</a>
-      <ul>
-          <li><a title="Item 1" href="Item 1" target="Item 1">Item 1/a></li>
-          <li><a title="Item 2" href="Item 2" target="Item 2">Item 2/a></li>
-          <li class="subfolders">
-              <a title="Subfolder 1" href="#">Subfolder 1</a>
-              <ul>
-                  <li><a title="item1" href="item1" target="_blank" rel="noopener">item1</a></li>
-                  <li><a title="item2" href="item2" target="_blank" rel="noopener">item2</a></li>
-                  <li><a title="item3" href="item3" target="_blank" rel="noopener">item3</a></li>
-              </ul>
-              <a title="Subfolder 2" href="#">Subfolder 2</a>
-              <ul>
-                  <li><a title="item1" href="item1" target="_blank" rel="noopener">item1</a></li>
-                  <li><a title="item2" href="item2" target="_blank" rel="noopener">item2</a></li>
-                  <li><a title="item3" href="item3" target="_blank" rel="noopener">item3</a></li>
-              </ul>
-          </li>
-      </ul>
-  </li>
+  {% endfor %}
 </ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
 
 
