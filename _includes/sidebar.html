@@ -7,6 +7,7 @@
     {% assign libcounter == forloop.index0 %}
     {% assign docnames = site.pages | where: 'libname', ulib | map: 'docname' | uniq | compact %}
     {% for adoc in libdocnames %}
+    <p>{{ulib}}.{{adoc}}</p>
       {% assign doccounter = forloop.index0 %}
       <li>
         <a title="{{adoc}}" href="#">{{adoc}}</a>
