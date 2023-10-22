@@ -12,9 +12,9 @@
         {% assign thesepages = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | sort 'pagenum' %}
         {% for apage in thesepages %}
         <li><a title="{{apage.title}}" href="{{apage.permalink.url | remove: "/"}}">{{folderitem.title}}</a></li>
-        {% endfor %}}
+        {% endfor %}
        </ul>
-   {% endfor }
+   {% endfor %}
    </li>
 
       <!-- if you aren't using the accordion, uncomment this block:
