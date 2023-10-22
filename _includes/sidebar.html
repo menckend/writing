@@ -1,48 +1,67 @@
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">{{page.libname}}</li>
-  {% assign thesedocs = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | map: 'docname' | uniq | compact %}
-  {% for thisdoc in thesedocs %}
+  <li class="sidebarTitle">Sidebar title</li>
   <li>
-      <a title="{{thisdoc}}" href="#">{{thisdoc}}</a>
+      <a title="Folder title" href="#">{{folder.title}}</a>
       <ul>
-        <li class="active"><a title="{{page.chapname}}" href="{{page.url | remove: "/"}}">{{page.chapname}}</a></li>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li class="subfolders">
+              <a title="Subfolder-title" href="#">Subfolder-title</a>
+              <ul>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+              </ul>
+          </li>
       </ul>
-  {% endfor %}
-  
-  <li>
-    <a title="Static Chapter" href="static_chapter.html">Static Chapter</a>
-    <ul>
-      <li><a title="Page Title">Page Title</a>
-        <li class="subfolders">
-          <a title="Static subfolder">Static Subfolder</a>
-          <ul>
-            <li><a title="static subolder item">static subfolder item</a></li>
-          </ul>
-       </li>
-    </ul>
   </li>
-  {% for chappie in chapters %}
- 
-    <a title="{{chappie}}" href="#">{{chappie}}.html</a>
-    <ul>
-    <-- loop through pages in the chapter --> 
-    {% assign thesepages = site.pages | where: 'libname', page.libname | where: 'chapname', page.chapname | sort 'pagenum' %}
-    {% for apage in thesepages %}
-      <li><a title="{{apage.title}}" href="{{apage.permalink.url | remove: "/"}}">{{folderitem.title}}</a></li>
-    {% endfor %}
-    </ul>
-   {% endfor %}
+  <li>
+      <a title="Folder title" href="#">{{folder.title}}</a>
+      <ul>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li class="subfolders">
+              <a title="Subfolder-title" href="#">Subfolder-title</a>
+              <ul>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+              </ul>
+          </li>
+      </ul>
    </li>
-
-      <!-- if you aren't using the accordion, uncomment this block:
-         <p class="external">
-             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
-         </p>
-         -->
 </ul>
-
-<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
-<script>$("li.active").parents('li').toggleClass("active");</script>
-
-{% comment %} Copyright 2021 Google LLC {% endcomment %}
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Sidebar title</li>
+  <li>
+      <a title="Folder title" href="#">{{folder.title}}</a>
+      <ul>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li class="subfolders">
+              <a title="Subfolder-title" href="#">Subfolder-title</a>
+              <ul>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+              </ul>
+          </li>
+      </ul>
+  </li>
+  <li>
+      <a title="Folder title" href="#">{{folder.title}}</a>
+      <ul>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li><a title="Folder-item-title" href="Folder-item-title" target="Folder-item-title">Folder-item-title</a></li>
+          <li class="subfolders">
+              <a title="Subfolder-title" href="#">Subfolder-title</a>
+              <ul>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+                  <li><a title="Subfolder-item" href="Subfolder-item" target="_blank" rel="noopener">Subfolder-item</a></li>
+              </ul>
+          </li>
+      </ul>
+   </li>
+</ul>

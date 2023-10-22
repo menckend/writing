@@ -5,7 +5,7 @@ chapnum: 1
 chapnam: "Chapter 1: The First chapter"
 pagenum: 1
 
-title: "This page has a name.  It's name is Phil"
+title: "My title is Phil"
 summary: "This is a description of the page named Phil.  It doesn't tell you much, and you shouldn't trust what it does tell you."
 sidebar: newside
 permalink: doc1_chap1_page1.html
