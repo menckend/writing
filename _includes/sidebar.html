@@ -1,8 +1,14 @@
+---
+layout: post
+title: Blogging Like a Hacker
+---
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">{{page.docname}} __</li>
-  <!-- Need to loop through all the unique chapname values in this document -->
-  {% assign chapters = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapname' | uniq | compact %}
+  <li class="sidebarTitle">{{page.docname}}</li>
+  {% assign documents = site.pages | sort: 'docname' | map: 'docname' | uniq | compact %}
+  <li></li>
+  
+  
   <li>
     <a title="Static Chapter" href="static_chapter.html">Static Chapter</a>
     <ul>
@@ -16,6 +22,7 @@
     </ul>
   </li>
   {% for chappie in chapters %}
+ 
     <a title="{{chappie}}" href="#">{{chappie}}.html</a>
     <ul>
     <-- loop through pages in the chapter --> 
