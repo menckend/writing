@@ -11,10 +11,10 @@
         <li class="subfolders">
         <a title="{{achap}}" href="#">{{achap}}</a>
           <ul>
-          {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnam', {{achap}} | sort: 'pagenum' | map: 'pagename' | uniq | comact %}
-          {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnam', {{achap}} | sort: 'pagenum' | map: 'url' | uniq | comact %}
+          {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'chapnam', {{achap}} | sort: 'pagenum' | map: 'pagename' | uniq | compact %}
+          {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnam', {{achap}} | sort: 'pagenum' | map: 'url' | uniq | compact %}
           {% for apage in pagenames %}
-            <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+            <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
           {% endfor %}
           </ul>
         </li>
