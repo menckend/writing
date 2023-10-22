@@ -17,7 +17,7 @@
           {% for apage in pagenames %}
             {% if page.chapnum == chapnum and page.title == apage %}
               <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">visible {{apage}}</a></li>
-            {% elsif %}
+            {% else %}
               <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">visible {{apage}}</a></li>
             {% endif %}
           {% endfor %}
