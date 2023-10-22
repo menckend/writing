@@ -2,10 +2,10 @@
 libname: library1
 docname: doc1
 chapnum: 1
-chapnam: "Chapter 1 The First chapter"
+chapnam: "l1d1ch1"
 pagenum: 1
 
-title: "My title is Phil"
+title: "l1d1ch1p1
 summary: "This is a description of the page named Phil.  It doesn't tell you much, and you shouldn't trust what it does tell you."
 sidebar: newside
 permalink: doc1_chap1_page1.html
