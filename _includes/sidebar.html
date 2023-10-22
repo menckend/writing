@@ -6,6 +6,7 @@
   <li class="sidebarTitle">{{page.docname}}</li>
   <!-- Need to loop through all the unique chapname values in this document -->
   {% assign chapters = site.pages | where: 'libname', page.libname | sort: 'chapnum' | map: 'chapname' | uniq | compact %}
+  <p> {{chapname}}</p>
   {% for chappie in chapters %}
   <li>
       <a title="{{chappie}}" href="#">{{chappie}}.html</a>

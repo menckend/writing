@@ -14,7 +14,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
-
                 <!-- entries with drop-downs appear here -->
                 {% assign folders = site.pages | map: 'libname' | uniq | compact  %}
                 {% for folder in folders %}
