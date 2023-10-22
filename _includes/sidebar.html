@@ -7,7 +7,7 @@
   {% assign lvl0counter == forloop.index0 %}
     {% assign libdocnames = site.pages | where: 'libname', ulib | map: 'docname' | uniq | compact %}
     {% for adoc in libdocnames %}
-    {$ assign lvl1counter = forloop.index0 %}
+    {% assign lvl1counter = forloop.index0 %}
     <li>
       <a title="{{adoc}}" href="#">{{adoc}}</a>
       {% assign chapnums =  site.pages | where: 'libname', ulibname[lvl0counter] | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
