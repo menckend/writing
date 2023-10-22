@@ -16,9 +16,9 @@
           {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'chapnum', chapnums[forloop.index0] | sort: 'pagenum' | map: 'url' | uniq | compact %}
           {% for apage in pagenames %}
             {% if page.docname == adoc and page.chapnum == chapnum and page.title == apage %}
-              <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">active {{apage}}</a></li>
+              <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
             {% else %}
-              <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}"> notactive  {{apage}}</a></li>
+              <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
             {% endif %}
           {% endfor %}
           </ul>
