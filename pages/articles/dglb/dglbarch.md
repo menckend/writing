@@ -4,7 +4,7 @@ docname: Global Load Balancing Reference Architecture
 chapnum: 2
 chapnam: "The Reference Architecture"
 pagenum: 1
-title: Why is this here..
+title: P1
 summary: "A Generalized Reference Architecture for DNS-based Global Load Balancing"
 permalink: dglbdarch_ch2_p1.html
 folder: articles\/dglb
