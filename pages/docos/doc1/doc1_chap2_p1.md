@@ -2,7 +2,7 @@
 libname: library1
 docname: doc1
 chapnum: 2
-chapnam: "l1d1ch2"
+chapnam: "Chapter 2: The quickening"
 pagenum: 1
 title: "l1d1ch2p1"
 summary: "This is l1d1ch2p1"
