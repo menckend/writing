@@ -1,11 +1,11 @@
-<!--
-If there's only one page, don't bother creating the buttons, otherwise
-    If there's an earlier page, add the "previous" button.
-    If there's a next page, add the "next" button.
-    Add the "goto page" button
--->
+                                <!--
+                                If there's only one page, don't bother creating the buttons, otherwise
+                                If there's an earlier page, add the "previous" button.
+                                If there's a next page, add the "next" button.
+                                Add the "goto page" button
+                                -->
 
-<!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
+                                <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
                                 {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
                                 {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
                                 {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
@@ -20,17 +20,18 @@ If there's only one page, don't bother creating the buttons, otherwise
     <a href="{{fullpages[pnum].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
                                         {% endif %}
                                         {% if pnum == addone %}
-    <a href="{{fullpages[pnum].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+    <a href="{{fullpages[pnum].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                         {% endif %}
                                     {% endfor %}
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
             <ol class="dropdown-menu">
                                     {% for pnum in pagenums %}
-
-                <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
+                                        {%if fullpages[pnum].pagenum == page.pagenum %}
+                <li class="disabled"> <strong>→</strong>{{fullpages[pnum].pagenum}}.{{fullpages[pnum].title}}</li>
+                                        {% elsif %}
                 <li>
-                    <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
+                    <a href="{{fullpages[pnum].url | remove: '/'}}">{{fullpages[pnum].pagenum}}. {{fullpages[pnum].title}}</li>
                 </li>
                                     {% endfor %}
             </ol>
