@@ -3,12 +3,12 @@
   <li class="sidebarTitle">{{page.libname}}</li>
   {% assign ulibnames = site.pages | map: 'libname' | uniq | compact %}
   {% for ulib in ulibnames %}
-  <p>{{forloop.index0}}{{ulib}}<p>
-    {% assign libcounter == forloop.index0 %}
-    {% assign docnames = site.pages | where: 'libname', ulibnames[libcounter] | map: 'docname' | uniq | compact %}
+    {% assign libcnt == forloop.index0 %}
+    {% assign docnames = site.pages | where: 'libname', ulibnames[libcnt] | map: 'docname' | uniq | compact %}
+    <p> [[ublibnames[libcnt] }} -- {{docnames}}
     {% for adoc in libdocnames %}
-      {% assign doccounter = forloop.index0 %}
-      <p>{{libcounter}}-{{ulib}}.{{doccounter}}-{{adoc}}</p>
+      {% assign doccnt = forloop.index0 %}
+      <p>{{libcnt}}-{{ulibnames[libcnt]}}.{{doccnt}}-{{docnames[doccnt]}}</p>
       <li>
         <a title="{{adoc}}" href="#">{{adoc}}</a>
       {% assign chapnums =  site.pages | where: 'libname', ulib | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
