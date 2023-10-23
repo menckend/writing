@@ -14,8 +14,8 @@ If there's only one page, don't bother creating the buttons
 
                                 {% if pagecount > 1 %}
                                     {% for pnum in pagenums %}
-                                        {% if pnum == page.pagenum | minus: 1}
-                                            <p>  I am page {page.pnum}; my predecessor is {{pnum}</p>
+                                        {% if pnum == page.pagenum | minus: 1 %}
+<p>  I am page {page.pnum}; my predecessor is {{pnum}</p>
                                         {% endif %}
                                     {% endfor %}
                                 {{% endif %}}
