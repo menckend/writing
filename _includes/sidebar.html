@@ -5,10 +5,10 @@
   {% for ulib in ulibnames %}
     {% assign libcnt = forloop.index0 %}
     {% assign docnames = site.pages | where: 'libname', ulibnames[libcnt] | map: 'docname' | uniq | compact %}
-    <p> {{ ulibnames[libcnt] }} -- {{docnames}}
+<!--    <p> {{ ulibnames[libcnt] }} -- {{docnames}} -->
     {% for adoc in libdocnames %}
       {% assign doccnt = forloop.index0 %}
-      <p>{{libcnt}}-{{ulibnames[libcnt]}}.{{doccnt}}-{{docnames[doccnt]}}</p>
+      <p>Is the libdocnames/adoc loop running:  {{libcnt}}-{{ulib}}.{{doccnt}}-{{adoc}}</p>
       <li>
         <a title="{{adoc}}" href="#">{{adoc}}</a>
       {% assign chapnums =  site.pages | where: 'libname', ulib | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
