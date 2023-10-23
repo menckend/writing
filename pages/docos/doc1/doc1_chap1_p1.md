@@ -4,16 +4,12 @@ docname: doc1
 chapnum: 1
 chapnam: "l1d1ch1"
 pagenum: 1
-
-title: "l1d1ch1p1
+title: "l1d1ch1p1"
 summary: "l1d1ch1 summary "
 sidebar: newside
 permalink: doc1_chap1_page1.html
 folder: docos\/doc1
-
 toc: false
-
-sidebar: articles_sidebar
 ---
 
 ## What's going on?
