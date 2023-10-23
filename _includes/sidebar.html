@@ -1,72 +1,25 @@
 <ul id="mysidebar" class="nav">
-
-{% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
-
-
-
   <li class="sidebarTitle">{{page.libname}}</li>
-
-  <li>
-    <a title=" testdoc" href="#">testdoc</a>
-    <ul>
-      <li class="subfolders">
-        <a title="testchap" href="#"> testchap }}</a>
-        <ul>
-          <li ><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-        </ul>
-      </li>
-      <li class="subfolders">
-        <a title="testchap2" href="#"> testchap2 }}</a>
-        <ul>
-          <li ><a title="testpage1" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-        </ul>
-      </li>
-     </ul>
-  </li>
-  <li>
-    <a title=" testdoc2" href="#">testdoc2</a>
-    <ul>
-      <li class="subfolders">
-        <a title="testchap1" href="#"> testchap }}</a>
-        <ul>
-          <li ><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-        </ul>
-      </li>
-      <li class="subfolders">
-        <a title="testchap2" href="#"> testchap2 }}</a>
-        <ul>
-          <li ><a title="testpage1" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-        </ul>
-      </li>
-     </ul>
-  </li>
-
-
                         {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
                         {% for adoc in docnames %}
                               {% assign doccnt = forloop.index0 %}
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
-<p>{{libdocnames}}</p>
   <li>
-    <a title=" {{docnames}}--{{adoc}}" href="#">should be a document {{adoc}}</a>
+    <a title=" {{adoc}}" href="#">{{adoc}}</a>
     <ul>
                               {% for chapnum in chapnums %}
                                     {% assign chapcnt = forloop.index0 %}
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
       <li class="subfolders">
-        <a title="{{ chapnames[chapcnt] }}" href="#"> should be chapternames {{ chapnames[chapcnt] }}</a>
+        <a title="{{ chapnames[chapcnt]" href="#"> {{ chapnames[chapcnt] }}</a>
         <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">should be a page {{apage}}</a></li>
+          <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{apage}}</a></li>
                                           {% else %}
-          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">should be a page {{apage}}</a></li>
+          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
                                           {% endif %}
                                     {% endfor %}
         </ul>
