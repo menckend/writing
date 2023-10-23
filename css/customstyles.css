@@ -421,8 +421,9 @@ ul#mysidebar {
 }
 
 span.projectTitle {
-    font-family: Helvetica;
+    font-family: 'Caveat', cursive;
     font-weight: bold;
+    
 }
 
 .footer {
