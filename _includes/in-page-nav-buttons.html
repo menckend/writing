@@ -5,8 +5,8 @@
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
                                     {% if pagecount > 1 %}
 <div class="seriesContext">
-                                        {% assign lessone == '' | plus 0 %}
-                                        {% assign plusone == '' | plus 0 %}
+                                        {% assign lessone == '' | plus: 0 %}
+                                        {% assign plusone == '' | plus: 0 %}
                                         {% assign lessone == page.pagenum  %}
                                         {% assign plusone == page.pagenum %}
                                         {% assign lessone == lessone | minus: 1  %}
