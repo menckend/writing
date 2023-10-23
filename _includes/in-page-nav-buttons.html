@@ -1,6 +1,5 @@
-
 <!--
-If there's only one page, don't bother creating the buttons
+If there's only one page, don't bother creating the buttons, otherwise
     If there's an earlier page, add the "previous" button.
     If there's a next page, add the "next" button.
     Add the "goto page" button
@@ -15,7 +14,9 @@ If there's only one page, don't bother creating the buttons
                                 {% if pagecount > 1 %}
 <div class="seriesContext">
                                     {% for pnum in pagenums %}
-                                        {% if pnum == page.pagenum | minus: 1 %}
+                                        {% assign lessone == page.pagenum | minus: 1 %}
+                                        {% assign addone == page.pagenum | plus: 1 %}
+                                        {% if pnum == lessone %}
     <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
     <p>  I am page {{page.pagenum}}; my predecessor is {{pnum}} is {{page.pagenum | minus: 1}}</p>
                                         {% endif %}
