@@ -1,9 +1,13 @@
 ---
-title: Why?  What's the Point?
+libname: Articles
+docname: Global Load Balancing Reference Architecture
+chapnum: 1
+chapnam: "Preamble"
+pagenum: 1
+title: Why is this here..
 summary: "...because I needed it, and couldn't find it. So, I made it."
-sidebar: articles_sidebar
-permalink: articles_dglbdarch-intro.html
-folder: articles\/glbd
+permalink: dglbdarch_ch1_p1.html
+folder: articles\/dglb
 series: "dGLB series"
 weight: 1
 toc: false
