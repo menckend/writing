@@ -20,35 +20,3 @@ If there's only one page, don't bother creating the buttons
                                     {% endfor %}
                                 {{% endif %}}
 
-<!--
-                                {% if pagecount > 1 %}
-<div class="seriesContext">
-                                    {% for pnum in pagenums %}
-                                        {% if pnum == page.pagenum | minus: 1}
-<p>  I am page {page.pnum}; my predecessor is {{pnum}</p>
-                                        {% endif %}
-                                    {% endfor %}
-
-
-{% for fpage in fullpages %}
-  <!-- If page.pagenum minus 1 exists, create the -->
-
-<a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
-<a href="{{pg.url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
-
-    <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
-        <ol class="dropdown-menu">
-            <li class="disabled"> <strong>→</strong>{{pg.weight}}. {{pg.title}}</li>
-            <li>
-                <a href="{{pg.url | remove: '/'}}">{{pg.weight}}. {{pg.title}}</a>
-            </li>
-        </ol>
-    </div>
-
-    <a>
-
-	</a>
-    &nbsp;
-</div>
--->
