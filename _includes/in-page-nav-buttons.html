@@ -5,14 +5,14 @@
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
                                     {% if pagecount > 1 %}
 <div class="seriesContext">
-                                        {% assign lessone == page.pagenum | minus: 1 %}
-                                        {% assign addone == page.pagenum | plus: 1 %}
+                                        {% assign lessone == page.pagenum | to_i | minus: 1 %}
+                                        {% assign addone == page.pagenum | to_i | plus: 1 %}
                                         {% for pnum in pagenums %}
-                                            {% if pnum == lessone %}
+                                            {% if pnum | to_i == lessone %}
 <!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a> -->
         <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; addone={{addone}}</a>
                                             {% endif %}
-                                            {% if pnum == addone %}
+                                            {% if pnum | to_i == addone %}
 <!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a> -->
         <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; addone={{addone}}</a>
                                             {% endif %}
