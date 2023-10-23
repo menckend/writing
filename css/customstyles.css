@@ -423,7 +423,7 @@ ul#mysidebar {
 span.projectTitle {
     font-family: 'Caveat', cursive;
     font-weight: bold;
-    
+    font-size 16px;    
 }
 
 .footer {
