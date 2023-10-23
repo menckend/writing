@@ -17,7 +17,7 @@
         <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{apage}}</a></li>
+          <li <a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{apage}}</a></li>
                                           {% else %}
           <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
                                           {% endif %}
