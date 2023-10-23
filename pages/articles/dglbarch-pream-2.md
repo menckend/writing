@@ -6,7 +6,7 @@ chapnam: "Preamble"
 pagenum: 2
 title: "What *is* GLB?"
 summary: "The quickest of overviews as to just what DNS-based global-load-balancing actually *is*."
-permalink: dglbdarch_ch1_p1.html
+permalink: dglbdarch_ch1_p2.html
 folder: articles\/dglb
 toc: false
 ---

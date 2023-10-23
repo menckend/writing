@@ -1,4 +1,21 @@
+
+<!--
+If there's only one page, don't bother creating the buttons
+    If there's an earlier page, add the "previous" button.
+    If there's a next page, add the "next" button.
+    Add the "goto page" button
+-->
+
+<!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
+{% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
+{% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
+{% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
+{% assign doccnt = forloop.index0 %}
+
+{% if pagecount > 1 %}
+
 <div class="seriesContext">
+
 {% assign seriesornot = site.page.series %}
 {% if seriesornot != "series" %}
     {% assign anchor-series = page.series  %}
@@ -37,3 +54,5 @@
     </div>
 {% endif %}
 </div>
+
+{% endif %}
