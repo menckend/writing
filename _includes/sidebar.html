@@ -30,7 +30,7 @@ li > summary {
         <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{pagenames[forloop.index0]}}</a></li>
+          <li class="active"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{pagenames[forloop.index0]}}</a></li>
                                           {% else %}
           <li><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% endif %}
