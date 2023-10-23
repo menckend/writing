@@ -4,6 +4,7 @@
 
   {% assign ulibnames = site.pages | map: 'libname' | uniq | compact %}
   {% for ulib in ulibnames %}
+  {{ulib}}
     {% assign libcounter == forloop.index0 %}
     {% assign docnames = site.pages | where: 'libname', ulib | map: 'docname' | uniq | compact %}
     {% for adoc in libdocnames %}
