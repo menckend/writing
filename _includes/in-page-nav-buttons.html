@@ -16,7 +16,7 @@ If there's only one page, don't bother creating the buttons
 <div class="seriesContext">
                                     {% for pnum in pagenums %}
                                         {% if pnum == page.pagenum | minus: 1 %}
-    <a href="{{fullpages[forloop.index0].url}} | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
     <p>  I am page {{page.pagenum}}; my predecessor is {{pnum}} is {{page.pagenum | minus: 1}}</p>
                                         {% endif %}
                                     {% endfor %}
