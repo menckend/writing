@@ -15,11 +15,11 @@
                                         {% for pnum in pagenums %}
                                             {% if pnum == lessone %}
 <!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a> -->
-        <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; addone={{addone}}</a>
+        <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
                                             {% endif %}
                                             {% if pnum == plusone %}
 <!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a> -->
-        <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; addone={{addone}}</a>
+        <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
                                             {% endif %}
                                         {% endfor %}
     <div class="btn-group">
@@ -27,10 +27,10 @@
             <ol class="dropdown-menu">
                                         {% for pnum in pagenums %}
                                             {%if fullpages[pnum].pagenum == page.pagenum %}
-                <li class="disabled"> <strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
+                <li class="disabled"> <strong>→</strong>{{fullpages[pnum].pagenum}}.{{fullpages[pnum].title}}</li>
                                             {% else %}
                 <li>
-                    <a href="{{fullpages[forloop.index].url | remove: '/'}}">{{fullpages[forloop.index].pagenum}}. {{fullpages[forloop.index].title}}</a>
+                    <a href="{{fullpages[pnum].url | remove: '/'}}">{{fullpages[pnum].pagenum}}. {{fullpages[pnum].title}}</a>
                 </li>
                                             {% endif %}
                                         {% endfor %}
