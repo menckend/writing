@@ -1,4 +1,9 @@
 <ul id="mysidebar" class="nav">
+
+{% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
+
+
+
   <li class="sidebarTitle">{{page.libname}}</li>
 
   <li>
@@ -42,7 +47,7 @@
 
 
                         {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
-                        {% for adoc in libdocnames %}
+                        {% for adoc in docnames %}
                               {% assign doccnt = forloop.index0 %}
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
