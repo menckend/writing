@@ -7,26 +7,19 @@
 <div class="seriesContext">
                                         
                                         {% for pnumval in pagenums %}
-                                            <p>
-                                            {% assign hostpage-num == page.pagenum | to_i %}
-                                            <a> hostpage-num as int = {{hostpage-num}} ---</a>
-                                            {% assign lessone == hostpage-num | minus: 1  %}
-                                            {% assign plusone == hostpage-num | plus: 1 %}
+                                            <p> page.pagenum:  {{page.pagenum}}</p>
+                                            <p> pnumval (direct):  {{pnumval}}</p>
+                                            <p> pnumval (forloopidx0 ref): {{pagenums[forrloop.index0]}}
+                                            <p> pnumval (forloopidx ref): {{pagenums[forrloop.index0]}}
 
-                                            {% assign pnum == pnumval | plus: 0 %}
-                                            <a> pnumval = {{pnumval}} ---</a>
-                                            {% assign pnum == pnumval | plus: 1 %}
-                                            <a> pnumval+1 = {{pnumval}} ---</a>
-                                            <a> lessone = {{lessone}} ---</a>
-                                            <a> plusone = {{plusone}} ---</a>
-                                            </p>
+
 <!--
                                             {% if pnum == lessone %}
-<!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a> -->
+    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
         <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
                                             {% endif %}
                                             {% if pnum == plusone %}
-<!--    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a> -->
+    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
         <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
                                             {% endif %}
                                         {% endfor %}
