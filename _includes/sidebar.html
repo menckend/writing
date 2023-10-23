@@ -3,6 +3,21 @@
                     {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
                     {% for adoc in libdocnames %}
                       {% assign doccnt = forloop.index0 %}
+
+  <li>
+    <a title=" testdoc" href="#">{{adoc}}</a>
+    <ul>
+      <li class="subfolders">
+        <a title="testchap" href="#"> {{ chapnames[chapcnt] }}</a>
+        <ul>
+          <li class="active"><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+          <li><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+        </ul>
+      </li>
+     </ul>
+  </li>
+
+
   <li>
     <a title=" {{docnames}}--{{adoc}}" href="#">{{adoc}}</a>
                       {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
