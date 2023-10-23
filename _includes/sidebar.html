@@ -1,12 +1,11 @@
 
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{page.libname}}</li>
-
   {% assign ulibnames = site.pages | map: 'libname' | uniq | compact %}
   {% for ulib in ulibnames %}
   <p>{{forloop.index0}}{{ulib}}<p>
     {% assign libcounter == forloop.index0 %}
-    {% assign docnames = site.pages | where: 'libname', ulib | map: 'docname' | uniq | compact %}
+    {% assign docnames = site.pages | where: 'libname', ulibnames[libcounter] | map: 'docname' | uniq | compact %}
     {% for adoc in libdocnames %}
       {% assign doccounter = forloop.index0 %}
       <p>{{libcounter}}-{{ulib}}.{{doccounter}}-{{adoc}}</p>
