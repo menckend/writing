@@ -7,15 +7,19 @@
 <div class="seriesContext">
                                         
                                         {% for pnumval in pagenums %}
-                                            {% assign pnum == pnumval | plus: 0 %}
-                                            {% assign hostpage-num == page.pagenum | plus: 0 %}
+                                            <p>
+
+                                            {% assign hostpage-num == page.pagenum | to_i %}
+                                            <a> hostpage-num as int = {{hostpage-num}} ---</a>
                                             {% assign lessone == hostpage-num | minus: 1  %}
                                             {% assign plusone == hostpage-num | plus: 1 %}
-                                            <p>
-                                            <a> hostpage-num = {{hostpage-num}} </a>
-                                            <a> pnumval = {{pnumval}} </a>
-                                            <a> lessone = {{lessone}} </a>
-                                            <a> plusone = {{plusone}}
+
+                                            {% assign pnum == pnumval | plus: 0 %}
+                                            <a> pnumval = {{pnumval}} ---</a>
+                                            {% assign pnum == pnumval | plus: 1 %}
+                                            <a> pnumval+1 = {{pnumval}} ---</a>
+                                            <a> lessone = {{lessone}} ---</a>
+                                            <a> plusone = {{plusone}} ---</a>
                                             </p>
 
                                             {% if pnum == lessone %}
