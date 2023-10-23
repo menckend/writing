@@ -6,7 +6,6 @@ chapnam: "Dumb Chapter 1"
 pagenum: 1
 title: "l1d1ch1p1"
 summary: "l1d1ch1 summary "
-sidebar: newside
 permalink: doc1_chap1_p1.html
 folder: docos\/doc1
 toc: false
