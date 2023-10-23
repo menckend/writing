@@ -7,14 +7,17 @@
 <div class="seriesContext">
                                         {% for pnumval in pagenums %}
                                             <p> page.pagenum:  {{page.pagenum}} </p>
-                                            <p> pnumval (direct):  {{pnumval}} </p>
-                                            <p> pnumval (forloopidx0 ref): {{pagenums[forloop.index0]}} </p>
-                                            <p> pnumval (+1): {{pagenums[forloop.index] | plus: 1 }} </p>
-                                            <p> 
+                                            <p> pnum from looped array item:  {{pnumval}} </p>
+                                            <p> pnum from looped array item as integer:  {{pnumval | to_i }} </p>
+                                            <p> pnum from array item by index (forloopidx0 ref): {{pagenums[forloop.index0]}} </p>
+                                            <p> pnum from array item by index (forloopidx0 ref) as integer: {{pagenums[forloop.index0] | to_i }} </p>
+                                            <p> </p>
 
 
 
                                         {% endfor %}
+
+
 
     </div>
     &nbsp;
