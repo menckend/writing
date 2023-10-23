@@ -112,14 +112,31 @@
               }
             }
           },
-          "files": {
-            "articles_whynot-1": 0
-          }
+          "files": {}
         },
-        "morecontent": {
-          "name": "morecontent",
+        "docos": {
+          "name": "docos",
           "isOrdered": true,
-          "folders": {},
+          "folders": {
+            "doc1": {
+              "name": "doc1",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "doc2": {
+              "name": "doc2",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "doc3": {
+              "name": "doc3",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
           "files": {}
         }
       },
