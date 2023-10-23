@@ -7,42 +7,68 @@
       <li class="subfolders">
         <a title="testchap" href="#"> testchap }}</a>
         <ul>
-          <li class="active"><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
-          <li><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+          <li ><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+        </ul>
+      </li>
+      <li class="subfolders">
+        <a title="testchap2" href="#"> testchap2 }}</a>
+        <ul>
+          <li ><a title="testpage1" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+        </ul>
+      </li>
+     </ul>
+  </li>
+  <li>
+    <a title=" testdoc2" href="#">testdoc2</a>
+    <ul>
+      <li class="subfolders">
+        <a title="testchap1" href="#"> testchap }}</a>
+        <ul>
+          <li ><a title="testpage" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+        </ul>
+      </li>
+      <li class="subfolders">
+        <a title="testchap2" href="#"> testchap2 }}</a>
+        <ul>
+          <li ><a title="testpage1" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
+          <li><a title="testpage2" href="{{pageurls[forloop.index0] | remove: "/"}}">testpage</a></li>
         </ul>
       </li>
      </ul>
   </li>
 
 
-                    {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
-                    {% for adoc in libdocnames %}
-                      {% assign doccnt = forloop.index0 %}
+                        {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
+                        {% for adoc in libdocnames %}
+                              {% assign doccnt = forloop.index0 %}
   <li>
     <a title=" {{docnames}}--{{adoc}}" href="#">{{adoc}}</a>
-                      {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
-                      {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
+                              {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
+                              {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
     <ul>
-                      {% for chapnum in chapnums %}
-                        {% assign chapcnt = forloop.index0 %}
+                              {% for chapnum in chapnums %}
+                                    {% assign chapcnt = forloop.index0 %}
       <li class="subfolders">
         <a title="{{ chapnames[chapcnt] }}" href="#"> {{ chapnames[chapcnt] }}</a>
         <ul>
-                        {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
-                        {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-                        {% for apage in pagenames %}
-                          {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
+                                    {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
+                                    {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
+                                    {% for apage in pagenames %}
+                                          {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
           <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
-                          {% else %}
+                                          {% else %}
           <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
-                          {% endif %}
-                        {% endfor %}
+                                          {% endif %}
+                                    {% endfor %}
         </ul>
       </li>
-                      {% endfor %}
+                              {% endfor %}
      </ul>
   </li>
-                    {% endfor %}
+                        {% endfor %}
 </ul>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
