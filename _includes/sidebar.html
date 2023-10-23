@@ -1,17 +1,5 @@
-<style>
-li > summary {
-  padding: 2px 6px;
-  width: 15em;
-  background-color: #347DBE;
-  color: #ffffff;
-  border: 1;
-  cursor: pointer;
-}
-</style>
 
-
-
-<ul id="mysidebar" class="nav">
+<ul id="mysidebar" class="docnav">
   <li class="sidebarTitle">{{page.libname}}</li>
                         {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
                         {% for adoc in docnames %}
