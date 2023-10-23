@@ -44,23 +44,23 @@
                         {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
                         {% for adoc in libdocnames %}
                               {% assign doccnt = forloop.index0 %}
-  <li>
-    <a title=" {{docnames}}--{{adoc}}" href="#">{{adoc}}</a>
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
+  <li>
+    <a title=" {{docnames}}--{{adoc}}" href="#">should be a document {{adoc}}</a>
     <ul>
                               {% for chapnum in chapnums %}
                                     {% assign chapcnt = forloop.index0 %}
-      <li class="subfolders">
-        <a title="{{ chapnames[chapcnt] }}" href="#"> {{ chapnames[chapcnt] }}</a>
-        <ul>
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
+      <li class="subfolders">
+        <a title="{{ chapnames[chapcnt] }}" href="#"> should be chapternames {{ chapnames[chapcnt] }}</a>
+        <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+          <li class="active"><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">should be a page {{apage}}</a></li>
                                           {% else %}
-          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">should be a page {{apage}}</a></li>
                                           {% endif %}
                                     {% endfor %}
         </ul>
