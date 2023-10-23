@@ -27,10 +27,12 @@ div.navbar-collapse .dropdown-menu > li > a:hover {
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
     color: white;
+    font-family: 'Caveat', cursive;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, a.fa.fa-home.fa-lg.navbar-brand:hover {
      color: #f0f0f0;
+     font-family: 'Caveat', cursive;
 }
 
 .nav li.thirdlevel > a {
