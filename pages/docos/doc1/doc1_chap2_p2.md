@@ -1,7 +1,7 @@
 ---
 libname: library1
 docname: doc1
-chapnum: 1
+chapnum: 2
 chapnam: "Chapter 2: The quickening"
 pagenum: 2
 title: "l1d1ch2p2"
