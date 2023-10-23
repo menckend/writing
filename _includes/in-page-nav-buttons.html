@@ -9,10 +9,10 @@
                                             {% assign lessone == page.pagenum | minus: 1 %}
                                             {% assign addone == page.pagenum | plus: 1 %}
                                             {% if pnum == lessone %}
-    <a href="{{fullpages[pnum].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
                                             {% endif %}
                                             {% if pnum == addone %}
-    <a href="{{fullpages[pnum].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                             {% endif %}
                                         {% endfor %}
     <div class="btn-group">
@@ -20,10 +20,10 @@
             <ol class="dropdown-menu">
                                         {% for pnum in pagenums %}
                                             {%if fullpages[pnum].pagenum == page.pagenum %}
-                <li class="disabled"> <strong>→</strong>{{fullpages[pnum].pagenum}}.{{fullpages[pnum].title}}</li>
+                <li class="disabled"> <strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
                                             {% else %}
                 <li>
-                    <a href="{{fullpages[pnum].url | remove: '/'}}">{{fullpages[pnum].pagenum}}. {{fullpages[pnum].title}}</li>
+                    <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</li>
                 </li>
                                             {% endif %}
                                         {% endfor %}
