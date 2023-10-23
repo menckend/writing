@@ -7,6 +7,7 @@
     {% assign docnames = site.pages | where: 'libname', ulibnames[libcnt] | map: 'docname' | uniq | compact %}
 <!--    <p> {{ ulibnames[libcnt] }} -- {{docnames}} -->
     {% for adoc in libdocnames %}
+        <p> {{ adoc }}</p>
       {% assign doccnt = forloop.index0 %}
       <p>Is the libdocnames/adoc loop running:  {{libcnt}}-{{ulib}}.{{doccnt}}-{{adoc}}</p>
       <li>
