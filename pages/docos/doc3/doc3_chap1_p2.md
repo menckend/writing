@@ -6,7 +6,7 @@ chapnam: "l3d3ch1"
 pagenum: 2
 title: "l3d3ch1p2"
 summary: "This is l3d3ch1p2"
-permalink: doc3_chap1_page2.html
+permalink: doc3_chap1_p2.html
 folder: docos\/doc3
 
 toc: false

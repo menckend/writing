@@ -8,7 +8,7 @@ pagenum: 2
 title: "l1d1ch1p2"
 summary: "This is l1d1ch1p2"
 sidebar: doc1
-permalink: doc1_chap1_page2.html
+permalink: doc1_chap1_p2.html
 folder: docos\/doc1
 
 toc: false
