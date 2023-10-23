@@ -11,12 +11,6 @@ All works presented here are my own, and are intended for you to adore/ignore/sh
 
 The content is sorted into "libraries" (each of which has a drop-down menu on the top navbar), with the contents of each library accessible through the sidebar on the left.
 
-The general hierarchy is:
-
-* Library
-    * Document
-        * Chapter
-            * Page
-
+The general hierarchy is: Library | Document | Chapter | Page.
 
 {% include links.html %}
