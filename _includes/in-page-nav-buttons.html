@@ -13,32 +13,6 @@
                                             <p> pnumval (forloopidx ref): {{pagenums[forrloop.index0]}}
                                         {% endfor %}
 
-<!--
-                                            {% if pnum == lessone %}
-    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
-        <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
-                                            {% endif %}
-                                            {% if pnum == plusone %}
-    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
-        <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
-                                            {% endif %}
-                                        {% endfor %}
-    <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
-            <ol class="dropdown-menu">
-                                        {% for pnum in pagenums %}
-                                            {%if fullpages[pnum].pagenum == page.pagenum %}
-                <li class="disabled"> <strong>→</strong>{{fullpages[pnum].pagenum}}.{{fullpages[pnum].title}}</li>
-                                            {% else %}
-                <li>
-                    <a href="{{fullpages[pnum].url | remove: '/'}}">{{fullpages[pnum].pagenum}}. {{fullpages[pnum].title}}</a>
-                </li>
-                                            {% endif %}
-                                        {% endfor %}
-            </ol>
-
-
--->
     </div>
     &nbsp;
 </div>
