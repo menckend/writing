@@ -9,8 +9,8 @@ My name is Mencken Davidson. I'm a network architect, husband, parent, musician,
 
 All works presented here are my own, and are intended for you to adore/ignore/shove-in-a-drawer (or outright abhor) as you see fit. (I certainly *hope* that someone finds value in them, though.)
 
-The content is sorted into "libraries" (each of which has a drop-down menu on the top navbar), with the contents of each library accessible through the sidebar on the left.
+The content is sorted into "libraries" (each of which has a drop-down menu on the top navbar), with the contents of each library enumerated and iterated in the sidebar on the left.
 
-The general hierarchy is: Library | Document | Chapter | Page.
+The general hierarchy is: Library-->Document-->Chapter-->Page.
 
 {% include links.html %}
