@@ -17,8 +17,10 @@ If there's only one page, don't bother creating the buttons, otherwise
                                         {% assign lessone == page.pagenum | minus: 1 %}
                                         {% assign addone == page.pagenum | plus: 1 %}
                                         {% if pnum == lessone %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
-    <p>  I am page {{page.pagenum}}; my predecessor is {{pnum}} is {{page.pagenum | minus: 1}}</p>
+    <a href="{{fullpages[lessone].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+                                        {% endif %}
+                                        {% if pnum == addone %}
+    <a href="{{fullpages[addone].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
                                         {% endif %}
                                     {% endfor %}
                                 {% endif %}
