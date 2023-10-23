@@ -5,7 +5,7 @@ chapnum: 2
 chapnam: "l3d3ch2"
 pagenum: 1
 title: "l3d3ch2p1"
-summary: "This is l3d3ch2"
+summary: "This is l3d3ch2p1"
 permalink: doc3_chap2_p1.html
 folder: docos\/doc3
 

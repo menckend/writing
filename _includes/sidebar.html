@@ -30,9 +30,9 @@ li > summary {
         <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{apage}}</a></li>
+          <li class="active"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}"{{pagenames[forloop.index0]}}</a></li>
                                           {% else %}
-          <li><a title="{{apage}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{apage}}</a></li>
+          <li><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% endif %}
                                     {% endfor %}
         </ul>
@@ -46,6 +46,5 @@ li > summary {
   </p>
 </ul>
 
-<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
--->
