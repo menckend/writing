@@ -1,5 +1,5 @@
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
-                                    {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
+                                    {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, || sort: 'pagenum' %}
                                     {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
                                     {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
@@ -8,8 +8,8 @@
                                         {% for pnumval in pagenums %}
                                             <p> page.pagenum:  {{page.pagenum}} </p>
                                             <p> pnumval (direct):  {{pnumval}} </p>
-                                            <p> pnumval (forloopidx0 ref): {{pagenums[forrloop.index0]}} </p>
-                                            <p> pnumval (forloopidx ref): {{pagenums[forrloop.index0]}} </p>
+                                            <p> pnumval (forloopidx0 ref): {{pagenums[forloop.index0]}} </p>
+                                            <p> pnumval (forloopidx ref): {{pagenums[forloop.index]}} </p>
                                         {% endfor %}
 
     </div>
