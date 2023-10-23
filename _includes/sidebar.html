@@ -13,7 +13,7 @@
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
       <li class="subfolders">
-        <a title="{{ chapnames[chapcnt]" href="#"> {{ chapnames[chapcnt] }}</a>
+        <a title="{{ chapnames[chapcnt] }}" href="#"> {{ chapnames[chapcnt] }}</a>
         <ul>
                                     {% for apage in pagenames %}
                                           {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
