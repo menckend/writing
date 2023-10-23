@@ -46,6 +46,7 @@
                               {% assign doccnt = forloop.index0 %}
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
+<p>{{libdocnames}}</p>
   <li>
     <a title=" {{docnames}}--{{adoc}}" href="#">should be a document {{adoc}}</a>
     <ul>
