@@ -30,5 +30,7 @@ Seemed to work.  Onto something else.
 
 {% assign tmparray = page.content | markdownify %}
 <p> Number of h2 headers in page: {{tmparray}} </p>
+<!--
 {{tmparray}}
+-->
 {% include links.html %}
