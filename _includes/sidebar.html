@@ -1,7 +1,7 @@
 {% unless page.url contains 'index.html' %}
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle"><a class="sidebarTitle title="{{page.docname}}" href="{{page.docname}}">{{page.docname}}</a></li>
+  <li class="sidebarTitle"><a class="sidebarTitle" title="{{page.docname}}" href="{{page.docname}}">{{page.docname}}</a></li>
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
                               {% for chapnum in chapnums %}
