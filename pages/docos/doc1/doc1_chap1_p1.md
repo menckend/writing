@@ -28,7 +28,7 @@ Seemed to work.  Onto something else.
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
-{% assign tmparray = page.content | split: '##' | compact |size %}
+{% assign tmparray = page.content | markdownify | split: '<h2>' | compact |size %}
 <p> Number of level-2 headers in page: {{tmparray}} </p>
 <!--<p>Loop through page.content </p>
 {% for chunk in page.content %}
