@@ -13,9 +13,9 @@
 
 <p> {{var2}}, {{var3}}, {{var4}} </p>
 <p> {{var2 | plus: 1}}, {{var3 | plus: 2 }}, {{var4 | plus: 3}} </p>
-{% assign var22 | var2 | plus: 1 %}
-{% assign var33 | var3 | plus: 2 %}
-{% assign var44 | var4 | plus: 3 %}
+{% assign var22 == var2 | plus: 1 %}
+{% assign var33 == var3 | plus: 2 %}
+{% assign var44 == var4 | plus: 3 %}
 <p> {{var22 }}, {{var33 }}, {{var44 }} </p>
 
 
