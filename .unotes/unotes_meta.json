@@ -108,8 +108,9 @@
               "folders": {},
               "files": {
                 "dglbarch": 0,
-                "dglbarch-intro": 1,
-                "Global Load Balancing Reference Architecture": 2
+                "Global Load Balancing Reference Architecture": 1,
+                "dglbarch-pream-2": 2,
+                "dglbarch-pream-1": 3
               }
             }
           },

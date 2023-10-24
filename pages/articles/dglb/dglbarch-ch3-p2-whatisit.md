@@ -17,5 +17,4 @@ Global load balancing ("GLB") is a service that directs inbound connections inte
 
 There *are* other "flavors" of GLB to be had, but they are outside the scope of *this* document.
 
-
 {% include links.html %}
