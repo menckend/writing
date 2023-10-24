@@ -19,16 +19,16 @@
                                             {% assign varone == '' | plus: 0 %}
                                             {% assign vartwo == '' | plus: 0 %}
 
-                                            <p>Test arithmetic: {{varone}}; {{varone | increment}}   </p>
+                                            <p>Test arithmetic: {{varone}}; {{varone | increment }}   </p>
                                             {% assign varone == varone | plus: 1 %}
                                             <p> varone with 1 added:  {{varone}} </p>
-                                            {% varone == varone | plus: 2 %}
+                                            {% assign varone == varone | plus: 2 %}
                                             <p>varone from 0 to 1 and then two more added: {{varone}} </p>
 
 
 
-                                        {% endfor %}
 
+                                        {% endfor %}
 
 
 
