@@ -30,20 +30,6 @@ details > summary {
 
 <!-- end of in-page TOC staging -->
 
-
-<!-- divert to library-level sidebar if page has no chapter or pagenumber -->
-
-<p>page.url: {{page.url}}</p>
-<p>page.url | append: '' : {{page.url | append: ''}} </p>
-
-
-{% if page.url contains 'index.html' %}
-  <p> Successfully detected index.html in url</p>
-{% endif %}  
-
-
-
-
                                     {% unless page.pagenav == false %}
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
                                     {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
