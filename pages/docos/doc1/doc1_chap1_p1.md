@@ -31,11 +31,5 @@ Seemed to work.  Onto something else.
 {% endfor %}
 </p>
 
-<p>Loop through page.content </p>
-<p>
-{% for chunk in page.content %}
-{{chunk}}
-{% endfor %}
-</p>
 
 {% include links.html %}
