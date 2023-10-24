@@ -2,16 +2,14 @@
                                     {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
                                     {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
                                     {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
-                                    {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
-                                    {% assign thispagenum = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' %}
                                     {% if pagecount > 1 %}
-<div class="seriesContext">
                                         {% assign hostpagenum = page.pagenum | plus: 0  %}
                                         {% assign hostpagenumint = page.pagenum | to_i  %}
                                         {% assign oneless = '' | plus: 0 %}
                                         {% assign onemore = '' | plus: 0 %}
                                         {% assign oneless = hostpagenumint | minus: 1 %}
                                         {% assign onemore = hostpagenumint | plus: 1 %}
+<div class="seriesContext">
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {% if flpagenum == oneless %}
@@ -20,7 +18,7 @@
                                             {% if flpagenum == onemore %}
     <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                             {% endif %}
-
+                                        {% endfor %}
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
             <ol class="dropdown-menu">
@@ -34,8 +32,6 @@
                                             {% endif %}
                                         {% endfor %}
             </ol>
-
-                                        {% endfor %}
     </div>
     &nbsp;
 </div>
