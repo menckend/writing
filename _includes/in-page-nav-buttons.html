@@ -15,7 +15,10 @@
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {% if flpagenum == oneless %}
-    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+                                            {% endif %}
+                                            {% if flpagenum == onemore %}
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                             {% endif %}
 
                                         {% endfor %}
