@@ -34,6 +34,43 @@
                                         {% endfor %}
             </ol>
     </div>
+
+<!--   sneak the TOC in here?  -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<style>
+details > summary {
+  padding: 2px 6px;
+  width: 15em;
+  background-color: #347DBE;
+  color: #ffffff;
+  border: 1;
+  cursor: pointer;
+}
+</style>
+
+<details>
+  <summary > Toggle Page TOC</summary>
+  <div id="toc"></div>
+</details>
+
+
     &nbsp;
 </div>
     &nbsp;
