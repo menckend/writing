@@ -1,34 +1,24 @@
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">{{page.libname}}</li>
-                        {% assign docnames = site.pages | where: 'libname', page.libname | map: 'docname' | uniq | compact %}
-                        {% for adoc in docnames %}
-                              {% assign doccnt = forloop.index0 %}
-                              {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
-                              {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
-  <li>
-    <a title=" {{adoc}}" href="#">{{adoc}}</a>
-    <ul>
+  <li class="sidebarTitle">{{page.docname}}</li>
+                              {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
+                              {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
                               {% for chapnum in chapnums %}
                                     {% assign chapcnt = forloop.index0 %}
-                                    {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
-                                    {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', adoc | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-      <li class="subfolders">
-        <a title="{{ chapnames[chapcnt] }}" href="#"> {{ chapnames[chapcnt] }}</a>
-        <ul>
+                                    {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
+                                    {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
+  <li>
+    <a title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
+    <ul>
                                     {% for apage in pagenames %}
-                                          {% if page.docname == adoc and page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-          <li class="active"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                          {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
+        <li class="active"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% else %}
-          <li>               <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+        <li>               <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% endif %}
                                     {% endfor %}
-        </ul>
-      </li>
-                              {% endfor %}
-     </ul>
+      </ul>
   </li>
-                        {% endfor %}
-</ul>
+                              {% endfor %}
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
