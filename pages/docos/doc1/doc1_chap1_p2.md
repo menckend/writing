@@ -13,7 +13,7 @@ folder: docos\/doc1
 
 ---
 
-## What's going on?
+**What's going on?**
 
 I'm going to clone this page repeatedly; tagging the frontmatter to create two libraries, with two documents each, with two chapters each, with two pages each.
 
