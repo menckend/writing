@@ -73,7 +73,7 @@ details > summary {
                                     {% unless page.toc == false %}
                                       {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
                                       <p> H2 header count: {{tmparray}}</p>
-                                      {% if tmparry 0 1 %}
+                                      {% if tmparry > 1 %}
 <details><summary > Toggle Page TOC</summary><div id="toc"></div></details>
                                       {% endif %}
                                     {% endunless %}
