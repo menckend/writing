@@ -23,11 +23,14 @@ Seemed to work.  Onto something else.
 ...and disable TOC-toggle if they're not present.
 
 {% assign tmparray = page.content | split: '##' | size %}
-<p>Loop through page.content </p>
+<p> Number of level-2 headers in page: {{tmparray}} </p>
+<!--<p>Loop through page.content </p>
 {% for chunk in page.content %}
 <p>Array index = {{forloop.index0}}<p>
 <p>{{chunk}}</p>
 <p>{{page.content[forloopindex0]}}</p>
 {% endfor %}
 <p>_________________</p>
+-->
+
 {% include links.html %}
