@@ -24,10 +24,7 @@ Seemed to work.  Onto something else.
 
 
 <p>Loop through page.content </p>
-<p>
-{% for chunk in page.content %}
-<p>{{chunk}}<p>
-{% endfor %}
+<p> {{page.content[0]}}
 </p>
 
 {% include links.html %}
