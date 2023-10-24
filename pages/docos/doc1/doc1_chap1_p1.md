@@ -24,10 +24,10 @@ Seemed to work.  Onto something else.
 
 
 <p>Loop through page.content </p>
-<p> {{page.content[0]}}
 {% for chunk in page.content %}
 <p>Array index = {{forloop.index0}}<p>
+<p>{{chunk}}</p>
+<p>{{page.content[forloopindex0]}}</p>
 {% endfor %}
-</p>
-
+<p>_________________</p>
 {% include links.html %}
