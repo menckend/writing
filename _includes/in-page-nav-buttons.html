@@ -29,11 +29,13 @@
                                             <p>Test arithmetic: {{varone}}; {{varone | increment}}   </p>
                                             {% assign varone == varone | plus: 1 %}
                                             <p> varone with 1 added:  {{varone}} </p>
+                                            {% varone == varone | plus: page.pagenum }
                                             <p> </p>
 
 
 
                                         {% endfor %}
+
 
 
     </div>
