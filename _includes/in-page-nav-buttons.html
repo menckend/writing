@@ -36,7 +36,11 @@ details > summary {
 <p>page.url: {{page.url}}</p>
 <p>page.url[0]: {{page.url[0]}}</p>
 <p>page.url | append: '' : {{page.url | append: ''}} </p>
-{% unless page.url[0] == '/index.html' %}
+
+
+{%} if page.url contains 'index.html' {%}
+  <p> Successfully detected index.html in url</p>
+{% endif %}  
 
 
 
@@ -90,4 +94,3 @@ details > summary {
                                       {% endif %}
                                     {% endunless %}
     &nbsp;
-{% endunless %}
