@@ -24,15 +24,15 @@
 
 
                                         {% for pnumval in pagenums %}
-{% assign hostpagenum = pnumval | plus: 0  %}
-<p> hostpagenum: {{hostpagenum}} </p>
-{% assign hostpagenum = hostpagenum | plus: 3  %}
-<p> hostpagenum +3: {{hostpagenum}} </p>
+{% assign flpagenum = pnumval | plus: 0  %}
+<p> flpagenum: {{flpagenum}} </p>
+{% assign flpagenum = flpagenum | plus: 3  %}
+<p> flpagenum +3: {{flpagenum}} </p>
 
-{% assign fmpagenum = page.pagenum | plus: 0  %}
-<p> fmpagenum: {{fmpagenum}} </p>
-{% assign fmpagenum = fmpagenum | plus: 7 %}
-<p> fmpagenum +7: {{hostpagenum}} </p>
+{% assign hostpagenum = page.pagenum | plus: 0  %}
+<p> hostpagenum: {{hostpagenum}} </p>
+{% assign hostpagenum = hostpagenum | plus: 1 %}
+<p> hostpagenum +1: {{hostpagenum}} </p>
 <p>==</p>
 <p>==</p>
                                         {% endfor %}
