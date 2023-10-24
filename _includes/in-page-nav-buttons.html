@@ -1,0 +1,41 @@
+                                    <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
+                                    {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
+                                    {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
+                                    {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
+                                    {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
+                                    {% assign thispagenum = }
+
+                                    {% if pagecount > 1 %}
+<div class="seriesContext">
+
+<p>==</p>
+<p>==</p>
+
+{% assign hostpagenum = page.pagenum | plus: 0  %}
+<p> hostpagenum: {{hostpagenum}} </p>
+{% assign hostpagenumint = page.pagenum | to_i  %}
+
+{% assign oneless = '' | plus: 0 %}
+{% assign onemore = '' | plus: 0 %}
+
+{% assign oneless = hostpagenumint | minus: 1 %}
+{% assign onemore = hostpagenumint | plus: 1 %}
+
+<p> onemore: {{onemore}} -- oneless: {{oneless}}</p>
+
+                                        {% for pnumval in pagenums %}
+{% assign flpagenum = pnumval | plus: 0  %}
+<p> flpagenum: {{flpagenum}} </p>
+{% assign flpagenum = flpagenum | plus: 3  %}
+<p> flpagenum +3: {{flpagenum}} </p>
+<p>==</p>
+<p>==</p>
+                                        {% endfor %}
+
+
+
+
+    </div>
+    &nbsp;
+</div>
+                                    {% endif %}
