@@ -6,7 +6,6 @@ summary: nothing fancy, just a place for my content
 pagenav: false
 ---
 
-
 My name is Mencken; I'm a network architect, a husband, a parent, a musician, and I like writing.
 
 I made this site to start hosting some network-architecture-related articles based on ideas that it took me way too long to realize actually *wanted* to *be* more generalized, longer-form documents. (That is, after I noticed that a lot of the same themes kept popping up irresistable rabbit-holes continually trying to distract me from the more mundane artifacts I was creating on a day-to-day basis.)
