@@ -71,6 +71,9 @@ details > summary {
 </div>
                                     {% endif %}
                                     {% unless page.toc == false %}
+                                      {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
+                                      {% if tmparry > 1 %}
 <details><summary > Toggle Page TOC</summary><div id="toc"></div></details>
+                                      {% endif %}
                                     {% endunless %}
     &nbsp;
