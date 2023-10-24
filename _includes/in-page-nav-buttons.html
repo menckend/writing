@@ -11,7 +11,9 @@
 {% assign var3 == '' | plus: 0 %}
 {% assign var4 == '' | plus: 0 %}
 
-<p> var1, var2, var3, var4 </p>
+<p> {{var1}}, {{var2}}, {{var3}}, {{var4}} </p>
+<p> {{var1 | increment }}, {{var2 | plus: 1}}, {{var3 | plus: 2 }}, {{var4 | plus: 3}} </p>
+
 
                                         {% for pnumval in pagenums %}
 
