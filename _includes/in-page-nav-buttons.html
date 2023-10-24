@@ -22,14 +22,13 @@
                                             {% assign lessone == lessone | minus: 1 %}
                                             {% assign plusone == plusone | plus: 1 %}
 
-
                                             {% assign varone == '' | plus: 0 %}
                                             {% assign vartwo == '' | plus: 0 %}
 
                                             <p>Test arithmetic: {{varone}}; {{varone | increment}}   </p>
                                             {% assign varone == varone | plus: 1 %}
                                             <p> varone with 1 added:  {{varone}} </p>
-                                            {% varone == varone | plus: page.pagenum }
+                                            {% varone == varone | plus: page.pagenum | to_i }
                                             <p> </p>
 
 
