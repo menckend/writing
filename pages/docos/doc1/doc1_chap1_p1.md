@@ -28,7 +28,7 @@ Seemed to work.  Onto something else.
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
-{% assign tmparray = page.content | markdownify | split '</h2>' | size %}
+{% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
 <p> Number of h2 headers in page: {{tmparray}} </p>
 
 {% include links.html %}
