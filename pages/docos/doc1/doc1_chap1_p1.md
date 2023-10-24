@@ -18,17 +18,11 @@ Testing a way to get at different permutations of "libname", "docname", "chapnum
 
 Seemed to work.  Onto something else.
 
-## test
-
-## test
-
-## test
-
 
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
 {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
-<p> Number of h2 headers in page: {{tmparray}} </p>
+<p> Number of h2 headers in page (was 7, removed 3, expecting 4): {{tmparray}} </p>
 
 {% include links.html %}
