@@ -30,7 +30,7 @@ details > summary {
 
 <!-- end of in-page TOC staging -->
 
-                                    {% unless page.pagenav == false %}
+                                  {% unless page.pagenav == false %}
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
                                     {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
                                     {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
@@ -52,6 +52,7 @@ details > summary {
     <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                             {% endif %}
                                         {% endfor %}
+                                        {% if pagecount > 2 %}
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
             <ol class="dropdown-menu">
@@ -67,6 +68,7 @@ details > summary {
                                         {% endfor %}
             </ol>
     </div>
+                                        {% endif %}
 </div>
                                     {% endif %}
                                   {% endunless %}
