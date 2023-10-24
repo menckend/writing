@@ -27,7 +27,12 @@ details > summary {
   cursor: pointer;
 }
 </style>
-<!-- end of in-table TOC staging -->
+
+<!-- divert to library-level sidebar if page has no chapter or pagenumber -->
+<p> Page-url: {{page.url}}</p>
+
+
+<!-- end of in-page TOC staging -->
 
                                     {% unless page.pagenav == false %}
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
