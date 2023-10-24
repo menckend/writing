@@ -33,7 +33,13 @@ details > summary {
 
 <!-- divert to library-level sidebar if page has no chapter or pagenumber -->
 
-{% unless page.url == '/index.html' %}
+<p>page.url: {{page.url}}</p>
+<p>page.url[0]: {{page.url[0]}}</p>
+<p>page.url | append: '' : {{page.url | append: ''}} </p>
+{% unless page.url[0] == '/index.html' %}
+
+
+
 
                                     {% unless page.pagenav == false %}
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
