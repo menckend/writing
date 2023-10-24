@@ -1,3 +1,5 @@
+{% unless page.url contains 'index.html' %}
+
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{page.docname}}</li>
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
@@ -23,7 +25,9 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
-{% if page.url contains 'index.html' %}
   <p> Successfully detected index.html in url</p>
-{% endif %}  
-<p> test text test</p>
+{% endunless %}
+
+{% if page.url contains 'index.html' %}
+{% include sidebar-librarylevel.html %}
+{% endif %}
