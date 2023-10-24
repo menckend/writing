@@ -19,10 +19,9 @@ Testing a way to get at different permutations of "libname", "docname", "chapnum
 {% include newtest1.html %}
 
 
-## Nothing else.
+## Try to detect presence of H2 sections programmatically 
+...and disable TOC-toggle if they're not present.
 
-We're done here.
-
-
+{{page.content}}
 
 {% include links.html %}
