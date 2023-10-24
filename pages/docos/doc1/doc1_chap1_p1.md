@@ -16,12 +16,26 @@ Testing a way to get at different permutations of "libname", "docname", "chapnum
 
 ## Results
 
-{% include newtest1.html %}
+Seemed to work.  Onto something else.
 
 
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
-{{page.content}}
+<p>Loop through an array that page.content was mapped to.</p>
+<p>
+{% assign bigvar == emptyArray %}
+{% assign bigvar == page.content %}
+{% for chunk in bigvar %}
+{{chunk}}
+{% endfor %}
+</p>
+
+<p>Loop through page.content </p>
+<p>
+{% for chunk in page.content %}
+{{chunk}}
+{% endfor %}
+</p>
 
 {% include links.html %}
