@@ -3,7 +3,7 @@
                                     {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
                                     {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'url' | uniq | compact %}
-                                    {% assign thispagenum = site.pages | where: 'libname', page.libname | where 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum %}
+                                    {% assign thispagenum = site.pages | where: 'libname', page.libname | where 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' %}
 
                                     {% if pagecount > 1 %}
 <div class="seriesContext">
