@@ -14,10 +14,10 @@
                                             <p> pnum from looped array item:  {{pnumval}} </p>
                                             <p> pnum from looped array item as integer:  {{pnumval | to_i }} </p>
                                             {% assign lessone == '' | plus, 0 %}
-                                            {% assign lessone == page.pagenum | to_i %}
+                                            {% assign lessone == pnumval | to_i %}
                                             <p> lessone initial assignment:  {{lessone}}</p>
                                             {% assign lessone == lessone | minus: 1 %}
-                                            {% assign plusone == page.pagenum | to_i %}
+                                            {% assign plusone == pnumval | to_i %}
                                            <p> plusone initial assignment:  {{plusone}}</p>
                                             {% assign plusone == plusone | plus: 1 %}
                                             <p> lessone with 1 subtracted: {{lessone}} </p>
