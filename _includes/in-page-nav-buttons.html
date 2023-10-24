@@ -29,9 +29,7 @@ details > summary {
 </style>
 <!-- end of in-table TOC staging -->
 
-
-
-
+                                    {% unless page.pagenav == false %}
                                     <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
                                     {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
                                     {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
@@ -70,6 +68,9 @@ details > summary {
     </div>
 </div>
                                     {% endif %}
+                                  {% endunless %}
+
+
                                     {% unless page.toc == false %}
                                       {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
                                       {% if tmparray > 1 %}
