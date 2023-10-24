@@ -22,7 +22,7 @@ Seemed to work.  Onto something else.
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
-
+{% assign tmparray = page.content | split: '##' | size %}
 <p>Loop through page.content </p>
 {% for chunk in page.content %}
 <p>Array index = {{forloop.index0}}<p>
