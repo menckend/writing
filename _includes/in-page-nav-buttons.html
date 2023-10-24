@@ -6,17 +6,53 @@
                                     {% if pagecount > 1 %}
 <div class="seriesContext">
                                         {% for pnumval in pagenums %}
+
+
+
+
                                             <p> page.pagenum:  {{page.pagenum | to_i }} </p>
                                             <p> pnum from looped array item:  {{pnumval}} </p>
                                             <p> pnum from looped array item as integer:  {{pnumval | to_i }} </p>
+                                            {% assign lessone == page.pagenum | to_i %}
+                                            {% assign lessone == lessone | minus: 1 %}
+                                            {% assign plusone == page.pagenum | to_i %}
+                                            {% assign plusone == plusone | plus: 1 %}
+                                            <p> lessone: {{lessone}} </p>
+                                            <p> lessone: {{plusone}} </p>
                                             <p> pnum from array item by index (forloopidx0 ref): {{pagenums[forloop.index0]}} </p>
                                             <p> pnum from array item by index (forloopidx0 ref) as integer: {{pagenums[forloop.index0] | to_i }} </p>
+                                            <p> </p>
+                                            <p> </p>
                                             <p> </p>
 
 
 
                                         {% endfor %}
 
+<!--
+                                            {% if pnum == lessone %}
+    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+        <a><button type="button class="btn btn-primary>matched pnum=lessone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
+                                            {% endif %}
+                                            {% if pnum == plusone %}
+    <a href="{{fullpages[forloop.index].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
+        <a><button type="button class="btn btn-primary>matched pnum=addone.  pnum={{pnum}}; loaded-page ={{page.pagenum}}; lessone={{lessone}}; plusone={{plusone}}</a>
+                                            {% endif %}
+                                        {% endfor %}
+    <div class="btn-group">
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
+            <ol class="dropdown-menu">
+                                        {% for pnum in pagenums %}
+                                            {%if fullpages[pnum].pagenum == page.pagenum %}
+                <li class="disabled"> <strong>→</strong>{{fullpages[pnum].pagenum}}.{{fullpages[pnum].title}}</li>
+                                            {% else %}
+                <li>
+                    <a href="{{fullpages[pnum].url | remove: '/'}}">{{fullpages[pnum].pagenum}}. {{fullpages[pnum].title}}</a>
+                </li>
+                                            {% endif %}
+                                        {% endfor %}
+            </ol>
+-->
 
 
     </div>
