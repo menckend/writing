@@ -23,8 +23,7 @@ Seemed to work.  Onto something else.
 ...and disable TOC-toggle if they're not present.
 
 
-<p>Loop through page.content </p>
-<p> {{page.content[0]}}
+<p> {{page.content[1]}}
 </p>
 
 {% include links.html %}
