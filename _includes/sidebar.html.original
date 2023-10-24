@@ -1,8 +1,8 @@
 
 {% unless page.url contains 'index.html'%}
-{{page.url}}
-{% assign sidebar = site.data.sidebars[page.sidebar].entries %}
 
+{% assign sidebar = site.data.sidebars[page.sidebar].entries %}
+<p> {{page.url}} </p>
 <ul id="mysidebar" class="nav">
 
   <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
@@ -66,4 +66,5 @@
 
 {% if page.url contains 'index.html' %}
     {% include sidebar-librarylevel.html %}
+    <p> {{page.url}} </p>
 {% endif %}
