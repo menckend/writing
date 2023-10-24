@@ -29,14 +29,6 @@ Seemed to work.  Onto something else.
 ...and disable TOC-toggle if they're not present.
 
 {% assign tmparray = page.content | markdownify | split: '<h2>' | compact |size %}
-<p> Number of level-2 headers in page: {{tmparray}} </p>
-<!--<p>Loop through page.content </p>
-{% for chunk in page.content %}
-<p>Array index = {{forloop.index0}}<p>
-<p>{{chunk}}</p>
-<p>{{page.content[forloopindex0]}}</p>
-{% endfor %}
-<p>_________________</p>
--->
+<p> Number of h2 headers in page: {{tmparray}} </p>
 
 {% include links.html %}
