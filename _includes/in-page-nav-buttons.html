@@ -68,12 +68,10 @@ details > summary {
                                         {% endfor %}
             </ol>
 
-        <button type="button" class="btn btn-primary">
-        <details>
-          <summary > Toggle Page TOC</summary>
-          <div id="toc"></div>
-        </details>
-        </button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Page Contents <span class="caret"></span></button>
+            <ol class="dropdown-menu">
+                <li><div id="toc"></div></li>
+            </ol>
     </div>
     &nbsp;
 </div>
