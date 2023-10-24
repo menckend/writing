@@ -11,7 +11,6 @@ sidebar: doc1
 permalink: doc1_chap1_p2.html
 folder: docos\/doc1
 
-toc: false
 ---
 
 ## What's going on?

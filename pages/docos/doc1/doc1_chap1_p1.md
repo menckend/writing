@@ -8,7 +8,6 @@ title: "l1d1ch1p1"
 summary: "l1d1ch1 summary "
 permalink: doc1_chap1_p1.html
 folder: docos\/doc1
-toc: false
 ---
 
 ## What's going on?
