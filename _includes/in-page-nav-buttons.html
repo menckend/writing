@@ -21,6 +21,20 @@
     <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
                                             {% endif %}
 
+    <div class="btn-group">
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
+            <ol class="dropdown-menu">
+                                        {% for pnumval in pagenums %}
+                                            {%if flpagenum == hostpagenum %}
+                <li class="disabled"> <strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
+                                            {% else %}
+                <li>
+                    <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
+                </li>
+                                            {% endif %}
+                                        {% endfor %}
+            </ol>
+
                                         {% endfor %}
     </div>
     &nbsp;
