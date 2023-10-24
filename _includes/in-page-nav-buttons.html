@@ -21,18 +21,22 @@
 {% assign var3 == var3 | plus: 2 %}
 {% assign var4 == var4 | plus: 3 %}
 <p> {{var2}}, {{var3}}, {{var4}} </p>
+<p>==</p>
+<p>==</p>
 
+{% assign hostpagenum = page.pagenum | plus: 0  %}
+<p> hostpagenum: {{hostpagenum}} </p>
+{% assign oneless == '' | plus: 0 %}
+{% assign onemore == '' | plus: 0 %}
+{% assign oneless == hostpagenum | minus: 1 %}
+{% assign onemore == hostpagenum | plus: 1 %}
+<p> onemore: {{onemore}} -- oneless: {{oneless}}</p>
 
                                         {% for pnumval in pagenums %}
 {% assign flpagenum = pnumval | plus: 0  %}
 <p> flpagenum: {{flpagenum}} </p>
 {% assign flpagenum = flpagenum | plus: 3  %}
 <p> flpagenum +3: {{flpagenum}} </p>
-
-{% assign hostpagenum = page.pagenum | plus: 0  %}
-<p> hostpagenum: {{hostpagenum}} </p>
-{% assign hostpagenum = hostpagenum | plus: 1 %}
-<p> hostpagenum +1: {{hostpagenum}} </p>
 <p>==</p>
 <p>==</p>
                                         {% endfor %}
