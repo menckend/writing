@@ -11,16 +11,10 @@
                                             <p> pnum from looped array item:  {{pnumval}} </p>
                                             <p> pnum from looped array item as integer:  {{pnumval | to_i }} </p>
 
-
                                             {% assign host-page-num = page.pagenum | plus: 0 %}
                                             {% assign host-page-num-upone = page-weight-num | plus: 1 %}
                                             {% assign host-page-num-downone = page-weight-num | minus: 1 %}
                                             <p> host-page-num: {{host-page-num}} ---- host-page-num-upone: {{host-page-num-upone}} ---- host-page-num-downone: {{host-page-num-downone}}</p>
-
-                                            {% assign lessone == '' | plus: 0 %}
-                                            {% assign lessone == pnumval | to_i %}
-                                            {% assign lessone == lessone | minus: 1 %}
-                                            {% assign plusone == plusone | plus: 1 %}
 
                                             {% assign varone == '' | plus: 0 %}
                                             {% assign vartwo == '' | plus: 0 %}
@@ -28,12 +22,14 @@
                                             <p>Test arithmetic: {{varone}}; {{varone | increment}}   </p>
                                             {% assign varone == varone | plus: 1 %}
                                             <p> varone with 1 added:  {{varone}} </p>
-                                            {% varone == varone | plus: page.pagenum | to_i }
+                                            {% varone == varone | plus: 2 }
                                             <p> </p>
 
 
 
                                         {% endfor %}
+
+
 
 
 
