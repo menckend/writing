@@ -71,9 +71,6 @@ details > summary {
 </div>
                                     {% endif %}
                                     {% unless page.toc == false %}
-                                        {% assign h2count = page.content | split: '##' | compact | size %}
-                                        {% if h2count > 2 %}
 <details><summary > Toggle Page TOC</summary><div id="toc"></div></details>
-                                        {% endif %}
                                     {% endunless %}
     &nbsp;
