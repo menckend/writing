@@ -22,14 +22,12 @@ Seemed to work.  Onto something else.
 ## Try to detect presence of H2 sections programmatically 
 ...and disable TOC-toggle if they're not present.
 
-<p>Loop through an array that page.content was mapped to.</p>
+
+<p>Loop through page.content </p>
 <p>
-{% assign bigvar == emptyArray %}
-{% assign bigvar == page.content %}
-{% for chunk in bigvar %}
-{{chunk}}
+{% for chunk in page.content %}
+<p>{{chunk}}<p>
 {% endfor %}
 </p>
-
 
 {% include links.html %}
