@@ -29,7 +29,11 @@
 {% assign hostpagenum = hostpagenum | plus: 3  %}
 <p> hostpagenum +3: {{hostpagenum}} </p>
 
-
+{% assign fmpagenum = page.pagenum | plus: 0  %}
+<p> fmpagenum: {{fmpagenum}} </p>
+{% assign fmpagenum = fmpagenum | plus: 7  %}
+<p> fmpagenum +7: {{hostpagenum}} </p>
+<p>  </p>
                                         {% endfor %}
 
 
