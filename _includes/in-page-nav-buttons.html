@@ -23,11 +23,12 @@
                                             {% assign plusone == plusone | plus: 1 %}
 
 
-                                            {%assign varone == '' | plus: 0 %}
-                                            {%assign vartwo == '' | plus: 0 %}
+                                            {% assign varone == '' | plus: 0 %}
+                                            {% assign vartwo == '' | plus: 0 %}
 
                                             <p>Test arithmetic: {{varone}}; {{varone | increment}}   </p>
-                                            <p> </p>
+                                            {% assign varone == varone | plus: 1 %}
+                                            <p> varone with 1 added:  {{varone}} </p>
                                             <p> </p>
 
 
