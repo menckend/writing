@@ -71,8 +71,8 @@ details > summary {
 </div>
                                     {% endif %}
                                     {% unless page.toc == false %}
+                                        {% if page.content | split: '##' > 2 %}
 <details><summary > Toggle Page TOC</summary><div id="toc"></div></details>
+                                        {% endif %}
                                     {% endunless %}
-
-
     &nbsp;
