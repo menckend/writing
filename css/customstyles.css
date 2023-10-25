@@ -1202,33 +1202,21 @@ h4.panel-title {
         display:block !important;
     }
 }
-
-
 details {
-    border-collapse: separate;
     border-radius: 10px;
-    overflow: hidden;
     padding: 0px 8px;
     margin-bottom: 15px;
-    border: 1px solid #dedede;
 }
 details[open] {
-    border-collapse: separate;
-    border-radius: 10px;
-    overflow: hidden;
+    background: $details-background-color;
     padding: 0px 8px 8px 8px;
-    border: 1px solid #dedede;
 }
 summary {
-    border-collapse: separate;
     margin: 0px 0px 8px 0px;
-    overflow: hidden;
     outline:none;
-    color: #2a7ae2;
 }
 details summary {
-    border-collapse: separate;
-    border-radius: 10px;
-    overflow: hidden;
-    color: #2a7ae2;
+    color: $brand-color;
 }
+
+
