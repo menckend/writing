@@ -1205,6 +1205,7 @@ h4.panel-title {
 
 
 details {
+    display:list-item;
     border-radius: 10px;
     overflow: hidden;
     padding: 0px 8px;
@@ -1217,6 +1218,7 @@ details[open] {
     padding: 0px 8px 8px 8px;
 }
 summary {
+    display:list-item
     margin: 0px 0px 8px 0px;
     overflow: hidden;
     outline:none;
