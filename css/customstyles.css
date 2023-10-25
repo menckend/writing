@@ -1218,6 +1218,7 @@ details[open] {
 }
 summary {
     margin: 0px 0px 8px 0px;
+    overflow: hidden;
     outline:none;
     background: #eeeded;
     color: #2a7ae2;
@@ -1228,10 +1229,4 @@ details summary {
     color: #2a7ae2;
     list-style-type: none;
     background: #eeeded;
-}
-details > summary::before {
-    content: '+ ';
-}
-details[open] > summary::before {
-    content: '- ';
 }
