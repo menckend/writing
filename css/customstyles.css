@@ -1219,20 +1219,12 @@ details[open] {
     background: #6a93eb7f
     padding: 0px 8px 8px 8px;
 }
-summary {
+details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #6a93eb7f
     margin: 0px 0px 8px 0px;
-    cursor: pointer;
-}
-details summary {
-    list-style: none;
-    display:list-item;
-    overflow: hidden;
-    border-collapse: separate;
-    background: #6a93eb7f
     color: #2a7ae2;
     cursor: pointer;
 }
