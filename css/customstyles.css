@@ -1203,7 +1203,6 @@ h4.panel-title {
     }
 }
 details {
-    display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #6a93eb7f
