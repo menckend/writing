@@ -1214,10 +1214,11 @@ details {
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    background-color: #6a93eb7f
     padding: 0px 8px 8px 8px;
     border-style: solid;
     border: 1px solid #ccc;
+
+    background-color: #6a93eb7f
 }
 details summary {
     display:list-item;
@@ -1226,4 +1227,5 @@ details summary {
     margin: 0px 0px 8px 0px;
     cursor: pointer;
     color: #2a7ae2;
+    background: none;
 }
