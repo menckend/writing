@@ -1,9 +1,9 @@
 ---
 libname: Articles
-docname: (DRAFT) Abstracting Capacity
+docname: -DRAFT- Abstracting Capacity
 summary: "An analysis of how virtualization and all-active-clustering in IT system architecture serve to abstract capacity from opposite directions (providing decomposability and composability, respectively).  Along with a framework for applying 'abstracted capacity' analysis to IT system architecture."
 folder: articles/capacity
-permalink: (DRAFT)%20Abstracting%20Capacity.html
+permalink: -DRAFT-%20Abstracting%20Capacity.html
 pagenav: false
 ---
 

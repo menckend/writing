@@ -1,6 +1,6 @@
 ---
 libname: Articles
-docname: (DRAFT) Abstracting Capacity
+docname: -DRAFT- Abstracting Capacity
 chapnum: 2
 chapnam: "Foundations"
 pagenum: 1
