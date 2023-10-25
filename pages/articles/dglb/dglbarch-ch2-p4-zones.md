@@ -12,7 +12,11 @@ folder: articles\/dglb
 
 ## Diagram Key
 
+{% capture details %}
 ![image](./dglb-zones-key.drawio.svg)
+{% endcapture %}
+{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
+
 
 ## Enterprise Nameserver DNS Zones
 
