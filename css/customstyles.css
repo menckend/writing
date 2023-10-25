@@ -1219,6 +1219,8 @@ details[open] {
 summary {
     margin: 0px 0px 8px 0px;
     outline:none;
+    background: #eeeded;
+    color: #2a7ae2;
 }
 details summary {
     border-radius: 10px;
