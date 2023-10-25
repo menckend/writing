@@ -1206,7 +1206,7 @@ details {
 	display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #dedede
+    background: #6a93eb7f
     border-radius: 10px;
     padding: 0px 8px;
     margin-bottom: 15px;
@@ -1215,21 +1215,22 @@ details[open] {
 	display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #dedede
+    background: #6a93eb7f
     padding: 0px 8px 8px 8px;
 }
 summary {
 	display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #dedede
+    background: #6a93eb7f
     margin: 0px 0px 8px 0px;
-    cursor:
+    cursor: pointer;
 }
 details summary {
 	display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #dedede
+    background: #6a93eb7f
     color: #2a7ae2;
+    cursor: pointer;
 }
