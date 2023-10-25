@@ -12,7 +12,7 @@ folder: articles\/capacity
 
 ## Let's Talk Layers
 
-The idea of a layered-model is foundational in information technology, but is worth elaborating on briefly with regards to IT systems architecture. 
+The idea of a layered-model is foundational in information technology, but is worth elaborating on briefly with regards to IT systems architecture.
 
 ### Conventional Description
 
@@ -20,9 +20,10 @@ I haven't been able to locate any single authoritative reference for what a "lay
 
 #### Properties of Layers
 
-* Layers are groupings of elements with similar functionality. 
-    * Typically depicted as horizontal bands in graphical representations.)
+* Layers are groupings of elements with similar functionality.
+    * Typically depicted as horizontal bands in graphical representations.
 * Layers are arranged hierarchically
+    * With the hierarchical relationships depicted through vertical positioning in graphical representations
 * Information moves between adjacent layers only
 
 #### Benefits of Layered architectures
@@ -39,23 +40,49 @@ I will use the following conventions with regards to conceptual layers of IT sys
 * Layers are hierarchical
 * For any two "adjacent" layers in an architecture stack, the *lower* of the two layers is considered to be (the "hosting" layer), which *hosts* the upper of the two layers (the "<em>workload</em>" layer).
     * Conversely, the workload layer is hosted on the hosting layer.
-* The hosting layer exposes (provides) "functions" and "capacity" to the workload layer through its "interfaces"
-    * A "function" is something that the hosting layer can do.
-    * "Capacity" is how *much* of a function the hosting layer can do.
-    * An "interface" is an implementation of a well-defined mechanism through which the workload layer can expose/deliver functions and capacity
-* The workload layer consumes (receives) functions and capacity from the workload layer via its own interfaces, which implement the same well-defined mechanism as the inerfaces of the hosting layer
+* The hosting layer exposes (provides) "functions" to the workload layer through its "interfaces", consuming "capacity" as it does so.
+    * A "function" is something that the hosting layer can *do* for the workload layer
+    * An "interface" is an implementation of a well-defined mechanism through which the hosting and workload layers connect/communicate
+        * The hosting layer has an "up-facing" interface that presents to the workload layer
+    * "Capacity" is the set of internal resources that the hosting layer consumes in executing functions for the workload layer
+* The workload layer
+    * Accesses/requests/receives the hosting layer's "functions" through the hosting layer's "interface"
+        * To do so, the workload layer must implement its own "down-facing" interface, using the same well-define mechanism as the "up-facing" interface of the hosting layer.
 
 ## Examples of Layered Architecture Models
 
 Here are a couple of extremely uniquitous layered-models that crop up in IT systems architecture:
 
-### OSI Networking Model
+### The TCP/IP Stack
 
-OK, maybe a bit too on the nose, given my background, but it's certainly ubiquitous! In this model, there are seven layers, starting with Layer One (Physical) and rising all the way to Layer 7 (Application). Here, we'll take a quick look at Layers 3 (network) and (4) connection and see how they match up with the framework I discussed above. In that model:
+OK, maybe a bit *too* on the nose, given my background, but it's certainly ubiquitous. In the TCP/IP architecture, the "IP" and "transport" layers are adjacent to each other. More than a few systems in the real world implement the "IP layer" using the IPv4 protocol specification, and the "transport" layer using the TCP protocol specification.
 
-* Layer 3 (network; typically implemented as IP) is the hosting layer for layer 4 (connection; typically implemented as TCP.)
-    * L3/IP provides data transport services to the transport layer (TCP) using a well-defined interface called a "socket"
+In a common scenario (any random Linux host), the lower-layer ("IP") function/role is instantiated as software (implementing the functions defined in the IPv4 protocol standard) running as part of Linux kernel. The upper-layer ("transport") is instantiated the same way, substituting the TCP protocol (instead of the IP protocol). In that scenario, we have our two ostensible "layers" instantiated as logic being executed in kernel-space.
 
+So, we have our two nominal layers, but how do we make sense of them relative to the framework I laid out in the previous section? Well... the network (IP) layer is the "hosting" layer and:
+
+* It exposes two "functions" to the workload (transport/TCP) layer
+    * SEND
+    * RECV
+* The "interface" it exposes those functions through is platform dependent
+    * In a Linux operating system, for instance, [the "interface" is a large number of kernel functions](https://web.archive.org/web/20170905131225if_/https://wiki.linuxfoundation.org/images/1/1c/Network_data_flow_through_kernel.png).
+* The "capacity" that it consumes includes host CPU cycles and throughput provided by the data-link layer (a layer down)
+
+The "workload" layer is the transport (TCP) layer and:
+
+* It consumes the SEND/RECV functions from the hosting (IP) layer
+    * Using linux kernel function calls as its down-facing interface to the network layer
+
+#### How the TCP/IP stack stacks up
+
+Much as it pains me to say so, the TCP/IP stack, or the transport/network layers at least (as implemented in the Linux kernel, anyway) misses the boat on a lot of the generic characteristics/goals of a layered architecture. Specifically:
+
+* Communication isn't limited to adjacent layers
+    * The "application" layer can bypass the transport layer and access the "network" layer directly
+* The transport and network layers suffer from extremely rigid coupling
+    * They are both implemented as a set of in-kernel functions. (Not exactly plug-and-play if you wanted to swap out a different implementation of the TCP protocol.)
+
+That's *not* to say that there's something *wrong* with TCP/IP (or even how it's implemented in the Linux kernel). Rather, the key takeaway here is that even if we have a conceptual model that defines a layered architecture, we can easily end up with a monolithic system, depending on *how* that model gets implemented.
 
 <br>
 <br>
