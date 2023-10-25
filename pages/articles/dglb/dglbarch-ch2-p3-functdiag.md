@@ -14,6 +14,7 @@ folder: articles\/dglb
 
 The following table lists the network flows associated with the execution of the global load-balancing function, beginning with a client-device attempting to perform DNS resolution for the FQDN of a globally-load-balanced service.
 
+{% capture details %}
 | Flow# | Description |
 | ----- | ----------- |
 | 1 | DNS query to resolve the advertised FQDN (eg. "[svc-x.example.com](http://svc-x.example.com/ "http://svc-x.example.com")) of a globally load-balanced service.  From client (c1/c2) to its preferred DNS resolver (rr1/rr2) |
@@ -28,14 +29,20 @@ The following table lists the network flows associated with the execution of the
 | 10 | Health-checks from ALBs to members of their target pools |
 | 11 | Application traffic ***from*** clients to ALBs |
 | 12 | Application traffic ***from*** ALBs to service instances |
+{% endcapture %}
+{% capture summary %}Show/hide table{% endcapture %}{% include details.html %}
+
 
 ## Functional Diagram
 
 The following diagram illustrates the low-level topology and network-flows in an implementation of this reference architecture.
+
 {% capture details %}
 ![image](./dglb-functional-key.drawio.svg)
 {% endcapture %}
 {% capture summary %}Show/hide key{% endcapture %}{% include details.html %}
+
+{% capture details %}
 ![image](./dglb-functional-1.drawio.svg)
 {% endcapture %}
 {% capture summary %}Show/hide diagram{% endcapture %}{% include details.html %}
