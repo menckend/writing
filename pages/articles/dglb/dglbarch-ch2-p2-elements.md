@@ -9,6 +9,9 @@ summary: "Semi-formal ontology with labels/names/decriptions of each element of 
 permalink: dglbdarch_ch2_p2.html
 folder: articles\/dglb
 ---
+## What's an element?
+
+The intent in enumerating the elements of the reference architecture here is two-fold.  Firstly, to provide an un-ambiguous mechanism for mapping items (mere squiggles on a diagram, or rack-mounted-appliances on your data-center floor, or anywhere inbetween) to the *role(s)/function(s)* that they're fulfilling.  Secondly, to characterize (richly, we hope) the important properties and functions of each piece of the whole.
 
 ## Conventions
 
@@ -16,6 +19,7 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 
 ## Element Definitions
 
+{% capture details %}
 | Element Label | Element Name | Element Description |
 | ------------- | ------------ | ------------------- |
 | "<em>app(a-n).</em>ai<em>(a-n)</em>" | Application instances | Instances of the nominal backend application/service that is being load-balanced by the GLB and ALB services.  There must be a minimum of one instance at a minimum two locales, but there may be more instances (a-n) |
@@ -40,5 +44,7 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 | "rrset4(a-<em>n</em>)" | GLB service FQDN synthetic A records | A "synthetic" A record resource record set maintained on the global load-balancers (glb1).  Each globally load-balanced service must have a corresponding configuration on glb1 that is "keyed" to a fully qualified domain name (FQDN) in the global load-balancing domain ("glbd1".)  If the entries in the nominal load-balancing target pool for the GLB service's FQDN are IP addresses, the glb will respond to queries with dynamically generated A records. |
 | "rrset5(a-<em>n</em>)" | GLB service FQDN synthetic CNAME records | A "synthetic" CNAME record resource record set maintained on the global load-balancers (glb1).  Each globally load-balanced service must have a corresponding configuration on glb that is "keyed" to a fully qualified domain name (FQDN) in the global load-balancing domain (glbd.)  If the entries in the nominal load-balancing target pool for the GLB service's FQDN are FQDNs, the glb will respond to resolution requests for the GLB service's FQDN with dynamically generated CNAME records, aliasing the GLB's service's FQDN to the FQDN of an item from the configured list of load-balancing targets. |
 | "rrset6(a-<em>n</em>)" | ALB FQDN A records | An A record resource set maintained on the authoritative nameservers for any FQDNs that are included in the glbpool.  (E.g. "alb1.example.com") |
+{% endcapture %}
+{% capture summary %}Show/hide table{% endcapture %}{% include details.html %}
 
 {% include links.html %}
