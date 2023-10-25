@@ -10,10 +10,34 @@ permalink: dglbdarch_ch2_p4.html
 folder: articles\/dglb
 ---
 
-## DNS Zone Structure/Content Diagram
+<details>
+<summary >
+Show/hide diagram key
+</summary>
+![image](./dglb-zones-key.drawio\.svg)
+</details>
 
-The structure of the DNS zones maintained by the DNS authoritative nameservers global load-balancers is illustrated in the following figures.
-![image](./dglb-zones-key.drawio.svg)
+
+## Enterprise Nameserver DNS Zones
+
+The structure of the DNS zones maintained by the DNS authoritative nameservers is illustrated in the following figure.
+
+<details>
+<summary >
+Show/hide diagram
+</summary>
 ![image](./dglb-zones-1.drawio.svg)
+</details>
+
+## Global DNS Nameserver DNS Zones
+
+The structure of the DNS zones maintained by the global load-balancers is illusrated in the following diagram.
+
+<details>
+<summary >
+Show/hide diagram
+</summary>
+![image](./dglb-zones-2.drawio.svg)
+</details>
 
 {% include links.html %}
