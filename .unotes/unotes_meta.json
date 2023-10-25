@@ -66,9 +66,10 @@
               "isOrdered": true,
               "folders": {},
               "files": {
-                "Abstracting Capacity": 0,
-                "capacity-ch1-p1-thefever": 1,
-                "capacity-ch1-p2-bigpicture": 2
+                "capacity-ch1-p1-thefever": 0,
+                "capacity-ch1-p2-bigpicture": 1,
+                "(DRAFT) Abstracting Capacity": 2,
+                "capacity-ch2-p1-layers": 3
               }
             }
           },
