@@ -24,7 +24,7 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers i
 {% capture details %}
 ![image](./dglb-zones-1.drawio.svg)
 {% endcapture %}
-{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
+{% capture summary %}Show/hide diagram{% endcapture %}{% include details.html %}
 
 ## Global DNS Nameserver DNS Zones
 
@@ -33,6 +33,6 @@ The structure of the DNS zones maintained by the global load-balancers is illusr
 {% capture details %}
 ![image](./dglb-zones-2.drawio.svg)
 {% endcapture %}
-{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
+{% capture summary %}Show/hide diagram{% endcapture %}{% include details.html %}
 
 {% include links.html %}

@@ -1216,7 +1216,6 @@ details[open] {
     border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
-    background: #eeeded;
     padding: 0px 8px 8px 8px;
     border: 1px solid #dedede;
 }
@@ -1225,7 +1224,6 @@ summary {
     margin: 0px 0px 8px 0px;
     overflow: hidden;
     outline:none;
-    background: #eeeded;
     color: #2a7ae2;
     border: 1px solid #dedede;
 }
@@ -1234,6 +1232,5 @@ details summary {
     border-radius: 10px;
     overflow: hidden;
     color: #2a7ae2;
-    background: #eeeded;
     border: 1px solid #dedede;
 }
