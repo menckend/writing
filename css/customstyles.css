@@ -1203,7 +1203,6 @@ h4.panel-title {
     }
 }
 details {
-    list-style: none;
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
@@ -1221,7 +1220,8 @@ details[open] {
     padding: 0px 8px 8px 8px;
 }
 summary {
-	display:list-item;
+    list-style: none;
+    display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #6a93eb7f
@@ -1229,7 +1229,8 @@ summary {
     cursor: pointer;
 }
 details summary {
-	display:list-item;
+    list-style: none;
+    display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #6a93eb7f
