@@ -1219,6 +1219,7 @@ details[open] {
 }
 summary {
     display:list-item
+    list-style-type: none;
     margin: 0px 0px 8px 0px;
     overflow: hidden;
     outline:none;
@@ -1229,6 +1230,7 @@ details summary {
     border-radius: 10px;
     overflow: hidden;
     color: #2a7ae2;
-    list-style-type: none;
     background: #eeeded;
+    display:list-item
+    list-style-type: none;
 }
