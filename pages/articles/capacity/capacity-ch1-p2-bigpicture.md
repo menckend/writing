@@ -6,7 +6,7 @@ chapnam: "Preamble"
 pagenum: 2
 title: The Scaffolding
 summary: "To talk about how capacity is 'abstracted' by, and how it presents in relation to: reliability; virtualization; and composability we have to be clear on what we think all those things mean."
-permalink: capacity_ch1_p1.html
+permalink: capacity_ch1_p2.html
 folder: articles\/capacity
 ---
 
