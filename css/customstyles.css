@@ -1223,6 +1223,7 @@ details[open] {
     border: 1px solid #ccc;
 }
 details summary {
+    overflow: hidden;
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
