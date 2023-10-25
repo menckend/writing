@@ -1203,20 +1203,16 @@ h4.panel-title {
     }
 }
 
-//
-// <details> tag
-//
-$grey-color:         #757575;
-$grey-color-darkish: darken($grey-color, 15%);
-$brand-color:        #2a7ae2;
-$details-background-color: #dbdbdb;
 
 details {
     border-radius: 10px;
+    overflow: hidden;
     padding: 0px 8px;
     margin-bottom: 15px;
 }
 details[open] {
+    border-radius: 10px;
+    overflow: hidden;
     background: #dbdbdb;
     padding: 0px 8px 8px 8px;
 }
@@ -1225,15 +1221,14 @@ summary {
     outline:none;
 }
 details summary {
+    border-radius: 10px;
+    overflow: hidden;
     color: #2a7ae2;
     list-style-type: none;
 }
-details > summary::-webkit-details-marker {
-    display: none;
-}
 details > summary::before {
-    content: '▶️ ';
+    content: '+ ';
 }
 details[open] > summary::before {
-    content: '🔽 ';
+    content: '-';
 }
