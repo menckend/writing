@@ -1210,6 +1210,7 @@ details {
     padding: 0px 8px;
     margin-bottom: 15px;
     cursor: pointer;
+    border: 1px solid #ccc;
 }
 details[open] {
 	display:list-item;
@@ -1226,4 +1227,5 @@ details summary {
     margin: 0px 0px 8px 0px;
     color: #2a7ae2;
     cursor: pointer;
+    border: 1px solid #ccc;
 }
