@@ -1217,12 +1217,14 @@ details[open] {
     padding: 0px 8px 8px 8px;
 }
 summary {
+	display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #dedede
     margin: 0px 0px 8px 0px;
 }
 details summary {
+	display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #dedede
