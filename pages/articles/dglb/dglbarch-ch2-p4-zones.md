@@ -21,13 +21,18 @@ folder: articles\/dglb
 ## Enterprise Nameserver DNS Zones
 
 The structure of the DNS zones maintained by the DNS authoritative nameservers is illustrated in the following figure.
-
+{% capture details %}
 ![image](./dglb-zones-1.drawio.svg)
+{% endcapture %}
+{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
 
 ## Global DNS Nameserver DNS Zones
 
 The structure of the DNS zones maintained by the global load-balancers is illusrated in the following diagram.
 
+{% capture details %}
 ![image](./dglb-zones-2.drawio.svg)
+{% endcapture %}
+{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
 
 {% include links.html %}

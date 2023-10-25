@@ -1213,7 +1213,7 @@ details {
 details[open] {
     border-radius: 10px;
     overflow: hidden;
-    background: #dbdbdb;
+    background: #eeeded;
     padding: 0px 8px 8px 8px;
 }
 summary {
@@ -1225,10 +1225,11 @@ details summary {
     overflow: hidden;
     color: #2a7ae2;
     list-style-type: none;
+    background: #eeeded;
 }
 details > summary::before {
     content: '+ ';
 }
 details[open] > summary::before {
-    content: '-';
+    content: '- ';
 }
