@@ -12,7 +12,7 @@ folder: articles\/dglb
 
 ## Diagram Key
 
-![image](./dglb-zones-key.drawio\.svg)
+![image](./dglb-zones-key.drawio.svg)
 
 ## Enterprise Nameserver DNS Zones
 
