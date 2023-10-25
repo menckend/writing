@@ -1204,6 +1204,7 @@ h4.panel-title {
 }
 details {
     overflow: hidden;
+    border-collapse: separate;
     background: #dedede
     border-radius: 10px;
     padding: 0px 8px;
@@ -1211,18 +1212,19 @@ details {
 }
 details[open] {
     overflow: hidden;
+    border-collapse: separate;
     background: #dedede
     padding: 0px 8px 8px 8px;
 }
 summary {
     overflow: hidden;
+    border-collapse: separate;
     background: #dedede
     margin: 0px 0px 8px 0px;
 }
 details summary {
     overflow: hidden;
+    border-collapse: separate;
     background: #dedede
     color: #2a7ae2;
 }
-
-
