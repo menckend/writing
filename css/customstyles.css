@@ -1225,12 +1225,10 @@ summary {
     overflow: hidden;
     outline:none;
     color: #2a7ae2;
-    border: 1px solid #dedede;
 }
 details summary {
     border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
     color: #2a7ae2;
-    border: 1px solid #dedede;
 }
