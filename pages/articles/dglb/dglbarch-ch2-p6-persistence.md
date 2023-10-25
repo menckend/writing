@@ -18,8 +18,13 @@ DNS-based global load-balancing can implement a "persistence" mechanism to help 
 * Persistence timeout
 * Persistent response
 
-The first two fields act as a primary key for the table. That is, there can be no more than one record with the same values in the "Client-IP address" and "Queried FQDN" fields. The following flow-chart illustrates the persistence-related logic that a GLB executes when it receives a query for an FQDN that it is servicing:
+The first two fields act as a primary key for the table. That is, there can be no more than one record with the same values in the "Client-IP address" and "Queried FQDN" fields.
 
+The following flow-chart illustrates the persistence-related logic that a GLB executes when it receives a query for an FQDN that it is servicing:
+
+{% capture details %}
 ![image](./dglb-persistence-flowchart.drawio.svg)
+{% endcapture %}
+{% capture summary %}Show/hide flowchart{% endcapture %}{% include details.html %}
 
 {% include links.html %}

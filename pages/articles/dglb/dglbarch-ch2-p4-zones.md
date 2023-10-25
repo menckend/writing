@@ -9,13 +9,12 @@ summary: "Detailed explanation of DNS zones and records as well as the recursive
 permalink: dglbdarch_ch2_p4.html
 folder: articles\/dglb
 ---
-
 ## Diagram Key
 
 {% capture details %}
 ![image](./dglb-zones-key.drawio.svg)
 {% endcapture %}
-{% capture summary %}Show/hide diagram key{% endcapture %}{% include details.html %}
+{% capture summary %}Show/hide key{% endcapture %}{% include details.html %}
 
 
 ## Enterprise Nameserver DNS Zones
@@ -29,7 +28,6 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers i
 ## Global DNS Nameserver DNS Zones
 
 The structure of the DNS zones maintained by the global load-balancers is illusrated in the following diagram.
-
 {% capture details %}
 ![image](./dglb-zones-2.drawio.svg)
 {% endcapture %}
