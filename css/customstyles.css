@@ -1206,6 +1206,8 @@ h4.panel-title {
 
 details {
     display:list-item;
+    list-style-type: none;
+    border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
     padding: 0px 8px;
@@ -1213,6 +1215,8 @@ details {
 }
 details[open] {
     display:list-item;
+    list-style-type: none;
+    border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
     background: #eeeded;
@@ -1220,6 +1224,8 @@ details[open] {
 }
 summary {
     display:list-item;
+    list-style-type: none;
+    border-collapse: separate;
     margin: 0px 0px 8px 0px;
     overflow: hidden;
     outline:none;
@@ -1227,9 +1233,11 @@ summary {
     color: #2a7ae2;
 }
 details summary {
+    display:list-item;
+    list-style-type: none;
+    border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
     color: #2a7ae2;
     background: #eeeded;
-    display:list-item;
 }
