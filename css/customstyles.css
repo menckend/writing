@@ -1210,16 +1210,16 @@ details {
     padding: 0px 8px;
     margin-bottom: 15px;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: hidden;
 
 }
 details[open] {
 	display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #6a93eb7f
+    background-color: #6a93eb7f
     padding: 0px 8px 8px 8px;
-    border-style: none
+    border-style: hidden
     border: 1px solid #ccc;
 }
 details summary {
