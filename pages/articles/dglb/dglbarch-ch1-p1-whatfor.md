@@ -4,7 +4,7 @@ docname: Global Load Balancing Reference Architecture
 chapnum: 1
 chapnam: "Preamble"
 pagenum: 1
-title: Why is this here..
+title: Why is this here?
 summary: "...because I needed it, and couldn't find it. So, I made it."
 permalink: dglbdarch_ch1_p1.html
 folder: articles\/dglb

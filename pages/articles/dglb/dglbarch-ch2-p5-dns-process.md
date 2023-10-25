@@ -11,6 +11,7 @@ folder: articles\/dglb
 ---
 
 The process of DNS resolution from client-device, to recursive-resolver, to authoritative nameserver, back to recursive-resolver, to glb, back to recursive resolver, and back to client-device is depicted in the following flowcharts:
+
 ![image](./dglb-resolution-flowchart.drawio.svg)
 ![image](./dglb-resolution-flowchart4.drawio.svg)
 

@@ -4,8 +4,8 @@ docname: Global Load Balancing Reference Architecture
 chapnum: 2
 chapnam: "The Reference Architecture"
 pagenum: 3
-title: Functional Diagram
-summary: "Functional diagram and table of network flows"
+title: "Topology and Flows"
+summary: "A Functional diagram and table of network flows"
 permalink: dglbdarch_ch2_p3.html
 folder: articles\/dglb
 ---
@@ -28,7 +28,6 @@ The following table lists the network flows associated with the execution of the
 | 10 | Health-checks from ALBs to members of their target pools |
 | 11 | Application traffic ***from*** clients to ALBs |
 | 12 | Application traffic ***from*** ALBs to service instances |
-
 
 ## Functional Diagram
 

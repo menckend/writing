@@ -16,5 +16,4 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers g
 ![image](./dglb-zones-key.drawio.svg)
 ![image](./dglb-zones-1.drawio.svg)
 
-
 {% include links.html %}

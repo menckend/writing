@@ -41,6 +41,4 @@ The italicized suffix "<em>(a-n)</em>" is used to indicate that multiple instanc
 | "rrset5(a-<em>n</em>)" | GLB service FQDN synthetic CNAME records | A "synthetic" CNAME record resource record set maintained on the global load-balancers (glb1).  Each globally load-balanced service must have a corresponding configuration on glb that is "keyed" to a fully qualified domain name (FQDN) in the global load-balancing domain (glbd.)  If the entries in the nominal load-balancing target pool for the GLB service's FQDN are FQDNs, the glb will respond to resolution requests for the GLB service's FQDN with dynamically generated CNAME records, aliasing the GLB's service's FQDN to the FQDN of an item from the configured list of load-balancing targets. |
 | "rrset6(a-<em>n</em>)" | ALB FQDN A records | An A record resource set maintained on the authoritative nameservers for any FQDNs that are included in the glbpool.  (E.g. "alb1.example.com") |
 
-
-
 {% include links.html %}

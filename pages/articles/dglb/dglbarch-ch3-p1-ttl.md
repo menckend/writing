@@ -1,22 +1,14 @@
 ---
 libname: Articles
 docname: Global Load Balancing Reference Architecture
-chapnum: 2
-chapnam: "The Reference Architecture"
-pagenum: 4
-title: DNS Zone/Record Details
-summary: "Detailed explanation of DNS zones and records as well as the recursive resolution process used in this architecture."
-permalink: dglbdarch_ch2_p4.html
+chapnum: 3
+chapnam: "Considerations and Limitations"
+pagenum: 1
+title: DNS TTL Guidelines
+summary: "Things to consider (and why) regarding DNS record time-to-live values."
+permalink: dglbdarch_ch3_p1.html
 folder: articles\/dglb
 ---
-
-## DNS Zone Structure/Content Diagram
-
-The structure of the DNS zones maintained by the DNS authoritative nameservers global load-balancers is illustrated in the following figures.
-![image](./dglb-zones-key.drawio.svg)
-![image](./dglb-zones-1.drawio.svg)
-
-## DNS Time To Live Guidelines
 
 * All other factors being equal, a lower TTL is preferred
     * This minimizes time to re-direct traffic away from a failed site
@@ -31,7 +23,5 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers g
     * If, for example, a 3rd-party dGLB is configured with an FQDN that load-balances to multiple AWS application-load-balancers
         * AWS DNS always responds to resolution requests for ALB's FQDNs with a TTL of 60 seconds.
         * If the dGLB is configured with a 30-second persistence timer, the clients (recursive resolvers) would keep the A records cached past the 30 seconds, and the GLB would expire the persistence-able entry before it received another query
-
-***
 
 {% include links.html %}
