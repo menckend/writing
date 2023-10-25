@@ -116,7 +116,12 @@ description: "A site for me to put things that I think may be worth sharing (som
 
 github: [metadata]
 
-exclude: [pages-draft]
+exclude:
+  - tmp/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - pages-draft
 
 emptyArray: []
 
