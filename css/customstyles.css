@@ -1215,10 +1215,7 @@ details[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
-    border-style: solid;
-    border: 1px solid #ccc;
-
-    background-color: #6a93eb7f
+    background-color: #b7b7b7b7;
 }
 details summary {
     display:list-item;
@@ -1228,4 +1225,5 @@ details summary {
     cursor: pointer;
     color: #2a7ae2;
     background: none;
+    border: none;
 }
