@@ -2,7 +2,7 @@
 libname: Articles
 docname: Global Load Balancing Reference Architecture
 chapnum: 2
-chapnam: "The Reference Architecture"
+chapnam: "Technical Architecture"
 pagenum: 3
 title: "Topology and Flows"
 summary: "A Functional diagram and table of network flows"
@@ -41,8 +41,5 @@ The following diagram illustrates the low-level topology and network-flows in an
 ![image](./dglb-functional-1.drawio.svg)
 {% endcapture %}
 {% capture summary %}Show/hide diagram{% endcapture %}{% include details.html %}
-
-
-
 
 {% include links.html %}

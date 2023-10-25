@@ -55,9 +55,10 @@
                 "dglbarch-ch2-p6-persistence": 8,
                 "dglbarch-ch3-p1-ttl": 9,
                 "dglbarch-ch3-p2-granularity": 10,
-                "dglbarch-ch3-p3": 11,
-                "dglbarch-ch3-p4": 12,
-                "dglbarch-ch1-p2-whatis": 2
+                "dglbarch-ch1-p2-whatis": 2,
+                "dglbarch-ch3-p3-fqdn-targets": 11,
+                "dglbarch-ch3-p4-fqdn-per-service": 12,
+                "dglbarch-ch3-p5-usecases": 13
               }
             },
             "capacity": {

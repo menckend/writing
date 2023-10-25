@@ -2,7 +2,7 @@
 libname: Articles
 docname: Global Load Balancing Reference Architecture
 chapnum: 2
-chapnam: "The Reference Architecture"
+chapnam: "Technical Architecture"
 pagenum: 6
 title: Persistence
 summary: "How something approximating session persistence can be implemented with dGLB."

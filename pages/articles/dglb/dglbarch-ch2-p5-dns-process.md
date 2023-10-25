@@ -2,7 +2,7 @@
 libname: Articles
 docname: Global Load Balancing Reference Architecture
 chapnum: 2
-chapnam: "The Reference Architecture"
+chapnam: "Technical Architecture"
 pagenum: 5
 title: Resolution Process
 summary: "Detailed explanation of DNS zones and records as well as the recursive resolution process used in this architecture."
@@ -20,7 +20,5 @@ The process of DNS resolution from client-device, to recursive-resolver, to auth
 ![image](./dglb-resolution-flowchart4.drawio.svg)
 {% endcapture %}
 {% capture summary %}Show/hide sub-flowcharts (steps 4 and 6){% endcapture %}{% include details.html %}
-
-
 
 {% include links.html %}

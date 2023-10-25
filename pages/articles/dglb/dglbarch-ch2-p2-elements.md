@@ -2,7 +2,7 @@
 libname: Articles
 docname: Global Load Balancing Reference Architecture
 chapnum: 2
-chapnam: "The Reference Architecture"
+chapnam: "Technical Architecture"
 pagenum: 2
 title: Elements of the Architecture
 summary: "Semi-formal ontology with labels/names/decriptions of each element of the architecture"

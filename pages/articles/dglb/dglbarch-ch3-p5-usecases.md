@@ -10,7 +10,6 @@ permalink: dglbdarch_ch3_p5.html
 folder: articles\/dglb
 ---
 
-
 Because dGLB provides a relatively coarse-grained mechanism for traffic distribution, it is of relatively low utility for balancing (the irony isn't lost on anyone) workload distribution across targets. Use cases are instead best differentiated by the resiliency models they enable.
 
 ### Active/Standby
