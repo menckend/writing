@@ -14,7 +14,9 @@ folder: articles\/dglb
 <summary >
 Show/hide diagram key
 </summary>
+
 ![image](./dglb-zones-key.drawio\.svg)
+
 </details>
 
 
@@ -26,7 +28,9 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers i
 <summary >
 Show/hide diagram
 </summary>
+
 ![image](./dglb-zones-1.drawio.svg)
+
 </details>
 
 ## Global DNS Nameserver DNS Zones
@@ -37,7 +41,9 @@ The structure of the DNS zones maintained by the global load-balancers is illusr
 <summary >
 Show/hide diagram
 </summary>
+
 ![image](./dglb-zones-2.drawio.svg)
+
 </details>
 
 {% include links.html %}
