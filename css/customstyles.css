@@ -1203,6 +1203,7 @@ h4.panel-title {
     }
 }
 details {
+	display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #dedede
@@ -1211,6 +1212,7 @@ details {
     margin-bottom: 15px;
 }
 details[open] {
+	display:list-item;
     overflow: hidden;
     border-collapse: separate;
     background: #dedede
@@ -1222,6 +1224,7 @@ summary {
     border-collapse: separate;
     background: #dedede
     margin: 0px 0px 8px 0px;
+    cursor:
 }
 details summary {
 	display:list-item;
