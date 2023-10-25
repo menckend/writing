@@ -1206,6 +1206,7 @@ details {
     overflow: hidden;
     border-collapse: separate;
     background: #6a93eb7f
+    border-style: solid;
     border-radius: 10px;
     padding: 0px 8px;
     margin-bottom: 15px;
@@ -1223,11 +1224,9 @@ details[open] {
     border: 1px solid #ccc;
 }
 details summary {
-    overflow: hidden;
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
     margin: 0px 0px 8px 0px;
     cursor: pointer;
-    border-style: none
 }
