@@ -25,7 +25,7 @@ The structure of the DNS zones maintained by the DNS authoritative nameservers i
 {% endcapture %}
 {% capture summary %}Show/hide diagram{% endcapture %}{% include details.html %}
 
-## Global DNS Nameserver DNS Zones
+## GLB DNS Nameserver DNS Zones
 
 The structure of the DNS zones maintained by the global load-balancers is illusrated in the following diagram.
 {% capture details %}
