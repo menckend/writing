@@ -1218,14 +1218,12 @@ details[open] {
     border-collapse: separate;
     background: #6a93eb7f
     padding: 0px 8px 8px 8px;
+    border: 1px solid #ccc;
 }
 details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    background: #6a93eb7f
     margin: 0px 0px 8px 0px;
-    color: #2a7ae2;
     cursor: pointer;
-    border: 1px solid #ccc;
 }
