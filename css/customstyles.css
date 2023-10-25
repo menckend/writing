@@ -1205,13 +1205,16 @@ h4.panel-title {
 
 
 details {
-    display:list-item;
+    display:list-item
+    list-style-type: none;
     border-radius: 10px;
     overflow: hidden;
     padding: 0px 8px;
     margin-bottom: 15px;
 }
 details[open] {
+    display:list-item
+    list-style-type: none;
     border-radius: 10px;
     overflow: hidden;
     background: #eeeded;
