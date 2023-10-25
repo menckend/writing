@@ -1228,4 +1228,5 @@ details summary {
     border-collapse: separate;
     margin: 0px 0px 8px 0px;
     cursor: pointer;
+    border-style: none
 }
