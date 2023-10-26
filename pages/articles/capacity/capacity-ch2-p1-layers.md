@@ -32,7 +32,7 @@ I haven't been able to locate any single authoritative reference for what a "lay
     * An MS SQLServer instance acting as an element in a "database layer" could be be replaced with a PostGRESQL, for instance
 * Provide an abstracted, functional-level view of overall system architecure
 {% endcapture %}
-{% capture summary %}+/-{% endcapture %}{% include details.html %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 ### But, for this discussion
 {% capture details %}
@@ -50,7 +50,7 @@ I will use the following conventions with regards to conceptual layers of IT sys
     * Accesses/requests/receives the hosting layer's "functions" through the hosting layer's "interface"
         * To do so, the workload layer must implement its own "down-facing" interface, using the same well-define mechanism as the "up-facing" interface of the hosting layer.
 {% endcapture %}
-{% capture summary %}+/-{% endcapture %}{% include details.html %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 ## Examples of Layered Architecture Models
 
@@ -87,7 +87,7 @@ Much as it pains me to say so, the TCP/IP stack, or the transport/network layers
 
 That's *not* to say that there's something *wrong* with TCP/IP (or even how it's implemented in the Linux kernel). Rather, the key takeaway here is that even if we have a conceptual model that defines a layered architecture, we can easily end up with a monolithic system, depending on *how* that model gets implemented.
 {% endcapture %}
-{% capture summary %}+/-{% endcapture %}{% include details.html %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 ### Utility Compute
 
@@ -111,6 +111,6 @@ The name (Basic Input-Output System) says it all
 
 ...
 {% endcapture %}
-{% capture summary %}+/-{% endcapture %}{% include details.html %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 {% include links.html %}
