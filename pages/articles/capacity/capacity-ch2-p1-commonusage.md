@@ -12,19 +12,30 @@ folder: articles\/capacity
 
 ## Abstraction defined
 In short, abstraction is a powerful tool for organizing and managing our knowledge of complex systems. There's no shortage of definitions for abstraction in various dictionaries, but what I think that the most generalized version would be something like this:
+
 <details markdown=block>
 <summary markdown=span>"Abstraction" (as a verb)</summary>
 <p style="background: white">
 "Abstraction" (as a verb) is the act of creating a concept ("an abstraction") that represents the common properties of some group of things.  That group of things is the object of the verb.  The things themselves could be physical objects or other concepts (other abstractions, even).    In order for abstraction to occur, some filtering/selection mechanism must be applied to identify the "group of things" being abstracted.  
 </p>
+
+
 </details>
+
+
+
 <details markdown=block>
-<summary markdown=span>""An abstraction" (as a noun)</summary>
+<summary markdown=span>"An abstraction" (as a noun)</summary>
 ```
 "An abstraction" (as a noun) is a concept that summarizes/contains all of the things it has abstracted.  The abastraction is, in one sense, the selection filter/criteria that was applied in choosing the "group of things" being abstracted.  In another sense it is the "group of things" itself.
 ```
 </details>
-In that generalized sense, abastraction is foundational to human cognition. When we read some article on the Internet, we don't think about individual photons hitting our retinas or usually even think about individual letters. We engage with one of my favorite abstactions, "words." The word "retina" is an *abstraction* that I can engage with identically whether I read it in this lovely typeface on a screen, or in a handwritten cursive note, or hear it whispered in my ear.
+
+In the generalized sense above, abastraction is foundational to human cognition. When we read some article on the Internet, we don't think about individual photons hitting our retinas or usually even think about individual letters. We engage with one of my favorite abstactions, "words." The word "retina" is an *abstraction* that I can engage with identically whether I read it in this lovely typeface on a screen, or in a handwritten cursive note, or hear it whispered in my ear.
+
+
+
+
 
 
 ## Abstraction in action
