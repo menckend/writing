@@ -1,12 +1,12 @@
 ---
 libname: Articles
 docname: -DRAFT- Abstracting Capacity
-chapnum: 2
+chapnum: 20
 chapnam: "Foundations"
-pagenum: 2
+pagenum: 20
 title: Multi-layered Architecture Model
 summary: "Layared archiectures are a recurring them in information technology. We need a consistent way to talk about how that layering works if we're going to look at how it relates to capacity."
-permalink: capacity_ch2_p2.html
+permalink: capacity_ch20_p2.html
 folder: articles\/capacity
 ---
 

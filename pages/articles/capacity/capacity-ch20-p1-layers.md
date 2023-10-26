@@ -1,19 +1,52 @@
 ---
 libname: Articles
 docname: -DRAFT- Abstracting Capacity
-chapnum: 2
-chapnam: "Foundations"
+chapnum: 20
+chapnam: "Multi-layered Architectures"
 pagenum: 1
-title: Multi-layered Architecture Model
-summary: "Layared archiectures are a recurring them in information technology. We need a consistent way to talk about how that layering works if we're going to look at how it relates to capacity."
-permalink: capacity_ch2_p1.html
+title: The Conventional Wisdowm
+summary: "Layered architectures are old-hat in information technology, but have picked up a lot of domain-specific nuance over the years.  Specialists in different fields can tend to think about layers very differently.  This page summarizes some of those perspectives."
+permalink: capacity_ch20_p1.html
 folder: articles\/capacity
 ---
 
-## Let's Talk Layers
-The idea of a layered-model is foundational in information technology, but is worth elaborating on briefly with regards to IT systems architecture.
+## The Big Idea
+
+The idea of a layered-model is pretty foundational in information technology. Put super-succinctly, it'a about abstraction and modularity.
+
+### Abstraction
+
+In short, abstraction is a powerful tool for organizing and managing our knowledge of complex systems. Click on the disclosure widget below to read the full shpiel.
+{% capture details %}
+Picture, for instance, a microsope slide prepared with a drop of water containing hundreds of amoeba. Now, imagine that your miscrocope can zoom all the way down to subatomic scale.
+
+If have the microscope set the sub-atomic scale, you'll see an innumberable number of electrons/protons/neutrons, but at that scale you might just barely be able to infer the existence of an atomic structure.
+
+If you zoom out ("atomic scale"), you won't see electrons/protons/etc any more; you'll see individual atoms, and you'll notice that there seems to be some sort of pattern to how they connect/interact with each other. That "zooming out" has effectively "abstracted" subatomic particles into atoms. It's a *useful* abstraction because (with the benefit of a few hundred years of scientific research at your disposal) you can *predict* the behavior of the atoms without needing direct knowledge of the individual subatomic particles that they are made up of. But, if you want to *explain* (understand) the *mechanism* of that interaction, you have to drill back down to the subatomic level to see things like the "sharing" of electrons in covalent bonding.
+
+Zooming out again (to "molecular scale") you'll see a bewildering array of molecules. You've "abstracted" atoms into molecules. Again, it's a *useful* abstraction because you are able to infer (or borrow from the collected body of existing human knowledge) a set of patterns that let you predict how the molecules interact with each other.
+
+Zoom out again, (to the "organelle scale") and now you'll see all these neat structures like mitochondria, Golgi apparatus, and others.
+
+And so on and so-forth. My point here isn't that an amoeba is an example of a "multi-layered architecture", but rather that the concep of abstraction lets us do things like predict/observe that an amoeba will move across the slide to get at some sugar crytals that we would not be able to do if we were "zoomed in" and seeing the patterns of electron-clouds coalescence points.
+
+In a more on-topic example, "good luck" to anyone hoping to understand why a right-click their desktop won't raise a context menu if they are zoomed in and watching machine-code instructions get executed by your CPU.
+
+{% endcapture %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
+
+### Modularity
+
+In short, abstraction is a powerful tool for organizing and managing our knowledge of complex systems. Click on the disclosure widget below to read the full shpiel.
+{% capture details %}
+asdf
+{% endcapture %}
+{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
+
+That is, describing a system
 
 ### Conventional Description
+
 {% capture details %}
 I haven't been able to locate any single authoritative reference for what a "layered architecture" is, but there are a few themese that seem to be pretty ubiquitous:
 
@@ -25,18 +58,19 @@ I haven't been able to locate any single authoritative reference for what a "lay
     * With the hierarchical relationships depicted through vertical positioning in graphical representations
 * Information moves between adjacent layers only
 
-
 #### Benefits of Layered architectures
 
 * Well-implemented layered architectures allow for modular refit of system elements.
     * An MS SQLServer instance acting as an element in a "database layer" could be be replaced with a PostGRESQL, for instance
 * Provide an abstracted, functional-level view of overall system architecure
-{% endcapture %}
-{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
+    {% endcapture %}
+    {% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 ### But, for this discussion
+
 {% capture details %}
 I will use the following conventions with regards to conceptual layers of IT systems architecture throughout this document:
+
 * Layers are designated with both an index number and a name
 * Layers are hierarchical
 * For any two "adjacent" layers in an architecture stack, the *lower* of the two layers is considered to be (the "hosting" layer), which *hosts* the upper of the two layers (the "<em>workload</em>" layer).
@@ -49,14 +83,15 @@ I will use the following conventions with regards to conceptual layers of IT sys
 * The workload layer
     * Accesses/requests/receives the hosting layer's "functions" through the hosting layer's "interface"
         * To do so, the workload layer must implement its own "down-facing" interface, using the same well-define mechanism as the "up-facing" interface of the hosting layer.
-{% endcapture %}
-{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
+            {% endcapture %}
+            {% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
 
 ## Examples of Layered Architecture Models
 
 Here are a couple of extremely ubiquitous layered-models that crop up in IT systems architecture:
 
 ### The TCP/IP Stack
+
 {% capture details %}
 OK, maybe a bit *too* on the nose, given my background, but it's certainly ubiquitous. In the TCP/IP architecture, the "IP" and "transport" layers are adjacent to each other. More than a few systems in the real world implement the "IP layer" using the IPv4 protocol specification, and the "transport" layer using the TCP protocol specification.
 
