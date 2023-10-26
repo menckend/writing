@@ -5,7 +5,7 @@ chapnum: 2
 chapnam: "Foundations"
 pagenum: 1
 title: Multi-layered Architecture Model
-summary: "IT systems are inherently layered; we need a consistent way to talk about how that layering works if we're going to look at how that layering is related to capacity."
+summary: "Layared archiectures are a recurring them in information technology. We need a consistent way to talk about how that layering works if we're going to look at how it relates to capacity."
 permalink: capacity_ch2_p1.html
 folder: articles\/capacity
 ---
