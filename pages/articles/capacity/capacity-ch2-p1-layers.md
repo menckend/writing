@@ -20,11 +20,17 @@ I haven't been able to locate any single authoritative reference for what a "lay
 
 #### Properties of Layers
 
+
+{% capture details %}
+
 * Layers are groupings of elements with similar functionality.
     * Typically depicted as horizontal bands in graphical representations.
 * Layers are arranged hierarchically
     * With the hierarchical relationships depicted through vertical positioning in graphical representations
 * Information moves between adjacent layers only
+
+{% endcapture %}
+{% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}
 
 #### Benefits of Layered architectures
 
@@ -32,9 +38,10 @@ I haven't been able to locate any single authoritative reference for what a "lay
     * An MS SQLServer instance acting as an element in a "database layer" could be be replaced with a PostGRESQL, for instance
 * Provide an abstracted, functional-level view of overall system architecure
 
-### How I'll approach layered architectures throughout this document
+### For *this* discussion)
 
 I will use the following conventions with regards to conceptual layers of IT systems architecture throughout this document:
+{% capture details %}
 
 * Layers are designated with both an index number and a name
 * Layers are hierarchical
@@ -49,6 +56,9 @@ I will use the following conventions with regards to conceptual layers of IT sys
     * Accesses/requests/receives the hosting layer's "functions" through the hosting layer's "interface"
         * To do so, the workload layer must implement its own "down-facing" interface, using the same well-define mechanism as the "up-facing" interface of the hosting layer.
 
+{% endcapture %}
+{% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}
+
 ## Examples of Layered Architecture Models
 
 Here are a couple of extremely uniquitous layered-models that crop up in IT systems architecture:
@@ -56,7 +66,7 @@ Here are a couple of extremely uniquitous layered-models that crop up in IT syst
 ### The TCP/IP Stack
 
 OK, maybe a bit *too* on the nose, given my background, but it's certainly ubiquitous. In the TCP/IP architecture, the "IP" and "transport" layers are adjacent to each other. More than a few systems in the real world implement the "IP layer" using the IPv4 protocol specification, and the "transport" layer using the TCP protocol specification.
-
+{% capture details %}
 In a common scenario (any random Linux host), the lower-layer ("IP") function/role is instantiated as software (implementing the functions defined in the IPv4 protocol standard) running as part of Linux kernel. The upper-layer ("transport") is instantiated the same way, substituting the TCP protocol (instead of the IP protocol). In that scenario, we have our two ostensible "layers" instantiated as logic being executed in kernel-space.
 
 So, we have our two nominal layers, but how do we make sense of them relative to the framework I laid out in the previous section? Well... the network (IP) layer is the "hosting" layer and:
@@ -73,9 +83,12 @@ The "workload" layer is the transport (TCP) layer and:
 * It consumes the SEND/RECV functions from the hosting (IP) layer
     * Using linux kernel function calls as its down-facing interface to the network layer
 
+{% endcapture %}
+{% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}
+
 #### How the TCP/IP stack stacks up
 
-Much as it pains me to say so, the TCP/IP stack, or the transport/network layers at least (as implemented in the Linux kernel, anyway) misses the boat on a lot of the generic characteristics/goals of a layered architecture. Specifically:
+Much as it pains me to say so, the TCP/IP stack, or the transport/network layers at least (as implemented in the Linux kernel, anyway) misses the boat on a lot of the typical characteristics/goals of a layered architecture. Specifically:
 
 * Communication isn't limited to adjacent layers
     * The "application" layer can bypass the transport layer and access the "network" layer directly
@@ -84,6 +97,31 @@ Much as it pains me to say so, the TCP/IP stack, or the transport/network layers
 
 That's *not* to say that there's something *wrong* with TCP/IP (or even how it's implemented in the Linux kernel). Rather, the key takeaway here is that even if we have a conceptual model that defines a layered architecture, we can easily end up with a monolithic system, depending on *how* that model gets implemented.
 
+### Utility Compute
+
+Computers. Who *doesn't* love, 'em? And they've got layers too!
+
+{% capture details %}
+
+#### Physical resources (Layer 1)
+
+CPU, working-memory, non-volatile storage (etc...)
+
+#### BIOS (Layer 2)
+
+The name (Basic Input-Output System) says it all
+
+#### Operating System (Layer 3)
+
+...
+
+#### Application (Layer 4)
+
+...
+{% endcapture %}
+{% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}a
+
+<br>
 <br>
 <br>
 {% include links.html %}
