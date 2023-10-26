@@ -1213,7 +1213,7 @@ details[open] {
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
     border-style: solid;
-    border-color: #248EC2;
+    border-color: #777;
 }
 details summary {
     display:list-item;
@@ -1225,14 +1225,9 @@ details summary {
     background: none;
     border: hidden;
 }
-
-details summary {
-    display:list-item;
-    overflow: hidden;
-    border-collapse: separate;
-    margin: 0px 0px 8px 0px;
-    cursor: pointer;
+details[open] summary {
     color: #777;
     background: none;
     border: hidden;
+    visibility: hidden;
 }
