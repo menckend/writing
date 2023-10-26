@@ -1207,7 +1207,6 @@ details {
     padding: 0px 8px;
     margin-bottom: 15px;
     border: hidden;
-    color: #5a5a5a;
 }
 details[open] {
     overflow: hidden;
@@ -1217,7 +1216,7 @@ details[open] {
     border-color: #5a5a5a;
     border-width: 3px ;
     border-left-style: solid;
-    border-right-style: solid;
+    border-right-style: hidden;
     border-top-style: hidden;
     border-bottom-style: hidden;
 }
