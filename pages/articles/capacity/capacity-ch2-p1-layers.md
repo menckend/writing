@@ -10,7 +10,7 @@ permalink: capacity_ch2_p1.html
 folder: articles\/capacity
 ---
 
-## Let's Talk Layers
+{% capture details %}
 
 The idea of a layered-model is foundational in information technology, but is worth elaborating on briefly with regards to IT systems architecture.
 
@@ -20,17 +20,12 @@ I haven't been able to locate any single authoritative reference for what a "lay
 
 #### Properties of Layers
 
-
-{% capture details %}
-
 * Layers are groupings of elements with similar functionality.
     * Typically depicted as horizontal bands in graphical representations.
 * Layers are arranged hierarchically
     * With the hierarchical relationships depicted through vertical positioning in graphical representations
 * Information moves between adjacent layers only
 
-{% endcapture %}
-{% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}
 
 #### Benefits of Layered architectures
 
@@ -121,7 +116,8 @@ The name (Basic Input-Output System) says it all
 {% endcapture %}
 {% capture summary %}Expand/Collapse{% endcapture %}{% include details.html %}a
 
-<br>
-<br>
-<br>
+{% endcapture %}
+{% capture summary %}## Let's Talk Layers{% endcapture %}{% include details.html %}
+
+
 {% include links.html %}
