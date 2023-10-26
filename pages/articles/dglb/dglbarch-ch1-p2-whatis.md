@@ -5,7 +5,7 @@ chapnum: 1
 chapnam: "Preamble"
 pagenum: 2
 title: What is it?
-permalink: dglbdarch_ch2_p1.html
+permalink: dglbdarch_ch1_p2.html
 folder: articles\/dglb
 ---
 
