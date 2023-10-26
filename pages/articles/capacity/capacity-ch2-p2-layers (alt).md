@@ -3,10 +3,10 @@ libname: Articles
 docname: -DRAFT- Abstracting Capacity
 chapnum: 2
 chapnam: "Foundations"
-pagenum: 6
+pagenum: 2
 title: Multi-layered Architecture Model
 summary: "Layared archiectures are a recurring them in information technology. We need a consistent way to talk about how that layering works if we're going to look at how it relates to capacity."
-permalink: capacity_ch2_p6.html
+permalink: capacity_ch2_p2.html
 folder: articles\/capacity
 ---
 
@@ -52,12 +52,8 @@ I will use the following conventions with regards to conceptual layers of IT sys
 {% endcapture %}
 {% capture summary %}## Let's Talk About Layers{% endcapture %}{% include details.html %}
 
-
-## Examples of Layered Architecture Models
-
-Here are a couple of extremely ubiquitous layered-models that crop up in IT systems architecture:
-
-### The TCP/IP Stack
+{% capture details %}
+Here are a couple of  ubiquitous layered-models that crop up in IT systems architecture:
 
 {% capture details %}
 OK, maybe a bit *too* on the nose, given my background, but it's certainly ubiquitous. In the TCP/IP architecture, the "IP" and "transport" layers are adjacent to each other. More than a few systems in the real world implement the "IP layer" using the IPv4 protocol specification, and the "transport" layer using the TCP protocol specification.
@@ -89,13 +85,10 @@ Much as it pains me to say so, the TCP/IP stack, or the transport/network layers
 
 That's *not* to say that there's something *wrong* with TCP/IP (or even how it's implemented in the Linux kernel). Rather, the key takeaway here is that even if we have a conceptual model that defines a layered architecture, we can easily end up with a monolithic system, depending on *how* that model gets implemented.
 {% endcapture %}
-{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
-
-### Utility Compute
-
-Computers. Who *doesn't* love, 'em? And they've got layers too!
+{% capture summary %}### The TCP/IP Stack{% endcapture %}{% include details.html %}
 
 {% capture details %}
+Computers. Who *doesn't* love, 'em? And they've got layers too!
 
 #### Physical resources (Layer 1)
 
@@ -113,6 +106,7 @@ The name (Basic Input-Output System) says it all
 
 ...
 {% endcapture %}
-{% capture summary %}expand/collapse{% endcapture %}{% include details.html %}
-
+{% capture summary %}### Utility Compute{% endcapture %}{% include details.html %}
+{% endcapture %}
+{% capture summary %}## Examples of Layered Architecture Models{% endcapture %}{% include details.html %}
 {% include links.html %}
