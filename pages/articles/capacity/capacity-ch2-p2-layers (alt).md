@@ -94,8 +94,13 @@ Computers. Who *doesn't* love, 'em? And they've got layers too!
 
 CPU, working-memory, non-volatile storage (etc...)
 
-#### BIOS (Layer 2)
 
+<details markdown=block>
+<summary markdown=span>
+#### BIOS (Layer 2)
+</summary>
+All about BIOS.  (More to come.)
+</details>
 The name (Basic Input-Output System) says it all
 
 #### Operating System (Layer 3)
