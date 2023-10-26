@@ -14,9 +14,9 @@ folder: articles\/capacity
 In short, abstraction is a powerful tool for organizing and managing our knowledge of complex systems. There's no shortage of definitions for abstraction in various dictionaries, but what I think that the most generalized version would be something like this:
 <details markdown=block>
 <summary markdown=span>"Abstraction" (as a verb)</summary>
-<span style="background: white">
+<p style="background: white">
 "Abstraction" (as a verb) is the act of creating a concept ("an abstraction") that represents the common properties of some group of things.  That group of things is the object of the verb.  The things themselves could be physical objects or other concepts (other abstractions, even).    In order for abstraction to occur, some filtering/selection mechanism must be applied to identify the "group of things" being abstracted.  
-</span>
+</p>
 </details>
 <details markdown=block>
 <summary markdown=span>""An abstraction" (as a noun)</summary>
