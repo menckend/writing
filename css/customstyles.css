@@ -1211,7 +1211,8 @@ details[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
-    border-color: whitesmoke;
+    border-color: #dcdcdc;
+    margin-bottom: 5px;
     border-width: 1px ;
     border-left-style: solid;
     border-right-style: hidden;
