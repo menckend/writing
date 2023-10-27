@@ -35,20 +35,20 @@ $('#toc').on('click', 'a', function() {
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {% if flpagenum == oneless %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Previous Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary; font-size: 10px;">Previous Page </button></a>
                                             {% endif %}
                                             {% if flpagenum == onemore %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary">Next Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary font-size: 10px;">Next Page </button></a>
                                             {% endif %}
                                         {% endfor %}
                                         {% if pagecount > 2 %}
     <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Jump to page <span class="caret"></span></button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle font-size: 10px;">Jump to page <span class="caret"></span></button>
             <ol class="dropdown-menu">
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {%if flpagenum == hostpagenum %}
-                <li class="disabled;font-weight:bold;background-color:#9f9f9f;"><strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
+                <li class="disabled;font-weight:bold;background-color:#9f9f9f; font-size: 10px;"><strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
                                             {% else %}
                 <li>
                     <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
