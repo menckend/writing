@@ -1,4 +1,4 @@
-body {
+abody {
     font-size:15px;
 }
 
@@ -1202,7 +1202,7 @@ h4.panel-title {
 details {
     overflow: hidden;
     border-collapse: separate;
-    border-style: solid;
+    border-style: hidden;
     padding: 0px 8px;
     margin-bottom: 15px;
     border: hidden;
@@ -1211,13 +1211,11 @@ details[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
-    border-style: solid;
     border-color: #4a4a4a;
-    border-width: 3px ;
+    border-width: 1px ;
     border-left-style: solid;
     border-right-style: hidden;
-    border-top-style: hidden;
-    border-bottom-style: hidden;
+    background-color: whitesmoke
 }
 details summary {
     display:list-item;
