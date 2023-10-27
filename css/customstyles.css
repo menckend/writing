@@ -1203,18 +1203,18 @@ details {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
-    padding: 0px 8px;
+    padding: 0px 0px;
     margin-bottom: 15px;
     border: hidden;
 }
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 8px 8px 8px;
+    padding: 0px 0px 0px 0px;
     border-color: #dcdcdc;
     margin-bottom: 0px;
     border-width: 2px ;
-    border-style: solid;
+    border-style: hidden;
     background-color: whitesmoke;
     border-radius: 5px;
 }
@@ -1224,10 +1224,6 @@ details summary {
     border-collapse: separate;
     margin: 0px 0px 0px 0px;
     cursor: pointer;
-    background: none;
-    border: hidden;
-}
-details[open] summary {
     background: none;
     border: hidden;
 }
