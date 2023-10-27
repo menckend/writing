@@ -35,7 +35,7 @@ $('#toc').on('click', 'a', function() {
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {% if flpagenum == oneless %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary font-size: 5px;">Previous Page </button></a>
+    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
                                             {% endif %}
                                             {% if flpagenum == onemore %}
     <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn btn-primary font-size: 5px;">Next Page </button></a>
