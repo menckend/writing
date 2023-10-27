@@ -1215,7 +1215,8 @@ details[open] {
     border-width: 1px ;
     border-left-style: solid;
     border-right-style: hidden;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    background-radius: 10px;
 }
 details summary {
     display:list-item;
