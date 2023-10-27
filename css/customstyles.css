@@ -1212,7 +1212,7 @@ details[open] {
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
     border-color: #dcdcdc;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     border-width: 2px ;
     border-left-style: solid;
     border-right-style: hidden;
@@ -1223,7 +1223,7 @@ details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    margin: 0px 0px 8px 0px;
+    margin: 0px 0px 0px 0px;
     cursor: pointer;
     background: none;
     border: hidden;
