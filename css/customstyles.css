@@ -1214,8 +1214,7 @@ details[open] {
     border-color: #dcdcdc;
     margin-bottom: 0px;
     border-width: 2px ;
-    border-left-style: solid;
-    border-right-style: hidden;
+    border-style: solid;
     background-color: whitesmoke;
     border-radius: 5px;
 }
