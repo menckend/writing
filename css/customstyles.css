@@ -1203,16 +1203,16 @@ details {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
-    padding: 0px 0px;
+    padding: 0px 8px;
     margin-bottom: 15px;
     border: hidden;
 }
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 8px 0px;
     border-color: #dcdcdc;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     border-width: 2px ;
     border-style: hidden;
     background-color: whitesmoke;

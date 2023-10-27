@@ -119,3 +119,7 @@ li.sidebarTitle {
 .navbar-inverse .navbar-toggle {
     border-color: #015CAE;
 }
+.open .dropdown-toggle.btn-primary {
+    color: #248ec2;
+    color: #347DBE;
+}
