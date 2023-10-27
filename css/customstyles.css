@@ -1213,11 +1213,11 @@ details[open] {
     padding: 0px 8px 8px 8px;
     border-color: #dcdcdc;
     margin-bottom: 5px;
-    border-width: 1px ;
+    border-width: 2px ;
     border-left-style: solid;
     border-right-style: hidden;
     background-color: whitesmoke;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 details summary {
     display:list-item;
