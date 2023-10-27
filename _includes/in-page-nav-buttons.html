@@ -66,8 +66,7 @@ $('#toc').on('click', 'a', function() {
                                     {% unless page.toc == false %}
                                       {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
                                       {% if tmparray > 1 %}
-<details><summary > Toggle Page TOC</summary><div id="toc"></div></details>
+<details><summary >Table of Contents</summary><div id="toc"></div></details>
                                       {% endif %}
                                     {% endunless %}
     &nbsp;
-
