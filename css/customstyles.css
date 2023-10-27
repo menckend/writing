@@ -1211,12 +1211,12 @@ details[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
-    border-color: #8b8b8b;
+    border-color: whitesmoke;
     border-width: 1px ;
     border-left-style: solid;
     border-right-style: hidden;
     background-color: whitesmoke;
-    background-radius: 10px;
+    border-radius: 10px;
 }
 details summary {
     display:list-item;
