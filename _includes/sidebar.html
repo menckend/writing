@@ -2,16 +2,15 @@
 
 <ul id="mysidebar" class="docnav">
   <li class="level1" onclick="location.href = '{{page.docname}}.html'">{{page.docname}}
-      <ul style="display:none">
+      <ul>
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
                               {% for chapnum in chapnums %}
                                     {% assign chapcnt = forloop.index0 %}
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-
             <li class="level2"><a class="subfoldersTitle" title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
-                  <ul style="display:none;">
+                  <ul>
                                     {% for apage in pagenames %}
                                           {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
                         <li class="level2items open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a>
