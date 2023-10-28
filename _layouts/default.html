@@ -71,6 +71,80 @@
     </script>
     {% endif %}
 
+
+
+
+
+
+
+
+
+    <!-- FontAwesome -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- Navgoco -->
+    <script type="text/javascript" src="/assets/js/jquery.navgoco.min.js"></script>
+
+    <!-- Algolia -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+    <!-- end Algolia -->
+
+    <!-- Anchor JS -->
+    {% unless page.layout == "homepage" %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+        });
+        </script>
+    {% endunless %}
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+
+    <!--Bootstrap -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 {% include topnav.html %}
