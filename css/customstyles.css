@@ -1239,7 +1239,9 @@ details summary {
 
 .docnav {
     max-width: 300px;
-  }
+    background-color: whitesmoke;
+    padding-top: 15px;
+}
   .docnav {
     padding-left: 0px;
     margin-left: 10px;
