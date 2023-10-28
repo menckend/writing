@@ -2,7 +2,6 @@
 title: "welcome to menckenania"
 toc: false
 permalink: index.html
-summary: nothing fancy, just a place for my content
 pagenav: false
 ---
 
