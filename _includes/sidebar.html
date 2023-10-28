@@ -15,7 +15,7 @@ lvl5 = 3rd level of entries in sidebar
       {% assign sbtitle == sballpages | map: lvl2_name | compact | uniq %}
       <ul id="sitesidebar" class="deetsnav">
             <li><strong>{{sbtitle}}</strong></li>
-            {% assign sbl3pages == sballpages | where 'lvl3_idx' == page.lvl3_idx %}
+            {% assign sbl3pages == sballpages | where: 'lvl3_idx', page.lvl3_idx %}
             {% if sbl3pages %}
                   {% for sbl3page in sbl3pages %}
                         <li>
