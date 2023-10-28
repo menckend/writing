@@ -1289,7 +1289,7 @@ details summary {
   }
   /* minus */
   
-  .docnav li.open > a > span:after {
+  .docnav li.active > a > span:after {
     content: '\f146';
     font-family: 'FontAwesome';
     color: 347DBE;
@@ -1313,48 +1313,48 @@ details summary {
     margin: 7px 0px;
   }
   
-  li.level1.open > ul > li.level1items.open a,
-  li.level2.open > ul > li.level2items.open a,
-  li.level3.open > ul > li.level3items.open a {
+  li.level1.active > ul > li.level1items.active a,
+  li.level2.active > ul > li.level2items.active a,
+  li.level3.active > ul > li.level3items.active a {
     color: #347DBE;
     font-weight: bold;
     text-decoration: none;
   }
-  li.level1.open > ul > li.level1items.open > a:before,
-  li.level2.open > ul > li.level2items.open > a:before,
-  li.level3.open > ul > li.level3items.open > a:before {
+  li.level1.active > ul > li.level1items.active > a:before,
+  li.level2.active > ul > li.level2items.active > a:before,
+  li.level3.active > ul > li.level3items.active > a:before {
     color: #347DBE;
     content: '\f0c8';
     font-family: 'FontAwesome';
     text-decoration: none;
   }
   
-  li.level1.open > ul > li.level1items a,
-  li.level2.open > ul > li.level2items a,
-  li.level3.open > ul > li.level3items a {
+  li.level1.active > ul > li.level1items a,
+  li.level2.active > ul > li.level2items a,
+  li.level3.active > ul > li.level3items a {
     font-weight: normal;
     color: #0066c0;
     text-decoration: none;
   }
   
-  li.level1.open > ul > li.level1items > a:before,
-  li.level2.open > ul > li.level2items > a:before,
-  li.level3.open > ul > li.level3items > a:before {
+  li.level1.active > ul > li.level1items > a:before,
+  li.level2.active > ul > li.level2items > a:before,
+  li.level3.active > ul > li.level3items > a:before {
     font-weight: normal;
     color: #0066c0;
     text-decoration: none;
   }
   
   
-  li.folderTitle.current.open > a.subfoldersTitle {
+  li.folderTitle.current.active > a.subfoldersTitle {
       font-weight: bold;
       color: #347DBE;
       text-decoration: none;
   }
   
-  .level1.folderTitle.open, 
-  .level2.folderTitle.open, 
-  .level3.folderTitle.open {
+  .level1.folderTitle.active, 
+  .level2.folderTitle.active, 
+  .level3.folderTitle.active {
       font-weight: bold;
   }
   
