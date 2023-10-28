@@ -10,7 +10,7 @@
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
          <li class="level2 folderTitle current open"><a title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
-            <ul style="display:none;">
+            <ul>
                                     {% for apage in pagenames %}
                                           {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
                   <li class="level2items open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
