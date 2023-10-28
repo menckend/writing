@@ -1,3 +1,5 @@
+<div class="mydocsidebar">
+<div class="sidebar-inner">
 {% unless page.url contains 'index.html' %}
 
 <ul id="docnavsidebar" class="docnav">
@@ -28,10 +30,11 @@
       </ul>
   </li>
 </ul>
+</div>
+</div>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted. -->
 <script>$("li.open").parents('li').toggleClass("open");</script>
 
 {% endunless %}
-
 
