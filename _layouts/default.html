@@ -88,21 +88,6 @@
     <!-- Navgoco -->
     <script type="text/javascript" src="/assets/js/jquery.navgoco.min.js"></script>
 
-    <!-- Algolia -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
-    <!-- end Algolia -->
-
-    <!-- Anchor JS -->
-    {% unless page.layout == "homepage" %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
-        <script>
-        $( document ).ready(function() {
-            anchors.add('h2,h3,h4,h5');
-        });
-        </script>
-    {% endunless %}
-
     <script>
         $( document ).ready(function() {
             $("#docnavsidebar").navgoco({
@@ -141,10 +126,6 @@
         });
     </script>
 
-
-    <!--Bootstrap -->
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 {% include topnav.html %}
