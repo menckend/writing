@@ -9,11 +9,15 @@
                                     {% assign chapcnt = forloop.index0 %}
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
+                                    {% if if page.chapnum == chapnums[chapcnt] %}
+         <li class="level2 folderTitle current open"><a title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
+                                    {% else %}
          <li class="level2 folderTitle"><a title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
+                                    {% endif %}
             <ul>
                                     {% for apage in pagenames %}
-                                          {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-                  <li class="level2items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                          {% if page.chapnum == chapnums[chapcnt] and page.title == apage %}
+                  <li class="level2items current open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% else %}
                   <li class="level2items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                                           {% endif %}
@@ -24,7 +28,7 @@
       </ul>
   </li>
 
-<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.
 <script>$("li.open").parents('li').toggleClass("open");</script>
 
 {% endunless %}

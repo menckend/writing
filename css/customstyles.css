@@ -1268,7 +1268,7 @@ details summary {
   .docnav li.level3 > a > span:after {
     content: '\f0fe';
     font-family: 'FontAwesome';
-    color: #e47911;
+    color: #666;
     font-size: 14px;
     padding-right: 12px;
     text-decoration: none;
@@ -1280,7 +1280,7 @@ details summary {
   .docnav li.level3items > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    color: #e47911;
+    color: #e666;
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
@@ -1290,7 +1290,7 @@ details summary {
   .docnav li.open > a > span:after {
     content: '\f146';
     font-family: 'FontAwesome';
-    color: #e47911;
+    color: #248ec2;
     font-size: 14px;
     padding-right: 10px;
     text-decoration: none;
