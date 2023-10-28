@@ -1240,7 +1240,7 @@ details summary {
 .docnav {
     max-width: 300px;
     background-color: whitesmoke;
-    padding-top: 15px;
+    padding-top: 45x
 }
   .docnav {
     padding-left: 0px;
@@ -1270,7 +1270,7 @@ details summary {
   .docnav li.level3 > a > span:after {
     content: '\f0fe';
     font-family: 'FontAwesome';
-    color: #666;
+    color: #347DBE;
     font-size: 14px;
     padding-right: 12px;
     text-decoration: none;
@@ -1282,7 +1282,7 @@ details summary {
   .docnav li.level3items > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    color: #e666;
+    color: #347DBE;
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
@@ -1292,7 +1292,7 @@ details summary {
   .docnav li.open > a > span:after {
     content: '\f146';
     font-family: 'FontAwesome';
-    color: #248ec2;
+    color: 347DBE;
     font-size: 14px;
     padding-right: 10px;
     text-decoration: none;
@@ -1316,14 +1316,14 @@ details summary {
   li.level1.open > ul > li.level1items.open a,
   li.level2.open > ul > li.level2items.open a,
   li.level3.open > ul > li.level3items.open a {
-    color: black;
+    color: #347DBE;
     font-weight: bold;
     text-decoration: none;
   }
   li.level1.open > ul > li.level1items.open > a:before,
   li.level2.open > ul > li.level2items.open > a:before,
   li.level3.open > ul > li.level3items.open > a:before {
-    color: black;
+    color: #347DBE;
     content: '\f0c8';
     font-family: 'FontAwesome';
     text-decoration: none;
@@ -1348,7 +1348,7 @@ details summary {
   
   li.folderTitle.current.open > a.subfoldersTitle {
       font-weight: bold;
-      color: black;
+      color: #347DBE;
       text-decoration: none;
   }
   
