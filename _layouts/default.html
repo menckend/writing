@@ -76,9 +76,6 @@
 
 
 
-
-
-
     <!-- FontAwesome -->
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jQuery -->
@@ -87,45 +84,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <!-- Navgoco -->
     <script type="text/javascript" src="/assets/js/jquery.navgoco.min.js"></script>
-
-    <script>
-        $( document ).ready(function() {
-            $("#docnavsidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'open', // open
-                save: true,
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 300,
-                    easing: 'swing'
-                }
-            });
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#docnavsidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#docnavsidebar").navgoco('toggle', true);
-            });
-        });
-
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle=offcanvas]').click(function() {
-                $('.row-offcanvas').toggleClass('active');
-            });
-        });
-    </script>
-
+  
 </head>
 <body>
 {% include topnav.html %}
