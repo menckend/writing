@@ -16,7 +16,7 @@
                                     {% else %}
          <li class="level2 folderTitle"><a title="{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
                                     {% endif %}
-            <ul>
+            <ul styl="display:none";>
                                     {% for apage in pagenames %}
                                           {% if page.chapnum == chapnums[chapcnt] and page.title == apage %}
                   <li class="level2items current open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
