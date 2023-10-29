@@ -1,0 +1,54 @@
+<!--
+lvl1 = topnav button name
+lvl2 = sidebar name
+lvl3 = 1st level of entries in sidebar
+lvl4 = 2nd level of entries in sidebar 
+lvl5 = 3rd level of entries in sidebar
+-->
+
+
+{% assign sbtitle == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | map: l2_name | compact | uniq %}
+<p> sbtitle: {{sbtitle[0]}}</p>
+
+
+{% unless page.url contains 'index.html' %}
+      <ul id="sitesidebar">
+            {% assign sbtitle == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | map: l2_name | compact | uniq %}
+            <li><strong>{{sbtitle}}</strong></li>
+            {% assign sbl3pages == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | where: 'l3_idx', page.l3_idx %}
+            {% if sbl3pages %}
+                  <p>sbl3pages is real!</p>
+                  <p>{{sbl3pages.size}}
+                  {% for sbl3page in sbl3pages %}
+                        <li>
+                              {% assign sbl4pages == sbl3pages | where 'l4_idx' == page.l4_idx %}
+                              {% if sbl4pages %}
+                                    <details>
+                                          <summary>{{sbl3page.title}}</summary>
+                                          <ul class= "nav deetsnav4">
+                                                {% for sbl4page in sbl4pages %}
+                                                      {% assign sbl5pages = sbl4pages | where 'l5_idx' == page.l5_idx %}
+                                                      {% if sbl5pages %}
+                                                            <details>
+                                                                  <summary>{{sbl4page.title}}</summary>
+                                                                  <ul class="nav deetsnav5">
+                                                                        {% for sbl5page in sbl5pages %}
+                                                                              <li><a>{{sbl5page.title}}</a></li>
+                                                                        {% endfor %}
+                                                                  </ul>
+                                                            </details>
+                                                      {% else %}
+                                                            <a>{{sbl4page.title}}</a>
+                                                      {% endif %}
+                                                {% endfor %}
+                                          </ul>
+                                    </details>
+                              {% else %}
+                                    <a>{{sbl3page.title}}</a>
+                              {% endif %}
+                        </li>
+                  {% endfor %}
+            {% endif %}
+      </ul>
+{% endunless %}
+
