@@ -15,13 +15,13 @@
             {% assign chapcnt = forloop.index0 %}
             {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
             {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-            <li class="level1 folderTitle current><a>{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
+            <li class="level1 folderTitle><a>{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a>
                   <ul>
                         {% for apage in pagenames %}
                               {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-                                    <li class="level1 folderItems current open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                    <li class="level1Items current open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                               {% else %}
-                                    <li class="level1 folderItems"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                    <li class="level1Items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                               {% endif %}
                         {% endfor %}
                   </ul>
