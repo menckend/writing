@@ -11,23 +11,23 @@ lvl5 = 3rd level of entries in sidebar
 
 
 {% unless page.url contains 'index.html' %}
-      <p>  This page's frontmatter:  L1idx: {{page.lvl_idx}}; L2idx: {{page.lvl2_idx}}; L3idx: {{page.lvl3_idx}}; L4idx: {{pave.lvl4_idx}}; L5idx: {{page.lvl5_idx}}</p>
-            {% assign sballpages == site.pages | where: 'lvl1_idx', page.lvl1_idx | where: 'lvl2_idx', page.lvl2_idx %}
-      <p> {{sballpages | map: 'lvl2_name' }} {{sballpages | map: 'lvl2_idx' }} {{page.lvl2_idx}}</p>
-      {% assign sbtitle == sballpages | map: lvl2_name | compact | uniq %}
+      <p>  This page's frontmatter:  L1idx: {{page.l1_idx}}; L2idx: {{page.l2_idx}}; L3idx: {{page.l3_idx}}; L4idx: {{pave.l4_idx}}; L5idx: {{page.l5_idx}}</p>
+            {% assign sballpages == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx %}
+      <p> {{sballpages | map: 'l2_name' }} {{sballpages | map: 'l2_idx' }} {{page.l2_idx}}</p>
+      {% assign sbtitle == sballpages | map: l2_name | compact | uniq %}
       <ul id="sitesidebar" ">
             <li><strong>{{sbtitle}}</strong></li>
-            {% assign sbl3pages == sballpages | where: 'lvl3_idx', page.lvl3_idx %}
+            {% assign sbl3pages == sballpages | where: 'l3_idx', page.l3_idx %}
             {% if sbl3pages %}
                   {% for sbl3page in sbl3pages %}
                         <li>
-                              {% assign sbl4pages == sbl3pages | where 'lvl4_idx' == page.lvl4_idx %}
+                              {% assign sbl4pages == sbl3pages | where 'l4_idx' == page.l4_idx %}
                               {% if sbl4pages %}
                                     <details>
                                           <summary>{{sbl3page.title}}</summary>
                                           <ul class= "nav deetsnav4">
                                                 {% for sbl4page in sbl4pages %}
-                                                      {% assign sbl5pages = sbl4pages | where 'lvl5_idx' == page.lvl5+idx %}
+                                                      {% assign sbl5pages = sbl4pages | where 'l5_idx' == page.l5_idx %}
                                                       {% if sbl5pages %}
                                                             <details>
                                                                   <summary>{{sbl4page.title}}</summary>
