@@ -1243,6 +1243,25 @@ details summary {
 
 
 
+
+
+
+
+
+
+
+
+.docnav {
+    max-width: 300px;
+  }
+  .docnav {
+    padding-left: 0px;
+    margin-left: 10px;
+    padding-right: 15px;
+  }
+  .docnav ul {
+    padding-left: 15px
+  }  
 .docnav li {
     list-style: none;
     font: normal 12px "Open Sans", "Lucida Grande", "Helvetica Neue", Arial;

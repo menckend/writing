@@ -6,17 +6,17 @@
 <p style="background.color: whitesmoke;">
                               {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                               {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
-      <ul style="none">
+      <ul id="sitesidebar" class="docnav">
                               {% for chapnum in chapnums %}
                                     {% assign chapcnt = forloop.index0 %}
                                     {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-            <li style="none">
+            <li>
                   <details>
                         <summary>{{chapnames[chapcnt]}}</summary>
                                     {% for apage in pagenames %}
-                        <ul style="none">
-                              <li style="none"> <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                        <ul>
+                              <li> <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                         </ul>
                                     {% endfor %}
                   </details>
