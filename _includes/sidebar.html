@@ -7,8 +7,8 @@ lvl5 = 3rd level of entries in sidebar
 -->
 
 
-{% assign pagelist == site.pages | where: 'l1_idx', page.l1_idx %}
-<p> pagelist.size: {{pagelist.size}}</p>
+{% assign sbtitle == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | map: l2_name | compact | uniq %}
+<p> sbtitle: {{sbtitle}}</p>
 
 
 {% unless page.url contains 'index.html' %}
