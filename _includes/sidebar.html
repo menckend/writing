@@ -13,12 +13,13 @@
                                     {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
       <li>
       <details>
-            <summary>{{chapnmes[chaptnt]}}</summary>
+            <summary>{{chapnames[chaptnt]}}</summary>
                                     {% for apage in pagenames %}
             <ul style="none">
-                  <li> <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
-                                    {% endfor %}
+                  <li style="none"> <a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
             </ul>
+                                    {% endfor %}
+      </details>
       </li>
                               {% endfor %}
 
