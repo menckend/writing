@@ -15,7 +15,7 @@ lvl5 = 3rd level of entries in sidebar
       <ul id="sitesidebar">
             {% assign sbtitle == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | map: l2_name | compact | uniq %}
             <li><strong>{{sbtitle}}</strong></li>
-            {% assign sbl3pages == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | where: 'l3_idx', page.l3_idx % | sort: 'l3_idx' %}
+            {% assign sbl3pages == site.pages | where: 'l1_idx', page.l1_idx | where: 'l2_idx', page.l2_idx | where: 'l3_idx', page.l3_idx | sort: 'l3_idx' %}
             {% if sbl3pages %}
                   <p>sbl3pages is real!</p>
                   <p>{{sbl3pages.size}}
