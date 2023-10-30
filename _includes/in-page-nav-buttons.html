@@ -19,6 +19,9 @@ $('#toc').on('click', 'a', function() {
 
 
 
+
+
+
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
@@ -43,7 +46,7 @@ $('#toc').on('click', 'a', function() {
         {% endif %}
       {% endfor %}
       {% if pagecount > 2 %}
-        <!-- <div class="btn-group"> -->
+        <div class="btn-group">
           <button type="button" data-toggle="dropdown" class="btn dropdown-toggle;">Jump to page <span class="caret"> </span></button>
           <ol class="dropdown-menu">
             {% for pnumval in pagenums %}
@@ -57,7 +60,7 @@ $('#toc').on('click', 'a', function() {
               {% endif %}
             {% endfor %}
             </ol>
-        <!-- </div> -->
+        </div>
       {% endif %}
     </div>
   {% endif %}

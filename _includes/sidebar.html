@@ -7,7 +7,9 @@
 <div class="sidebar-inner">
 <p>{{page.doctitle}}</p>
 
-<ul id="docnavsidebar" class="docnav">
+
+<ul id="mysidebar" class="nav">
+
       {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
       {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
       {% for chapnum in chapnums %}
