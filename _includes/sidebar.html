@@ -3,6 +3,7 @@
 <p>{{page.doctitle}}</p>
 
 <div class="mydocsidebar">
+<p>{{page.doctitle}}</p>
 <div class="sidebar-inner">
 <ul id="docnavsidebar" class="docnav">
       {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
