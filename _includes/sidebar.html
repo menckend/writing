@@ -19,9 +19,9 @@
                   <ul>
                         {% for apage in pagenames %}
                               {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
-                                    <li class="level1Items current open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                    <li class="level1items open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                               {% else %}
-                                    <li class="level1Items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
+                                    <li class="level1items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
                               {% endif %}
                         {% endfor %}
                   </ul>
