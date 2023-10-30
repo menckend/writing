@@ -1,10 +1,13 @@
 {% unless page.url contains 'index.html' %}
 
-<h3>{{page.doctitle}}</h3>
+
 
 <div class="mydocsidebar">
+      {{page.doctitle}}
       <div class="sidebar-inner">
+            {{page.doctitle}}
             <ul id="docnavsidebar" class="docnav">
+            {{page.doctitle}}
                   {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                   {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
                   {% for chapnum in chapnums %}
