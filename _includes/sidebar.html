@@ -1,11 +1,9 @@
 {% unless page.url contains 'index.html' %}
 
-
-
+<div class="productTitle">{{page.doctitle}}</div>
 <div class="mydocsidebar">
       <div class="sidebar-inner">
             <ul id="docnavsidebar" class="docnav">
-                  <li>{{page.doctitle}}</li>
                   {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
                   {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
                   {% for chapnum in chapnums %}
