@@ -1229,6 +1229,36 @@ details summary {
 }
 
 
+li.level1 details {
+    overflow: hidden;
+    border-collapse: separate;
+    border-style: hidden;
+    margin-bottom: 10px;
+    border: hidden;
+}
+li.level1 details[open] {
+    overflow: hidden;
+    border-collapse: separate;
+}
+li.level1 details summary {
+    display:list-item;
+    overflow: hidden;
+    border-collapse: separate;
+    cursor: pointer;
+    border: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1243,6 +1273,11 @@ li.level1items.open > a:before{
   font-family: 'FontAwesome';
   text-decoration: none;
 }
+
+
+
+
+
 
 
 
