@@ -11,7 +11,7 @@
             {% assign chapcnt = forloop.index0 %}
             {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
             {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
-            <li class="level1 folderTitle><details<summary><a>{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a></summary>
+            <li class="level1 folderTitle><details><summary><a>{{ chapnames[chapcnt] }}" href="#">{{ chapnames[chapcnt] }}</a></summary>
                   <ul>
                         {% for apage in pagenames %}
                               {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
