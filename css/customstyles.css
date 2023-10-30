@@ -1281,7 +1281,7 @@ details summary {
   .docnav li.level3items > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    color: #e47911;
+    color: #666;
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/

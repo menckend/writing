@@ -15,7 +15,7 @@
             {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
             {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
  
-            {% if page.chapnum == chapnums[[chapcnt]]
+            {% if page.chapnum == chapnums[[chapcnt]] %}
             <li class="level1 folderTitle"><details open><summary>{{ chapnames[chapcnt]}}</summary>
             {% else %}
             <li class="level1 folderTitle"><details><summary>{{ chapnames[chapcnt]}}</summary>
