@@ -42,7 +42,7 @@ $('#toc').on('click', 'a', function() {
                                         {% endfor %}
                                         {% if pagecount > 2 %}
     <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="background-color: #015CAE; btn dropdown-toggle;"></span style="color:#248ec2">Jump to page</span> <span class="caret"></span></button>
+        <button type="button" data-toggle="dropdown" class="background-color: #015CAE; btn dropdown-toggle;"></span style="text-color:#248ec2;">Jump to page</span> <span class="caret"></span></button>
             <ol class="dropdown-menu">
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
