@@ -15,8 +15,11 @@ $('#toc').on('click', 'a', function() {
 
 });
 </script>
-
 <!-- end of in-page TOC staging -->
+
+
+
+<!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
   {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
@@ -46,7 +49,7 @@ $('#toc').on('click', 'a', function() {
             {% for pnumval in pagenums %}
               {% assign flpagenum = pnumval | plus: 0  %}
               {%if flpagenum == hostpagenum %}
-                <li><span style="background-color:c0c0c0;">→{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</span></li>
+                <li class="active">→{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
               {% else %}
                 <li>
                   <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
@@ -59,6 +62,10 @@ $('#toc').on('click', 'a', function() {
     </div>
   {% endif %}
 {% endunless %}
+<!--   End of in-page page-navigation buttons  -->
+
+
+
 
 {% unless page.toc == false %}
   {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
