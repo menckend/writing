@@ -5,6 +5,8 @@
 <div class="mydocsidebar">
 <p>{{page.doctitle}}</p>
 <div class="sidebar-inner">
+<p>{{page.doctitle}}</p>
+
 <ul id="docnavsidebar" class="docnav">
       {% assign chapnums =  site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnum' | uniq | compact %}
       {% assign chapnames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | sort: 'chapnum' | map: 'chapnam' | uniq | compact %}
@@ -12,14 +14,19 @@
             {% assign chapcnt = forloop.index0 %}
             {% assign pagenames = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'title' | uniq | compact %}
             {% assign pageurls = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', chapnum | sort: 'pagenum' | map: 'url' | uniq | compact %}
+ 
+            {% if page.chapnum == chapnums[[chapcnt]]
+            <li class="level1 folderTitle"><details open><summary>{{ chapnames[chapcnt]}}</summary>
+            {% else %}
             <li class="level1 folderTitle"><details><summary>{{ chapnames[chapcnt]}}</summary>
+            {% endif %}
                   <ul>
                         {% for apage in pagenames %}
                               {% if page.chapnum == chapnums[[chapcnt]] and page.title == apage %}
                                     <li class="level1items open"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}--active</a></li>
                               {% else %}
                                     <li class="level1items"><a title="{{pagenames[forloop.index0]}}" href="{{pageurls[forloop.index0] | remove: "/"}}">{{pagenames[forloop.index0]}}</a></li>
-                              {% endif %}
+f                              {% endif %}
                         {% endfor %}
                   </ul>
             </details></li>
