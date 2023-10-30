@@ -1249,6 +1249,23 @@ li.level1 details summary {
 }
 
 
+li.level1items.open > a:before,
+li.level2items.open > a:before,
+li.level3items.open > a:before {
+    color: black;
+    content: '\f0c8';
+    font-family: 'FontAwesome';
+    text-decoration: none;
+  }
+
+
+  li.level1items.open > a:before{
+    color:#5cb85c; 
+    content: '\f0c8';
+    font-family: 'FontAwesome';
+    text-decoration: none;
+  }
+  
 
 
 
@@ -1263,16 +1280,6 @@ li.level1 details summary {
 
 
 
-
-
-
-
-li.level1items.open > a:before{
-  color:#5cb85c; 
-  content: '\f0c8';
-  font-family: 'FontAwesome';
-  text-decoration: none;
-}
 
 
 
