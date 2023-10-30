@@ -17,52 +17,52 @@ $('#toc').on('click', 'a', function() {
 </script>
 
 <!-- end of in-page TOC staging -->
-                                  {% unless page.pagenav == false %}
-                                    <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
-                                    {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
-                                    {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
-                                    {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
-                                    {% if pagecount > 1 %}
-                                        {% assign hostpagenum = page.pagenum | plus: 0  %}
-                                        {% assign hostpagenumint = page.pagenum | to_i  %}
-                                        {% assign oneless = '' | plus: 0 %}
-                                        {% assign onemore = '' | plus: 0 %}
-                                        {% assign oneless = hostpagenumint | minus: 1 %}
-                                        {% assign onemore = hostpagenumint | plus: 1 %}
-<div class="seriesContext">
-                                        {% for pnumval in pagenums %}
-                                            {% assign flpagenum = pnumval | plus: 0  %}
-                                            {% if flpagenum == oneless %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
-                                            {% endif %}
-                                            {% if flpagenum == onemore %}
-    <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Next Page </button></a>
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if pagecount > 2 %}
-    <div class="btn-group">
-        <button type="button" data-toggle="dropdown" class="background-color: #015CAE; btn dropdown-toggle;"></span style="text-color:#248ec2;">Jump to page</span> <span class="caret"></span></button>
-            <ol class="dropdown-menu">
-                                        {% for pnumval in pagenums %}
-                                            {% assign flpagenum = pnumval | plus: 0  %}
-                                            {%if flpagenum == hostpagenum %}
+{% unless page.pagenav == false %}
+  <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
+  {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
+  {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
+  {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
+  {% if pagecount > 1 %}
+    {% assign hostpagenum = page.pagenum | plus: 0  %}
+    {% assign hostpagenumint = page.pagenum | to_i  %}
+    {% assign oneless = '' | plus: 0 %}
+    {% assign onemore = '' | plus: 0 %}
+    {% assign oneless = hostpagenumint | minus: 1 %}
+    {% assign onemore = hostpagenumint | plus: 1 %}
+    <div class="seriesContext">
+      {% for pnumval in pagenums %}
+        {% assign flpagenum = pnumval | plus: 0  %}
+        {% if flpagenum == oneless %}
+          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
+        {% endif %}
+        {% if flpagenum == onemore %}
+          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Next Page </button></a>
+        {% endif %}
+      {% endfor %}
+      {% if pagecount > 2 %}
+        <div class="btn-group">
+          <button type="button" data-toggle="dropdown" class="background-color: #015CAE; btn dropdown-toggle;"></span style="text-color:#248ec2;">Jump to page</span> <span class="caret"></span></button>
+          <ol class="dropdown-menu">
+            {% for pnumval in pagenums %}
+              {% assign flpagenum = pnumval | plus: 0  %}
+              {%if flpagenum == hostpagenum %}
                 <li><span style="background-color:c0c0c0;">→{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</span></li>
-                                            {% else %}
+              {% else %}
                 <li>
-                    <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
+                  <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
                 </li>
-                                            {% endif %}
-                                        {% endfor %}
+              {% endif %}
+            {% endfor %}
             </ol>
+        </div>
+      {% endif %}
     </div>
-                                        {% endif %}
-</div>
-                                    {% endif %}
-                                  {% endunless %}
+  {% endif %}
+{% endunless %}
 
-                                    {% unless page.toc == false %}
-                                      {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
-                                      {% if tmparray > 1 %}
-<details><summary >Table of Contents</summary><div id="toc"></div></details>
-                                      {% endif %}
-                                    {% endunless %}
+{% unless page.toc == false %}
+  {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
+  {% if tmparray > 1 %}
+    <details><summary >Table of Contents</summary><div id="toc"></div></details>
+  {% endif %}
+{% endunless %}

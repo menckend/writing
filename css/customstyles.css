@@ -626,8 +626,6 @@ li.activeSeries {
 
 .seriesContext .dropdown-menu li.active {
     font-weight: bold;
-    margin-left: 43px;
-    font-size:18px;
 }
 
 .alert-warning {
