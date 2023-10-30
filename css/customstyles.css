@@ -1237,6 +1237,12 @@ details summary {
 
 
 
+li.level1items.open > a:before,
+  color: black;
+  content: '\f0c8';
+  font-family: 'FontAwesome';
+  text-decoration: none;
+}
 
 
 
@@ -1281,7 +1287,7 @@ details summary {
   .docnav li.level3items > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    color: #666;
+    color: black;
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
