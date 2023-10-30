@@ -47,7 +47,7 @@ $('#toc').on('click', 'a', function() {
                                         {% for pnumval in pagenums %}
                                             {% assign flpagenum = pnumval | plus: 0  %}
                                             {%if flpagenum == hostpagenum %}
-                <li class="font-weight:bold; text-color:red;"><strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
+                <li class="active"><strong>→</strong>{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
                                             {% else %}
                 <li>
                     <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
