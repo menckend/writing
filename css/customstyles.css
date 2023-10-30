@@ -625,7 +625,7 @@ li.activeSeries {
 }
 
 .seriesContext .dropdown-menu li.active {
-    color:#adadad:
+    color:#adadad;
     background-color: whitesmoke;
 }
 
