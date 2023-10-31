@@ -16,8 +16,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
          <ul id="docnavsidebar" class="docnav">
             <!-- Get a list of all pages with l1/l2/l3.idx values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
-            {% if sbpages %}
-
+            {% if sbpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
                {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq %}
 
@@ -37,11 +36,17 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               {% assign l4name = l3pages | where: 'l4idx', sbl4idxes[forloop.index0] | map: 'l4name' | compact | uniq %}
                               <li><a>l4idx: {{l4name}}</a></li>
                            {% endfor %}
+                        {% else %}
+                          <li><a>No content here yet; check back later</a></li>
                         {% endif %}
                      </li>
                   {% endfor %}
                   </ul>
+               {% else %}
+                 <li><a> No content here yet; check back later</a></li>
                {% endif %}
+            {% else %}
+              <li><a> No content here yet; check back later</a></li>
             {% endif %}
          </ul>
       {% endunless %}
