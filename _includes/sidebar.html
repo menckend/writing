@@ -31,6 +31,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                         <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                         <li><a>sub-item count: {{l3pages.size}}</a><li>
                         {% assign sbl4idxes = l3pages | map: 'l4idx' | compact | uniq %}
+                        <li><a>sbl4idxes size: {{sbl4idxes.size}}</a><li>
                         {% if sbl4idxes.size > 0 %}
                            <li><a> L4 indices: {{sbl4idxes}}</a></li>
                            {% for l4ix in sbl4idxes %}
