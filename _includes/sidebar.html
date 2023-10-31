@@ -19,12 +19,13 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% if sbpages %}
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
                {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq %}
-               <li><a> Unique L3 indices: {{sbl3idxes}}</a></li>
-               <li><a> # of unique L3 indices: {{sbl3idxes.size}}</a></li>
-               <li><a> </a></li>
                {% for l3ix in sbl3idxes %}
                   {% assign l3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | map: 'l3name' | compact | uniq %}
-                  <li><a> L3 index {{l3ix}}: {{l3name}} </a></li>
+                  <li><a>{{l3name}}</a></li>
+
+
+
+
                {% endfor %}
             {% endif %}
          </ul>
