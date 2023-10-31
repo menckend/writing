@@ -20,12 +20,12 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% if sbpages %}
 
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
-               {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq | sort: 'l3idx' %}
+               {% assign sbl3idxes = sbpages | map: 'l3idx' | to_i | compact | uniq | sort: 'l3idx' %}
                <li><a> Unique L3 indices in this L2 navbar: {{sbl3idxes}}</a></li>
                <li><a> Number of unique L3 indices in this L2 navbar: {{sbl3idxes.size}}</a></li>
                <li<a> </a></li>
                {% for sbl3ix in sbl3idxes %}
-                  {% assign sbl3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | map: 'l3name' | compact | uniq %}
+                  {% assign l3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | map: 'l3name' | compact | uniq %}
                   <li><a> Index#: {{sbl3ix}}.  Index-name: {{sbl3name}}</a></li>
                {% endfor %}
             {% endif %}
