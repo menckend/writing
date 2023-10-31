@@ -10,7 +10,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
    <div class="sidebar-inner">
       {% unless page.sidebar == null %}
          {% assign sbtitle = site.pages | map: l2name | compact | uniq %}
-         <div class="productTitle">nothing? here: {{sbtitle}}</div>
+         {% assign chapnums =  site.pages | map: 'chapnum' | uniq | compact %}
+         <div class="productTitle">nothing? here: {{sbtitle}} , {{chapnums}}</div>
       {% endunless %}
    </div>
 </div>
