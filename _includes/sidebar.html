@@ -21,7 +21,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                <li><a> Unique L3 indices in this L2 navbar: {{sbpages | map: 'l3idx' | compact | uniq }}</a></li>
                {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq %}
                {% for sbl3idx in sbl3idxes %}
-                  {% assign sbl3name = sbpages | where 'l3idx' = sbl3idx | map 'l3name' | compact | uniq %}
+                  {% assign sbl3name = sbpages | where: 'l3idx' = sbl3idx | map: 'l3name' | compact | uniq %}
                   <li><a>{{sbl3name}}</a></li>
                {% endfor %}
             {% endif %}
