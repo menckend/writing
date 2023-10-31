@@ -4,7 +4,6 @@ l2idx: 1
 l3idx: 2
 14idx: 2
 l4name: "Page 2: A thing about MORE things."
-l4description: "In which we get into MORE things."
 permalink: l1idx3_l2idx1_l3idx2_l4idx2.html
 folder: docos\
 ---
