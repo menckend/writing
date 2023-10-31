@@ -26,7 +26,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                <li<a> </a></li>
                {% for sbl3idx in sbl3idxes %}
                   {% assign sbl3name = sbpages | where: 'l3idx', sbl3idx | map: 'l3name' | compact | uniq %}
-                  <li><a>{{sbl3name}}</a></li>
+                  <li><a> Index#: {{sbl3idx}}.  Index-name: {{sbl3name}}</a></li>
                {% endfor %}
             {% endif %}
          </ul>
