@@ -14,12 +14,16 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
       {% endunless %}
       {% unless page.url contains 'index.html' %}
          <ul id="docnavsidebar" class="docnav">
-            {% assign sbl3pages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | where: 'l3idx', page.l3idx | sort: '13idx' %}
-            {% if sbl3pages %}
-               {% for l3page in sbl3pages %}
+            <!-- Get a list of all pages with l1/l2/l3.idx values that match *this* page.  (these are all the pages that should be in the sidebar)  -->
+            {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
+            {% if sbpages %}
+               <!-- Get a list of all the unique/sorted l3 indices and names from sidebar pages -->
+               {% assign sbl3idxes = sblpages | map: 'l3idx' | compact | uniq | sort: 'l3idx' %}
+               {% assign sbl3names = sbl3pages | map: 'l3name' | compact | uniq | sort: 'l3idx' %}
+               <!-- Loop through the list of unique L3 indexes/names and create navbar/list entries for each -->
+               {% for sbl3idx in sbl3idxes %}
                   <li>
-                     {% assign l3name = sbl3pages | where: 'l3idx', l3page.l3idx | map: 'l3name' | compact | uniq %}
-                     <a>{{l3name}}</a>
+                     <a>{{sbl3name in sbl3idx[forloop.index0]}}</a>
                   </li>
                {% endfor %}
             {% endif %}
