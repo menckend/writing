@@ -18,21 +18,21 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
             {% if sbpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
-               {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq %}
+               {% assign sbl3idxes = sbpages | sort: "l3idx" | map: 'l3idx' | compact | uniq %}
 
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if sbl3idxes.size > 0 %}
                   <ul>
                   {% for l3ix in sbl3idxes %}
-                     {% assign l3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | map: 'l3name' | sort: 'l3idx' | compact | uniq %}
+                     {% assign l3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | sort: "l3idx" | map: 'l3name' | compact | uniq %}
                      <li><a>{{l3ix}}. {{l3name}}</a>
                         <!-- Get a list of all the pages with *current* L3 index -->
-                        {% assign l3pages = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | sort: 'l3idx' %}
+                        {% assign l3pages = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | sort: "l3idx" %}
                         <!-- Get all the unique L4 indices in pages with *current* L3 index -->
-                        {% assign sbl4idxes = l3pages | map: 'l4idx' | sort: 'l4idx' | compact | uniq %}
+                        {% assign sbl4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                         {% if sbl4idxes.size > 0 %}
                            {% for l4ix in sbl4idxes %}
-                              {% assign l4name = l3pages | where: 'l4idx', sbl4idxes[forloop.index0] | map: 'l4name' | sort: 'l4idx' | compact | uniq %}
+                              {% assign l4name = l3pages | where: 'l4idx', sbl4idxes[forloop.index0] | sort: "l4idx" | map: 'l4name' | compact | uniq %}
                               <li><a>{{l4ix}}. {{l4name}}</a></li>
                            {% endfor %}
                         {% else %}
