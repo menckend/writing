@@ -18,7 +18,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
             {% if sbpages %}
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
-               <li><a> Unique L3 indices in this L2 navbar: {{sbpages | map: 'l3idx' | compact | uniq | sort: 'l3idx'}}</a></li>
+               
                {% assign sbl3idxes = sbpages | map: 'l3idx' | compact | uniq | sort: 'l3idx' %}
                {% for sbl3idx in sbl3idxes %}
                   {% assign sbl3name = sbpages | where 'l3idx' = sbl3idx | map 'l3name' | compact | uniq %}
