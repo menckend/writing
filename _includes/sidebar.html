@@ -10,7 +10,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
    <div class="sidebar-inner">
       {% unless page.sidebar == null %}
          {% assign sbtitle == site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: l2name | compact | uniq %}
-         <div class="productTitle">{{sbtitle}}-title goes here.  page.l1idx, page.l2idx, page.l3idx</div>
+         <div class="productTitle">{{sbtitle}}-title goes here.  {{page.l1idx}}, {{page.l2idx}}, {{page.l3idx}}</div>
       {% endunless %}
    </div>
 </div>
