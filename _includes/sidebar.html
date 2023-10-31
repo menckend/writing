@@ -1,16 +1,16 @@
 <!--
 lvl1 = topnav button name
-lvl2 = sidebar name (same as topnav dropdown list entry)
-lvl3 = 1st level of entries in sidebar
-lvl4 = 2nd level of entries in sidebar 
-lvl5 = 3rd level of entries in sidebar
+lvl2 = sidebar name (same as topnav dropdown list entry, e.g. book or article)
+lvl3 = 1st level of entries in sidebar  (eg section or chapter)
+lvl4 = 2nd level of entries in sidebar  (eg chapter or page )
+lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
 <div class="mydocsidebar">
    <div class="sidebar-inner">
       {% unless page.sidebar == null %}
          {% assign sbtitle == site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: l2name | compact | uniq %}
-         <div class="productTitle">{{sbtitle}}-title goes here</div>
+         <div class="productTitle">{{sbtitle}}-title goes here.  page.l1idx, page.l2idx, page.l3idx</div>
       {% endunless %}
    </div>
 </div>
