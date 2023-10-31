@@ -18,9 +18,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% if sbl3pages %}
                {% for l3page in sbl3pages %}
                   <li>
-                     {% assign l3name = sbl3pages | where: 'l3idx', l3page.l3idx | compact | uniq %}
+                     {% assign l3name = sbl3pages | where: 'l3idx', l3page.l3idx | map: 'l3name' | compact | uniq %}
                      <a>{{l3name}}</a>
-
                   </li>
                {% endfor %}
             {% endif %}
