@@ -1,10 +1,10 @@
 ---
-l1_idx: 3
-l2_idx: 1
-l3_idx: 2
-14_idx: 1
+l1idx: 3
+l2idx: 1
+l3idx: 2
+14idx: 1
 title: "Page 1: A thing about another thing."
-l4_description: "In which we get into things."
+l4description: "In which we get into things."
 permalink: l1idx3_l2idx1_l3idx2_l4idx1.html
 folder: docos\
 ---

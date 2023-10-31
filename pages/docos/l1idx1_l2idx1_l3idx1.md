@@ -1,8 +1,8 @@
 ---
-l1_idx: 1
-l2_idx: 1
-l3_idx: 1
-l3_name: "Month: January"
-l3_description: "A month of new beginnings"
+l1idx: 1
+l2idx: 1
+l3idx: 1
+l3name: "Month: January"
+l3description: "A month of new beginnings"
 folder: docos\
 ---
