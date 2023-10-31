@@ -25,7 +25,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                {% if sbl3idxes.size > 0 %}
                   {% for l3ix in sbl3idxes %}
                      {% assign l3name = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | map: 'l3name' | compact | uniq %}
-                     <li><a>{{l3name}}</a></li>
+                     <li><a>{{l3name}}</a>
                         <!-- Get a list of all the pages with *current* L3 index -->
                         {% assign l3pages = sbpages | where: 'l3idx', sbl3idxes[forloop.index0] | sort: 'l3idx' %}
                         <!-- Get all the unique L4 indices in pages with *current* L3 index -->
@@ -37,6 +37,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               <li><a>l4idx: {{l4name}}</a></li>
                            {% endfor %}
                         {% endif %}
+                     </li>
                   {% endfor %}
                {% endif %}
             {% endif %}
