@@ -12,10 +12,45 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
          <div class="productTitle">{{sbtitle}} </div>
       {% endunless %}
-
-
-
-
-
+      {% unless page.url contains 'index.html' %}
+         <ul id="docnavsidebar" class="docnav">
+            {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
+            <li><strong>{{sbtitle}}</strong></li>
+            {% assign sbl3pages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | where: 'l3idx', page.l3idx | sort: '13idx' %}
+            {% if sbl3pages %}
+               <p>sbl3pages is real!</p>
+               <p>{{sbl3pages.size}}
+               {% for sbl3page in sbl3pages %}
+                  <li>
+                     {% assign sbl4pages = sbl3pages | where 'l4_idx' == page.l4_idx %}
+                     {% if sbl4pages %}
+                        <details>
+                           <summary>{{sbl3page.title}}</summary>
+                           <ul class="nav deetsnav4">
+                              {% for sbl4page in sbl4pages %}
+                                 {% assign sbl5pages = sbl4pages | where 'l5_idx' == page.l5_idx %}
+                                 {% if sbl5pages %}
+                                    <details>
+                                       <summary>{{sbl4page.title}}</summary>
+                                       <ul class="nav deetsnav5">
+                                          {% for sbl5page in sbl5pages %}
+                                             <li><a>{{sbl5page.title}}</a></li>
+                                          {% endfor %}
+                                       </ul>
+                                    </details>
+                                 {% else %}
+                                    <a>{{sbl4page.title}}</a>
+                                    {% endif %}
+                              {% endfor %}
+                           </ul>
+                        </details>
+                     {% else %}
+                        <a>{{sbl3page.title}}</a>
+                     {% endif %}
+                  </li>
+               {% endfor %}
+            {% endif %}
+         </ul>
+      {% endunless %}
    </div>
 </div>
