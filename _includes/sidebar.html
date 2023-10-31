@@ -22,13 +22,13 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                <p>{{sbl3pages.size}}
                {% for sbl3page in sbl3pages %}
                   <li>
-                     {% assign sbl4pages = sbl3pages | where 'l4_idx' == page.l4_idx %}
+                     {% assign sbl4pages = sbl3pages | where 'l4_idx', page.l4idx %}
                      {% if sbl4pages %}
                         <details>
                            <summary>{{sbl3page.title}}</summary>
                            <ul class="nav deetsnav4">
                               {% for sbl4page in sbl4pages %}
-                                 {% assign sbl5pages = sbl4pages | where 'l5_idx' == page.l5_idx %}
+                                 {% assign sbl5pages = sbl4pages | where 'l5idx', page.l5idx %}
                                  {% if sbl5pages %}
                                     <details>
                                        <summary>{{sbl4page.title}}</summary>
