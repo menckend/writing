@@ -23,7 +23,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if sbl3idxes.size > 0 %}
                   <ul>
-                  <li><a> sbl3idxes: {{sbl3idxes}}</a></li
+                  <li><a> sbl3idxes: {{sbl3idxes}}</a></li>
                   {% for l3ix in sbl3idxes %}
                      {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
                      <li><a>{{l3ix}}. {{l3name}}</a>
