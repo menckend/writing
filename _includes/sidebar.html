@@ -49,26 +49,16 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                        {% endfor %}
                                        </details>
                                     {% else %}
-                                       {% if page.l4idx == l4ix and page.l3idx == l3ix %}
-                                       <p class="l4itemactive"><a title=" {{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
-                                       {% else %}
-                                       <p class="l4item"><a title="{{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
-                                       {% endif %}
-                                       <!-- <li><a> Nothing here yet; check back later</a></li> -->
+                                       <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
                                     {% endif %}
                               {% endfor %}
                               </details>
                            {% else %}
-                              {% if page.l3idx == l3ix %}
-                                 <p class="l3itemactive"><a title=" {{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
-                              {% else %}
-                                 <p class="l3item"><a title="{{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
-                              {% endif %}
+                              <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
                            {% endif %}
                         <!-- </li> -->
                      {% endfor %}
                {% else %}
-                 <!-- <li><a> Nothing here yet; check back later</a></li> -->
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
