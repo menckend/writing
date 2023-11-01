@@ -1419,6 +1419,7 @@ div.mencknav * {
     color: #333333;
     display: block;
     margin-right: 8px;
+    margin-bottom 8px;
   }
   hr.resourceSeparator {
     display: block;
