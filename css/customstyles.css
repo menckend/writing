@@ -1288,6 +1288,7 @@ li.level3items.open > a:before {
 
 .docnav {
     max-width: 500px;
+    background-color: whitesmoke;
   }
   .docnav {
     padding-left: 0px;
