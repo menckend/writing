@@ -16,16 +16,16 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
          <ul id="docnavsidebar" class="docnav">
             <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
-            <li><a> All the page URLs to be filed in this sidebar: {{sbpages.url}}</a></li>
+            <li><a> All the page URLs to be filed in this sidebar: {{sbpages | map url | compact | uniq }}</a></li>
             {% if sbpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indice from sbpages -->
                {% assign sbl3idxes = sbpages | sort: "l3idx" | map: 'l3idx' | compact | uniq %}
-
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if sbl3idxes.size > 0 %}
                   <ul>
                      {% for l3ix in sbl3idxes %}
                         {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
+                        <li><a> all the pages in this l3-index: {{sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'url' | compact | uniq }}</a></li>
                         <li><a>{{l3name}}</a>
                            <!-- Get a list of all the pages with *current* L3 index -->
                            {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
