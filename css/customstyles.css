@@ -1228,68 +1228,43 @@ details summary {
     border: hidden;
 }
 
- /* 
-li.level1 details {
-    overflow: hidden;
-    border-collapse: separate;
-    border-style: hidden;
-    margin-bottom: 10px;
-    border: hidden;
-}
-li.level1 details[open] {
-    overflow: hidden;
-    border-collapse: separate;
-}
-li.level1 details summary {
-    display:list-item;
-    overflow: hidden;
-    border-collapse: separate;
-    cursor: pointer;
-    border: hidden;
-}
-*/
 
 
-  li.level1items.open > a:before{
-    color:#5cb85c; 
-    content: '\f0c8';
-    font-family: 'FontAwesome';
-    text-decoration: none;
-  }
+
+/* plus */
   
+summary:after {
+  content: '\f0fe';
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  padding-right: 12px;
+  text-decoration: none;
+}
+
+/* minus */
+details[open] summary:after {
+  content: '\f146';
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  padding-right: 10px;
+  text-decoration: none;
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* empty square*/
-  p.l5item > a:before,
-  p.l4item > a:before,
-  p.l3item > a:before {
+/* empty square*/
+p.l5item > a:before,
+p.l4item > a:before,
+p.l3item > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
   }
+
 
 /* full square*/
 p.l5itemactive > a:before,
@@ -1301,21 +1276,6 @@ p.l3itemactive > a:before {
     text-decoration: none;
   /*text-indent: -1.5em;*/
 }
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
