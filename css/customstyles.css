@@ -1265,42 +1265,10 @@ li.level3items.open > a:before {
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.docnav {
-    max-width: 500px;
-    background-color: whitesmoke;
-  }
-  .docnav {
-    padding-left: 0px;
-    margin-left: 10px;
-    padding-right: 15px;
-    background-color: whitesmoke;
-  }
-
   /* empty square*/
-  l5item > a:before,
-  l4item > a:before,
-  l3item > a:before {
+  p.l5item > a:before,
+  p.l4item > a:before,
+  p.l3item > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
     color: black;
@@ -1309,6 +1277,16 @@ li.level3items.open > a:before {
     /*text-indent: -1.5em;*/
   }
 
+  p.l5item > a:before,
+  p.l4item > a:before,
+  p.l3item > a:before {
+    content: '\f096';
+    font-family: 'FontAwesome';
+    color: black;
+    padding-right: 10px;
+    text-decoration: none;
+    /*text-indent: -1.5em;*/
+  }
 
 
 
