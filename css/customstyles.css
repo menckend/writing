@@ -1202,8 +1202,10 @@ h4.panel-title {
 
 
 
+
 details {
     list-style: none;
+    content: "";
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
@@ -1213,6 +1215,7 @@ details {
 }
 details[open] {
     list-style: none;
+    content: "";
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
@@ -1224,6 +1227,8 @@ details[open] {
     border-radius: 5px;
 }
 details summary {
+    list-style: none;
+    content: "";
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 0px 8px 0px;
@@ -1254,22 +1259,6 @@ details[open] summary:before {
   text-decoration: none;
 }
 
-details.nested1 summary:before {
-    content: '\f0fe';
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    padding-right: 12px;
-    text-decoration: none;
-  }
-
-  /* minus */
-details.nested1 [open] summary:before {
-    content: '\f146';
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    padding-right: 10px;
-    text-decoration: none;
-  }
 
 
 
