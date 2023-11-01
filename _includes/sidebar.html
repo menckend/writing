@@ -24,13 +24,13 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                   <ul>
                      {% for l3ix in sbl3idxes %}
                         {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
-                        <li><a>{{l3name}}</a>
+                        <!-- <li><a>{{l3name}}</a> -->
                            <!-- Get a list of all the pages with *current* L3 index -->
                            {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                            <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                            {% assign l3-l4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                            {% if l3-l4idxes.size > 0 %}
-                              <ul>
+                              <details><summary>{{l3name}}<summary>
                               {% for l4ix in l3-l4idxes %}
                                  {% assign l4name = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
                                  <li><a>{{l4name}}</a>
@@ -40,29 +40,29 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                     <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                                     {% assign l4-l5idxes = l4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
                                     {% if l4-l5idxes.size > 0 %}
-                                       <ul>
+
                                        {% for l5ix in l4-l5idxes %}
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                           <li><a>{{l5name}}</a></li>
                                        {% endfor %}
-                                       </ul>
+
                                     {% else %}
                                        <!-- <li><a> Nothing here yet; check back later</a></li> -->
                                     {% endif %}
                                  </li>
                               {% endfor %}
-                              </ul>
+                              </details>
                            {% else %}
-                              <!-- <li><a>Nothing here yet; check back later</a></li> -->
+                              <li><a>{{l3name}}</a></li>
                            {% endif %}
-                        </li>
-                  {% endfor %}
+                        <!-- </li> -->
+                     {% endfor %}
                   </ul>
                {% else %}
                  <!-- <li><a> Nothing here yet; check back later</a></li> -->
                {% endif %}
             {% else %}
-              <li><a> Nothing here yet; check back later</a></li>
+               <li><a> Nothing here yet; check back later</a></li>
             {% endif %}
          </ul>
       {% endunless %}
