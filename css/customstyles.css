@@ -1286,7 +1286,6 @@ li.level1 details summary {
   p.l3item > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    color: black;
     padding-right: 10px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
@@ -1296,9 +1295,9 @@ li.level1 details summary {
 p.l5itemactive > a:before,
 p.l4itemactive > a:before,
 p.l3itemactive > a:before {
-    color: black;
     content: '\f0c8';
     font-family: 'FontAwesome';
+    padding-right: 10px;
     text-decoration: none;
   /*text-indent: -1.5em;*/
 }
