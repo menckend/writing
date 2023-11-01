@@ -1254,23 +1254,24 @@ details[open] summary:before {
   text-decoration: none;
 }
 
-detail details summary:before {
+detail.nested1 summary:before {
     content: '\f0fe';
     font-family: 'FontAwesome';
     font-size: 14px;
     padding-right: 12px;
     text-decoration: none;
   }
-  
+
   /* minus */
-  detail details[open] summary:before {
+detail.nested1 [open] summary:before {
     content: '\f146';
     font-family: 'FontAwesome';
     font-size: 14px;
     padding-right: 10px;
     text-decoration: none;
   }
-  
+
+
 
 
 
