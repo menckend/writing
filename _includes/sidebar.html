@@ -33,23 +33,23 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               <details><summary>{{l3name}}</summary>
                               {% for l4ix in l3-l4idxes %}
                                  {% assign l4name = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
-                                 <li><a>{{l4name}}</a>
-
+                                 <!-- <li><a>{{l4name}}</a> -->
                                     <!-- Get a list of all the pages with *current* L3 index -->
                                     {% assign l4pages = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' %}
                                     <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                                     {% assign l4-l5idxes = l4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
                                     {% if l4-l5idxes.size > 0 %}
-
+                                       <details><summary>{{l4name}}</summary>
                                        {% for l5ix in l4-l5idxes %}
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                           <li><a>{{l5name}}</a></li>
                                        {% endfor %}
-
+                                       </details>
                                     {% else %}
+                                       <li><a>{{l4name}}</a></li>
                                        <!-- <li><a> Nothing here yet; check back later</a></li> -->
                                     {% endif %}
-                                 </li>
+                                 <!-- </li> -->
                               {% endfor %}
                               </details>
                            {% else %}
