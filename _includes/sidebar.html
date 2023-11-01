@@ -22,6 +22,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                {% if sbl3idxes.size > 0 %}
                      {% for l3ix in sbl3idxes %}
                         {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
+                        {% assign l3url = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'url' | compact | uniq %}
                            <!-- Get a list of all the pages with *current* L3 index -->
                            {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                            <!-- Get all the unique L4 indices in pages with *current* L3 index -->
@@ -30,7 +31,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               <details><summary>{{l3name}}</summary>
                               {% for l4ix in l3-l4idxes %}
                                  {% assign l4name = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
-                                 {% assign l4url = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'permalink' | compact | uniq %}
+                                 {% assign l4url = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'url' | compact | uniq %}
                                     <!-- Get a list of all the pages with *current* L4 index -->
                                     {% assign l4pages = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' %}
                                     <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
@@ -39,7 +40,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                        <details><summary>{{l4name}}</summary>
                                        {% for l5ix in l4-l5idxes %}
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
-                                          {% assign l5url = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'permalink' | compact | uniq %}
+                                          {% assign l5url = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'url' | compact | uniq %}
                                           <p><a title="{{l5name}}" href="{{l5url | remove: "/"}}">{{l5name}}</a></p>
                                        {% endfor %}
                                        </details>
@@ -50,7 +51,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               {% endfor %}
                               </details>
                            {% else %}
-                              <p>{{l3name}}</p>
+                              <p><a title="{{l3name}}" href="{{l3url | remove: "/"}}">{{l3name}}</a></p>
                            {% endif %}
                         <!-- </li> -->
                      {% endfor %}
@@ -58,7 +59,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                  <!-- <li><a> Nothing here yet; check back later</a></li> -->
                {% endif %}
             {% else %}
-               <li><a> Nothing here yet; check back later</a></li>
+               <p> Nothing here yet; check back later</p>
             {% endif %}
       {% endunless %}
    </div>
