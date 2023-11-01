@@ -37,7 +37,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                     <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                                     {% assign l4-l5idxes = l4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
                                     {% if l4-l5idxes.size > 0 %}
-                                       <details {% if page.l4idx == l4ix%}open{%endif%}><summary>{{l4name}}</summary>
+                                       <details {% if page.l4idx == l4ix% AND page.l3idx == l3ix}open{%endif%}><summary>{{l4name}}</summary>
                                        {% for l5ix in l4-l5idxes %}
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                           {% assign l5url = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'url' | compact | uniq %}
