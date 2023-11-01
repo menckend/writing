@@ -42,8 +42,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                            {% endfor %}
                         {% else %}
                            <li><a>No content here yet; check back later</a></li>
-                           <li><a> Checking again:  {{l3pages | where: 'l4idx', sbl4idxes[l4ix-lp-cnt] | sort: "l4idx" | map: 'l4name' | compact | uniq }}</a></li>
-                           <li><a> l3xi: {{l3ix}};   </a></li>
+                           <li><a> Checking again:  {{l3pages | where: 'l4idx', 0 | sort: "l4idx" | map: 'l4name' | compact | uniq }}</a></li>
+                           <li><a> l3ix: {{l3ix}};   </a></li>
                         {% endif %}
                      </li>
                      {% assign l3ix-lp-cnt == l3ix-lp-cnt | plus: 1 %}
