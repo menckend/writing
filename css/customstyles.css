@@ -581,11 +581,12 @@ a[data-toggle] {
 
 }
 
+ /* 
 .summary:before {
     content: "Summary: ";
     font-weight: bold;
 }
-
+*/
 
 a.fa.fa-envelope-o.mailto {
     font-weight: 600;
@@ -1209,7 +1210,7 @@ details {
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 0px 8px 0px;
+    padding: 0px 8px 8px 8px;
     border-color: #dcdcdc;
     margin-bottom: 15px;
     border-width: 2px ;
@@ -1221,13 +1222,13 @@ details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 8px 0px;
     cursor: pointer;
     background: none;
     border: hidden;
 }
 
-
+ /* 
 li.level1 details {
     overflow: hidden;
     border-collapse: separate;
@@ -1246,7 +1247,7 @@ li.level1 details summary {
     cursor: pointer;
     border: hidden;
 }
-
+*/
 
 li.level1items.open > a:before,
 li.level2items.open > a:before,
