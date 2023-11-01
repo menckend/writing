@@ -1335,6 +1335,22 @@ li.level3items.open > a:before {
   }
   /* minus */
   
+  .docnav .a.l5item > a:before,
+  .docnav a.l4item > a:before,
+  .docnav a.l3item > a:before {
+    content: '\f096';
+    font-family: 'FontAwesome';
+    color: black;
+    padding-right: 10px;
+    text-decoration: none;
+    /*text-indent: -1.5em;*/
+  }
+
+
+
+
+
+
   .docnav li.open > a > span:after {
     content: '\f146';
     font-family: 'FontAwesome';
