@@ -1249,12 +1249,6 @@ li.level1 details summary {
 }
 */
 
-li.level3items.open > a:before {
-    color: black;
-    content: '\f0c8';
-    font-family: 'FontAwesome';
-    text-decoration: none;
-  }
 
   li.level1items.open > a:before{
     color:#5cb85c; 
@@ -1263,6 +1257,27 @@ li.level3items.open > a:before {
     text-decoration: none;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* empty square*/
@@ -1277,18 +1292,47 @@ li.level3items.open > a:before {
     /*text-indent: -1.5em;*/
   }
 
-  p.l5item > a:before,
-  p.l4item > a:before,
-  p.l3item > a:before {
-    content: '\f096';
-    font-family: 'FontAwesome';
+/* full square*/
+p.l5itemactive > a:before,
+p.l4itemactive > a:before,
+p.l3itemactive > a:before {
     color: black;
-    padding-right: 10px;
+    content: '\f0c8';
+    font-family: 'FontAwesome';
     text-decoration: none;
-    /*text-indent: -1.5em;*/
+  /*text-indent: -1.5em;*/
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  li.level1.open > ul > li.level1items.open > a:before,
+  li.level2.open > ul > li.level2items.open > a:before,
+  li.level3.open > ul > li.level3items.open > a:before {
+    color: black;
+    content: '\f0c8';
+    font-family: 'FontAwesome';
+    text-decoration: none;
   }
-
-
 
 
 
