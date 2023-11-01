@@ -1214,7 +1214,7 @@ details {
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 8px 8px 8px 8px;
+    padding: 0px 8px 8px 8px;
     border-color: #dcdcdc;
     margin-bottom: 15px;
     border-width: 2px ;
@@ -1256,15 +1256,6 @@ details[open] summary:before {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* empty square*/
 p.l5item > a:before,
 p.l4item > a:before,
@@ -1289,20 +1280,13 @@ p.l3itemactive > a:before {
 }
 
 
+div.menckennav {
+    background-color: whitesmoke;
+    color:#5cb85c;
+}
 
 
 
-
-
-
-  li.level1.open > ul > li.level1items.open > a:before,
-  li.level2.open > ul > li.level2items.open > a:before,
-  li.level3.open > ul > li.level3items.open > a:before {
-    color: black;
-    content: '\f0c8';
-    font-family: 'FontAwesome';
-    text-decoration: none;
-  }
 
 
 
