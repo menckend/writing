@@ -41,17 +41,17 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                        {% for l5ix in l4-l5idxes %}
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                           {% assign l5url = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'url' | compact | uniq %}
-                                          <p><a title="{{l5name}}" href="{{l5url | remove: "/"}}">{{l5name}}</a></p>
+                                          <p><a title="{{l5name}}" href="{{l5url[0] | remove: "/"}}">{{l5name}}</a></p>
                                        {% endfor %}
                                        </details>
                                     {% else %}
-                                       <p><a title="{{l4name}}" href="{{l4url | remove: "/"}}">{{l4name}}</a></p>
+                                       <p><a title="{{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
                                        <!-- <li><a> Nothing here yet; check back later</a></li> -->
                                     {% endif %}
                               {% endfor %}
                               </details>
                            {% else %}
-                              <p><a title="{{l3name}}" href="{{l3url | remove: "/"}}">{{l3name}}</a></p>
+                              <p><a title="{{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
                            {% endif %}
                         <!-- </li> -->
                      {% endfor %}
