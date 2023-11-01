@@ -29,8 +29,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                         <li><a>{{l3name}}</a>
                            <!-- Get a list of all the pages with *current* L3 index -->
                            {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
-                           <li><a> all the pages in this l3-index: {{sbpages.url | where: 'l3idx', l3ix | sort: 'l3idx'}}</a></li>
-                           <li><a> all the pages in this l3-index: {{sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'url' | compact | uniq }}</a></li>
+                           <li><a> all the pages in this l3-index: {% for l3pag in l3pages %} {{l3pag.url}}, {% endfor %}</a></li>
                            <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                            {% assign l3-l4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                            {% if l3-l4idxes.size > 0 %}
