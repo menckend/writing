@@ -1233,7 +1233,7 @@ details summary {
 
 /* plus */
   
-summary:after {
+summary:before {
   content: '\f0fe';
   font-family: 'FontAwesome';
   font-size: 14px;
@@ -1242,7 +1242,7 @@ summary:after {
 }
 
 /* minus */
-details[open] summary:after {
+details[open] summary:before {
   content: '\f146';
   font-family: 'FontAwesome';
   font-size: 14px;
