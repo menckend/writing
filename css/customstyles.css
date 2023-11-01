@@ -1290,7 +1290,6 @@ div.mencknav * {
     color:#666;
     text-decoration: none;
     background-color: none;
-    padding-bottom: 8px;    
 }
 
 
@@ -1318,7 +1317,7 @@ div.mencknav * {
     display: block;
     margin-right: 8px;
     margin-bottom 8px;
-    padding-bottom: 16px;
+    padding-bottom: 18px;
   }
   hr.resourceSeparator {
     display: block;
