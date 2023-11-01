@@ -42,7 +42,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                           {% assign l5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                           {% assign l5url = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'url' | compact | uniq %}
                                           {% if page.l5idx == l5ix %}
-                                             <p class="l5itemactive"><a title="{{l5name}}" href="{{l5url[0] | remove: "/"}}">{{l5name}}</a></p>
+                                             <p class="l5itemactive"><a title=" {{l5name}}" href="{{l5url[0] | remove: "/"}}">{{l5name}}</a></p>
                                           {% else %}
                                              <p class="l5item"><a title="{{l5name}}" href="{{l5url[0] | remove: "/"}}">{{l5name}}</a></p>
                                           {% endif %}
@@ -50,7 +50,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                                        </details>
                                     {% else %}
                                        {% if page.l4idx == l4ix %}
-                                       <p class="l4itemactive"><a title="{{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
+                                       <p class="l4itemactive"><a title=" {{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
                                        {% else %}
                                        <p class="l4item"><a title="{{l4name}}" href="{{l4url[0] | remove: "/"}}">{{l4name}}</a></p>
                                        {% endif %}
@@ -60,7 +60,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               </details>
                            {% else %}
                               {% if page.l3idx == l3ix %}
-                                 <p class="l3itemactive"><a title="{{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
+                                 <p class="l3itemactive"><a title=" {{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
                               {% else %}
                                  <p class="l3item"><a title="{{l3name}}" href="{{l3url[0] | remove: "/"}}">{{l3name}}</a></p>
                               {% endif %}
