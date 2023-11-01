@@ -1280,12 +1280,10 @@ p.l3itemactive > a:before {
 }
 
 
-div.mencknav {
+div.mencknav * {
     background-color: whitesmoke !important;
-    color:black !important;
-}
-div.mencknav a {
-    color:black !important;
+    color:#666;
+    text-decoration: none;
 }
 
 
