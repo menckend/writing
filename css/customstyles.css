@@ -1222,7 +1222,7 @@ details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 8px 0px;
     cursor: pointer;
     background: none;
     border: hidden;
@@ -1249,15 +1249,12 @@ li.level1 details summary {
 }
 */
 
-li.level1items.open > a:before,
-li.level2items.open > a:before,
 li.level3items.open > a:before {
     color: black;
     content: '\f0c8';
     font-family: 'FontAwesome';
     text-decoration: none;
   }
-
 
   li.level1items.open > a:before{
     color:#5cb85c; 
