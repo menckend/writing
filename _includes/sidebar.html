@@ -37,6 +37,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                            {% endfor %}
                         {% else %}
                           <li><a>No content here yet; check back later</a></li>
+                          <li><a> Checking again:  {{l3pages | where: 'l4idx', sbl4idxes[forloop.index0] | sort: "l4idx" | map: 'l4name' | compact | uniq}}</a></li>
                         {% endif %}
                      </li>
                   {% endfor %}
