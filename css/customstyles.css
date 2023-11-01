@@ -1200,6 +1200,7 @@ h4.panel-title {
     }
 }
 details {
+    display: inline
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
@@ -1208,6 +1209,7 @@ details {
     border: hidden;
 }
 details[open] {
+    display: inline
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
@@ -1219,6 +1221,7 @@ details[open] {
     border-radius: 5px;
 }
 details summary {
+    display: inline
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 0px 8px 0px;
