@@ -16,7 +16,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
          <ul id="docnavsidebar" class="docnav">
             <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
-            <li><a> All the page URLs to be filed in this sidebar: {{sbpages | map: 'url' | compact | uniq }}</a></li>
+            <li><a> Number of pages for this sidebar: {{sbpages | size }}</a></li>
             {% if sbpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
                {% assign sbl3idxes = sbpages | sort: "l3idx" | map: 'l3idx' | compact | uniq %}
@@ -29,7 +29,6 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                         <li><a>{{l3name}}</a>
                            <!-- Get a list of all the pages with *current* L3 index -->
                            {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
-                           <li><a> all the pages in this l3-index: {% for l3pag in l3pages %} {{l3pag.url}}, {% endfor %}</a></li>
                            <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                            {% assign l3-l4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                            {% if l3-l4idxes.size > 0 %}
@@ -39,9 +38,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                               {% endfor %}
                            {% else %}
                               <li><a>No content here yet; check back later</a></li>
-                              <li><a> Checking again:  {{l3pages | where: 'l4idx', l3ix | sort: "l4idx" | map: 'l4name' | compact | uniq }}</a></li>
-                              <li><a> l3ix: {{l3ix}};   </a></li>
-                        {% endif %}
+                           {% endif %}
                         </li>
                   {% endfor %}
                   </ul>
