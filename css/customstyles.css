@@ -1203,14 +1203,14 @@ details {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
-    padding: 0px 2px;
+    padding: 0px 8px;
     margin-bottom: 15px;
     border: hidden;
 }
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 2px 2px 2px;
+    padding: 0px 8px 8px 8px;
     border-color: #dcdcdc;
     margin-bottom: 15px;
     border-width: 2px ;
@@ -1222,7 +1222,7 @@ details summary {
     display:list-item;
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 0px 2px 0px;
+    padding: 0px 0px 8px 0px;
     cursor: pointer;
     background: none;
     border: hidden;
