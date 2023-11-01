@@ -1199,8 +1199,11 @@ h4.panel-title {
         display:block !important;
     }
 }
+
+
+
 details {
-    display: inline
+    list-style: none;
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
@@ -1209,7 +1212,7 @@ details {
     border: hidden;
 }
 details[open] {
-    display: inline
+    list-style: none;
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
