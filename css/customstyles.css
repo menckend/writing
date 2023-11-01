@@ -1294,6 +1294,7 @@ li.level3items.open > a:before {
     padding-left: 0px;
     margin-left: 10px;
     padding-right: 15px;
+    background-color: whitesmoke;
   }
   .docnav ul {
     padding-left: 15px
