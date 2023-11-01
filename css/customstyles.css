@@ -1200,6 +1200,7 @@ h4.panel-title {
     }
 }
 details {
+    list-style: none;
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
@@ -1208,6 +1209,7 @@ details {
     border: hidden;
 }
 details[open] {
+    list-style: none;
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
@@ -1233,7 +1235,7 @@ details summary {
 
 /* plus */
   
-summary:before {
+details summary:before {
   content: '\f0fe';
   font-family: 'FontAwesome';
   font-size: 14px;
