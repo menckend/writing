@@ -1204,8 +1204,6 @@ h4.panel-title {
 
 
 details {
-    list-style: none;
-    content: "";
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
@@ -1214,8 +1212,6 @@ details {
     border: hidden;
 }
 details[open] {
-    list-style: none;
-    content: "";
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px 8px 8px;
@@ -1228,7 +1224,6 @@ details[open] {
 }
 details summary {
     list-style: none;
-    content: "";
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 0px 8px 0px;
@@ -1236,7 +1231,10 @@ details summary {
     background: none;
     border: hidden;
 }
-
+details summary::-webkit-details-marker {
+    display: none;
+   }
+   
 
 
 
