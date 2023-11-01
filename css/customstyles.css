@@ -1284,6 +1284,10 @@ div.mencknav {
     background-color: whitesmoke !important;
     color:black !important;
 }
+div.mencknav a {
+    color:black !important;
+}
+
 
 
 
