@@ -7,7 +7,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
 <div class="mydocsidebar">
-   <div class="mencknav">
+   <div class="mencknav"> <span style="background-color: whitesmoke;">
       {% unless page.sidebar == null %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
          <div class="productTitle">{{sbtitle}} </div>
@@ -60,5 +60,5 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
                <p> Nothing here yet; check back later</p>
             {% endif %}   
       {% endunless %}
-   </div>
+   </span></div>
 </div>
