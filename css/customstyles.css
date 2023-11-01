@@ -1214,7 +1214,7 @@ details {
 details[open] {
     overflow: hidden;
     border-collapse: separate;
-    padding: 0px 8px 8px 8px;
+    padding: 8px 8px 8px 8px;
     border-color: #dcdcdc;
     margin-bottom: 15px;
     border-width: 2px ;
@@ -1234,8 +1234,6 @@ details summary {
 details summary::-webkit-details-marker {
     display: none;
    }
-   
-
 
 
 /* plus */
