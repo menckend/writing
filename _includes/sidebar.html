@@ -6,11 +6,11 @@ lvl4 = 2nd level of entries in sidebar  (eg chapter or page )
 lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
-<div class="mydocsidebar">
+<!-- <div class="mydocsidebar"> -->
    <div class="mencknav">
       {% unless page.sidebar == null %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
-         <div class="productTitle">{{sbtitle}}<p></p> </div>
+         <div class="productTitle">{{sbtitle}}</div>
       {% endunless %}
       {% unless page.url contains 'index.html' %}
             <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
@@ -61,4 +61,4 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
             {% endif %}   
       {% endunless %}
    </div>
-</div>
+<!-- </div> -->
