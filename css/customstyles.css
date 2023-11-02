@@ -1330,7 +1330,8 @@ div.mencknav * {
     text-decoration: none;
     background-color: none;
     padding-bottom: 8px;
-    padding-top: 0px;
+    padding-top: 8px;
+    color:#666;
 }
 
 /*
