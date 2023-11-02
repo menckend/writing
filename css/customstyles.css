@@ -1296,15 +1296,15 @@ p.l3itemactive > a:before {
 /* Try topnav color scheme in sidebar.  */
 
 div.medianav {
-    background-color: #347DBE !important;
-    color: whitesmoke;
+    background-color: whitesmoke !important;
+    color: #347DBE;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 8px;
     padding-left: 8px;
     border-style: none;
-    border-top-color: whitesmoke;
-    border-bottom-color: whitesmoke;
+    border-top-color: #347DBE;
+    border-bottom-color: #347DBE;
     border-top-width: 2px;
     border-bottom-width: 2px;
     border-top-style: solid;
@@ -1316,12 +1316,12 @@ div.medianav * {
 }
 
 div.mencknav {
-    background-color: #347DBE;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #347DBE;
     text-decoration: none;
 
     border-style: none;
-    border-bottom-color: whitesmoke;
+    border-bottom-color:#347DBE;
     border-bottom-width: 2px;
     border-bottom-width: 2px;
     border-bottom-style: solid;
@@ -1330,10 +1330,10 @@ div.mencknav {
 
 div.mencknav * {
     text-decoration: none;
-    background-color: #347DBE;
+    background-color: whitesmoke;
     padding-bottom: 2px;
     padding-top: 2px;
-    color:whitesmoke;
+    color:#347DBE;
 }
 
 
