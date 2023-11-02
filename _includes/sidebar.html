@@ -13,7 +13,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
    <div class="mencknav">
       {% unless page.url contains 'index.html' %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
-         <div class="productTitle"><p><span style="color: black !important;">{{sbtitle}}</span></p></div>
+         <div class="productTitle"><p>{{sbtitle}}</p></div>
       {% endunless %}
       {% unless page.url contains 'index.html' %}
             <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
