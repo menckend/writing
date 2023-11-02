@@ -1277,7 +1277,8 @@ p.l4item > a:before,
 p.l3item > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
-    padding-right: 8px;
+    font-size: 14px;
+        padding-right: 8px;
     padding-left: 8px;
     text-decoration: none;
     /*text-indent: -1.5em;*/
@@ -1289,6 +1290,7 @@ p.l5itemactive > a:before,
 p.l4itemactive > a:before,
 p.l3itemactive > a:before {
     content: '\f0c8';
+    font-size: 14px;
     font-family: 'FontAwesome';
     padding-right: 8px;
     padding-left: 8px;
