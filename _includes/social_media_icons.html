@@ -1,5 +1,5 @@
 {% if site.data.social_media %}
-<div id="social_media">
+<div id="social_media" style=">
     {% assign sm = site.data.social_media %}
     {% for entry in sm %}
         {% assign key = entry | first %}
@@ -9,6 +9,3 @@
     {% endfor %}
 </div>
 {% endif %}
-
-
-<i class="fa-brands fa-spotify"></i>
