@@ -8,22 +8,22 @@ facebook:
   id: 'mencken.davidson'
   href: 'https://www.facebook.com/'
   title: 'Facebook'
-  fa-icon: 'fa-brands fa-facebook'
+  fa-icon: 'fa-brands fa-facebook fa-lg'
 
 twitter:
   id: 'totstroc'
   href: 'https://www.twitter.com/'
   title: 'Twitter'
-  fa-icon: 'fa-brands fa-twitter'
+  fa-icon: 'fa-brands fa-twitter fa-lg'
 
 github:
   id: 'menckend'
   href: 'https://github.com/'
   title: 'GitHub'
-  fa-icon: 'fa-brands fa-github'
+  fa-icon: 'fa-brands fa-github fa-lg'
 
 spotify:
   id: 'menckendavidson'
   href: 'https://open.spotify.com/user/'
   title: 'GitHub'
-  fa-icon: 'fa-brands fa-spotify'
+  fa-icon: 'fa-brands fa-spotify fa-lg'
