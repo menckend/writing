@@ -1309,11 +1309,14 @@ div.medianav {
     border-bottom-width: 2px;
     border-top-style: solid;
     border-bottom-style: solid;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 div.medianav * {
     padding: 8px;
 }
+
 
 div.mencknav {
     background-color: whitesmoke;
