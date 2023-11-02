@@ -15,18 +15,22 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
       {% unless page.url contains 'index.html' %}
             <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
+
+            <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values.
             {% if sbpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
                {% assign sbl3idxes = sbpages | sort: "l3idx" | map: 'l3idx' | compact | uniq %}
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if sbl3idxes.size > 0 %}
                   {% for l3ix in sbl3idxes %}
+                     <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
                      {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
                      {% assign l3url = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'url' | compact | uniq %}
                      <!-- Get a list of all the pages with *current* L3 index -->
                      {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                      {% assign l3-l4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
+                     <!-- Testing to see if the current l3 index has an l4 children. -->
                      {% if l3-l4idxes.size > 0 %}
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{l3name}}</summary>
                            {% for l4ix in l3-l4idxes %}
