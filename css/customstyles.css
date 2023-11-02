@@ -1299,7 +1299,7 @@ div.medianav {
     padding-left: 8px;
 }
 
-div.medianav svg {
+div.medianav * {
     padding: 4px;
 }
 
