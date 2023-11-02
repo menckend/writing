@@ -1249,7 +1249,7 @@ details summary::-webkit-details-marker {
 details summary:before {
   content: '\f0fe';
   font-family: 'FontAwesome';
-  font-size: 14px;
+  font-size: 12px;
   padding-right: 8px;
   text-decoration: none;
 }
@@ -1258,7 +1258,7 @@ details summary:before {
 details[open] summary:before {
   content: '\f146';
   font-family: 'FontAwesome';
-  font-size: 14px;
+  font-size: 12px;
   padding-right: 8px;
   text-decoration: none;
 }
