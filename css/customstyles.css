@@ -1298,16 +1298,16 @@ div.medianav {
     padding-right: 8px;
     padding-left: 8px;
     border-color: #666;
-    border-width: 2px;
+    border-top-width: 2px;
+    border-top-width: 2px;
     border-style: solid;
-    border-left-style:hidden;
-    border-right-style:hidden;
+    border-left-style:none;
+    border-right-style:none;
 }
 
 div.medianav * {
     padding: 4px;
 }
-
 
 div.mencknav {
     background-color: whitesmoke;
