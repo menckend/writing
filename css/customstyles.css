@@ -1291,6 +1291,15 @@ p.l3itemactive > a:before {
   /*text-indent: -1.5em;*/
 }
 
+div.medianav {
+    background-color: whitesmoke;
+    padding: 24px;
+}
+
+div.medianav * {
+    padding: 24px;
+}
+
 
 div.mencknav {
     background-color: whitesmoke;

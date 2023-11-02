@@ -6,12 +6,12 @@ lvl4 = 2nd level of entries in sidebar  (eg chapter or page )
 lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
-
-
+<div class="medianav">
+{% include social_media_icons.html %}
+</div>
 <!-- <div class="mydocsidebar"> -->
    <div class="mencknav">
       {% unless page.url contains 'index.html' %}
-         {% include social_media_icons.html %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
          <div class="productTitle"><p><span style="color: black !important;">{{sbtitle}}</span></p></div>
       {% endunless %}
