@@ -1203,12 +1203,27 @@ h4.panel-title {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 details {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
 /*    padding: 0px 8px; */
-    margin-bottom: 15px;
+/*    margin-bottom: 15px; */
     border: hidden;
 }
 details[open] {
@@ -1216,7 +1231,7 @@ details[open] {
     border-collapse: separate;
 /*    padding: 0px 8px 8px 8px; */
     border-color: #dcdcdc;
-    margin-bottom: 15px;
+/*    margin-bottom: 15px; */
     border-width: 2px ;
     border-style: hidden;
     background-color: whitesmoke;
