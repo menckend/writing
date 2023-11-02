@@ -1285,7 +1285,7 @@ p.l3itemactive > a:before {
     content: '\f0c8';
     font-size: 14px;
     font-family: 'FontAwesome';
-    padding-right: 7.5px !important;
+    padding-right: 8px;
     padding-left: 8px;
     text-decoration: none;
   /*text-indent: -1.5em;*/
@@ -1332,6 +1332,9 @@ div.mencknav * {
     margin-right: 8px;
     margin-bottom 8px;
     padding-bottom: 18px;
+    padding-left: 8px;
+    text-decoration: underline;
+
   }
   hr.resourceSeparator {
     display: block;
