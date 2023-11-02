@@ -1293,11 +1293,14 @@ p.l3itemactive > a:before {
 
 div.medianav {
     background-color: whitesmoke;
-    padding: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
 div.medianav svg {
-    padding: 8px;
+    padding: 4px;
 }
 
 
