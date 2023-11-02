@@ -1299,7 +1299,7 @@ div.medianav {
     padding-left: 8px;
     border-color: #666;
     border-top-width: 2px;
-    border-top-width: 2px;
+    border-bottom-width: 2px;
     border-style: solid;
     border-left-style: none;
     border-right-style: none;
@@ -1307,12 +1307,11 @@ div.medianav {
 
 div.medianav * {
     padding: 4px;
-    color: #666;
 }
 
 div.mencknav {
     background-color: whitesmoke;
-    color:#666;
+    color:#00acee;
     text-decoration: none;
 }
 
