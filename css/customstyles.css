@@ -1333,9 +1333,9 @@ div.mencknav * {
     margin-bottom 8px;
     padding-bottom: 18px;
     padding-left: 8px;
-    text-decoration: underline;
-
+    padding-top: 18px;
   }
+
   hr.resourceSeparator {
     display: block;
     margin-top: 1.7em;
