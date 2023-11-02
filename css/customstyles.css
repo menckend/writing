@@ -1305,13 +1305,15 @@ div.medianav {
     border-right-style: none;
 }
 
-div.medianav * {
-    padding: 6px;
+div.medianav svg {
+    padding: 8px;
+    fill: 00acee;
 }
+
 
 div.mencknav {
     background-color: whitesmoke;
-    color:#00acee;
+    color:#666;
     text-decoration: none;
 }
 
