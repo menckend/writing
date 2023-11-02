@@ -1309,12 +1309,11 @@ div.medianav * {
     padding: 8px;
 }
 
-
-/* SVG fills*/
-.segment-fill {
-    fill: yellow(--segment-fill-fill);
-  }
-  
+div.medianav svg {
+    ​path {
+        fill: blue;
+      }​
+}
 
 
 
