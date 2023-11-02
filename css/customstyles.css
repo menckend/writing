@@ -1296,8 +1296,8 @@ div.medianav {
     padding: 24px;
 }
 
-div.medianav * {
-    padding: 24px;
+div.medianav svg {
+    padding: 8px;
 }
 
 
