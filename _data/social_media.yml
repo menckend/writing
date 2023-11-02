@@ -2,24 +2,28 @@ email:
   id: 'mencken@gmail.com'
   href: 'mailto:'
   title: 'Email'
-  fa-icon: 'fa-envelope-square'
+  fa-icon: 'fa-solid fa-envelope'
+
 facebook:
   id: 'mencken.davidson'
   href: 'https://www.facebook.com/'
   title: 'Facebook'
-  fa-icon: 'fa-facebook-square'
+  fa-icon: 'fa-brands fa-facebook'
+
 twitter:
   id: 'totstroc'
   href: 'https://www.twitter.com/'
   title: 'Twitter'
-  fa-icon: 'fa-twitter-square'
+  fa-icon: 'fa-brands fa-twitter'
+
 github:
   id: 'menckend'
   href: 'https://github.com/'
   title: 'GitHub'
-  fa-icon: 'fa-github-square'
+  fa-icon: 'fa-brands fa-github'
+
 spotify:
   id: 'menckendavidson'
   href: 'https://open.spotify.com/user/'
   title: 'GitHub'
-  fa-icon: 'fa-spotify-square'
+  fa-icon: 'fa-brands fa-spotify'
