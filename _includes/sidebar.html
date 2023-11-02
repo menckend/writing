@@ -6,23 +6,12 @@ lvl4 = 2nd level of entries in sidebar  (eg chapter or page )
 lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
-{% if site.data.social_media %}
-<div id="social_media" class="background-color: whitesmoke;">
-    {% assign sm = site.data.social_media %}
-    {% for entry in sm %}
-        {% assign key = entry | first %}
-        {% if sm[key].id %}
-            <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><i class="fa {{ sm[key].fa-icon }}"></i></a>
-        {% endif %}
-    {% endfor %}
-</div>
-{% endif %}
-
 
 
 <!-- <div class="mydocsidebar"> -->
    <div class="mencknav">
       {% unless page.sidebar == null %}
+         {% include social_media_icons.html %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
          <div class="productTitle"><p><span style="color: black !important;">{{sbtitle}}</span></p></div>
       {% endunless %}

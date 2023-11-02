@@ -1,18 +1,11 @@
-<!-- social_media_icons.html -->
-
-    </a>
-    <a class="noCrossRef" href="https://twitter.com/totstroc">twitter
-        <div class="stwitter"></div>
-    </a>
-
-    <a class="noCrossRef" href="https://www.linkedin.com/in/mencken">linkedin
-        <div class="slinkedin"></div>
-    </a>
-
-    <a class="noCrossRef" href="https://github.com/menckend/">github
-        <div class="sgithub"></div>
-    </a>
-
-<div style="clear:both"></div>
-
-<!-- end social_media_icons.html -->
+{% if site.data.social_media %}
+<div id="social_media">
+    {% assign sm = site.data.social_media %}
+    {% for entry in sm %}
+        {% assign key = entry | first %}
+        {% if sm[key].id %}
+            <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><i class="fa {{ sm[key].fa-icon }}"></i></a>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
