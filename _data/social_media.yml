@@ -5,7 +5,7 @@ email:
   fa-icon: 'fa-envelope-square'
 
 facebook:
-  id: 'menckendavidson'
+  id: 'mencken.davidson'
   href: 'https://www.facebook.com/'
   title: 'Facebook'
   fa-icon: 'fa-facebook-square'
@@ -21,3 +21,9 @@ github:
   href: 'https://github.com/'
   title: 'GitHub'
   fa-icon: 'fa-github-square'
+
+spotify:
+  id: 'menckendavidson'
+  href: 'https://open.spotify.com/user/'
+  title: 'GitHub'
+  fa-icon: 'fa-spotify-square'

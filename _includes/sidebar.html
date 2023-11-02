@@ -6,10 +6,9 @@ lvl4 = 2nd level of entries in sidebar  (eg chapter or page )
 lvl5 = 3rd level of entries in sidebar  (e.g  page)
 -->
 
-<div class="mencknav">
-{% if site.data.social-media %}
-<div id="social-media">
-    {% assign sm = site.data.social-media %}
+{% if site.data.social_media %}
+<div id="social_media" class="background-color: whitesmoke;">
+    {% assign sm = site.data.social_media %}
     {% for entry in sm %}
         {% assign key = entry | first %}
         {% if sm[key].id %}
@@ -18,7 +17,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page)
     {% endfor %}
 </div>
 {% endif %}
-</div>
+
 
 
 <!-- <div class="mydocsidebar"> -->
