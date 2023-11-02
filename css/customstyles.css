@@ -1305,25 +1305,16 @@ div.medianav {
     border-right-style: none;
 }
 
-div.medianav svg {
+div.medianav * {
     padding: 8px;
-    fill: 00acee;
-}
-div.medianav svg.0 {
-    padding: 8px;
-    fill: #1964e6;
-}
-div.medianav svg.1 {
-    padding: 8px;
-    fill: #213454;
-}
-div.medianav svg.2 {
-    padding: 8px;
-    fill: #00acee;
 }
 
 
-
+/* SVG fills*/
+.segment-fill {
+    fill: yellow(--segment-fill-fill);
+  }
+  
 
 
 
