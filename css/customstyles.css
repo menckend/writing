@@ -1309,11 +1309,10 @@ div.medianav * {
     padding: 8px;
 }
 
-div.medianav svg {
-    ​path {
+div.medianav svg ​path {
         fill: blue;
       }​
-}
+
 
 
 
