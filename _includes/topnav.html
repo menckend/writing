@@ -13,16 +13,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on" style="outline:none"></i> Nav</a></li>
 
                 <!-- entries with drop-downs appear here -->
-
-
-
-
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
-                
                 <!-- Loop through the unique l1idx values -->
                 {% for l1ix in l1idxes %}
                     <!-- Get all pages with this ("my") l1idx value -->
@@ -48,8 +43,6 @@
                         </ul>
                     </li>
                 {% endfor %}
-
-
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
 <!--			{% include feedback.html %} -->
 		{% endif %}
