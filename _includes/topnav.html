@@ -22,7 +22,7 @@
                 <!-- Loop through the unique l1idx values, building a dropdown button for each.     -->
                 {% for l1ix in l1idxes %}
                     <!-- Get all pages with this l1idx value -->
-                    {% myl1pages = site.pages | where: 'l1idx', l1ix | sort: 'l1idx' | compact %}
+                    {% assign myl1pages = site.pages | where: 'l1idx', l1ix | sort: 'l1idx' | compact %}
                     <!-- Get l1name value that corresponds to the current l1idx value -->
                     {% assign thisl1name = myl1pages | sort: '1lidx'| map: 'l1name' | compact | uniq %}
                     <li class="dropdown">
