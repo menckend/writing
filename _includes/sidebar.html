@@ -37,8 +37,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% if l3-l4idxes.size > 0 %}
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{l3name}}</summary>
                            {% for l4ix in l3-l4idxes %}
-                              {% assign l4name = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
-                              {% assign l4url = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'url' | compact | uniq %}
+                              {% assign myl4name = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
+                              {% assign l4url = l3pages | where: 'l4idx', l4ix | | where: 'l4name', myl4name | sort: 'l4idx' | map: 'url' | compact | uniq %}
                               <!-- Get a list of all the pages with *current* L4 index -->
                               {% assign l4pages = l3pages | where: 'l4idx', l4ix | sort: 'l4idx' %}
                               <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
