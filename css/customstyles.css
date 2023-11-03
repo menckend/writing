@@ -275,7 +275,9 @@ div#toc >ul::before {
 }
 
 li.dropdownActive a {
-    font-weight: bold;
+    background-color: whitesmoke
+    color:#248EC2;
+/*    font-weight: bold; */
 }
 
 
