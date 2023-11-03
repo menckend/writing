@@ -16,17 +16,25 @@
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
 
                 <!-- entries with drop-downs appear here -->
+
+
+
+
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
                 
-                <!-- Loop through the unique l1idx values, building a dropdown button for each.     -->
+                <!-- Loop through the unique l1idx values -->
                 {% for l1ix in l1idxes %}
-                    <!-- Get all pages with this l1idx value -->
+                    <!-- Get all pages with this ("my") l1idx value -->
                     {% assign myl1pages = site.pages | where: 'l1idx', l1ix | sort: 'l1idx' | compact %}
-                    <!-- Get l1name value that corresponds to the current l1idx value -->
-                    {% assign thisl1name = myl1pages | sort: '1lidx'| map: 'l1name' | compact | uniq %}
+                    <!-- Get l1name value that corresponds to the this("my") l1idx value -->
+                    {% assign thisl1name = myl1pages | map: 'l1name' | compact | uniq %}
+                    {% assign thisl1url = myl1pages | where: 'l1name', thisl1name | map: 'url' %}
+                    <!-- Building a dropdown button for each unique l1idx value in our pages  -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
+                        <!-- Giving the dropdown button the same name as this("my") l1name -->
+                        <a href="thisl1url[0]" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
+                        <!-- Starting the list of entries to go under this menu -->
                         <ul class="dropdown-menu">
                             <!-- Get list of unique l2idx values from pages with the current l1ix value -->
                             {% assign l2idxes = myl1pages | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
