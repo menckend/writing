@@ -1370,6 +1370,13 @@ div.mencknav * {
 
 
 
+.topnavlinks.dropdown-menu>li>a:focus,
+.topnavlinks.dropdown-menu>li>a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: #347DBE;
+}
+
 
 /*                                      */
 /*                                      */
