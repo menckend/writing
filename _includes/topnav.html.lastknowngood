@@ -14,34 +14,22 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
-
-
                 <!-- entries with drop-downs appear here -->
-                <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
-                {% assign l1idxes = site.pages | sort: '13idx' | map: 'l1idx' | compact | uniq %}
-                
-                <!-- Loop through the unique l1idx values, building a dropdown button for each.     -->
-                {% for l1ix in l1idxes %}
-                    <!-- Get l1name value that corresponds to the current l1idx value -->
-                    {% assign thisl1name == site.pages | where: 'l1idx', l1ix | map 'l1name' | compact | uniq %}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <!-- Get list of unique l2idx values from pages with the current l1ix value -->
-                            {% assign l2idxes == site.pages | where: l1idx, l1ix | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
-                            <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
-                            {% for l2ix in l2idxes %}
-                                {% assign myl2name = site.pages | where: 'l3idx' == l3ix AND 'l2idx' == l2ix | map: 'l2name' | compact | uniq }
-                                {% assign myl2url = site.pages | where: 'l3idx' == l3ix AND 'l2idx' == l2ix | map: 'url' | compact | uniq }
-                                <li class="dropdownActive"><a href="{{myl2url}}.html">{{ myl2name }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
+                {% assign folders = site.pages | map: 'libname' | uniq | compact  %}
+                {% for folder in folders %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ folder }}<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    {% assign folderitems = site.emptyArray %}
+                    {% assign folderitems = site.pages | where: 'libname', folders[forloop.index0] | map: 'docname' | uniq | compact  %}
+                        {% for folderitem in folderitems %}
+                        <li class="dropdownActive"><a href="{{ folderitem }}.html">{{ folderitem }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
                 {% endfor %}
-
-
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
-<!--			{% include feedback.html %} -->
+			{% include feedback.html %}
 		{% endif %}
                 <!--comment out this block if you want to hide search-->
                 <li>
