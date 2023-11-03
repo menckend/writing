@@ -35,7 +35,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% assign l3-l4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
                      {% if l3-l4idxes.size > 0 %}
-                        <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{l3name}}</summary>
+                        <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}</summary>
                            {% for l4ix in l3-l4idxes %}
                               {% assign myl4name = myl3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
                               {% assign l4url = myl3pages | where: 'l4idx', l4ix | | where: 'l4name', myl4name | sort: 'l4idx' | map: 'url' | compact | uniq %}
@@ -44,7 +44,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                               <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                               {% assign l4-l5idxes = l4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
                               {% if l4-l5idxes.size > 0 %}
-                                 <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{l4name}}</summary>
+                                 <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
                                     {% for l5ix in l4-l5idxes %}
                                        {% assign myl5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
                                        {% assign l5url = l4pages | where: 'l5idx', l5ix | where: 'l5name', myl5name | sort: 'l5idx' | map: 'url' | compact | uniq %}
