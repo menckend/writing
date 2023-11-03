@@ -26,13 +26,13 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if sbl3idxes.size > 0 %}
                   {% for l3ix in sbl3idxes %}
-                     <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
-                     {% assign l3name = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'l3name' | compact | uniq %}
-                     {% assign l3url = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' | map: 'url' | compact | uniq %}
                      <!-- Get a list of all the pages with *current* L3 index -->
-                     {% assign l3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
+                     {% assign myl3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
+                     <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
+                     {% assign myl3name = myl3pages | where: 'l3idx', l3ix | map: 'l3name' | compact | uniq %}
+                     {% assign l3url = myl3pages | where: 'l3name', myl3name | map: 'url' | compact | uniq %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
-                     {% assign l3-l4idxes = l3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
+                     {% assign l3-l4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
                      {% if l3-l4idxes.size > 0 %}
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{l3name}}</summary>
