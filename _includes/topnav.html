@@ -28,7 +28,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <!-- Get list of unique l2idx values from pages with the current l1ix value -->
-                            {% assign l2idxes == site.pages | where: l1idx, l1ix | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
+                            {% assign l2idxes == site.pages | where: 'l1idx', l1ix | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
                             <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
                             {% for l2ix in l2idxes %}
                                 {% assign myl2name = site.pages | where: 'l3idx', l3ix AND 'l2idx', l2ix | map: 'l2name' | compact | uniq %}
