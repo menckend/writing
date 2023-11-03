@@ -18,7 +18,7 @@
 
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
-                {% assign l1idxes = site.pages | sort: '13idx' | map: 'l1idx' | compact | uniq %}
+                {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
                 
                 <!-- Loop through the unique l1idx values, building a dropdown button for each.     -->
                 {% for l1ix in l1idxes %}
