@@ -33,7 +33,7 @@
                     <!-- Building a dropdown button for each unique l1idx value in our pages  -->
                     <li class="dropdown">
                         <!-- Giving the dropdown button the same name as this("my") l1name -->
-                        <a href="{{thisl1url[0]}}" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
+                        <a href="{{thisl1url[0] | remove: "/"}}" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1url }}<b class="caret"></b></a>
                         <!-- Starting the list of entries to go under this menu -->
                         <ul class="dropdown-menu">
                             <!-- Get list of unique l2idx values from pages with the current l1ix value -->
@@ -41,8 +41,8 @@
                             <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
                             {% for l2ix in l2idxes %}
                                 {% assign myl2pages = myl1pages | where: 'l2idx', l2ix | sort: 'l2idx' | compact | uniq %}
-                                {% assign myl2name = myl2pages | map: 'l2name' | compact | uniq %}
-                                {% assign myl2url = myl2pages | where: 'l2name', myl2name | map: 'url' %}
+                                {% assign myl2name = myl2pages | sort: 'l2idx' | map: 'l2name' | compact | uniq %}
+                                {% assign myl2url = myl2pages | where: 'l2name', myl2name | sort: 'l2idx'| map: 'url' | compact | uniq %}
                                 <li class="dropdownActive"><a href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
                             {% endfor %}
                         </ul>
