@@ -53,6 +53,9 @@ Zooming out again (to "molecular scale") you'll see a bewildering array of molec
 </details>
 <details markdown=block>
 <summary markdown=span>""3rd Abstraction: Organelles" (as a noun)</summary>
+
+### easter egg.
+
 Zoom out again, (to the "organelle scale") and now you'll see all these neat structures like mitochondria, Golgi apparatus, and others.
 </details>
 
