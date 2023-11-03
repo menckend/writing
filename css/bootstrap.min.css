@@ -4076,10 +4076,11 @@ tbody.collapse.in {
 .dropup {
     position: relative
 }
-
+/*
 .dropdown-toggle:focus {
     outline: 0
 }
+*/
 
 .dropdown-menu {
     position: absolute;
