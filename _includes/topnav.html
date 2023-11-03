@@ -32,7 +32,7 @@
                             {% for l2ix in l2idxes %}
                                 {% assign myl2name = site.pages | where: 'l1idx', l1ix | where: 'l2idx', l2ix | map: 'l2name' | compact | uniq %}
                                 {% assign myl2url = site.pages | where: 'l1idx', l1ix | where: 'l2idx', l2ix | map: 'url' | compact | uniq %}
-                                <li class="dropdownActive"><a href="{{myl2url[0]}}.html">{{ myl2name[0] }}</a></li>
+                                <li class="dropdownActive"><a href="{{myl2url[0]}}">{{ myl2name[0] }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
