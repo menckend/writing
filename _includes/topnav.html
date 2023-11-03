@@ -32,8 +32,8 @@
                             {% assign l2idxes = myl1pages | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
                             <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
                             {% for l2ix in l2idxes %}
-                                {% assign myl2name = site.pages | where: 'l1idx', l1ix | where: 'l2idx', l2ix | sort: 'l2idx'| map: 'l2name' | compact | uniq %}
-                                {% assign myl2url = site.pages | where: 'l1idx', l1ix | where: 'l2idx', l2ix | where: 'l2name', myl2name | sort: 'l2idx'| map: 'url' | compact | uniq %}
+                                {% assign myl2name = myl2pages | where: 'l2idx', l2ix | sort: 'l2idx'| map: 'l2name' | compact | uniq %}
+                                {% assign myl2url = myl1pages | where: 'l2idx', l2ix | where: 'l2name', myl2name | map: 'url' | compact | uniq %}
                                 <li class="dropdownActive"><a href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
                             {% endfor %}
                         </ul>
