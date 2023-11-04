@@ -17,6 +17,7 @@
 
 
 
+
                <!-- Get a list of all the unique/sorted l1 indices from pages -->
                {% assign uniql1idxes = site.pages | sort: "l1idx" | map: 'l1idx' | compact | uniq %}
                <!-- Loop through all the unique L1 indices and create the pages-based entries in the topnav menu -->
@@ -29,23 +30,11 @@
                      {% assign myl1name = myl1apexpage[0].l1name %}
                      {% assign myl1url = myl1apexpage[0].url %}
 
-                    <li class="dropdown">
-                        <!-- Giving the dropdown button the same name as this("my") l1name -->
-                        <a href="{{myl1url | remove: "/"}}" class="dropdown-toggle" style="outline:none" data-toggle="dropdown">{{ myl1name }}<b class="caret"></b></a>
-                    </li>
+                    <details class="details-tn">
+                        <summary class="summary-tn">{{ myl1name {{myl1url}} }}</summary>
+                    </details>
                   {% endfor %}
                {% endif %}   
-
-
-
-
-
-
-
-
-
-
-
 
 
 
