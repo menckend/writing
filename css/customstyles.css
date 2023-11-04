@@ -1368,7 +1368,7 @@ div.mencknav * {
     color:#347DBE;
 }
 
-
+/*
 ul.navbar>li.dropdown>ul.dropdownmenu>li.dropdownActive>a {
     color: whitesmoke;
     text-decoration: none;
@@ -1378,11 +1378,11 @@ ul.navbar>li.dropdown>ul.dropdownmenu>li.dropdownActive>a {
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-    color: #262626;
+    color: whitesmoke;
     text-decoration: none;
-    background-color: #f5f5f5
+    background-color:#347DBE
 }
-
+*/
 
 
 
