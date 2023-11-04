@@ -8,7 +8,58 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="fa navbar-brand" href="index.html"><img src="/images/menckenania-logo.drawio.svg">&nbsp;<span class="projectTitle"> </span></a>
+<!--            <a class="fa fa-home fa-4x navbar-brand" href="index.html">&nbsp;<span class="projectTitle">{{site.topnav_title}}</span></a> -->
+                <a class="navbar-brand" href="index.html"><img src="/images/menckenania-logo.drawio.svg"> &nbsp; <span class="projectTitle"></span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
+                {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
+                <!-- Loop through the unique l1idx values -->
+                {% for l1ix in l1idxes %}
+                    <!-- Get all pages with this ("my") l1idx value -->
+                    {% assign myl1pages = site.pages | where: 'l1idx', l1ix | sort: 'l1idx' | compact %}
+                    <!-- Get l1name value that corresponds to the this("my") l1idx value -->
+                    {% assign thisl1name = myl1pages | map: 'l1name' | compact | uniq %}
+                    {% assign thisl1url = myl1pages | where: 'l1name', thisl1name[0] | map: 'url' %}
+                    <!-- Building a dropdown button for each unique l1idx value in our pages  -->
+                    <li class="dropdown" style="background-color:#347DBE;">
+                        <!-- Giving the dropdown button the same name as this("my") l1name -->
+                        <a href="{{thisl1url[0] | remove: "/"}}" class="dropdown-toggle" style="color: whitesmoke;" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
+                        <!-- Starting the list of entries to go under this menu -->
+                        <ul class="dropdown-menu" style="background-color:#347DBE; border-style: solid; border-radius: 5px; border-width: 1;" >
+                            <!-- Get list of unique l2idx values from pages with the current l1ix value -->
+                            {% assign l2idxes = myl1pages | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
+                            <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
+                            {% for l2ix in l2idxes %}
+                                {% assign myl2pages = myl1pages | where: 'l2idx', l2ix | sort: 'l2idx' | compact | uniq %}
+                                {% assign myl2name = myl2pages | sort: 'l2idx' | map: 'l2name' | compact | uniq %}
+                                {% assign myl2url = myl2pages | where: 'l2name', myl2name[0] | sort: 'l2idx'| map: 'url' | compact | uniq %}
+                                <li class="dropdownActive" style="background: none; border-style: none;"><a style="color: whitesmoke; background: none; border-style: none;" href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
