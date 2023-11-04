@@ -17,40 +17,6 @@
 
 
 
-
-               <!-- Get a list of all the unique/sorted l1 indices from pages -->
-               {% assign uniql1idxes = site.pages | sort: "l1idx" | map: 'l1idx' | compact | uniq %}
-               <!-- Loop through all the unique L1 indices and create the pages-based entries in the topnav menu -->
-               {% if uniql1idxes.size > 0 %}
-                  {% for l1ix in uniql1idxes %}
-                     <!-- get collection of pages with this("my") l1idx value
-                     {% assign myl1pages = site.pages | where: 'l1idx', l1ix %}
-                     <!-- set variables for the l1name and url value that corresponds to the l1index value of the current iteration of the loop -->
-                     {% assign myl1apexpage = myl1pages | where: 'l2idx', null %}
-                     {% assign myl1name = myl1apexpage[0].l1name %}
-                     {% assign myl1url = myl1apexpage[0].url %}
-
-                
-                    <li><details class="details-tn">
-                        <summary class="summary-tn">{{ myl1name }} {{myl1url}}</summary>
-                    </details></li>
-                  {% endfor %}
-               {% endif %}   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
