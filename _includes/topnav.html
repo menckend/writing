@@ -40,7 +40,7 @@
                                 {% assign myl2pages = myl1pages | where: 'l2idx', l2ix | sort: 'l2idx' | compact | uniq %}
                                 {% assign myl2name = myl2pages | sort: 'l2idx' | map: 'l2name' | compact | uniq %}
                                 {% assign myl2url = myl2pages | where: 'l2name', myl2name[0] | sort: 'l2idx'| map: 'url' | compact | uniq %}
-                                <li class="dropdownActive" style="color: whitesmoke; background: none; outline: none;"><a style="color: whitesmoke; background: none; outline: none;" href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
+                                <li class="dropdownActive" style="color: whitesmoke; background: none; outline: none; border-style: none;"><a style="color: whitesmoke; background: none; outline: none; border-style: none;" href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
