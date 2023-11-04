@@ -15,6 +15,52 @@
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on" ></i> Nav</a></li>
 
+
+
+               <!-- Get a list of all the unique/sorted l1 indices from pages -->
+               {% assign uniql1idxes = site.pages | sort: "l1idx" | map: 'l1idx' | compact | uniq %}
+               <!-- Loop through all the unique L1 indices and create the pages-based entries in the topnav menu -->
+               {% if uniql1idxes.size > 0 %}
+                  {% for l1ix in uniql1idxes %}
+                     <!-- get collection of pages with this("my") l1idx value
+                     {% assign myl1pages = site.pages | where 'l1idx', l1ix %}
+                     <!-- set variables for the l1name and url value that corresponds to the l1index value of the current iteration of the loop -->
+                     { assign myl1apexpage = myl1pages | where 'l2idx', null %}
+                     {% assign myl1name = myl1apexpage[0].l1name %}
+                     {% assign myl1url = myl1apexpage[0].url %}
+
+                    <li class="dropdown">
+                        <!-- Giving the dropdown button the same name as this("my") l1name -->
+                        <a href="{{myl1url | remove: "/"}}" class="dropdown-toggle" style="outline:none" data-toggle="dropdown">{{ myl1name }}<b class="caret"></b></a>
+                    </li>
+                  {% endfor %}
+               {% endif %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
@@ -38,11 +84,32 @@
                                 {% assign myl2pages = myl1pages | where: 'l2idx', l2ix | sort: 'l2idx' | compact | uniq %}
                                 {% assign myl2name = myl2pages | sort: 'l2idx' | map: 'l2name' | compact | uniq %}
                                 {% assign myl2url = myl2pages | where: 'l2name', myl2name[0] | sort: 'l2idx'| map: 'url' | compact | uniq %}
-                                <li class="dropdownActive"><a  href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
+                                <li class="dropdownActive"><a href="{{myl2url[0] | remove: "/"}}">{{ myl2name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
                 {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
 <!--			{% include feedback.html %} -->
 		{% endif %}
