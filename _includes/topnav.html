@@ -23,9 +23,9 @@
                {% if uniql1idxes.size > 0 %}
                   {% for l1ix in uniql1idxes %}
                      <!-- get collection of pages with this("my") l1idx value
-                     {% assign myl1pages = site.pages | where 'l1idx', l1ix %}
+                     {% assign myl1pages = site.pages | where: 'l1idx', l1ix %}
                      <!-- set variables for the l1name and url value that corresponds to the l1index value of the current iteration of the loop -->
-                     { assign myl1apexpage = myl1pages | where 'l2idx', null %}
+                     { assign myl1apexpage = myl1pages | where: 'l2idx', null %}
                      {% assign myl1name = myl1apexpage[0].l1name %}
                      {% assign myl1url = myl1apexpage[0].url %}
 
