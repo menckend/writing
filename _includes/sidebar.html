@@ -13,10 +13,10 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
    <div class="mencknav">
       {% unless page.url contains 'index.html' %}
          {% assign sbtitle = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | map: 'l2name' | compact | uniq %}
-         <div class="productTitle"><p>{{sbtitle}}</p></div>
+         <div class="productTitle" style="margin-top: 16px;"><p>{{sbtitle}}</p></div>
       {% endunless %}
       {% unless page.url contains 'index.html' %}
-            <!-- Get a list of all pages with l1/l2/l3 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
+            <!-- Get a list of all pages with l1/l2 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign sbpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | sort: '13idx' %}
 
             <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values. -->
