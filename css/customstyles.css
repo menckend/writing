@@ -1293,6 +1293,30 @@ details[open] summary:before {
 }
 
 
+/* plus */
+  
+details>details summary:before {
+    content: '\f0fe';
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    padding-right: 8px;
+    text-decoration: none;
+  }
+  
+  /* minus */
+  details>details[open] summary:before {
+    content: '\f146';
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    padding-right: 8px;
+    text-decoration: none;
+  }
+  
+
+
+
+
+
 /* empty square*/
 p.l5item > a:before,
 p.l4item > a:before,
