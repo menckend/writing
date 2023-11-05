@@ -66,6 +66,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
+               <p> {{%} ourpages | where_exp: 'l4idx', 'l4idx == nil' | sort: "l3idx" | map: 'l3idx' array_to_sentence_string %} </p>
             {% endif %}   
       {% endunless %}
    </div>
