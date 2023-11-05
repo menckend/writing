@@ -30,25 +30,25 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% assign myl3pages = sbpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
                      {% assign myl3name = myl3pages | where: 'l3idx', l3ix | map: 'l3name' | compact | uniq %}
-                     {% assign l3url = myl3pages | where: 'l3name', myl3name | map: 'url' | compact | uniq %}
+                     {% assign myl3url = myl3pages | where: 'l3name', myl3name | map: 'url' | compact | uniq %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
-                     {% assign l3-l4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
+                     {% assign myl4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
-                     {% if l3-l4idxes.size > 0 %}
+                     {% if myl4idxes.size > 0 %}
                         <!-- Look to see if there is an apex page for this folder and grab its URL. -->
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}</summary>
-                           {% for l4ix in l3-l4idxes %}
+                           {% for l4ix in myl4idxes %}
                               {% assign myl4name = myl3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
-                              {% assign l4url = myl3pages | where: 'l4idx', l4ix | | where: 'l4name', myl4name[0] | sort: 'l4idx' | map: 'url' | compact | uniq %}
+                              {% assign myl4url  = myl3pages | where: 'l4name', myl4name[0] | sort: 'l4idx' | map: 'url' | compact | uniq %}
                               <!-- Get a list of all the pages with *current* L4 index -->
-                              {% assign l4pages = myl3pages | where: 'l4idx', l4ix | sort: 'l4idx' %}
+                              {% assign myl4pages = myl3pages | where: 'l4idx', l4ix | sort: 'l4idx' %}
                               <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
-                              {% assign l4-l5idxes = l4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
-                              {% if l4-l5idxes.size > 0 %}
+                              {% assign myl5idxes = myl4pages | sort: "l5idx" | map: 'l5idx' | compact | uniq %}
+                              {% if myl5idxes.size > 0 %}
                                  <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
-                                    {% for l5ix in l4-l5idxes %}
-                                       {% assign myl5name = l4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
-                                       {% assign myl5url = l4pages | where: 'l5idx', l5ix | where: 'l5name', myl5name[0] | sort: 'l5idx' | map: 'url' | compact | uniq %}
+                                    {% for l5ix in myl5idxes %}
+                                       {% assign myl5name = myl4pages | where: 'l5idx', l5ix | sort: 'l5idx' | map: 'l5name' | compact | uniq %}
+                                       {% assign myl5url = myl4pages | where: 'l5name', myl5name[0] | sort: 'l5idx' | map: 'url' | compact | uniq %}
                                        <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url[0] | remove: "/"}}">{{myl5name}}</a></p>
                                     {% endfor %}
                                  </details>
