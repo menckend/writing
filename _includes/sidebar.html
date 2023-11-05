@@ -35,6 +35,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% assign l3-l4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
                      {% if l3-l4idxes.size > 0 %}
+                        <!-- Look to see if there is an apex page for this folder and grab its URL. -->
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}</summary>
                            {% for l4ix in l3-l4idxes %}
                               {% assign myl4name = myl3pages | where: 'l4idx', l4ix | sort: 'l4idx' | map: 'l4name' | compact | uniq %}
