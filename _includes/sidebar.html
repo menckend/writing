@@ -52,7 +52,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' | array_to_sentence_string %}
                                        {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' | array_to_sentence_string %}
                                        <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}}
-                                          {% if page.l3idx == l3ix %} L3 match. {% endif %} {% if page.l4idx == l4ix %} L4 match. {% endif %} {% if page.l5idx == l5ix %} L5 match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3|4 match. {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 match. {% endif %}
+                                          {% if page.l3idx == l3ix %} L3 match. {% endif %} {% if page.l4idx == l4ix %} L4 match. {% endif %} {% if page.l5idx == l5ix %} L5 match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3|4 match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 match. {% endif %}
                                           </a></p>
                                     {% endfor %}
                                  </details>
