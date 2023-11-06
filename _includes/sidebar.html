@@ -48,7 +48,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' | array_to_sentence_string %}
                                        {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' | array_to_sentence_string %}
-                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}. l3ix:{{l3ix}}, l4ix:{{l4ix}}, l5ix{{l5ix}}. Page: {{page.l3idx}}, {{page.l4idx}}, {page.l5idx}}" href="{{myl5url | remove: '/'}}.  L3-5 index comparison = {{page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix}}">{{myl5name}}</a></p>
+                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}} . . . . l3ix:{{l3ix}}, l4ix:{{l4ix}}, l5ix{{l5ix}}. Page: {{page.l3idx}}, {{page.l4idx}}, {page.l5idx}} .  L3-5 index comparison = {{page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix}}</a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
