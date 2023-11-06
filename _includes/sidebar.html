@@ -22,7 +22,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
             <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values. -->
             {% if ourpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
-               {% assign ourl3idxes = ourpages | where_exp: 'l4idx', "l4idx == ''" | sort: 'l3idx' | map: 'l3idx' %}
+               {% assign ourl3idxes = ourpages | where_exp: 'l4idx', 'l4idx == false' | sort: 'l3idx' | map: 'l3idx' %}
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if ourl3idxes.size > 0 %}
                   {% for l3ix in ourl3idxes %}
@@ -63,6 +63,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                   {% endfor %}
                {% else %}
                   <p> Nothing here yet; check back later</p>
+                  <p> ... {{ ourpages | where_exp: 'l4idx', 'l4idx == false' | sort: 'l3idx' | map: 'l3idx' }} ...</p>
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
