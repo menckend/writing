@@ -52,7 +52,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                           {% if page.l3idx == l3ix %} L3 index on current {{page.l3idx}} and looped {{ldix}} pages are a match. {% endif %}
                                           {% if page.l4idx == l4ix %} L4 index on current {{page.l4idx}} and looped {{l4ix}} pages are a match. {% endif %}
                                           {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3andL4 index on current and looped pages are a match. {% endif %}
-                                          {% if page.l5idx == l5ix %} L5 index on current {{page.l5idx}} and looped {{l5ix}} pages are a match. {% endif %}                                          
+                                          {% if page.l5idx == l5ix %} L5 index on current {{page.l5idx}} and looped {{l5ix}} pages are a match. {% endif %}
+                                          {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 index on current and looped pages all match. {% endif %}                                      
                                           </a></p>
                                     {% endfor %}
                                  </details>
