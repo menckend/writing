@@ -57,7 +57,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{myl3name}}" href="{{ myl3url }}">{{myl3name}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: "/"}}">{{myl3name}}</a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
