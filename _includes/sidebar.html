@@ -51,7 +51,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                        <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}}
                                           {% if page.l3idx == l3ix %} L3 index on current {{page.l3idx}} and looped {{ldix}} pages are a match. {% endif %}
                                           {% if page.l4idx == l4ix %} L4 index on current {{page.l4idx}} and looped {{l4ix}} pages are a match. {% endif %}
-                                          {% if if page.l3idx == l3ix and if page.l4idx == l4ix %} L3andL4 index on current and looped pages are a match. {% endif %}
+                                          {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3andL4 index on current and looped pages are a match. {% endif %}
                                           {% if page.l5idx == l5ix %} L5 index on current {{page.l5idx}} and looped {{l5ix}} pages are a match. {% endif %}                                          
                                           </a></p>
                                     {% endfor %}
