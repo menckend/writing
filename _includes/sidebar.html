@@ -18,11 +18,10 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
       {% unless page.url contains 'index.html' %}
             <!-- Get a list of all pages with l1/l2 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
             {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
-
             <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values. -->
             {% if ourpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
-               {% assign ourl3idxes = ourpages | where_exp: 'l4idx', 'l4idx == false' | sort: 'l3idx' | map: 'l3idx' %}
+               {% assign ourl3idxes = ourpages | where: 'l4idx', nil | sort: 'l3idx' | map: 'l3idx' %}
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if ourl3idxes.size > 0 %}
                   {% for l3ix in ourl3idxes %}
@@ -63,7 +62,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                   {% endfor %}
                {% else %}
                   <p> Nothing here yet; check back later</p>
-                  <p> ... {{ ourpages | where: 'page.l4idx', nil | map: 'l3idx' }} ...</p>
+                  <p> ... {{ ourpages | where: 'page.l4idx', nil | where: 'page.l5idx', nil | where_exp: 'page', page.l3idx != nil | map: 'l3idx' }} ...</p>
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
@@ -71,3 +70,19 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
       {% endunless %}
    </div>
 <!-- </div> -->
+
+
+<!--
+
+topnav menu-name (l1.idx)
+topnav menu-entry (l2.idx)
+^Get collection of all pages from site whose frontmatter matches these two values on the *current*/loaded page (ourpages)
+
+Get all the unique l3.idx (chapters) values from the ourpages collection
+   Assign from ourpages, all pages where:
+      There *is* an l3.idx value and there are *not* l4.idx or l5.idx values.
+         assign ourl3idxes = ourpages | where: 'page.l4idx', nil | where 'page.l5idx', nil | where_exp: 'page', 'page.l3idx != nil' | map 'l3idx' 
+
+
+
+-->
