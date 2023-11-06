@@ -1295,7 +1295,7 @@ details[open] summary:before {
 
 /* plus */
   
-details>details summary:before {
+details.deet4 summary:before {
     content: '\f0fe';
     font-family: 'FontAwesome';
     font-size: 14px;
@@ -1304,7 +1304,7 @@ details>details summary:before {
   }
   
   /* minus */
-  details>details[open] summary:before {
+details.deet4[open] summary:before {
     content: '\f146';
     font-family: 'FontAwesome';
     font-size: 14px;
