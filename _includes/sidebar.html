@@ -25,6 +25,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if ourl3idxes.size > 0 %}
                   {% for l3ix in ourl3idxes %}
+                     {% assign l3ix-ref = l3ix %}
                      <!-- Get a list of all the pages with *current* L3 index -->
                      {% assign myl3pages = ourpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
@@ -37,6 +38,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                         <!-- Look to see if there is an apex page for this folder and grab its URL. -->
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}</summary>
                            {% for l4ix in myl4idxes %}
+                              {% assign l4ix-ref == l4ix}
                               <!-- Get a list of all the pages with *current* L4 index -->
                               {% assign myl4pages = myl3pages | where: 'l4idx', l4ix %}
                               {% assign myl4name = myl4pages | where: 'l4idx', l4ix | where_exp: 'page', 'page.l4name' | map: 'l4name' | array_to_sentence_string %}
@@ -46,18 +48,19 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                               {% if myl5idxes.size > 0 %}
                                  <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
                                     {% for l5ix in myl5idxes %}
+                                       {% assign l5ix-ref = l5ix %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' | array_to_sentence_string %}
                                        {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' | array_to_sentence_string %}
                                        <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}} _ lpidx: l3-{{l3ix}};l4-{{l4ix}};l5{{l5ix}}. pg-idx: l3-{{page.l3idx}}; l4-{{page.l4idx}}; l5-{{ page.l5idx }}.  Index comparisons: l3-{{page.l3idx == l3ix}}; l4-{{page.l4idx == l4ix}}; l5-{{page.l5idx == l5ix}}.</a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
-                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}} _ lpidxes: l3-{{l3ix}}; l4-{{l4ix}}. pgidxes: l3-{{page.l3idx}}; l4-{{page.l4idx}}.  Index comparisons: l3-{{page.l3idx == l3ix}}; l4-{{page.l4idx == l4ix}} .</a></p>
+                                 <p class="l4item{% if page.l4idx == l4ix-ref and page.l3idx == l3ix-ref %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}} _ lpidxes: l3-{{l3ix-ref}}; l4-{{l4ix-ref}}. pgidxes: l3-{{page.l3idx}}; l4-{{page.l4idx}}.  Index comparisons: l3-{{page.l3idx == l3ix-ref}}; l4-{{page.l4idx == l4ix-ref}} .</a></p>
                               {% endif %}
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}} _ lpidxes: l3-{{l3ix}}. pgidxes: l3-{{page.l3idx}}.  Idx comparison = {{page.l3idx == l3ix}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix-ref %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}} _ lpidxes: l3-{{l3ix-ref}}. pgidxes: l3-{{page.l3idx}}.  Idx comparison = {{page.l3idx == l3ix-ref}}</a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
