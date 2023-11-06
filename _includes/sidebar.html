@@ -62,7 +62,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                   {% endfor %}
                {% else %}
                   <p> Nothing here yet; check back later</p>
-                  <p> ... {{ ourpages | where: 'page.l4idx', nil | where: 'page.l5idx', nil | where_exp: "page", "page.l3idx" | map: 'l3idx' }} ...</p>
+                  <p> ... {{ ourpages | where_exp: 'page', 'page.name' | map: 'l3idx' }} ...</p>
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
@@ -76,13 +76,14 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
 
 topnav menu-name (l1.idx)
 topnav menu-entry (l2.idx)
+sidebar entry (l3.idx)
 ^Get collection of all pages from site whose frontmatter matches these two values on the *current*/loaded page (ourpages)
 
 Get all the unique l3.idx (chapters) values from the ourpages collection
    Assign from ourpages, all pages where:
       There *is* an l3.idx value and there are *not* l4.idx or l5.idx values.
-         assign ourl3idxes = ourpages | where: 'page.l4idx', nil | where 'page.l5idx', nil | where_exp: 'page', 'page.l3idx' | map 'l3idx' 
+         assign ourl3idxes = ourpages | where: 'page.l4idx', nil | where 'page.l5idx', nil | where_exp: 'page', 'page.l3name' | map 'l3idx' 
 
 
-
+... 111122233 ...
 -->
