@@ -29,7 +29,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% assign myl3pages = ourpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
                      {% assign myl3name = myl3pages | where: 'l3idx', l3ix | where_exp: 'page', 'page.l3name' | map: 'l3name' | array_to_sentence_string %}
-                     {% assign myl3url = myl3pages | where: 'l3name', myl3name | map: 'url' %}
+                     {% assign myl3url = myl3pages | where: 'l3name', myl3name | map: 'url' | array_to_sentence_string %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                      {% assign myl4idxes = myl3pages | where_exp: 'page', 'page.l4name' | map: 'l4idx' %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
@@ -47,17 +47,17 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                  <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' %}
-                                       {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' %}
-                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: "/"}}">{{myl5name}}</a></p>
+                                       {% assign myl5url = myl4pages | where: 'l5name', myl5name[0] | map: 'url' %}
+                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url[0] | remove: "/"}}">{{myl5name}}</a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
-                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{l4url | remove: "/"}}">{{myl4name}}</a></p>
+                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{l4url[0] | remove: "/"}}">{{myl4name}}</a></p>
                               {% endif %}
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{myl3name}}" href="{{l3url | remove: "/"}}">{{myl3name}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{myl3name}}" href="{{ myl3url }}">{{myl3name}}</a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
