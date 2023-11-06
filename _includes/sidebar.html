@@ -62,7 +62,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                   {% endfor %}
                {% else %}
                   <p> Nothing here yet; check back later</p>
-                  <p> ... {{ ourpages | where: 'page.l4idx', nil | where: 'page.l5idx', nil | where_exp: "page", "page.l3idx != 'nil'' | map: 'l3idx' }} ...</p>
+                  <p> ... {{ ourpages | where: 'page.l4idx', nil | where: 'page.l5idx', nil | where_exp: "page", "page.l3idx != 'nil'" | map: 'l3idx' }} ...</p>
                {% endif %}
             {% else %}
                <p> Nothing here yet; check back later</p>
