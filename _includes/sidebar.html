@@ -47,17 +47,17 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                  <details {% if page.l4idx == l4ix AND page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' %}
-                                       {% assign myl5url = myl4pages | where: 'l5name', myl5name[0] | map: 'url' %}
-                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url[0] | remove: "/"}}">{{myl5name}}</a></p>
+                                       {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' %}
+                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: "/"}}">{{myl5name}}</a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
-                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{l4url[0] | remove: "/"}}">{{myl4name}}</a></p>
+                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{l4url | remove: "/"}}">{{myl4name}}</a></p>
                               {% endif %}
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{myl3name}}" href="{{l3url[0] | remove: "/"}}">{{myl3name}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix %}"active"{% endif %}><a title=" {{myl3name}}" href="{{l3url | remove: "/"}}">{{myl3name}}</a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
@@ -70,20 +70,3 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
       {% endunless %}
    </div>
 <!-- </div> -->
-
-
-<!--
-
-topnav menu-name (l1.idx)
-topnav menu-entry (l2.idx)
-sidebar entry (l3.idx)
-^Get collection of all pages from site whose frontmatter matches these two values on the *current*/loaded page (ourpages)
-
-Get all the unique l3.idx (chapters) values from the ourpages collection
-   Assign from ourpages, all pages where:
-      There *is* an l3.idx value and there are *not* l4.idx or l5.idx values.
-         assign ourl3idxes = ourpages | where: 'page.l4idx', nil | where 'page.l5idx', nil | where_exp: 'page', 'page.l3name' | map 'l3idx' 
-
-
-... 111122233 ...
--->
