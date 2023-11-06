@@ -48,16 +48,16 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' | array_to_sentence_string %}
                                        {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' | array_to_sentence_string %}
-                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}} ___ Loop indices: {{l3ix}};{{l4ix}};{{l5ix}}. Page: {{page.l3idx}};{{page.l4idx}};{{page.l5idx}}.  L3-5 index comparison = {{page.l5idx == l5ix}}. {{page.l4idx == l4ix}}. {{page.l3idx == l3ix}}.</a></p>
+                                       <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}} _ Loop indices: {{l3ix}};{{l4ix}};{{l5ix}}. Page-indices: L3-{{page.l3idx}}; L4-{{page.l4idx}}; L5-{{page.l5idx}}.  Index comparisons: L3-{{page.l3idx == l3ix}}; L4-{{page.l4idx == l4ix}}; L5-{{page.l5idx == l5ix}}.</a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
-                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}} __ Loop indices: {{l3ix}};{{l4ix}}. Page: {{page.l3idx}};{{page.l4idx}}.  L3-4 index comparison = {{page.l4idx == l4ix}}. {{page.l3idx == l3ix}}.</a></p>
+                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}} _ Loop indices: L3-{{l3ix}}; L4-{{l4ix}}. Page-indices: L3-{{page.l3idx}}; L4-{{page.l4idx}}.  Index comparisons: L4-{{page.l4idx == l4ix}}; L3-{{page.l3idx == l3ix}}.</a></p>
                               {% endif %}
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}} __ Loop indices: {{l3ix}}. Page: {{page.l3idx}}.  L3 = {{page.l3idx == l3ix}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}} _ Loop indices: L3-{{l3ix}}. Page-indices: L3-{{page.l3idx}}.  Idx comparison = {{page.l3idx == l3ix}}</a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
