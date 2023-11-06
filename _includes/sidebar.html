@@ -28,8 +28,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      <!-- Get a list of all the pages with *current* L3 index -->
                      {% assign myl3pages = ourpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
-                     {% assign myl3name = myl3pages | where: 'l3idx', l3ix | map: 'l3name' | compact | uniq | array_to_sentence_string %}
-                     {% assign myl3url = myl3pages | where: 'l3name', myl3name | map: 'url' | compact | uniq | array_to_sentence_string %}
+                     {% assign myl3name = myl3pages | where: 'l3idx', l3ix | where_exp: 'page', 'page.l3name' | map: 'l3name' | array_to_sentence_string %}
+                     {% assign myl3url = myl3pages | where: 'l3name', myl3name | map: 'url' %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                      {% assign myl4idxes = myl3pages | sort: "l4idx" | map: 'l4idx' | compact | uniq %}
                      <!-- Testing to see if the current l3 index has an l4 children. -->
