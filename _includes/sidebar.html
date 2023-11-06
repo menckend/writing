@@ -36,7 +36,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% if myl4idxes.size > 0 %}
                         <!-- Look to see if there is an apex page for this folder and grab its URL. -->
                         <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}
-                           {% if page.l3idx == l3ix %} L3 match. {% endif %} {% if page.l4idx == l4ix %} L4 match. {% endif %}. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3|4  match. {% endif %}
+                           {% if page.l3idx == l3ix %} L3 match. {% endif %} {% if page.l4idx == l4ix %} L4 match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3|4  match. {% endif %}
                               </summary>
                            {% for l4ix in myl4idxes %}
                               <!-- Get a list of all the pages with *current* L4 index -->
