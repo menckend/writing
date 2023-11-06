@@ -35,7 +35,9 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      <!-- Testing to see if the current l3 index has an l4 children. -->
                      {% if myl4idxes.size > 0 %}
                         <!-- Look to see if there is an apex page for this folder and grab its URL. -->
-                        <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}</summary>
+                        <details {% if page.l3idx == l3ix%}open{%endif%}><summary>{{myl3name}}
+                           {% if page.l3idx == l3ix %} L3 indexes match. {% endif %} {% if page.l4idx == l4ix %} L4 indexes match. {% endif %} {% if page.l5idx == l5ix %} L5 indexes match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 indexes match. {% endif %}
+                              </summary>
                            {% for l4ix in myl4idxes %}
                               <!-- Get a list of all the pages with *current* L4 index -->
                               {% assign myl4pages = myl3pages | where: 'l4idx', l4ix %}
@@ -44,26 +46,25 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                               <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                               {% assign myl5idxes = myl4pages | where_exp: 'page', 'page.l5name'| map: 'l5idx' %}
                               {% if myl5idxes.size > 0 %}
-                                 <details {% if page.l4idx == l4ix and page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}}</summary>
+                                 <details {% if page.l4idx == l4ix and page.l3idx == l3ix%}open{%endif%}><summary>{{myl4name}} {% if page.l3idx == l3ix %} L3 indexes match. {% endif %} {% if page.l4idx == l4ix %} L4 indexes match. {% endif %} {% if page.l5idx == l5ix %} L5 indexes match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 indexes match. {% endif %}
+                                    </summary>
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | map: 'l5name' | array_to_sentence_string %}
                                        {% assign myl5url = myl4pages | where: 'l5name', myl5name | map: 'url' | array_to_sentence_string %}
                                        <p class="l5item{% if page.l5idx == l5ix AND page.l4idx == l4ix AND page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url | remove: '/'}}">{{myl5name}}
-                                          {% if page.l3idx == l3ix %} L3 index on current {{page.l3idx}} and looped {{ldix}} pages are a match. {% endif %}
-                                          {% if page.l4idx == l4ix %} L4 index on current {{page.l4idx}} and looped {{l4ix}} pages are a match. {% endif %}
-                                          {% if page.l3idx == l3ix and page.l4idx == l4ix %} L3andL4 index on current and looped pages are a match. {% endif %}
-                                          {% if page.l5idx == l5ix %} L5 index on current {{page.l5idx}} and looped {{l5ix}} pages are a match. {% endif %}
-                                          {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 index on current and looped pages all match. {% endif %}                                      
+                                          {% if page.l3idx == l3ix %} L3 indexes match. {% endif %} {% if page.l4idx == l4ix %} L4 indexes match. {% endif %} {% if page.l5idx == l5ix %} L5 indexes match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 indexes match. {% endif %}
                                           </a></p>
                                     {% endfor %}
                                  </details>
                               {% else %}
-                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}}</a></p>
+                                 <p class="l4item{% if page.l4idx == l4ix and page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}}{% if page.l3idx == l3ix %} L3 indexes match. {% endif %} {% if page.l4idx == l4ix %} L4 indexes match. {% endif %} {% if page.l5idx == l5ix %} L5 indexes match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 indexes match. {% endif %}
+                                    </a></p>
                               {% endif %}
                            {% endfor %}
                         </details>
                      {% else %}
-                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}}</a></p>
+                        <p class="l3item{% if page.l3idx == l3ix %}active{% endif %}"><a title=" {{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}} {% if page.l3idx == l3ix %} L3 indexes match. {% endif %} {% if page.l4idx == l4ix %} L4 indexes match. {% endif %} {% if page.l5idx == l5ix %} L5 indexes match. {% endif %} {% if page.l3idx == l3ix and page.l4idx == l4ix and page.l5idx == l5ix %} L3|4|5 indexes match. {% endif %}
+                           </a></p>
                      {% endif %}
                   {% endfor %}
                {% else %}
