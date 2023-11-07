@@ -52,7 +52,16 @@ $('#toc').on('click', 'a', function() {
 {% assign parentlvl = mylvl | minus: 1 %}
 <p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
+{% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
 
+
+{% assign ourpages = site.pages %}
+{% for i in (1..parentlvl)  %}
+  <p> before: {{ourpages | size }}
+  {% assign ourpages = ourpages | where: '{{idxlvls[forloop.index]}}', page.{{idxlvls[forloop.index]}} %}
+   and after: {{ ourpages | size }} </p>
+
+{% endfor %}
 
 
 
