@@ -40,7 +40,9 @@ $('#toc').on('click', 'a', function() {
 {% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
 {% assign pgidxes = site.blankArray %}
 {% for i in (1..7) %}
-  {% assign pgidxes[i] = page.l{{i}}idx %} 
+  <p>direct-expression: {{ page.l{{i}}idx }}</p>
+  {% assign tmp = page.l{{i}}idx %}
+  <p>tmp:  {{tmp}} </p>
 {% endfor %}
 <p> {{pgidxe }} </p>
 <!-- page.l1idx,page.l3idx,page.l4idx,page.l5idx,page.l6idx;page.l7idx | split: ',' -->
