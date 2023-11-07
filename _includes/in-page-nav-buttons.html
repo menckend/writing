@@ -42,7 +42,7 @@ $('#toc').on('click', 'a', function() {
 {% for i in (1..7) %}
   {% assign pgidxes[i] = page.l{{i}}idx %} 
 {% endfor %}
-<p> {{pgidxes | array_to_sentence_string }} </p>
+<p> {{pgidxe }} </p>
 <!-- page.l1idx,page.l3idx,page.l4idx,page.l5idx,page.l6idx;page.l7idx | split: ',' -->
 
 
