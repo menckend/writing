@@ -17,6 +17,19 @@ $('#toc').on('click', 'a', function() {
 </script>
 <!-- end of in-page TOC staging -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
 
@@ -35,6 +48,7 @@ $('#toc').on('click', 'a', function() {
 {% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %}
 
 {%assign parentlvl == mylvl | minus: 1 %}
+<p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
 <!-- Build an arry of metadata variable names -->
 {% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
