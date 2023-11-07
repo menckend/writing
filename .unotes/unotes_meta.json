@@ -30,56 +30,55 @@
       "name": "pages",
       "isOrdered": true,
       "folders": {
-        "tags": {
-          "name": "tags",
+        "1": {
+          "name": "1",
           "isOrdered": true,
           "folders": {},
           "files": {}
         },
-        "articles": {
-          "name": "articles",
+        "2": {
+          "name": "2",
           "isOrdered": true,
           "folders": {
-            "dglb": {
-              "name": "dglb",
+            "1-capacity": {
+              "name": "1-capacity",
               "isOrdered": true,
               "folders": {},
               "files": {
-                "Global Load Balancing Reference Architecture": 0,
-                "dglbarch-ch1-p1-whatfor": 1,
-                "dglbarch-ch2-p1-overview": 3,
-                "dglbarch-ch2-p2-elements": 4,
-                "dglbarch-ch2-p3-functdiag": 5,
-                "dglbarch-ch2-p4-zones": 6,
-                "dglbarch-ch2-p5-dns-process": 7,
-                "dglbarch-ch2-p6-persistence": 8,
-                "dglbarch-ch3-p1-ttl": 9,
-                "dglbarch-ch3-p2-granularity": 10,
-                "dglbarch-ch1-p2-whatis": 2,
-                "dglbarch-ch3-p3-fqdn-targets": 11,
-                "dglbarch-ch3-p4-fqdn-per-service": 12,
-                "dglbarch-ch3-p5-usecases": 13
-              }
-            },
-            "capacity": {
-              "name": "capacity",
-              "isOrdered": true,
-              "folders": {},
-              "files": {
-                "capacity-ch1-p1-thefever": 0,
-                "capacity-ch1-p2-bigpicture": 1,
-                "(DRAFT) Abstracting Capacity": 2,
-                "capacity-ch2-p1-layers": 3,
-                "capacity-ch3-p1-diag1": 4,
-                "capacity-ch3-p2-diag2": 5,
-                "capacity-ch3-p3-diag3": 6,
-                "capacity-ch3-p4-diag4": 7,
-                "capacity-ch3-p5-diag5": 8,
-                "capacity-ch2-p1-abstraction": 9,
-                "capacity-ch2-p99-layers (alt)": 10
+                "2_1_1": 0,
+                "2_1": 1,
+                "2_1_1_1": 2,
+                "2_1_1_2": 3,
+                "2_1_2": 4,
+                "2_1_2_1": 5,
+                "2_1_2_1_1": 6,
+                "2_1_2_1_2": 7,
+                "2_1_2_1_3": 8,
+                "2_1_2_2": 9,
+                "capacity-ch20-p1-layers": 10,
+                "capacity-ch20-p99-layers (alt)": 11,
+                "capacity-ch3-p1-diag1": 12,
+                "capacity-ch3-p2-diag2": 13,
+                "capacity-ch3-p3-diag3": 14,
+                "capacity-ch3-p4-diag4": 15,
+                "capacity-ch3-p5-diag5": 16
               }
             }
           },
+          "files": {
+            "2": 0
+          }
+        },
+        "3": {
+          "name": "3",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "tags": {
+          "name": "tags",
+          "isOrdered": true,
+          "folders": {},
           "files": {}
         }
       },
