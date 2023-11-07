@@ -20,16 +20,6 @@ $('#toc').on('click', 'a', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
 
@@ -56,11 +46,10 @@ $('#toc').on('click', 'a', function() {
 
 
 {% assign ourpages = site.pages %}
+<p> ourpages's l1idxes: {{ourpages | map: l1idx }} </p>
+
+
 {% for i in (1..parentlvl)  %}
-  <p> before: {{ourpages | size }}
-  {% assign ourpages = ourpages | where_exp: 'page', 'page.idxlvls[forloop.index]' == 'page.idxlvls[forloop.index]' %}
-   and after: {{ ourpages | size }} </p>
-  <p> l1idx values: {{ourpages | where_exp: 'page', 'page.idxlvls[forloop.index]' == 'page.idxlvls[forloop.index]' | map: l1idx }}</p>
 {% endfor %}
 
 
