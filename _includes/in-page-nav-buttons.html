@@ -34,6 +34,7 @@ $('#toc').on('click', 'a', function() {
 {%assign parentlvl == mylvl | minus: 1 %}
 
 <!-- Build an arry of metadata variable names -->
+{% assign idxlvls = emptyArray %}
 {% assign idxlvls[0] = l1idx %}
 {% assign idxlvls[1] = l2idx %}
 {% assign idxlvls[2] = l3idx %}
