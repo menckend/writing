@@ -52,19 +52,19 @@ $('#toc').on('click', 'a', function() {
 
 
 
-
+<p>
 {% assign neighbors = site.pages %}
 {% for idxlvl in idxlvls %}
   {% if pgidx[forloop.index0] > 0 %}
     {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
+    {{ neighbors.size}}.
   {% endif %}
 {% endfor %}
+</p>
 
-<p>
 {% for neighbor in neighbors %}
-  {{ neighbor.name  }}
 {% endfor %}
-<p>
+
 
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
   {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
