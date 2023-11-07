@@ -1245,6 +1245,7 @@ details.sbdeet {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
+    margin-bottom: 0;
     padding: 0px 8px;
 /*    margin-bottom: 15px; */
     border: hidden;
@@ -1254,7 +1255,7 @@ details.sbdeet[open] {
     border-collapse: separate;
     padding: 0px 8px;
     border-color: #dcdcdc;
-    margin-bottom: 0; */
+    margin-bottom: 0;
     border-style: hidden;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -1277,7 +1278,7 @@ details {
     border-collapse: separate;
     border-style: hidden;
     padding: 0px 8px;
-/*    margin-bottom: 15px; */
+    margin-bottom: 15px;
     border: hidden;
 }
 details[open] {
