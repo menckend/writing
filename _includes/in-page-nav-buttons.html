@@ -52,7 +52,7 @@ $('#toc').on('click', 'a', function() {
 {% assign pgidx[6] = page.l7idx %}
 
 <p> Start Debug output (get rid of me later) </p>
-
+<p> {{ idxlvls | size }} </p>
 {% assign neighbors = site.pages %}
 <p>{{ neighbors | size }}, {{ shrtnbrs | size }}</p>
 {% for idxlvl in idxlvls %}
