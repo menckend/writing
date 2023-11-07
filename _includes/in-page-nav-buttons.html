@@ -60,7 +60,7 @@ $('#toc').on('click', 'a', function() {
   <p> before: {{ourpages | size }}
   {% assign ourpages = ourpages | where_exp: 'page', 'page.idxlvls[forloop.index]' == 'page.idxlvls[forloop.index]' %}
    and after: {{ ourpages | size }} </p>
-  <p> {{ourpages | where_exp: 'page', 'page.idxlvls[forloop.index]' == 'page.idxlvls[forloop.index]' | map l1idx }}
+  <p> {{ourpages | where_exp: 'page', 'page.idxlvls[forloop.index]' == 'page.idxlvls[forloop.index]' | map: l1idx }}
 {% endfor %}
 
 
