@@ -56,7 +56,7 @@ $('#toc').on('click', 'a', function() {
 {% assign neighbors = site.pages %}
 {% for idxlvl in idxlvls %}
   {% if pgidx[forloop.index0] > 0 %}
-    {% neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
+    {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
   {% endif %}
 {% endfor %}
 
