@@ -48,7 +48,7 @@ $('#toc').on('click', 'a', function() {
 {% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %}
 {% assign mylvl-int = mylvl | to_i %}
 {% assign myidx-int = myidx | to_i %}
-{% assign parentlvl = '' | plus 0 %}
+{% assign parentlvl = '' | plus: 0 %}
 {% assign parentlvl = mylvl | minus: 1 %}
 <p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
