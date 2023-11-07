@@ -35,13 +35,13 @@ $('#toc').on('click', 'a', function() {
 
 <!-- Build an arry of metadata variable names -->
 {% assign idxlvls = emptyArray %}
-{% assign idxlvls[0] = l1idx %}
-{% assign idxlvls[1] = l2idx %}
-{% assign idxlvls[2] = l3idx %}
-{% assign idxlvls[3] = l4idx %}
-{% assign idxlvls[4] = l5idx %}
-{% assign idxlvls[5] = l6idx %}
-{% assign idxlvls[6] = l7idx %}
+{% assign idxlvls[0] = 'l1idx' %}
+{% assign idxlvls[1] = 'l2idx' %}
+{% assign idxlvls[2] = 'l3idx' %}
+{% assign idxlvls[3] = 'l4idx' %}
+{% assign idxlvls[4] = 'l5idx' %}
+{% assign idxlvls[5] = 'l6idx' %}
+{% assign idxlvls[6] = 'l7idx' %}
 
 {% assign pgidx = emptyArray %}
 {% assign pgidx[0] = page.l1idx %}
