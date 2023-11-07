@@ -51,11 +51,11 @@ $('#toc').on('click', 'a', function() {
 {% assign pgidx[6] = page.l7idx %}
 
 <p>
-{% assign neighbors = site.pages | map name %}
+{% assign neighbors = site.pages %}
 {% for idxlvl in idxlvls %}
   {% if pgidx[forloop.index0] > 0 %}
     {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
-    {{neighbors.size}}
+    {{ neighbors | map: 'l1idx' | size }}
   {% endif %}
 {% endfor %}
 </p>
