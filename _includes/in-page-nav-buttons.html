@@ -22,44 +22,7 @@ $('#toc').on('click', 'a', function() {
 
 <!-- Create previous/next in-page navigation buttons. -->
 
-<!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
-{% if page.l7name %} {%assign myidx = page.l7idx %} {% assign mylvl = 7 | plus: 0 %} {% else %}
-{% if page.l6name %} {%assign myidx = page.l6idx %} {% assign mylvl = 6 | plus: 0 %} {% else %}
-{% if page.l5name %} {%assign myidx = page.l5idx %} {% assign mylvl = 5 | plus: 0 %} {% else %}
-{% if page.l4name %} {%assign myidx = page.l4idx %} {% assign mylvl = 4 | plus: 0 %} {% else %}
-{% if page.l3name %} {%assign myidx = page.l3idx %} {% assign mylvl = 3 | plus: 0 %} {% else %}
-{% if page.l2name %} {%assign myidx = page.l2idx %} {% assign mylvl = 2 | plus: 0 %}
-{% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %}
 
-{%assign parentlvl == mylvl | minus: 1 %}
-
-<!-- Build an arry of metadata variable names -->
-{% assign idxlvls[0] = l1idx %}
-{% assign idxlvls[1] = l2idx %}
-{% assign idxlvls[2] = l3idx %}
-{% assign idxlvls[3] = l4idx %}
-{% assign idxlvls[4] = l5idx %}
-{% assign idxlvls[5] = l6idx %}
-{% assign idxlvls[6] = l7idx %}
-
-{% assign pgidx[0] = page.l1idx %}
-{% assign pgidx[1] = page.l2idx %}
-{% assign pgidx[2] = page.l3idx %}
-{% assign pgidx[3] = page.l4idx %}
-{% assign pgidx[4] = page.l5idx %}
-{% assign pgidx[5] = page.l6idx %}
-{% assign pgidx[6] = page.l7idx %}
-
-<p>
-{% assign neighbors = site.pages %}
-{% for idxlvl in idxlvls %}
-  {% if pgidx[forloop.index0] > 0 %}
-    {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
-    {% assign shrtnbrs = neighbors | map: 'l1idx' %}
-    {{ shrtnbrs | size }}
-  {% endif %}
-{% endfor %}
-</p>
 
 
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
