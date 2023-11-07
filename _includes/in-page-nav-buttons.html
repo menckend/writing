@@ -50,7 +50,15 @@ $('#toc').on('click', 'a', function() {
 {% assign pgidx[5] = page.l6idx %}
 {% assign pgidx[6] = page.l7idx %}
 
-
+<p>
+{% assign neighbors = site.pages | map name %}
+{% for idxlvl in idxlvls %}
+  {% if pgidx[forloop.index0] > 0 %}
+    {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
+    {{neighbors.size}}
+  {% endif %}
+{% endfor %}
+</p>
 
 
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
