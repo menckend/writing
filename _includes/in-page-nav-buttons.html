@@ -58,7 +58,7 @@ $('#toc').on('click', 'a', function() {
   {% if pgidx[forloop.index0] > 0 %}
     {% assign neighbors = neighbors | where: idxlvl, pgidx[forloop.index0] %}
     {% assign shrtnbrs = neighbors | map: 'l1idx' %}
-    <p>{% neighbors | size }}, {{ shrtnbrs | size }}</p>
+    <p>{{ neighbors | size }}, {{ shrtnbrs | size }}</p>
   {% endif %}
 {% endfor %}
 
