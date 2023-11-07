@@ -1254,7 +1254,7 @@ details.sbdeet[open] {
     border-collapse: separate;
     padding: 0px 8px;
     border-color: #dcdcdc;
-/*    margin-bottom: 15px; */
+    margin-bottom: 0; */
     border-style: hidden;
     background-color: whitesmoke;
     border-radius: 5px;
