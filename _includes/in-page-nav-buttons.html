@@ -61,18 +61,8 @@ Loop through the index-hierarchies (1-7)
 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
-  {% for apage in pagearray %}
-    {% assign wrkpage = apage | split: ','
-    {% for fld in wrkpage %}
-      <p> wrkpage field {{forloop.index}}: {{fld}}</p>
-    {{% endfor %}}
-  {% endfor %}
+<p>{{ pagearray[3] | split: ',' }} <p>
 
-
-{% for lvl in lvlidxmatches %}
-  {% for apage in pagearray %}
-  {% endfor %}
-{% endfor %}
 
 
 
