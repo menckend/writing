@@ -23,30 +23,25 @@ $('#toc').on('click', 'a', function() {
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
 
+  <p> Start Debug output (get rid of me later) </p>
+  <!-- Create previous/next in-page navigation buttons. -->
 
-<p> Start Debug output (get rid of me later) </p>
+  <!-- Build an arry of metadata variable names -->
+  {% assign idxlvls = "junk,l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
 
-<!-- Create previous/next in-page navigation buttons. -->
 
-<!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
-{% if page.l7name %} {%assign myidx = page.l7idx %} {% assign mylvl = 7 | plus: 0 %} {% else %}
-{% if page.l6name %} {%assign myidx = page.l6idx %} {% assign mylvl = 6 | plus: 0 %} {% else %}
-{% if page.l5name %} {%assign myidx = page.l5idx %} {% assign mylvl = 5 | plus: 0 %} {% else %}
-{% if page.l4name %} {%assign myidx = page.l4idx %} {% assign mylvl = 4 | plus: 0 %} {% else %}
-{% if page.l3name %} {%assign myidx = page.l3idx %} {% assign mylvl = 3 | plus: 0 %} {% else %}
-{% if page.l2name %} {%assign myidx = page.l2idx %} {% assign mylvl = 2 | plus: 0 %}
-{% endif %} {% endif %} {% endif %} {% endif %} {% endif %} {% endif %}
+  <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
+  {% for i in (1..7) %}
+    {% if page[idxlvls[i]] %} {% assign myidx = page[idxlvls[i]] %}
+      {% assign mylv = i | plus: 0 %}
+    {% endif %}
+
 {% assign mylvl-int = mylvl | to_i %}
 {% assign myidx-int = myidx | to_i %}
 {% assign parentlvl = '' | plus: 0 %}
 {% assign parentlvl = mylvl | minus: 1 %}
 <p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
-{% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
-{% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
-
-{% for i in (3..parentlvl)  %}
-{% endfor %}
 
 <p> Try to get "where" or "where_exp" filters to work using dynamic/nested variable names</p>
 <p>  Get URL from the page with 2_1_2_1_3.html by using direct values and field-names from site.pages:
@@ -57,14 +52,12 @@ $('#toc').on('click', 'a', function() {
 {% assign standin = l5idx %}
 {% assign standin2 = 3 %}
 
-{% assign otraurl = site.pages | where: 'l1idx', 2 | where: 'l2idx', 1 | where: 'l3idx', 2 | where: 'l4idx', 1 | where: [standin], 3 | map: [standin2]]  %}
+{% assign otraurl = site.pages | where: 'l1idx', 2 | where: 'l2idx', 1 | where: 'l3idx', 2 | where: 'l4idx', 1 | where: [idxlvl[4]], 3 | map: [standin2]]  %}
 {{ url }}</p>
 
 </p>
 
 
-<!-- Build an arry of metadata variable names -->
-{% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
 
 <p> End Debug output (get rid of me later) </p>
 
