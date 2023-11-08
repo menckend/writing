@@ -42,18 +42,33 @@ $('#toc').on('click', 'a', function() {
 
 <!-- So, how do a mutate the pages hash into a new hash while programmatically *naming* the new hash?  I can select elements of the existing hash
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
+
+Instead of a hash; use an array?
+
+Flatten the hash of pages into a single entry in an array?
+  sillyarray[1] = 'page-contents','page2-contents'...all pages in site.pages'
+  sillyarray[2] = massage sillyarray[1] to exclude entries where 'l1idx: 2' is present?
+  sillyarray[3] = 
+Then 
+
 -->
 
+{% assign pagearray = site.emptyArray}
+{% assign pagearray = site.emptyArray}
+{% for apage in site.pages %}
+  {% assign pagearray = pagearray | push: page %}
+{% endfor %}
+<p> pagearray:  {{pagearray | size }}</p>
 
-{% assign stash-hash = site.pages %'}
-{% assign pallatecleanser = 'bland' %}
 
-<p> The stashhash size: {{stash-hash | size}}</p>
 
-{% assign shim = 'shimmy1' %}
-{% assign thim = 'shimmy1' %}
-{% assign [shim] = 'i did it' %}
-<p> {{shim}}, {{thim}}, {{shimmy1}}, ?<p>
+
+
+
+
+
+
+
                                                                                             <p> End Debug output (get rid of me later) </p>
 
 
