@@ -50,7 +50,7 @@ $('#toc').on('click', 'a', function() {
 
 <p> Try to get "where" or "where_exp" filters to work using dynamic/nested variable names</p>
 <p>  Get URL from the page with 2_1_2_1_3.html by using direct values and field-names from site.pages:
-{{ site.pages | where: 'lvl1idx', '2' | where: 'lvl2idx', '1' | where: 'lvl3idx', '2' | where: 'lvl4idx', '1' | where 'lvl5idx', '3' | map url  }}
+{{ site.pages | where: 'lvl1idx', '2' | where: 'lvl2idx', '1' | where: 'lvl3idx', '2' | where: 'lvl4idx', '1' | where: 'lvl5idx', '3' | map url  }}
 
 
 </p>
