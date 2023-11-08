@@ -40,12 +40,8 @@ $('#toc').on('click', 'a', function() {
   <!--  Create collection of "adjacent" pages to this one. -->
   
   {% assign thesepages = site.pages %}
-  {% assign thesepages[2] = site.pages %}
-  {% assign thesepages[1] = site.pages %}
-  {% assign thesepages[0] = site.pages %}
-  {% assign looper-less = 1 | plus: 0 %}
-  
-  
+  {% assign looper-less = '' | plus: 0 %}
+    
   {% for i in (1..7) %}
     {% assign looper = i %}
     {% assign looper-less = i | minus: 1 %}
@@ -55,6 +51,7 @@ $('#toc').on('click', 'a', function() {
         {% assign thesepages[looper] = thesepages[looper-less] | where: [lvlvar], page[lvlvar] %}
       {% endif %}
     {% else %}
+
     {% assign thesepages[looper] = thesepages %}
     {% endif %}
   {% endfor %}
