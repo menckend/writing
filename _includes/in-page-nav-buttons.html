@@ -39,7 +39,7 @@ $('#toc').on('click', 'a', function() {
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
   <!--  Create collection of "adjacent" pages to this one. -->
-  assign thesepages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
+  {% assign thesepages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
   {% for i in (3..parentlvl) %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
