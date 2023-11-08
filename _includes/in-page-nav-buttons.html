@@ -28,7 +28,6 @@ $('#toc').on('click', 'a', function() {
     {% if page[lvlvar] %}
       {% assign myidx = page[lvlvar] %}
       {% assign mylvl = forloop.index | plus: 0 %}
-      <p> loop instance: {{i}}'s idx value: {{ page[lvlvar] }}</p>
     {% endif %}
   {% endfor %}
 
@@ -43,9 +42,7 @@ $('#toc').on('click', 'a', function() {
   {% for i in (1..mylvl) %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
-      <p> test10: {{ thesepages | where: [lvlvar], page[lvlvar] | map: 'url' | size }} </p>
       {% assign thesepages[i] = thesepages[i | minus: 1] | where: [lvlvar], page[lvlvar] %}
-      <p> Number of pages in this (lvl {{i}}) group, with {{lvlvar}}: {{ thesepages[i] | size }}</p>
     {% endif %}
   {% endfor %}
   <p> size (in pages)of my section: {{thesepages[parentlvl] | size }}</p>
