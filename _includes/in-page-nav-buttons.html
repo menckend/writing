@@ -44,11 +44,11 @@ $('#toc').on('click', 'a', function() {
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
 -->
 
-{% assign stashhash = site.emptyArrary}
-{% assign stashhash = site.pages %'}
+{% assign stash-hash = site.emptyArrary}
+{% assign stash-hash = site.pages %'}
 {% assign pallatecleanser = 'bland' %}
 
-<p> The stashhash size: {{stashhash.size}}</p>
+<p> The stashhash size: {{stash-hash | size}}</p>
 
 {% assign shim = 'shimmy1' %}
 {% assign thim = 'shimmy1' %}
