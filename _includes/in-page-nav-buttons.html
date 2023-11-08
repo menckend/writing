@@ -38,26 +38,7 @@ $('#toc').on('click', 'a', function() {
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
   <!--  Create collection of "adjacent" pages to this one. -->
-
   
-{% assign thesepages = site.pages %}
-{% assign thesepages = thesepages | where: 'l5idx', page.l5idx %}
-{% assign thosepages = thesepages | where: 'l5idx', page.l5idx %}
-
-{% assign thesepages2 = thesepages %}
-{% assign thesepages.a2a = thesepages %}
-{% assign a2a.thesepages = thesepages %}
-{% assign these.a2a.pages = thesepages %}
-
-
-<p> {{thesepages2 | size}}, {{thesepages.a2a | size}} , {{a2a.thesepages | size}},{{ these.a2a.pages | size}} </p>
-<p> {{thosepages | size}}</p>
-
-{% assign a1.thesepages = thesepages | where: 'l1idx', page.l1idx %}
-{% assign a2.thesepages = a1.thesepages | where: 'l2idx', page.l2idx %}
-{% assign a3.thesepages = a2.thesepages | where: 'l3idx', page.l3idx %}
-{% assign a4.thesepages = a3.thesepages | where: 'l4idx', page.l4idx %}
-{% assign a5.thesepages = a4.thesepages | where: 'l5idx', page.l5idx %}
 
 <!-- So, how do a mutate the pages hash into a new hash while programmatically *naming* the new hash?  I can select elements of the existing hash
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
@@ -67,7 +48,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign stashhash[0] = 'something new %'}
 {% assign stashhash[1] = 'something newer %'}
 {% assign stashhash[2] = 'something newest %'}
-<p> The stashhash: {{stashhash | array_to_sentence_string}}</p>
+<p> The stashhash: {{stashhash}}</p>
 
 
                                                                                             <p> End Debug output (get rid of me later) </p>
