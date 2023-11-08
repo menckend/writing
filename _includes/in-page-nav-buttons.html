@@ -44,9 +44,10 @@ $('#toc').on('click', 'a', function() {
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
       {% assign thesepages = thesepages | where: [lvlvar], page[lvlvar] %}
+      <p> Number of pages in this (lvl {{i}}) group: {{ thesepages | size }}</p>
     {% endif %}
   {% endfor %}
-  <p> Number of pages in this (lvl {{i}}) group: {{ thesepages | size }}</p>
+  
 
 
 
