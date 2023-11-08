@@ -47,12 +47,12 @@ $('#toc').on('click', 'a', function() {
     {% assign looper-less = i | minus: 1 %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if thesepages[looper-less] %}
-      <p> looper-less existed on loop# {{i}}</p>
+      <p> looper-less ({{thesepages[looper-less] | size}} pages ) existed on loop# {{i}}</p>
       {% if page[lvlvar] %}
         {% assign thesepages[looper] = thesepages[looper-less] | where: [lvlvar], page[lvlvar] %}
       {% endif %}
     {% else %}
-      <p> looper-less did not exist on loop# {{i}}</p>
+      <p> looper-less ({{thesepages[looper-less] | size}} pages ) did not exist on loop# {{i}}</p>
       {% assign thesepages[looper] = thesepages %}
     {% endif %}
   {% endfor %}
