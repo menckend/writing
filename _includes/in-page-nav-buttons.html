@@ -38,14 +38,19 @@ $('#toc').on('click', 'a', function() {
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
   <!--  Create collection of "adjacent" pages to this one. -->
+  {% assign thesepages = site.pages %}
+  {% assign thesepages[2] = site.pages %}
+  {% assign thesepages[1] = site.pages %}
   {% assign thesepages[0] = site.pages %}
+  {% assign looper-less = 1 | plus: 0 %}
+  
   {% for i in (1..mylvl) %}
     {% assign looper = i %}
-    {% assign looper-less = i | minus: 1 %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
       {% assign thesepages[looper] = thesepages[looper-less] | where: [lvlvar], page[lvlvar] %}
     {% endif %}
+    {% assign looper-less = i | minus: 1 %}
   {% endfor %}
   <p> size (in pages)of sections: {{thesepages[0] | size }},{{thesepages[1] | size }},{{thesepages[2] | size }},{{thesepages[3] | size }},{{thesepages[4] | size }},{{thesepages[5] | size }},{{thesepages[6] | size }},{{thesepages[7] | size }},</p>
   
