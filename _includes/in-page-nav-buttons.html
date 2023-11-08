@@ -51,8 +51,9 @@ programmatically, using square-brackets to substitutute variables into the hash 
 <p> The stashhash: {{stashhash}}; size: {{stashhash.size}}</p>
 
 {% assign shim = 'shimmy1' %}
+{% assign thim = 'shimmy1' %}
 {% assign [shim] = 'i did it' %}
-<p> {{shimmy1}}, {{shim}}, ?<p>
+<p> {{shim}}, {{thim}}, {{shimmy1}}, ?<p>
                                                                                             <p> End Debug output (get rid of me later) </p>
 
 
