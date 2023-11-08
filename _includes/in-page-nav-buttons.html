@@ -39,15 +39,15 @@ $('#toc').on('click', 'a', function() {
 
   <!--  Create collection of "adjacent" pages to this one. -->
 
-
-  {% assign looper-less = '' | plus: 0 %}
-
   
 {% assign thesepages = site.pages %}
-{% assign thesepages[1] = thesepages | where: 'l1idx' = page.l1idx %}
-{% assign thesepages[2] = thesepages[1] | where: 'l2idx' = page.l2idx %}
-{% assign thesepages[3] = thesepages[2] | where: 'l3idx' = page.l3idx %}
-{% assign thesepages[4] = thesepages[3] | where: 'l4idx' = page.l4idx %}
+{% assign thesepages[1] = thesepages | where: 'l1idx', page.l1idx %}
+{% assign thesepages[2] = thesepages[1] | where: 'l2idx', page.l2idx %}
+{% assign thesepages[3] = thesepages[2] | where: 'l3idx', page.l3idx %}
+{% assign thesepages[4] = thesepages[3] | where: 'l4idx', page.l4idx %}
+{% assign thesepages[5] = thesepages[4] | where: 'l5idx', page.l5idx %}
+{% assign thesepages[6] = thesepages[5] | where: 'l6idx', page.l6idx %}
+{% assign thesepages[7] = thesepages[6] | where: 'l7idx', page.l7idx %}
 
 <p> {{thesepages | map url | array_to_sentence_string }} </p>
 <p> {{thesepages[1] | map url | array_to_sentence_string }} </p>
