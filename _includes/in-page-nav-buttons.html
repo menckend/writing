@@ -34,6 +34,16 @@ $('#toc').on('click', 'a', function() {
       {% assign mylvl = forloop.index | plus: 0 %}
     {% endif %}
   {% endfor %}
+
+  {% for i in (1..7) %}
+    {% assign lvlvar = "l" | append: i | append: "idx" %}
+    {% if page[lvlvar] %}
+      {% assign myidx = page[idxlvl] %}
+      {% assign mylvl = forloop.index | plus: 0 %}
+      <p> loop instance: {{i}}'s idx value: {{ page[lvlvar] }}.   {{page[lvlvar]}}</p>
+    {% endif %}
+  {% endfor %}
+
 {% assign mylvl-int = mylvl | to_i %}
 {% assign myidx-int = myidx | to_i %}
 {% assign parentlvl = '' | plus: 0 %}
