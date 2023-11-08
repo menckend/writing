@@ -47,13 +47,12 @@ $('#toc').on('click', 'a', function() {
 {% assign thesepages[4] = thesepages[3] | where: 'l4idx', page.l4idx %}
 {% assign thesepages[5] = thesepages[4] | where: 'l5idx', page.l5idx %}
 
-<p> {{thesepages | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[1] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[2] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[3] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[4] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[5] | map: url | array_to_sentence_string }} </p>
-
+<p> {{thesepages | map: url }} </p>
+<p> {{thesepages[1] | map: url }} </p>
+<p> {{thesepages[2] | map: url }} </p>
+<p> {{thesepages[3] | map: url }} </p>
+<p> {{thesepages[4] | map: url }} </p>
+<p> {{thesepages[5] | map: url }} </p>
 
 
 
