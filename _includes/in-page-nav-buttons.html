@@ -41,16 +41,16 @@ $('#toc').on('click', 'a', function() {
 
   
 {% assign thesepages = site.pages %}
-{% assign [1]thesepages = thesepages | where: 'l1idx', page.l1idx %}
-{% assign [2]thesepages = [1]thesepages | where: 'l2idx', page.l2idx %}
-{% assign [3]thesepages = [2]thesepages | where: 'l3idx', page.l3idx %}
-{% assign [4]thesepages = [3]thesepages | where: 'l4idx', page.l4idx %}
+{% assign 1thesepages = thesepages | where: 'l1idx', page.l1idx %}
+{% assign 2thesepages = 1thesepages | where: 'l2idx', page.l2idx %}
+{% assign 3thesepages = 2thesepages | where: 'l3idx', page.l3idx %}
+{% assign [4]thesepages = 3thesepages | where: 'l4idx', page.l4idx %}
 {% assign [5]thesepages = [4]thesepages | where: 'l5idx', page.l5idx %}
 
 <p> {{thesepages | map: 'url' | array_to_sentence_string }} </p>
-<p> 1: {{[1]thesepages | map: 'url' | array_to_sentence_string }} </p>
-<p> 2: {{[2]thesepages | map: 'url' | array_to_sentence_string }} </p>
-<p> 3: {{[3]thesepages | map: 'url' | array_to_sentence_string }} </p>
+<p> 1: {{1thesepages | map: 'url' | array_to_sentence_string }} </p>
+<p> 2: {{2thesepages | map: 'url' | array_to_sentence_string }} </p>
+<p> 3: {{3thesepages | map: 'url' | array_to_sentence_string }} </p>
 <p> 4: {{[4]thesepages | map: 'url' | array_to_sentence_string }} </p>
 <p> 5: {{[5]thesepages | map: 'url' | array_to_sentence_string }} </p>
 
