@@ -43,25 +43,17 @@ $('#toc').on('click', 'a', function() {
 <p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
 {% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
-
-
 {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
-<p> ourpages's l1idxes: {{ ourpages | map: 'l1idx' }} </p>
-
-  <p>
-  {% for pg in ourpages %}
-    l1-{{pg.l1idx}},l2-{{pg.l2idx}},l3-{{pg.13idx}},14-{{pg.14idx}},15-{{pg.15idx}}
-  {% endfor %}
-  </p>
 
 {% for i in (3..parentlvl)  %}
-  {% assign ourpages = ourpages | where: 'idxlvls[forloop.index]', page.idxlvls[forloop.index] %}
-  <p>
-  {% for pg in ourpages %}
-    l1-{{pg.l1idx}},l2-{{pg.l2idx}},l3-{{pg.13idx}},14-{{pg.14idx}},15-{{pg.15idx}}
-  {% endfor %}
-  </p>
 {% endfor %}
+
+<p> Try to get "where" or "where_exp" filters to work using dynamic/nested variable names</p>
+<p>  Get URL from the page with 2_1_2_1_3.html by using direct values and field-names from site.pages:
+{{ site.pages | where: 'lvl1idx', '2' | where: 'lvl2idx', '1' | where: 'lvl3idx', '2' | where: 'lvl4idx', '1' | where 'lvl5idx', '3' | map url  }}
+
+
+</p>
 
 
 
@@ -69,11 +61,6 @@ $('#toc').on('click', 'a', function() {
 
 <!-- Build an arry of metadata variable names -->
 {% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
-{% assign pgidxes = site.blankArray %}
-{% for i in (1..7) %}
-{% endfor %}
-<p> {{pgidxes }} </p>
-<!-- page.l1idx,page.l3idx,page.l4idx,page.l5idx,page.l6idx;page.l7idx | split: ',' -->
 
 <p> End Debug output (get rid of me later) </p>
 
