@@ -46,8 +46,6 @@ $('#toc').on('click', 'a', function() {
 {% assign thesepages[3] = thesepages[2] | where: 'l3idx', page.l3idx %}
 {% assign thesepages[4] = thesepages[3] | where: 'l4idx', page.l4idx %}
 {% assign thesepages[5] = thesepages[4] | where: 'l5idx', page.l5idx %}
-{% assign thesepages[6] = thesepages[5] | where: 'l6idx', page.l6idx %}
-{% assign thesepages[7] = thesepages[6] | where: 'l7idx', page.l7idx %}
 
 <p> {{thesepages | map: url | array_to_sentence_string }} </p>
 <p> {{thesepages[1] | map: url | array_to_sentence_string }} </p>
@@ -55,13 +53,6 @@ $('#toc').on('click', 'a', function() {
 <p> {{thesepages[3] | map: url | array_to_sentence_string }} </p>
 <p> {{thesepages[4] | map: url | array_to_sentence_string }} </p>
 <p> {{thesepages[5] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[6] | map: url | array_to_sentence_string }} </p>
-<p> {{thesepages[7] | map: url | array_to_sentence_string }} </p>
-
-
-
-
-
 
 
 
