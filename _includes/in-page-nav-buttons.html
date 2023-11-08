@@ -29,7 +29,7 @@ $('#toc').on('click', 'a', function() {
   <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
   {% for i in (1..7) %}
     {% if page[idxlvls[forloop.index]] %} {% assign myidx = page[idxlvls[forloop.index]] %}
-      {% assign mylv = forloop.index | plus: 0 %}
+      {% assign mylvl = forloop.index | plus: 0 %}
     {% endif %}
   {% endfor %}
 {% assign mylvl-int = mylvl | to_i %}
