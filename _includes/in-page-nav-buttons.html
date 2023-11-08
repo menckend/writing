@@ -49,6 +49,7 @@ $('#toc').on('click', 'a', function() {
 {% assign a2a.thesepages = thesepages %}
 {% assign these.a2a.pages = thesepages %}
 
+
 <p> {{thesepages2 | size}}, {{thesepages.a2a | size}} , {{a2a.thesepages | size}},{{ these.a2a.pages | size}} </p>
 <p> {{thosepages | size}}</p>
 
@@ -61,6 +62,12 @@ $('#toc').on('click', 'a', function() {
 <!-- So, how do a mutate the pages hash into a new hash while programmatically *naming* the new hash?  I can select elements of the existing hash
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
 -->
+
+{% assign stashhash = site.emptyArrary}
+{% assign stashhash[0] = 'something new %'}
+{% assign stashhash[1] = 'something newer %'}
+{% assign stashhash[2] = 'something newest %'}
+<p> The stashhash: {{stashhash | array_to_sentence_string}}</p>
 
 
                                                                                             <p> End Debug output (get rid of me later) </p>
@@ -123,7 +130,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 
 {% unless page.toc == false %}
   {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
-  {% if tmparray > 1 %}
+  {% if tmparray > 2 %}
     <details><summary >Table of Contents</summary><div id="toc"></div></details>
   {% endif %}
 {% endunless %}
