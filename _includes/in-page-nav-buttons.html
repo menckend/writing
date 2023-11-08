@@ -45,15 +45,16 @@ $('#toc').on('click', 'a', function() {
   {% for i in (1..7) %}
     {% assign looper-less = i | minus: 1 %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
-    {% if [i]thesepages[looper-less] %}
-      <p> [i]looper-less ({{[i]thesepages[looper-less] | size}} pages ) existed on loop# {{i}}</p>
+    {% if [i]thesepages %}
+      <p> [i]thesepages ({{[i]thesepages | size}} pages ) existed on loop# {{i}}</p>
       {% if page[lvlvar] %}
         <p> page.lvlvar is: {{page[lvlvar]}}</p>
-        {% assign [i]thesepages[i] = [looper-less]thesepages[looper-less] | where: [lvlvar], page[lvlvar] %}
+        {% assign [i]thesepages = [looper-less]thesepages | where: [lvlvar], page[lvlvar] %}
       {% endif %}
     {% else %}
-      <p> looper-less ({{[looper-less]thesepages[looper-less] | size}} pages ) did not exist on loop# {{i}}</p>
-      {% assign [i]thesepages[i] = thesepages %}
+      <p> [i]thesepages ({{[looper-less]thesepages | size}} pages ) did not exist on loop# {{i}}</p>
+      {% assign [i]thesepages = thesepages %}
+      <p> [i]thesepages ({{[looper-less]thesepages | size}} pages ) existed at end of loop# {{i}}</p>
     {% endif %}
   {% endfor %}
 
