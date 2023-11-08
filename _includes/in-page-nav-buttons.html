@@ -48,6 +48,7 @@ $('#toc').on('click', 'a', function() {
       <p> Number of pages in this (lvl {{i}}) group, with {{lvlvar}}: {{ thesepages[i] | size }}</p>
     {% endif %}
   {% endfor %}
+  <p> size (in pages)of my section: {{thesepages[parentlvl] | size }}</p>
   
 
 
