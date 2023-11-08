@@ -48,8 +48,10 @@ $('#toc').on('click', 'a', function() {
 {% assign ourpages = site.pages %}
 <p> ourpages's l1idxes: {{ ourpages | map: 'l1idx' }} </p>
 
-
 {% for i in (1..parentlvl)  %}
+
+<p> {{ ourpages | where: 'idxlvls[forloop.index]', page.idxlvls[forloop.index] | map 'l1idx' }} </p>
+
 {% endfor %}
 
 
