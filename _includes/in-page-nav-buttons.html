@@ -48,7 +48,7 @@ $('#toc').on('click', 'a', function() {
 {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
 <p> ourpages's l1idxes: {{ ourpages | map: 'l1idx' }} </p>
 
-{% for i in (mylvl..parentlvl)  %}
+{% for i in (parentlvl..mylvl)  %}
   <p> pre ourpages-size: {{ourpages | size }}</p>
   {% assign ourpages = ourpages | where: 'idxlvls[forloop.index]', page.idxlvls[forloop.index] %}
   <p> post ourpages-size: {{ourpages | size }}</p>
