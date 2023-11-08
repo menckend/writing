@@ -53,9 +53,14 @@ programmatically, using square-brackets to substitutute variables into the hash 
 <p> pagearray[3]: {{pagearray[3]}}</p>
 <p> pagearray[13]: {{pagearray[13]}}</p>
 
+<!--Create an array containing each page's data (pagearray).
+Loop through the index-hierarchies (1-7)
+  Loop through pagearray.
+    If a page in pagearray matches the l1idx filter, append its index to an array called indexmatches[pagearray.forloopindex]
+-->
 
-
-
+{% assign lvlidxmatches = '1,2,3,4,5,6,7' | split ',' %}
+<p> {{lvlidxmatches | size}} </p>
 
                                                                                             <p> End Debug output (get rid of me later) </p>
 
