@@ -46,7 +46,7 @@ $('#toc').on('click', 'a', function() {
 
 
 {% assign ourpages = site.pages %}
-<p> ourpages's l1idxes: {{ourpages | map: l1idx }} </p>
+<p> ourpages's l1idxes: {{ ourpages | map: 'l1idx' }} </p>
 
 
 {% for i in (1..parentlvl)  %}
@@ -64,22 +64,6 @@ $('#toc').on('click', 'a', function() {
 <p> {{pgidxes }} </p>
 <!-- page.l1idx,page.l3idx,page.l4idx,page.l5idx,page.l6idx;page.l7idx | split: ',' -->
 
-
-
-
-
-<p> {{ idxlvls | size }} </p>
-<p> {{ pgidxess | size }} </p>
-{% assign neighbors = site.pages %}
-<p>{{ neighbors | size }}, {{ shrtnbrs | size }}</p>
-{% for idxlvl in idxlvls %}
-  <p>{{ pgidx[forloop.index0] }}</p>
-  {% if pgidx[forloop.index0] > 0 %}
-    {% assign neighbors = neighbors | where: idxlvl, pgidxes[forloop.index0] %}
-    {% assign shrtnbrs = neighbors | map: 'l1idx' %}
-    <p>{{ neighbors | size }}, {{ shrtnbrs | size }}</p>
-  {% endif %}
-{% endfor %}
 <p> End Debug output (get rid of me later) </p>
 
 
