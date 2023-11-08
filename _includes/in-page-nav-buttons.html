@@ -55,7 +55,9 @@ $('#toc').on('click', 'a', function() {
 
 <p> Get URl from clumsy indirect variable references: 
 {% assign standin = l5idx %}
-{% assign otraurl = site.pages | where: 'l1idx', 2 | where: 'l2idx', 1 | where: 'l3idx', 2 | where: 'l4idx', 1 | where: [standin], 3 | map: 'url'  %}
+{% assign standin2 = 3 %}
+
+{% assign otraurl = site.pages | where: 'l1idx', 2 | where: 'l2idx', 1 | where: 'l3idx', 2 | where: 'l4idx', 1 | where: [standin], 3 | map: [standin2]]  %}
 {{ url }}</p>
 
 </p>
