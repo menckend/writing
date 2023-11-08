@@ -27,14 +27,6 @@ $('#toc').on('click', 'a', function() {
   <!-- Build an arry of metadata variable names -->
   {% assign idxlvls = "l1idx,l2idx,l3idx,l4idx,l5idx,l6idx,l7idx" | split: ',' %}
   <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
-  {% for idxlvl in idxlvls %}
-    <p> loop instance: {{i}}'s idx value: {{ page[idxlvl] }}.   {{page[idxlvel]}}</p>
-    {% if page[idxlvls[i]] %}
-      {% assign myidx = page[idxlvl] %}
-      {% assign mylvl = forloop.index | plus: 0 %}
-    {% endif %}
-  {% endfor %}
-
   {% for i in (1..7) %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
@@ -48,7 +40,7 @@ $('#toc').on('click', 'a', function() {
 {% assign myidx-int = myidx | to_i %}
 {% assign parentlvl = '' | plus: 0 %}
 {% assign parentlvl = mylvl | minus: 1 %}
-<p> myidx: {{myidx}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
+<p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
 
 <p> Try to get "where" or "where_exp" filters to work using dynamic/nested variable names</p>
