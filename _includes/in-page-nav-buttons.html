@@ -59,7 +59,7 @@ Loop through the index-hierarchies (1-7)
     If a page in pagearray matches the l1idx filter, append its index to an array called indexmatches[pagearray.forloopindex]
 -->
 
-{% assign lvlidxmatches = '1,2,3,4,5,6,7' | split ',' %}
+{% assign lvlidxmatches = '1,2,3,4,5,6,7' | split: ',' %}
 <p> {{lvlidxmatches | size}} </p>
 
                                                                                             <p> End Debug output (get rid of me later) </p>
