@@ -38,27 +38,25 @@ $('#toc').on('click', 'a', function() {
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
   <!--  Create collection of "adjacent" pages to this one. -->
-  
-  {% assign thesepages = site.pages %}
-  {% assign looper-less = '' | plus: 0 %}
-    
-  {% for i in (1..7) %}
-    {% assign looper-less = i | minus: 1 %}
-    {% assign lvlvar = "l" | append: i | append: "idx" %}
-    {% if [i]thesepages %}
-      <p> [i]thesepages ({{[i]thesepages | size}} pages ) existed on loop# {{i}}</p>
-      {% if page[lvlvar] %}
-        <p> page.lvlvar is: {{page[lvlvar]}}</p>
-        {% assign [i]thesepages = [looper-less]thesepages | where: [lvlvar], page[lvlvar] %}
-      {% endif %}
-    {% else %}
-      <p> [i]thesepages ({{[looper-less]thesepages | size}} pages ) did not exist on loop# {{i}}</p>
-      {% assign [i]thesepages = thesepages %}
-      <p> [i]thesepages ({{[looper-less]thesepages | size}} pages ) existed at end of loop# {{i}}</p>
-    {% endif %}
-  {% endfor %}
 
-  <p> size (in pages)of sections: 0: {{[0]thesepages[0] | size }}, 1: {{[1]thesepages[1] | size }}, 2: {{[2]thesepages[2] | size }}, 3: {{[3]thesepages[3] | size }}, 4: {{[4]thesepages[4] | size }}, 5: {{[5]thesepages[5] | size }}, 6: {{[6]thesepages[6] | size }}, 7: {{[7]thesepages[7] | size }},</p>
+
+  {% assign looper-less = '' | plus: 0 %}
+
+  
+{% assign thesepages = site.pages %}
+{% assign thesepages[1] = thesepages | where: 'l1idx' = page.l1idx %}
+{% assign thesepages[2] = thesepages[1] | where: 'l2idx' = page.l2idx %}
+{% assign thesepages[3] = thesepages[2] | where: 'l3idx' = page.l3idx %}
+{% assign thesepages[4] = thesepages[3] | where: 'l4idx' = page.l4idx %}
+
+<p> {{thesepages | map url | array_to_sentence_string }} </p>
+<p> {{thesepages[1] | map url | array_to_sentence_string }} </p>
+<p> {{thesepages[2] | map url | array_to_sentence_string }} </p>
+<p> {{thesepages[3] | map url | array_to_sentence_string }} </p>
+<p> {{thesepages[4] | map url | array_to_sentence_string }} </p>
+
+
+
 
 
 
