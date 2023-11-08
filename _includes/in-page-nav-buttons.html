@@ -41,11 +41,19 @@ $('#toc').on('click', 'a', function() {
 
   
 {% assign thesepages = site.pages %}
-{% assign thesepages[1] = thesepages | where: 'l1idx', page.l1idx %}
-{% assign thesepages[2] = thesepages[1] | where: 'l2idx', page.l2idx %}
-{% assign thesepages[3] = thesepages[2] | where: 'l3idx', page.l3idx %}
-{% assign thesepages[4] = thesepages[3] | where: 'l4idx', page.l4idx %}
-{% assign thesepages[5] = thesepages[4] | where: 'l5idx', page.l5idx %}
+
+<p> {{thesepages | map: url }} </p>
+<p> {{thesepages[1] | map: url | array_to_sentence_string }} </p>
+<p> {{thesepages[2] | map: url | array_to_sentence_string }} </p>
+<p> {{thesepages[3] | map: url | array_to_sentence_string }} </p>
+<p> {{thesepages[4] | map: url | array_to_sentence_string }} </p>
+<p> {{thesepages[5] | map: url | array_to_sentence_string }} </p>
+
+
+
+
+
+
 
 
                                                                                           <p> End Debug output (get rid of me later) </p>
