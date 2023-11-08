@@ -46,8 +46,8 @@ programmatically, using square-brackets to substitutute variables into the hash 
 
 {% assign pagearray = site.emptyArray %}
 {% assign pagearray = site.emptyArray %}
-{% assign pagearray = pagearray | push: site.pages[1] %}
-{% assign pagearray = pagearray | push: site.pages[2] %}
+{% assign pagearray = pagearray | push: '' %}
+{% assign pagearray = pagearray | push: '' %}
 {% for apage in site.pages %}
   {% assign pagearray[1] = pagearray[1] | append: apage %}
 {% endfor %}
