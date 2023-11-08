@@ -48,7 +48,9 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign stashhash[0] = 'something new %'}
 {% assign stashhash[1] = 'something newer %'}
 {% assign stashhash[2] = 'something newest %'}
-<p> The stashhash: {{stashhash}}; size: {{stashhash.size}}</p>
+{% assign pallatecleanser = 'bland' %}
+
+<p> The stashhash {{stashhash}}; size: {{stashhash.size}}</p>
 
 {% assign shim = 'shimmy1' %}
 {% assign thim = 'shimmy1' %}
