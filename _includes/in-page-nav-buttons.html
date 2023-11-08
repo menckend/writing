@@ -41,10 +41,15 @@ $('#toc').on('click', 'a', function() {
 {% assign parentlvl = mylvl | minus: 1 %}
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
-
-
-
-</p>
+  <!--  Create collection of "adjacent" pages to this one. -->
+  assign thesepages = site.pages | where: 'l1idx', page.l1idx | where 'l2idx', page.l2idx %}
+  {% for i in (3..parentlvl) %}
+    {% assign lvlvar = "l" | append: i | append: "idx" %}
+    {% if page[lvlvar] %}
+      {% assign thesepages = thesepages | where [lvlvar], page[lvlvar] %}
+    {% endif %}
+  {% endfor %}
+  <p> Number of pages in this (lvl {{i}}) group: {{thesepages | size }}</p>
 
 
 
