@@ -46,7 +46,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 
 {% assign pagearray = site.emptyArray %}
 {% assign pagearray = site.emptyArray %}
-{% assign pagearray = pagearray | push" site.pages %}
+{% assign pagearray = pagearray | push: site.pages %}
 
 <p> pagearray:  {{pagearray | size }}</p>
 <p> pagearray[1]:  {{pagearray[1]}}</p>
