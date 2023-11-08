@@ -50,7 +50,7 @@ $('#toc').on('click', 'a', function() {
 
 {% for i in (1..parentlvl)  %}
 
-<p> {{ ourpages | where: 'idxlvls[forloop.index]', page.idxlvls[forloop.index] | map 'l1idx' }} </p>
+<p> {{ ourpages | where: 'idxlvls[forloop.index]', page.idxlvls[forloop.index] | map: 'l1idx' }} </p>
 
 {% endfor %}
 
