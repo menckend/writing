@@ -72,6 +72,7 @@ $('#toc').on('click', 'a', function() {
     {% if cpg[l | append: mylvl | append: 'idx'][myidx]  == page[l | append: mylvl | append: 'idx'][myidx] %}
       {% assign goodpage = 'false' %}
     {% endif %}
+  {% endif %}
 
   {% if goodpage == true %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
