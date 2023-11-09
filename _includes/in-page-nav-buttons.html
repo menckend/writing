@@ -37,36 +37,40 @@ $('#toc').on('click', 'a', function() {
 {% assign parentlvl = mylvl | minus: 1 %}
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
-  <!--  Create collection of "adjacent" pages to this one. -->
-  
+  <!--  Create collection of "adjacent" pages to this one. -->  
 
 <!-- So, how do a mutate the pages hash into a new hash while programmatically *naming* the new hash?  I can select elements of the existing hash
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
 -->
 
-{% assign pagearray = site.emptyArray %}
+<!-- how to pack site.pages into an array -->
+
 {% assign pagearray = site.emptyArray %}
 {% for apage in site.pages %}
-  {% assign newstring = '' %}
+  {% assign pagestring = '' %}
   {% for item in apage %}
-    {% assign newstring = newstring | append: item | append: '|' %}
+    {% assign pagestring = item | strip_newlines %}
+    {% assign pos = pagestring | size | minus: 1 %}
+    {% assign pagestring = pagestring | slice: 1, pos %}
+    {% assign pos = pagestring | size | minus: 1 %}
+    {% assign pagestring = pagestring | slice: 1, pos %}
+    {% assign pagestring = pagestring | append: '|' %}
   {% endfor %}
-  {% assign pagearray = pagearray | push: newstring %}
+  {% assign pagearray = pagearray | push: pagestring %}
 {% endfor %}
+
 <p> pagearray:  {{pagearray | size }}</p>
 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
-
-{% assign tmp2 = site.emptyArray %}
-{% for blob in pagearray[3] %}
-{% endfor %}
-
 
 {% assign chunked = pagearray[3] | split: '|' %}
 <p> {{ chunked | size }}  </p>
 {% for hunk in chunked %}
   <p>{{hunk}}</p>
 {% endfor %}
+
+
+
 
 
                                                                                             <p> End Debug output (get rid of me later) </p>
