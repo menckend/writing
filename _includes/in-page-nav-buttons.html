@@ -53,7 +53,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
     {% assign pos = tmpstring | size | minus: 1 %}
     {% assign tmpstring = tmpstring | slice: 1, pos %}
     {% assign pos = tmpstring | size | minus: 1 %}
-    {% assign tmpstring = tmpstring | slice: 1, pos %}
+    {% assign tmpstring = tmpstring | slice: -1, pos %}
     {% assign tmpstring = tmpstring | append: '|' %}
     {% assign pagestring = pagestring | append: tmpstring %}
   {% endfor %}
