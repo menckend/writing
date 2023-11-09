@@ -44,10 +44,10 @@ $('#toc').on('click', 'a', function() {
 {% assign ngbr_urls = '' | split: ',' %}
 {% assign ngbr_names = '' | split: ',' %}
 
-{% assign outloopid = 0 | plus: 0 %}
+{% assign outloopid = '' | plus: 0 %}
 
 {% for cpg in site.pages %}
-{% increment outloopid %}
+{% assign outloopid == outloopid | plus: 1 %}
   {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
