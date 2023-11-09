@@ -46,7 +46,7 @@ $('#toc').on('click', 'a', function() {
     {% for i in (1..parentlvl) %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
       {% if page[cmpvar] and cpg[cmpvar] %} <p> I have a {{cmpvar}} tag of {{page[cmpvar]}}. Comp page has a {{cmpvar}} tag of {{page[cmpvar]}}</p> {% endif%}
-        {% if cpg[cmpvar] == page[cmpvar] %}
+        {% if cpg[cmpvar] | to_i == page[cmpvar] | to_i %}
           {% assign mtch_idxes == mtch_idxes | push: cmpvar %}
         {% endif %}
     {% endfor %}
