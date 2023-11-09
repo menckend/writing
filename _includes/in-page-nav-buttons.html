@@ -47,12 +47,12 @@ $('#toc').on('click', 'a', function() {
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
-      {% if page[cmpvar] and cpg[cmpvar] %}
-        {% assign cv1i = page[cmpvar] | to_i %}
-        {% assign cv2i = cpg[cmpvar] | to_i %}
-        {% if cv1i != cv2i %}
+      {% if cpg[cmpvar] %}
+        {% if cpg[cmpvar] != page[cmpvar] %}
           {% assign goodpage = 'false'  %}
         {% endif %}
+      {% else %}
+        {% assign goodpage = 'false'  %}
       {% endif %}
     {% endif %}
   {% endfor %}
