@@ -43,7 +43,6 @@ $('#toc').on('click', 'a', function() {
 
 {% for cpg in site.pages %}
   {% assign goodpage = 'true' %}
-  <p>  Started assuming that page {{forloop.index}} match status is: {{goodpage}}.
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
@@ -66,13 +65,7 @@ $('#toc').on('click', 'a', function() {
 {% for j in (1..ngbr_pgs | size%}
   {{site.pages[j].name}}|{{site.pages[j].url}}
 {% endfor %}
-<p>
-
-
-
-
-
-
+</p>
 
                                                                                             <p> End Debug output (get rid of me later) </p>
 
@@ -81,16 +74,16 @@ $('#toc').on('click', 'a', function() {
 
 
   <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
-  {% assign fullpages = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' %}
-  {% assign pagenums = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact %}
-  {% assign pagecount = site.pages | where: 'libname', page.libname | where: 'docname', page.docname | where: 'chapnum', page.chapnum, | sort: 'pagenum' | map: 'pagenum' | uniq | compact | size  %}
-  {% if pagecount > 1 %}
+
     {% assign hostpagenum = page.pagenum | plus: 0  %}
     {% assign hostpagenumint = page.pagenum | to_i  %}
     {% assign oneless = '' | plus: 0 %}
     {% assign onemore = '' | plus: 0 %}
     {% assign oneless = hostpagenumint | minus: 1 %}
     {% assign onemore = hostpagenumint | plus: 1 %}
+
+
+
     <div class="seriesContext">
       {% for pnumval in pagenums %}
         {% assign flpagenum = pnumval | plus: 0  %}
