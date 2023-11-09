@@ -59,12 +59,14 @@ $('#toc').on('click', 'a', function() {
   {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
   {% endif %}
-  Ending with status of: {{goodpage}}</p>
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
-
-
+<p>
+{% for j in (1..ngbr_pgs | size%}
+  {{site.pages[j].name}}|{{site.pages[j].url}}
+{% endfor %}
+<p>
 
 
 
