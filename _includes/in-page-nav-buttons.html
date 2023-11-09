@@ -43,6 +43,7 @@ $('#toc').on('click', 'a', function() {
 
 {% for cpg in site.pages %}
   {% assign goodpage = 'true' %}
+  <p>  Started assuming that page {{forloop.index}} match status is: {{goodpage}}.
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
@@ -51,9 +52,6 @@ $('#toc').on('click', 'a', function() {
         {% assign cv2i = cpg[cmpvar] | to_i %}
         {% if cv1i != cv2i %}
           {% assign goodpage = 'false'  %}
-          <p> compared indices didn't match: {{cv1i}}:{{cv2i}} </p>
-        {% else %}
-          <p> compared indices didt match: {{cv1i}}:{{cv2i}} </p>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -61,6 +59,7 @@ $('#toc').on('click', 'a', function() {
   {% if goodpage == true %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
   {% endif %}
+  Ending with status of: {{goodpage}}</p>
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
