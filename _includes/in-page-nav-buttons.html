@@ -23,7 +23,7 @@ $('#toc').on('click', 'a', function() {
                                                                                         <p> Start Debug output (get rid of me later) </p>
   <!-- Create previous/next in-page navigation buttons. -->
   <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
-  {% for i in (1..7) %}
+  {% for i in (1..10) %}
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
       {% assign myidx = page[lvlvar] %}
@@ -35,9 +35,10 @@ $('#toc').on('click', 'a', function() {
 {% assign myidx-int = myidx | to_i %}
 {% assign parentlvl = '' | plus: 0 %}
 {% assign parentlvl = mylvl | minus: 1 %}
+{% assign nextlvl = mylvl | plus: 1 %}
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
-  <!--  Create collection of "adjacent" pages to this one. -->  
+<!--  Create collection of "adjacent" pages to this one. -->  
 
 {% assign ngbr_pgs = '' | split: ',' %}
 {% assign ngbr_urls = '' | split: ',' %}
@@ -45,6 +46,7 @@ $('#toc').on('click', 'a', function() {
 
 {% for cpg in site.pages %}
   {% assign goodpage = 'true' %}
+
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
@@ -57,6 +59,21 @@ $('#toc').on('click', 'a', function() {
       {% endif %}
     {% endif %}
   {% endfor %}
+
+  {% for k in (mylvl..10) %}
+    {% if goodpage == 'true' %}
+      {% assign cmpvar = 'k' | append: k | append: 'idx' %}
+      {% if cpg[cmpvar] %}
+        {% assign goodpage = 'false' %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if goodpage == 'true' %}
+    {% if cpg[l | append: mylvl | append: 'idx'][myidx]  == page[l | append: mylvl | append: 'idx'][myidx] %}
+      {% assign goodpage = 'false' %}
+    {% endif %}
+
   {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
     {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
