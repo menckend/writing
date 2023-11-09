@@ -49,12 +49,13 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% for apage in site.pages %}
   {% assign pagestring = '' %}
   {% for item in apage %}
-    {% assign pagestring = item | strip_newlines %}
-    {% assign pos = pagestring | size | minus: 1 %}
-    {% assign pagestring = pagestring | slice: 1, pos %}
-    {% assign pos = pagestring | size | minus: 1 %}
-    {% assign pagestring = pagestring | slice: 1, pos %}
-    {% assign pagestring = pagestring | append: '|' %}
+    {% assign tmpstring = item | strip_newlines %}
+    {% assign pos = tmpstring | size | minus: 1 %}
+    {% assign tmpstring = tmpstring | slice: 1, pos %}
+    {% assign pos = tmpstring | size | minus: 1 %}
+    {% assign tmpstring = tmpstring | slice: 1, pos %}
+    {% assign tmpstring = tmpstring | append: '|' %}
+    {% assign pagestring = pagestring | append: tmpstring %}
   {% endfor %}
   {% assign pagearray = pagearray | push: pagestring %}
 {% endfor %}
@@ -64,7 +65,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign chunked = pagearray[3] | split: '|' %}
-<p> {{ chunked | size }}  </p>
+<p> page 3 field count: {{ chunked | size }}  </p>
 {% for hunk in chunked %}
   <p>{{hunk}}</p>
 {% endfor %}
