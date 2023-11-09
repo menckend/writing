@@ -56,7 +56,7 @@ $('#toc').on('click', 'a', function() {
       {% endif %}
     {% endif %}
   {% endfor %}
-  {% if goodpage == true %}
+  {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
   {% endif %}
   Ending with status of: {{goodpage}}</p>
