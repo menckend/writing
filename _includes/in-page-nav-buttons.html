@@ -44,7 +44,7 @@ $('#toc').on('click', 'a', function() {
 {% assign ngbr_urls = '' | split: ',' %}
 {% assign ngbr_names = '' | split: ',' %}
 
-(%assign outloopid == 0 | plus: 0 %}
+{% assign outloopid = 0 | plus: 0 %}
 
 {% for cpg in site.pages %}
 {% assign outloopid == outloopid | plus: 1 %}
