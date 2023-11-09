@@ -59,9 +59,9 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endfor %}
 
-  {% for k in (mylvl..10) %}
+  {% for k in (nextlvl..10) %}
     {% if goodpage == 'true' %}
-      {% assign cmpvar = 'k' | append: k | append: 'idx' %}
+      {% assign cmpvar = l | append: k | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% assign goodpage = 'false' %}
       {% endif %}
