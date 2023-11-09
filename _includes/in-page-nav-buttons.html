@@ -45,16 +45,18 @@ $('#toc').on('click', 'a', function() {
 {% assign ngbr_names = '' | split: ',' %}
 
 {% for cpg in site.pages %}
-  {% assign goodpage = true %}
+  {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
-    {% if goodpage == true %}
+    {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
-      {% if cpg[cmpvar] %}
+      {% if cpg[cmpvar] != nil and cpg[cmpvar] != '' %}
         {% if cpg[cmpvar] != page[cmpvar] %}
-          {% assign goodpage = false  %}
+          {% assign goodpage = 'false' %}
+          <p> higher-level index was detected, but different branch so {{forloop.index}} was marked as not-good </p>
         {% endif %}
       {% else %}
-        {% assign goodpage = false  %}
+        {% assign goodpage = 'false'%}
+        <p> higher-level index was missing altogehter, so {{forloop.index}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -64,6 +66,7 @@ $('#toc').on('click', 'a', function() {
       {% assign cmpvar = 'l' | append: k | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% assign goodpage = 'false' %}
+        <p> child-level index was detected, so page {{forloop.index}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -74,7 +77,7 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endif %}
 
-  {% if goodpage == true %}
+  {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
     {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
     {% assign ngbr_names = ngbr_names | push: cpg[forloop.index].name %}
