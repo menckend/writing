@@ -61,9 +61,12 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% for blob in pagearray[3] %}
 {% endfor %}
 
-<p> {{ pagearray[3] | split: '|' }} </p>
 
-
+{% assign chunked = pagearray[3] | split: '|' %}
+<p> {{ chunked | size }}  </p>
+{% for hunk in chunked %}
+  <p>{{hunk}}</p>
+{% endfor %}
 
 
                                                                                             <p> End Debug output (get rid of me later) </p>
