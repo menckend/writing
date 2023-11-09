@@ -47,7 +47,7 @@ $('#toc').on('click', 'a', function() {
 (%assign outloopid == 0 | plus: 0 %}
 
 {% for cpg in site.pages %}
-(%assign outloopid == outloopid | plus: 1 %}
+{% assign outloopid == outloopid | plus: 1 %}
   {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
