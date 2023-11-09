@@ -65,16 +65,11 @@ $('#toc').on('click', 'a', function() {
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
-<p>names/urls (indirect):  </p>
-<p>names/urls direct: {{ngbr_urls|}}, {{ngbr_names}} </p>
-
 {% assign ngct = ngbr_pgs | size %}
-Test:  {{site.pages[8].name}}, {{site.pages[8].url}}
-ngct: {{ngct}}
 {% for j in (1..ngct %}
-  {{site.pages[j].name}}|{{site.pages[j].url}}, 
+<p> name/url: {{site.pages.[j].name}}|{{site.pages.[j].url}}, </p>
 {% endfor %}
-</p>
+
 
                                                                                             <p> End Debug output (get rid of me later) </p>
 
