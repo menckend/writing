@@ -53,7 +53,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
     {% assign pos = tmpstring | size | minus: 1 %}
     {% assign tmpstring = tmpstring | slice: 1, pos %}
     {% assign pos = tmpstring | size | minus: 1 %}
-    {% assign tmpstring = tmpstring | slice: pos, -1 %}
+    {% assign tmpstring = tmpstring | slice: 0, pos %}
     {% assign tmpstring = tmpstring | append: '|' %}
     {% assign pagestring = pagestring | append: tmpstring %}
   {% endfor %}
@@ -65,6 +65,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign chunked = pagearray[3] | split: '|' %}
+<p> Page 3 string size: {{pagearray[3] | size }}</p>
 <p> page 3 field count: {{ chunked | size }}  </p>
 {% for hunk in chunked %}
   <p>{{hunk}}</p>
