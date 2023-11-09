@@ -42,13 +42,18 @@ $('#toc').on('click', 'a', function() {
 {% assign ngbr_pgs = '' | split: ',' %}
 
 {% for cpg in site.pages %}
-  {% assign goodpage = true %}
+  {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
-    {% if goodpage == true %}
+    {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
       {% if page[cmpvar] and cpg[cmpvar] %}
-        {% if page[cmpvar] != cpg[cmpvar] %}
-          {% assign goodpage = false  %}
+        {% assign cv1i = page[cmpvar] | to_i %}
+        {% assign cv2i = cpg[cmpvar] | to_i %}
+        {% if cv1i != cv2i %}
+          {% assign goodpage = 'false'  %}
+          <p> compared indices didn't match: {{cv1i}}:{{cv2i}} </p>
+        {% else %}
+          <p> compared indices didt match: {{cv1i}}:{{cv2i}} </p>
         {% endif %}
       {% endif %}
     {% endif %}
@@ -58,7 +63,7 @@ $('#toc').on('click', 'a', function() {
   {% endif %}
 {% endfor %}
 
-<p> Neighbor pages are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
+<p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
 
 
 
