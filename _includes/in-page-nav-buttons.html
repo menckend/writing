@@ -47,7 +47,7 @@ $('#toc').on('click', 'a', function() {
       {% assign cmpvar = 'l' | append i | append 'idx' %}
       {% if cpg.cmpvar and page.cmpvar %}
         {% if cpg.cmpvar == page.cmpvar %}
-          {% mtch_idxes == mtch_idxes | push: cmpvar %}
+          {% assign mtch_idxes == mtch_idxes | push: cmpvar %}
       {% endif %}
     {% end for %}
   <p> Page-{{forloop.index}} matching indices ({{mtch_idxes | size}}): {{mtch_idxes}}</p>
