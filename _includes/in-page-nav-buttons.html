@@ -58,7 +58,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign tmp2 = site.emptyArray %}
-{% for blob in site.pages[3] %}
+{% for blob in pagearray[3] %}
   <p> Field({{forloop.index}}): {{ blob }}</p>
 {% endfor %}
 
