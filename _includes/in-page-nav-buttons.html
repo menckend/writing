@@ -58,7 +58,7 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endfor %}
   {% if goodpage == true %}
-    {% assign ngbr_pgs = ngbr_pgs | push forloop.index%}
+    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
   {% endif %}
 {% endfor %}
 
