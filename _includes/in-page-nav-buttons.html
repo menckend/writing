@@ -50,7 +50,9 @@ $('#toc').on('click', 'a', function() {
       {% if page[cmpvar] and cpg[cmpvar] %}
         {% assign comp_var1 = cpg[cmpvar] | to_i %}
         {% assign comp_var2 = page[cmpvar] | to_i %}
-        {% if comp_var1 != comp_var2 %}
+        {% if comp_var1 == comp_var2 %}
+          <p> Match: {{comp_var1}} vs. {{comp_var2}} </p>
+        {% else %}
           {% assign goodpage = no %}
         {% endif %}
       {% endif %}
