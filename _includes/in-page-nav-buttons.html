@@ -83,7 +83,7 @@ $('#toc').on('click', 'a', function() {
     {% assign yourval = cpg[mystr][myidx] %}
     {% if myval == yourval %}
       {% assign goodpage = 'false' %}
-      <p> This page appears to *be* me, so pg.{{cpg.url}} was marked as not-good.   {{myval}} vs {{yourval}} </p>
+      <p> This page appears to *be* me, so pg.{{cpg.url}} was marked as not-good.   {{myval}} vs {{yourval}}.  {{mystr}}, {{myidx}} </p>
     {% endif %}
   {% endif %}
 
