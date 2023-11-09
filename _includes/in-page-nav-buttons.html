@@ -49,7 +49,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% for apage in site.pages %}
   {% assign newstring = '' %}
   {% for item in apage %}
-    {% newstring = newstring | append: item | append: '|' %}
+    {% assign newstring = newstring | append: item | append: '|' %}
   {% endfor %}
   {% assign pagearray = pagearray | push: newstring %}
 {% endfor %}
