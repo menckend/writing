@@ -78,7 +78,7 @@ $('#toc').on('click', 'a', function() {
   {% endfor %}
 
   {% if goodpage == 'true' %}
-    {% assign mystr = 'l' append: mylvl | append 'idx' %}
+    {% assign mystr = 'l' append: mylvl | append: 'idx' %}
     {% assign myval = page[mystr][myidx] %}
     {% assign yourval = cpg[mystr][myidx] %}
     {% if myval  == yourval %}
