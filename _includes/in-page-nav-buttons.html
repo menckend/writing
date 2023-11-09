@@ -27,7 +27,7 @@ $('#toc').on('click', 'a', function() {
     {% assign lvlvar = "l" | append: i | append: "idx" %}
     {% if page[lvlvar] %}
       {% assign myidx = page[lvlvar] %}
-      {% assign mylvl = forloop.index | plus: 0 %}
+      {% assign mylvl = forloop.index %}
     {% endif %}
   {% endfor %}
 
@@ -51,39 +51,39 @@ $('#toc').on('click', 'a', function() {
 
 
 {% for cpg in site.pages %}
-{% assign lp1id == lp1id | plus: 1 %}
   {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
-    {% lp2id == lp2id | plus: 1  %}
     {% if goodpage == 'true' %}
-      {% assign cmpvar = 'l' | append: lp2id | append: 'idx' %}
+      {% assign cmpvar = 'l' | append: i | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% if cpg[cmpvar] != page[cmpvar] %}
           {% assign goodpage = 'false' %}
-          <p> higher-level index was detected, but on a different branch so {{lp1id}} was marked as not-good </p>
+          <p> higher-level index was detected, but on a different branch so pg.{{cpg.url}} was marked as not-good </p>
         {% endif %}
       {% else %}
         {% assign goodpage = 'false'%}
-        <p> higher-level index was missing altogether, so {{lp1id}} was marked as not-good </p>
+        <p> higher-level index was missing altogether, so pg.{{cpg.url}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
 
   {% for k in (nextlvl..10) %}
-    {% assign lp3id == lp3id | plus: 1 %}
     {% if goodpage == 'true' %}
-      {% assign cmpvar = 'l' | append: lp3id | append: 'idx' %}
+      {% assign cmpvar = 'l' | append: k | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% assign goodpage = 'false' %}
-        <p> child-level index was detected, so page {{lp1id}} was marked as not-good </p>
+        <p> child-level index was detected, so pg.{{cpg.url}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
 
   {% if goodpage == 'true' %}
-    {% if cpg[l | append: mylvl | append: 'idx'][myidx]  == page[l | append: mylvl | append: 'idx'][myidx] %}
+    {% assign mystr = 'l' append: mylvl | append 'idx' %}
+    {% assign myval = page[mystr][myidx] %}
+    {% yourval = cpg[mystr][myidx] %}
+    {% if myval  == yourval %}
       {% assign goodpage = 'false' %}
-      <p> This page appears to *be* me, so {{lp1id}} was marked as not-good </p>
+      <p> This page appears to *be* me, so pg.{{cpg.url}} was marked as not-good </p>
     {% endif %}
   {% endif %}
 
