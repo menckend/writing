@@ -40,6 +40,8 @@ $('#toc').on('click', 'a', function() {
   <!--  Create collection of "adjacent" pages to this one. -->  
 
 {% assign ngbr_pgs = '' | split: ',' %}
+{% assign ngbr_urls = '' | split: ',' %}
+{% assign ngbr_names = '' | split: ',' %}
 
 {% for cpg in site.pages %}
   {% assign goodpage = 'true' %}
@@ -57,14 +59,17 @@ $('#toc').on('click', 'a', function() {
   {% endfor %}
   {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
+    {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
+    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index].name %}
   {% endif %}
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
-<p>names/urls: 
+<p>names/urls (indirect):  </p>
+<p>names/urls direct: {{ngbr_urls|}}, {{ngbr_names}} </p>
 
 {% assign ngct = ngbr_pgs | size %}
-
+Test:  {{site.pages[8].name}}, {{site.pages[8].name}}
 {% for j in (1..ngct %}
   {{site.pages[j].name}}|{{site.pages[j].url}}, 
 {% endfor %}
