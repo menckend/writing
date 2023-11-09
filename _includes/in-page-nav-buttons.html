@@ -51,16 +51,11 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% endfor %}
 <p> pagearray:  {{pagearray | size }}</p>
 
-<!--Create an array containing each page's data (pagearray).
-Loop through the index-hierarchies (1-7)
-  Loop through pagearray.
-    If a page in pagearray matches the l1idx filter, append its index to an array called indexmatches[pagearray.forloopindex]
--->
 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign tmp2 = site.emptyArray %}
-{% for blob in site.pages[3] | jsonify %}
+{% for blob in site.pages[3] | json %}
   {% assign tmp2 = tmp2 | push: blob %}
 {% endfor %}
 
@@ -69,7 +64,6 @@ Loop through the index-hierarchies (1-7)
 {% endfor %}
 
 
-<p>{{ site.pages[3] | jsonify }} </p>
                                                                                             <p> End Debug output (get rid of me later) </p>
 
 
