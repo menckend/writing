@@ -39,37 +39,24 @@ $('#toc').on('click', 'a', function() {
 
   <!--  Create collection of "adjacent" pages to this one. -->  
 
-<!-- So, how do a mutate the pages hash into a new hash while programmatically *naming* the new hash?  I can select elements of the existing hash
-programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
--->
+{% assign ngbr_pgs = '' | split: ',' %}
 
-<!-- how to pack site.pages into an array -->
-
-{% assign pagearray = site.emptyArray %}
-{% for apage in site.pages %}
-  {% assign pagestring = '' %}
-  {% for item in apage %}
-    {% assign tmpstring = item | strip_newlines %}
-    {% assign pos = tmpstring | size | minus: 1 %}
-    {% assign tmpstring = tmpstring | slice: 1, pos %}
-    {% assign pos = tmpstring | size | minus: 1 %}
-    {% assign tmpstring = tmpstring | slice: 0, pos %}
-    {% assign tmpstring = tmpstring | append: '|' %}
-    {% assign pagestring = pagestring | append: tmpstring %}
-  {% endfor %}
-  {% assign pagearray = pagearray | push: pagestring %}
+{% for cpg in site.pages %}
+  {% assign mtch_idxes = '' | split: ',' %}
+    {% for i in (1..parentlvl) %}
+      {% assign cmpvar = 'l' | append i | append 'idx' %}
+      {% if cpg.cmpvar and page.cmpvar %}
+        {% if cpg.cmpvar == page.cmpvar %}
+          {% mtch_idxes == mtch_idxes | push: cmpvar %}
+      {% endif %}
+    {% end for %}
+  <p> Page-{{forloop.index}} matching indices ({{mtch_idxes | size}}): {{mtch_idxes}}</p>
 {% endfor %}
 
-<p> pagearray:  {{pagearray | size }}</p>
 
-{% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
-{% assign chunked = pagearray[3] | split: '|' %}
-<p> Page 3 string size: {{pagearray[3] | size }}</p>
-<p> page 3 field count: {{ chunked | size }}  </p>
-{% for hunk in chunked %}
-  <p>{{hunk}}</p>
-{% endfor %}
+
+
 
 
 
