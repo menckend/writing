@@ -49,9 +49,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign pagearray = site.emptyArray %}
 {% for apage in site.pages %}
   {% assign newstring = '' %}
-  {% for item in apage %}
-    {% assign newstring = newstring | append: item %}
-  {% endfor %}
+  {% assign newstring = apage | join: '|||' %}
   {% assign pagearray = pagearray | push: newstring %}
 {% endfor %}
 <p> pagearray:  {{pagearray | size }}</p>
@@ -59,7 +57,7 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign tmp2 = site.emptyArray %}
-{% for blob in pagearray[3] %}
+{% for blob in pagearray[3] | split: '|||' %}
   <p> Field({{forloop.index}}): {{ blob }}</p>
 {% endfor %}
 
