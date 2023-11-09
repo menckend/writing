@@ -59,10 +59,9 @@ programmatically, using square-brackets to substitutute variables into the hash 
 
 {% assign tmp2 = site.emptyArray %}
 {% for blob in pagearray[3] %}
-  <p> Field({{forloop.index}}): {{ blob }}</p>
 {% endfor %}
 
-
+<p> {{ pagearray[3][layout] }} </p>
 
 
 
