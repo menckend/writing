@@ -50,7 +50,6 @@ programmatically, using square-brackets to substitutute variables into the hash 
   {% assign pagearray = pagearray | push: apage %}
 {% endfor %}
 <p> pagearray:  {{pagearray | size }}</p>
-<p> pagearray[3]: {{pagearray[3]}}</p>
 
 <!--Create an array containing each page's data (pagearray).
 Loop through the index-hierarchies (1-7)
@@ -60,11 +59,14 @@ Loop through the index-hierarchies (1-7)
 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
-<p>{{ site.pages[3] | jsonify }} <p>
+{% assign tmp2 = site.emptyArray %}
+{% for blob in site.pages[3] | jsonify %}
+  {% tmp2 = tmp2 | push blob %}
+{% endfor %}
 
-
-
-
+{% for bit in tmp2 %}
+<p> Fld({{forloop.index}}): {{bit}}</p>
+{% endfor %}
 
                                                                                             <p> End Debug output (get rid of me later) </p>
 
