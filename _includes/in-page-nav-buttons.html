@@ -43,13 +43,17 @@ $('#toc').on('click', 'a', function() {
 
 {% for cpg in site.pages %}
   {% assign mtch_idxes = '' | split: ',' %}
-    {% for i in (1..parentlvl) %}
-      {% assign cmpvar = 'l' | append: i | append: 'idx' %}
-      {% if page[cmpvar] and cpg[cmpvar] %} <p> I have a {{cmpvar}} tag of {{page[cmpvar]}}. Comp page has a {{cmpvar}} tag of {{page[cmpvar]}}</p> {% endif%}
-        {% if cpg[cmpvar] | to_i == page[cmpvar] | to_i %}
-          {% assign mtch_idxes == mtch_idxes | push: cmpvar %}
-        {% endif %}
-    {% endfor %}
+  {% for i in (1..parentlvl) %}
+    {% assign cmpvar = 'l' | append: i | append: 'idx' %}
+    {% if page[cmpvar] and cpg[cmpvar] %}
+      {% assign comp_var1 = cpg[cmpvar] | to_i%}
+      {% assign comp_var2 = page[cmpvar] | to_i%}
+      {% if comp_var1 == comp_var2 %}
+        <p> Match found for page {{parentloop.index0}} on {{cmpvar}} of {{comp_var1}}/{{comp_var2}}
+        {% assign mtch_idxes == mtch_idxes | push: cmpvar %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
   <p> Page-{{forloop.index}} matching indices ({{mtch_idxes | size}}): {{mtch_idxes}}</p>
 {% endfor %}
 
