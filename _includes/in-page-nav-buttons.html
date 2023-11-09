@@ -45,20 +45,19 @@ $('#toc').on('click', 'a', function() {
 {% for cpg in site.pages %}
   {% assign goodpage = true %}
   {% for i in (1..parentlvl) %}
-    {% if goodpage == false %}
-      {% break %}
-    {% endif %}
-    {% assign cmpvar = 'l' | append: i | append: 'idx' %}
-    {% if page[cmpvar] and cpg[cmpvar] %}
-      {% assign comp_var1 = cpg[cmpvar] | to_i%}
-      {% assign comp_var2 = page[cmpvar] | to_i%}
-      {% if comp_var1 != comp_var2 %}
-        {% assign goodpage = false  %}
+    {% if goodpage == true %}
+      {% assign cmpvar = 'l' | append: i | append: 'idx' %}
+      {% if page[cmpvar] and cpg[cmpvar] %}
+        {% assign comp_var1 = cpg[cmpvar] | to_i%}
+        {% assign comp_var2 = page[cmpvar] | to_i%}
+        {% if comp_var1 != comp_var2 %}
+          {% assign goodpage = false  %}
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
   {% if goodpage == true %}
-    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
+    {% assign ngbr_pgs = ngbr_pgs | push: cpg.url %}
   {% endif %}
 {% endfor %}
 
