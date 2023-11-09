@@ -44,12 +44,13 @@ $('#toc').on('click', 'a', function() {
 programmatically, using square-brackets to substitutute variables into the hash structure, but can't *create* hashes that way.  Maybe pre-define the hashes?
 -->
 
+
 {% assign pagearray = site.emptyArray %}
 {% assign pagearray = site.emptyArray %}
 {% for apage in site.pages %}
   {% assign newstring = '' %}
   {% for item in apage %}
-    {% assign newstring = newstring | append: item | append: '|' %}
+    {% assign newstring = newstring | append: item | append: '|||' %}
   {% endfor %}
   {% assign pagearray = pagearray | push: newstring %}
 {% endfor %}
@@ -58,19 +59,11 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign tmp2 = site.emptyArray %}
-{% for blob in pagearray[3] | split '|' %}
+{% for blob in pagearray[3] | split '|||' %}
   <p> Field({{forloop.index}}): {{ blob }}</p>
 {% endfor %}
 
 
-<!-- new approach?   Loop through all pages in the site, and compare the current page's index-values to the looped-page's values.  For any level where they match, append the looped-page's URL to an
-array called 'indexmatches', using the index-level (0-7) as the index value in indexmatches.
-
-E.G.  if page 33 of 50 in site.pages is a match for l1idx and l4idx and has URL:  /2_2_2_3.html, then
-indexmatches[1] will have ",/2_2_2_3.html" appended to it.
-indexmatches[4] will have ",/2_2_2_3.html" appended to it.
-
-Now, to build a list of neighbor pages, we loop through index-matches 
 
 
 
