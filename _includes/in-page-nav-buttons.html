@@ -49,15 +49,15 @@ $('#toc').on('click', 'a', function() {
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
-      {% if cpg[cmpvar] != nil and cpg[cmpvar] != '' %}
+      {% unless cpg[cmpvar] %}
         {% if cpg[cmpvar] != page[cmpvar] %}
           {% assign goodpage = 'false' %}
-          <p> higher-level index was detected, but different branch so {{forloop.index}} was marked as not-good </p>
+          <p> higher-level index was detected, but on a different branch so {{forloop.index}} was marked as not-good </p>
         {% endif %}
       {% else %}
         {% assign goodpage = 'false'%}
-        <p> higher-level index was missing altogehter, so {{forloop.index}} was marked as not-good </p>
-      {% endif %}
+        <p> higher-level index was missing altogether, so {{forloop.index}} was marked as not-good </p>
+      {% endunless %}
     {% endif %}
   {% endfor %}
 
@@ -74,6 +74,7 @@ $('#toc').on('click', 'a', function() {
   {% if goodpage == 'true' %}
     {% if cpg[l | append: mylvl | append: 'idx'][myidx]  == page[l | append: mylvl | append: 'idx'][myidx] %}
       {% assign goodpage = 'false' %}
+      <p> This page appears to *be* me, so {{forloop.index}} was marked as not-good </p>
     {% endif %}
   {% endif %}
 
