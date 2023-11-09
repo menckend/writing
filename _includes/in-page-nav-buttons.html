@@ -80,7 +80,7 @@ $('#toc').on('click', 'a', function() {
   {% if goodpage == 'true' %}
     {% assign mystr = 'l' append: mylvl | append 'idx' %}
     {% assign myval = page[mystr][myidx] %}
-    {% yourval = cpg[mystr][myidx] %}
+    {% assign yourval = cpg[mystr][myidx] %}
     {% if myval  == yourval %}
       {% assign goodpage = 'false' %}
       <p> This page appears to *be* me, so pg.{{cpg.url}} was marked as not-good </p>
