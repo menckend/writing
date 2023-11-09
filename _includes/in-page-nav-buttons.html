@@ -43,26 +43,21 @@ $('#toc').on('click', 'a', function() {
 
 <!-- Fill 
 {% for cpg in site.pages %}
-  {% assign goodpage = yes %}
+  {% assign goodpage = true %}
   {% for i in (1..parentlvl) %}
-    {% if goodpage == yes %}
+    {% if goodpage == true %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
       {% if page[cmpvar] and cpg[cmpvar] %}
-        {% assign comp_var1 = cpg[cmpvar] | to_i %}
-        {% assign comp_var2 = page[cmpvar] | to_i %}
-        {% if comp_var1 == comp_var2 %}
-          <p> Match: {{comp_var1}} vs. {{comp_var2}} </p>
-        {% else %}
-          {% assign goodpage = no %}
+        {% assign comp_var1 = cpg[cmpvar] | to_i%}
+        {% assign comp_var2 = page[cmpvar] | to_i%}
+        {% if comp_var1 != comp_var2 %}
+          {% assign goodpage = false  %}
         {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
-  {% if goodpage == yes %}
-    {% assign ngbr_pgs = ngbr_pgs | push: cpg.url %}
-    <p> This page is a neighbor: {{cpg.url}}  </p>
-  {% else %}
-    <p> This page ({{forloop.index}}) is not a neighbor: {{goodpage}} </p>
+  {% if goodpage == true %}
+    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
   {% endif %}
 {% endfor %}
 
