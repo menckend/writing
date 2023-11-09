@@ -69,7 +69,8 @@ $('#toc').on('click', 'a', function() {
 <p>names/urls direct: {{ngbr_urls|}}, {{ngbr_names}} </p>
 
 {% assign ngct = ngbr_pgs | size %}
-Test:  {{site.pages[8].name}}, {{site.pages[8].name}}
+Test:  {{site.pages[8].name}}, {{site.pages[8].url}}
+ngct: {{ngct}}
 {% for j in (1..ngct %}
   {{site.pages[j].name}}|{{site.pages[j].url}}, 
 {% endfor %}
