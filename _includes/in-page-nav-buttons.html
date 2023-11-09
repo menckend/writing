@@ -58,6 +58,7 @@ $('#toc').on('click', 'a', function() {
   {% endfor %}
   {% if goodpage == true %}
     {% assign ngbr_pgs = ngbr_pgs | push: cpg.url %}
+    <p> This page is a neighbor: {{cpg.url}}  </p>
   {% endif %}
 {% endfor %}
 
