@@ -59,6 +59,7 @@ $('#toc').on('click', 'a', function() {
   {% endfor %}
   {% if goodpage == true %}
     {% assign ngbr_pgs = ngbr_pgs | push forloop.index%}
+  {% endif %}
 {% endfor %}
 
 <p> Neighbor pages are site.pages indices: {{ngbr_pgs | split ', '}} </p>
