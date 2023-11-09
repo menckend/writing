@@ -47,24 +47,24 @@ programmatically, using square-brackets to substitutute variables into the hash 
 {% assign pagearray = site.emptyArray %}
 {% assign pagearray = site.emptyArray %}
 {% for apage in site.pages %}
-  {% assign pagearray = pagearray | push: apage %}
+  {% assign newstring = '' %}
+  {% for item in apage %}
+    {% newstring = newstring | append: item | append: '|' %}
+  {% endfor %}
+  {% assign pagearray = pagearray | push: newstring %}
 {% endfor %}
 <p> pagearray:  {{pagearray | size }}</p>
-
 
 {% assign lvlidxmatches = '','','','','','',''' | split: ',' %}
 
 {% assign tmp2 = site.emptyArray %}
-{% for blob in site.pages[3] | json %}
-  {% assign tmp2 = tmp2 | push: blob %}
-{% endfor %}
-
-{% for bit in tmp2 %}
-<p> Fld({{forloop.index}}): {{bit}}</p>
+{% for blob in site.pages[3] %}
+  <p> Field({{forloop.index}}): {{ blob }}</p>
 {% endfor %}
 
 
-{{ site.pages[3] | json }}
+
+
 
                                                                                             <p> End Debug output (get rid of me later) </p>
 
