@@ -61,7 +61,7 @@ Loop through the index-hierarchies (1-7)
 
 {% assign tmp2 = site.emptyArray %}
 {% for blob in site.pages[3] | jsonify %}
-  {% assign tmp2 = tmp2 | push blob %}
+  {% assign tmp2 = tmp2 | push: blob %}
 {% endfor %}
 
 {% for bit in tmp2 %}
