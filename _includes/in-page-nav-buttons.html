@@ -47,7 +47,7 @@ $('#toc').on('click', 'a', function() {
 {% assign outloopid = 0 | plus: 0 %}
 
 {% for cpg in site.pages %}
-{% assign outloopid == outloopid | plus: 1 %}
+{% increment outloopid %}
   {% assign goodpage = 'true' %}
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
@@ -82,9 +82,9 @@ $('#toc').on('click', 'a', function() {
   {% endif %}
 
   {% if goodpage == 'true' %}
-    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
-    {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
-    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index].name %}
+    {% assign ngbr_pgs = ngbr_pgs | push: outloopid %}
+    {% assign ngbr_urls = ngbr_urls | push: cpg[outloopid].url %}
+    {% assign ngbr_names = ngbr_names | push: cpg[outloopid].name %}
   {% endif %}
 {% endfor %}
 
