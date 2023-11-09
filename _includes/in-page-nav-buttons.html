@@ -52,12 +52,11 @@ $('#toc').on('click', 'a', function() {
         {% assign comp_var2 = page[cmpvar] | to_i %}
         {% if comp_var1 != comp_var2 %}
           {% assign goodpage = no %}
-          <p> Not a match: {{comp_var1}} vs. {{comp_var2}} </p>
         {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
-  {% if goodpage == yes %}
+  {% if goodpage = yes %}
     {% assign ngbr_pgs = ngbr_pgs | push: cpg.url %}
     <p> This page is a neighbor: {{cpg.url}}  </p>
   {% endif %}
