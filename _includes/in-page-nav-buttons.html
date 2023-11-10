@@ -17,6 +17,9 @@ $('#toc').on('click', 'a', function() {
 </script>
 <!-- end of in-page TOC staging -->
 
+
+
+
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
   <!-- Create previous/next in-page navigation buttons. -->
@@ -100,7 +103,6 @@ $('#toc').on('click', 'a', function() {
   {% assign nxtidx = myidx | plus: 1 %}
 
   {% for xray in (0..ngct) %}
-      <p> {{forloop.index0}}:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}  </p>
     {% if ngbr_idxes[forloop.index0] == prvidx %}
       {% assign prvurl = ngbr_urls[forloop.index0] %}
     {% endif %}
