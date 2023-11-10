@@ -86,8 +86,6 @@ $('#toc').on('click', 'a', function() {
       {% endif %}
     {% endif%}
     {% if goodpage == 'true' %}
-
-      <p> {{cpg.url}}; {{cpg[str_bb]}}; </p>
       {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
       {% assign ngbr_urls = ngbr_urls | push: cpg.url %}
       {% assign ngbr_idxes = ngbr_idxes | push: cpg[str_bb] %}
@@ -97,6 +95,7 @@ $('#toc').on('click', 'a', function() {
 
   <!-- Figure out the previous and next pages' site.pages' URLs, for use in the navigation buttons -->
   {% assign ngct = ngbr_pgs | size | minus: 1 %}
+
   {% assign lvlvar = "l" | append: mylvl | append: "idx" %}
   {% assign prvidx = lvlvar | minus: 1 %}
   {% assign nxtidx = lvlvar | plus: 1 %}
@@ -107,14 +106,13 @@ $('#toc').on('click', 'a', function() {
   {% for xray in (0..ngct) %}
       <p> {{forloop.index0}}:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}  </p>
     {% if ngbr_idxes[forloop.index0] == prvidx %}
-      <p> got a match for previous index: {{prvidx}} </p>
       {% assign prvurl = ngbr.urls[forloop.index0] %}
     {% endif %}
     {% if ngbr_idxes[forloop.index0] == nxtidx %}
-      <p> got a match for next index: {{nxtidx}} </p>
       {% assign nxturl = ngbr.urls[forloop.index0] %}
     {% endif %}
   {% endfor %}
+
 
   <div class="seriesContext">
     <a href="{{ prvurl | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
