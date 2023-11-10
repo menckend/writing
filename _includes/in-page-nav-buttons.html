@@ -111,12 +111,12 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endfor %}
 
-
+<p>
   <div class="seriesContext">
     <a href="{{ prvurl | remove: '/'}}"><button type="button" class="btn" style="float: left">Previous Page </button></a>
     <a href="{{ nxturl | remove: '/'}}"><button type="button" class="btn" style="float: right">Next Page </button></a>
   </div>
-
+</p>
 {% endunless %}
 
 <!--   End of in-page page-navigation buttons  -->
