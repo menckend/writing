@@ -88,7 +88,7 @@ $('#toc').on('click', 'a', function() {
     {% if goodpage == 'true' %}
       {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
       {% assign ngbr_urls = ngbr_urls | push: cpg.[forloop.index0].url %}
-      {% assign ngbr_idxes = ngbr_idxes | push: cpg.[forloop.index0].[lvlvar] %}
+      {% assign ngbr_idxes = ngbr_idxes | push: cpg[strbb] %}
     {% endif %}
   {% endfor %}
 
@@ -100,7 +100,7 @@ $('#toc').on('click', 'a', function() {
   {% assign nxtidx = lvlvar | plus: 1 %}
 
   {% for xray in (0..ngct) %}
-    <p> forloop.index0:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}  </p>
+    <p> {{forloop.index0}}:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}  </p>
     {% if ngbr_idxes[forloop.index0] == prvidx %}
       <p> got a match for previous index: {{prvidx}} </p>
       {% assign prvurl = ngbr.urls[forloop.index0] %}
