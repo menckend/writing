@@ -100,6 +100,7 @@ $('#toc').on('click', 'a', function() {
   {% assign nxtidx = lvlvar | plus: 1 %}
 
   {% for xray in (0..ngct) %}
+    <p> forloop.index0:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}    </p>
     {% if ngbr_idxes[forloop.index0] == prvidx %}
       <p> got a match for previous index: {{prvidx}} </p>
       {% assign prvurl = ngbr.urls[forloop.index0] %}
