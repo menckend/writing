@@ -38,7 +38,7 @@ $('#toc').on('click', 'a', function() {
   <!--  Create collection of "adjacent" pages to this one. -->  
   {% assign ngbr_pgs = '' | split: ',' %}
   {% assign ngbr_urls = '' | split: ',' %}
-  {% assign ngbr_names = '' | split: ',' %}
+  {% assign ngbr_idxes = '' | split: ',' %}
   <!-- Loop through all the pages in the site -->
   {% for cpg in site.pages %}
     <!-- Start by assuming that each page in site.pages *is* a neighbor page for the current page -->
@@ -100,6 +100,8 @@ $('#toc').on('click', 'a', function() {
   {% assign lvlvar = "l" | append: mylvl | append: "idx" %}
   {% assign prvidx = lvlvar | minus: 1 %}
   {% assign nxtidx = lvlvar | plus: 1 %}
+
+
 
   <p>  ngbr arrays:  {{ngbr_pgs}}; {{ngbr_urls}}; {{ngbr_idxes}} </p>
   {% for xray in (0..ngct) %}
