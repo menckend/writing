@@ -88,16 +88,17 @@ $('#toc').on('click', 'a', function() {
   {% endif %}
 
   {% if goodpage == 'true' %}
-    {% assign ngbr_pgs = ngbr_pgs | push: lp1id %}
-    {% assign ngbr_urls = ngbr_urls | push: cpg[lp1id].url %}
-    {% assign ngbr_names = ngbr_names | push: cpg[lp1id].name %}
+    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
+    {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
+    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index].name %}
   {% endif %}
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
 {% assign ngct = ngbr_pgs | size %}
 {% for j in (0..ngct) %}
-<p> name/url: {{site.pages.[ngbr_pgs[j].name}}|{{site.pages.[ngbr_pgs[j].url}}, </p>
+{% assign holdme = ngbr_pgs[j]  %}
+<p> name/url: {{site.pages.[holdme].name}}|{{site.pages.[holdme].url}}, </p>
 {% endfor %}
 
 
