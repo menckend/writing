@@ -34,8 +34,8 @@ $('#toc').on('click', 'a', function() {
 {% assign mylvl-int = mylvl | to_i %}
 {% assign myidx-int = myidx | to_i %}
 {% assign parentlvl = '' | plus: 0 %}
-{% assign parentlvl = mylvl | minus: 1 %}
-{% assign nextlvl = mylvl | plus: 1 %}
+{% assign parentlvl = mylvl-int | minus: 1 %}
+{% assign nextlvl = mylvl-int | plus: 1 %}
 <p> myidx: {{myidx-int}}.   mylvl: {{mylvl}}.  parentlvl: {{parentlvl}} </p>
 
 <!--  Create collection of "adjacent" pages to this one. -->  
