@@ -83,15 +83,6 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endfor %}
 
-  <!-- mark the "parent-page" (has an index one level up from current page, but *not* at the level of the current page) of the current page as "not a neighbor"  -->
-  {% assign cpgprstr = l | append: parentlvl | append: 'idx' %}
-  {% assign cpgmlstr = l | append: mylvl | append: 'idx' %}
-   {% if cpg[cpgprstr] %}
-    {% unless cpg[cpgmlstr] %}
-      {% assign goodpage = 'false' %}
-    {% endunless %}
-  {% endif %}
-
   {% if goodpage == 'true' %}
     {% assign mystr = 'l' | append: mylvl | append: 'idx' %}
     {% assign myval = page[mystr] %}
@@ -101,6 +92,18 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endif %}
 
+  <!-- mark the "parent-page"  of the current page as "not a neighbor"  -->
+  {% if goodpage == 'true' %}
+   {% assign str_aa = 'l' | append: parentlvl | append: 'idx' %}
+   {% assign str_bb = 'l' | append: mylvl | append: 'idx' %}
+    {% if cpg[str_aa] %}
+     {% unless cpg[str_bb] %}
+       {% assign goodpage = 'false' %}
+     {% endunless %}
+    {% endif %}
+  {% end if%}
+
+
   {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
     {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index0].url %}
@@ -108,7 +111,7 @@ $('#toc').on('click', 'a', function() {
   {% endif %}
 {% endfor %}
 
-<p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
+<p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | array_to_sentence_string }} </p>
 {% assign ngct = ngbr_pgs | size | minus: 1 %}
 {% for j in (0..ngct) %}
 {% assign holdme = ngbr_pgs[j]  %}
