@@ -20,7 +20,9 @@ $('#toc').on('click', 'a', function() {
 
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
-                                                                                        <p> Start Debug output (get rid of me later) </p>
+
+<p> Start Debug output (get rid of me later) </p>
+
   <!-- Create previous/next in-page navigation buttons. -->
   <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
   {% for i in (1..10) %}
@@ -91,7 +93,7 @@ $('#toc').on('click', 'a', function() {
 {% endfor %}
 
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
-{% assign ngct = ngbr_pgs | size %}
+{% assign ngct = ngbr_pgs | size | minus: 1 %}
 {% for j in (0..ngct) %}
 {% assign holdme = ngbr_pgs[j]  %}
 <p> name/url: {{site.pages.[holdme].name}}|{{site.pages.[holdme].url}}, </p>
