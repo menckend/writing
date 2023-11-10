@@ -58,11 +58,9 @@ $('#toc').on('click', 'a', function() {
       {% if cpg[cmpvar] %}
         {% if cpg[cmpvar] != page[cmpvar] %}
           {% assign goodpage = 'false' %}
-          <p> higher-level index was detected, but on a different branch so pg.{{cpg.url}} was marked as not-good </p>
         {% endif %}
       {% else %}
         {% assign goodpage = 'false'%}
-        <p> higher-level index was missing altogether, so pg.{{cpg.url}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -72,7 +70,6 @@ $('#toc').on('click', 'a', function() {
       {% assign cmpvar = 'l' | append: k | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% assign goodpage = 'false' %}
-        <p> child-level index was detected, so pg.{{cpg.url}} was marked as not-good </p>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -83,7 +80,6 @@ $('#toc').on('click', 'a', function() {
     {% assign yourval = cpg[mystr] %}
     {% if myval == yourval %}
       {% assign goodpage = 'false' %}
-      <p> This page appears to *be* me, so pg.{{cpg.url}} was marked as not-good.   {{myval}} vs {{yourval}}.  {{mystr}}, {{myidx}} </p>
     {% endif %}
   {% endif %}
 
