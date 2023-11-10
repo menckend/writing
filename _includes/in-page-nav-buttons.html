@@ -88,9 +88,9 @@ $('#toc').on('click', 'a', function() {
   {% endif %}
 
   {% if goodpage == 'true' %}
-    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index %}
-    {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index].url %}
-    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index].name %}
+    {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
+    {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index0].url %}
+    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index0].name %}
   {% endif %}
 {% endfor %}
 
