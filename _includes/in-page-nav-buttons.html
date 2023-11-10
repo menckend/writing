@@ -87,11 +87,9 @@ $('#toc').on('click', 'a', function() {
     {% endif%}
     {% if goodpage == 'true' %}
 
-      {% assign str_aa = 'l' | append: parentlvl | append: 'idx' %}
-      {% assign str_bb = 'l' | append: mylvl | append: 'idx' %}
-
+      <p>  {{cpg.url}}; {{cpg{str_aa}}}; </p>
       {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
-      {% assign ngbr_urls = ngbr_urls | push: cpg.[forloop.index0].url %}
+      {% assign ngbr_urls = ngbr_urls | push: cpg.url %}
       {% assign ngbr_idxes = ngbr_idxes | push: cpg[str_bb] %}
     {% endif %}
   {% endfor %}
