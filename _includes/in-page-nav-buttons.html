@@ -92,24 +92,20 @@ $('#toc').on('click', 'a', function() {
     {% endif %}
   {% endfor %}
 
-
   <!-- Figure out the previous and next pages' site.pages' URLs, for use in the navigation buttons -->
   {% assign ngct = ngbr_pgs | size | minus: 1 %}
 
   {% assign lvlvar = "l" | append: mylvl | append: "idx" %}
-  {% assign prvidx = lvlvar | minus: 1 %}
-  {% assign nxtidx = lvlvar | plus: 1 %}
+  {% assign prvidx = myidx | minus: 1 %}
+  {% assign nxtidx = myidx | plus: 1 %}
 
-
-
-  <p>  ngbr arrays:  {{ngbr_pgs}}; {{ngbr_urls}}; {{ngbr_idxes}} </p>
   {% for xray in (0..ngct) %}
       <p> {{forloop.index0}}:  {{ngbr_idxes[forloop.index0]}}; {{ngbr_urls[forloop.index0]}}; {{ngbr_pgs[forloop.index0]}}  </p>
     {% if ngbr_idxes[forloop.index0] == prvidx %}
-      {% assign prvurl = ngbr.urls[forloop.index0] %}
+      {% assign prvurl = ngbr_urls[forloop.index0] %}
     {% endif %}
     {% if ngbr_idxes[forloop.index0] == nxtidx %}
-      {% assign nxturl = ngbr.urls[forloop.index0] %}
+      {% assign nxturl = ngbr_urls[forloop.index0] %}
     {% endif %}
   {% endfor %}
 
