@@ -17,7 +17,6 @@ $('#toc').on('click', 'a', function() {
 </script>
 <!-- end of in-page TOC staging -->
 
-
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
 
@@ -52,21 +51,29 @@ $('#toc').on('click', 'a', function() {
 {% assign lp4id = '' | plus: 0 %}
 
 
+<!-- Loop through all the pages in the site -->
 {% for cpg in site.pages %}
+
+  <!-- Start by assuming that each page in site.pages *is* a neighbor page for the current page -->
   {% assign goodpage = 'true' %}
+
+  <!-- Loop through the page-hierarchy levls from 1 up to the parent-level of the active page -->
   {% for i in (1..parentlvl) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: i | append: 'idx' %}
       {% if cpg[cmpvar] %}
         {% if cpg[cmpvar] != page[cmpvar] %}
+          <!-- Mark the looped page as "not a neighbor", because one of the higher-levels in the hierarchy has a different value than the active page -->
           {% assign goodpage = 'false' %}
         {% endif %}
       {% else %}
+          <!-- Mark the looped page as "not a neighbor", because it doesn't even *have* an index for for one higher levels in the hierarchy.  -->
         {% assign goodpage = 'false'%}
       {% endif %}
     {% endif %}
   {% endfor %}
 
+  <!-- Loop through the page-hierarchy levls from the active-page's child-level to the deepest level (10, for now) -->
   {% for k in (nextlvl..10) %}
     {% if goodpage == 'true' %}
       {% assign cmpvar = 'l' | append: k | append: 'idx' %}
@@ -75,6 +82,13 @@ $('#toc').on('click', 'a', function() {
       {% endif %}
     {% endif %}
   {% endfor %}
+
+  <!-- mark the "parent-page" (has an index one level up from current page, but *not* at the level of the current page) of the current page as "not a neighbor"  -->
+  {% if cpg[parentlvl] %}
+    {% unless cpg[mylvl] %}
+      {% assign goodpage = 'false' %}
+    {% endunless %}
+  {% endif %}
 
   {% if goodpage == 'true' %}
     {% assign mystr = 'l' | append: mylvl | append: 'idx' %}
