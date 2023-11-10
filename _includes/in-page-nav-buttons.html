@@ -84,8 +84,8 @@ $('#toc').on('click', 'a', function() {
   {% endfor %}
 
   <!-- mark the "parent-page" (has an index one level up from current page, but *not* at the level of the current page) of the current page as "not a neighbor"  -->
-  {% cpgprstr = l | append: parentlvl | append: 'idx' %}
-  {% cpgmlstr = l | append: mylvl | append: 'idx' %}
+  {% assign cpgprstr = l | append: parentlvl | append: 'idx' %}
+  {% assign cpgmlstr = l | append: mylvl | append: 'idx' %}
    {% if cpg[cpgprstr] %}
     {% unless cpg[cpgmlstr] %}
       {% assign goodpage = 'false' %}
