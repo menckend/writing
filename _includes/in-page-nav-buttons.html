@@ -97,7 +97,7 @@ $('#toc').on('click', 'a', function() {
 <p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | split: ', '}} </p>
 {% assign ngct = ngbr_pgs | size %}
 {% for j in (0..ngct) %}
-<p> name/url: {{site.pages.[j].name}}|{{site.pages.[j].url}}, </p>
+<p> name/url: {{site.pages.[ngbr_pgs[j].name}}|{{site.pages.[ngbr_pgs[j].url}}, </p>
 {% endfor %}
 
 
