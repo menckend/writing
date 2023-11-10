@@ -87,7 +87,7 @@ $('#toc').on('click', 'a', function() {
     {% endif%}
     {% if goodpage == 'true' %}
 
-      <p>  {{cpg.url}}; {{cpg{str_aa}}}; </p>
+      <p> {{cpg.url}}; {{cpg[str_bb]}}; </p>
       {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
       {% assign ngbr_urls = ngbr_urls | push: cpg.url %}
       {% assign ngbr_idxes = ngbr_idxes | push: cpg[str_bb] %}
