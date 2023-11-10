@@ -20,10 +20,6 @@ $('#toc').on('click', 'a', function() {
 <!--   In-page page-navigation buttons  -->
 {% unless page.pagenav == false %}
 
-<!--
-<p> Start Debug output (get rid of me later) </p>
--->
-
   <!-- Create previous/next in-page navigation buttons. -->
   <!-- Figure out what the terminal-index-level of the current page is (as "mylevel") -->
   {% for i in (1..10) %}
@@ -33,6 +29,8 @@ $('#toc').on('click', 'a', function() {
       {% assign mylvl = forloop.index %}
     {% endif %}
   {% endfor %}
+{% assign lvlvar = "l" | append: mylvl | append: "idx" %}
+
 
 {% assign mylvl-int = mylvl | to_i %}
 {% assign myidx-int = myidx | to_i %}
@@ -47,12 +45,6 @@ $('#toc').on('click', 'a', function() {
 {% assign ngbr_pgs = '' | split: ',' %}
 {% assign ngbr_urls = '' | split: ',' %}
 {% assign ngbr_names = '' | split: ',' %}
-
-{% assign lp1id = '' | plus: 0 %}
-{% assign lp2id = '' | plus: 0 %}
-{% assign lp3id = '' | plus: 0 %}
-{% assign lp4id = '' | plus: 0 %}
-
 
 <!-- Loop through all the pages in the site -->
 {% for cpg in site.pages %}
@@ -109,86 +101,36 @@ $('#toc').on('click', 'a', function() {
   {% if goodpage == 'true' %}
     {% assign ngbr_pgs = ngbr_pgs | push: forloop.index0 %}
     {% assign ngbr_urls = ngbr_urls | push: cpg[forloop.index0].url %}
-    {% assign ngbr_names = ngbr_names | push: cpg[forloop.index0].name %}
+    {% assign ngbr_idxes = ngbr_idxes | push: cpg[forloop.index0].lvlvar %}
   {% endif %}
 {% endfor %}
 
-<!--
-<p> Neighbor pages ({{ngbr_pgs | size }}) are site.pages indices: {{ngbr_pgs | array_to_sentence_string }} </p>
+
+<!-- Figure out the previous and next pages' site.pages' URLs, for use in the navigation buttons -->
 {% assign ngct = ngbr_pgs | size | minus: 1 %}
+{% assign lvlvar = "l" | append: mylvl | append: "idx" %}
+
+{% assign prvidx = lvlvar | minus: 1 %}
+{% assign nxtidx = lvlvar | plus: 1 %}
+
 {% for j in (0..ngct) %}
-{% assign holdme = ngbr_pgs[j]  %}
-<p> name/url: {{site.pages.[holdme].name}}|{{site.pages.[holdme].url}}, </p>
-{% endfor %}
--->
+  {% if ngbr_idxes[forloop.index0] == prvidx %}
+    {% assign prvurl = ngbr.urls[forloop.index0] %}
+  {% endif %}
+  {% if ngbr_idxes[forloop.index0] == nxtidx %}
+    {% assign nxturl = ngbr.urls[forloop.index0] %}
+  {% endif %}
+{% endfor}
 
-
-  <!-- Get a list of all the page-numbers and their URLs for pages in the same library/document/chapter as the current page -->
-
-    {% assign hostpagenum = page.pagenum | plus: 0  %}
-    {% assign hostpagenumint = page.pagenum | to_i  %}
-    {% assign oneless = '' | plus: 0 %}
-    {% assign onemore = '' | plus: 0 %}
-    {% assign oneless = hostpagenumint | minus: 1 %}
-    {% assign onemore = hostpagenumint | plus: 1 %}
 
     <div class="seriesContext">
-
-          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
-          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Next Page </button></a>
-
-
+          <a href="{{ prvurl | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
+          <a href="{{ nxturl | remove: '/'}}"><button type="button" class="btn">Next Page </button></a>
     </div>
 
-
-        <div class="btn-group">
-          <button type="button" data-toggle="dropdown" class="btn dropdown-toggle;">Jump to page <span class="caret"> </span></button>
-          <ol class="dropdown-menu">
-            {% for pnumval in pagenums %}
-              {% assign flpagenum = pnumval | plus: 0  %}
-              {%if flpagenum == hostpagenum %}
-                <li class="active">→{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
-              {% else %}
-                <li>
-                  <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-            </ol>
-        </div>
-
-
-
-
-      {% for pnumval in pagenums %}
-        {% assign flpagenum = pnumval | plus: 0  %}
-        {% if flpagenum == oneless %}
-          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Previous Page </button></a>
-        {% endif %}
-        {% if flpagenum == onemore %}
-          <a href="{{fullpages[forloop.index0].url | remove: '/'}}"><button type="button" class="btn">Next Page </button></a>
-        {% endif %}
-      {% endfor %}
-      {% if pagecount > 2 %}
-        <div class="btn-group">
-          <button type="button" data-toggle="dropdown" class="btn dropdown-toggle;">Jump to page <span class="caret"> </span></button>
-          <ol class="dropdown-menu">
-            {% for pnumval in pagenums %}
-              {% assign flpagenum = pnumval | plus: 0  %}
-              {%if flpagenum == hostpagenum %}
-                <li class="active">→{{fullpages[forloop.index0].pagenum}}.{{fullpages[forloop.index0].title}}</li>
-              {% else %}
-                <li>
-                  <a href="{{fullpages[forloop.index0].url | remove: '/'}}">{{fullpages[forloop.index0].pagenum}}. {{fullpages[forloop.index0].title}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-            </ol>
-        </div>
-      {% endif %}
-    </div>
 
 {% endunless %}
+
 
 <!--   End of in-page page-navigation buttons  -->
 
