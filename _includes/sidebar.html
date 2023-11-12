@@ -31,14 +31,14 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
             <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values. -->
             {% if ourpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
-               {% assign ourl3idxes = ourpages | where_exp: 'page', 'page.l3name' | sort: 'l3idx' | map: 'l3idx' %}
+               {% assign ourl3idxes = ourpages | where_exp: 'page', 'page.l4idx == nil' | sort: 'l3idx' | map: 'l3idx' %}
                <!-- Loop through all the unique L3 indices and create the first level entries in the sidebar menu -->
                {% if ourl3idxes.size > 0 %}
                   {% for l3ix in ourl3idxes %}
                      <!-- Get a list of all the pages with *current* L3 index -->
                      {% assign myl3pages = ourpages | where: 'l3idx', l3ix | sort: 'l3idx' %}
                      <!-- set variables for the l3name and url value that corresponds to the l3index value of the current iteration of the loop -->
-                     {% assign myl3name = myl3pages | where: 'l3idx', l3ix | where_exp: 'page', 'page.l3name' | map: 'l3name'%}
+                     {% assign myl3name = myl3pages | where: 'l3idx', l3ix | where_exp: 'page', 'page.l3name' | map: 'title'%}
                      {% assign myl3url = myl3pages | where: 'l3name', myl3name[0] | map: 'url' | array_to_sentence_string %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
                      {% assign myl4idxes = myl3pages | where_exp: 'page', 'page.l4name' | sort: 'l4idx' | map: 'l4idx' %}
