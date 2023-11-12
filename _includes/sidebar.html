@@ -17,7 +17,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
 
          {% for heynong in ourpages %}
             {% if heynong.l1idx == page.l1idx and heynong.l2idx == page.l2idx and != heynong.l3idx and != heynong.l4idx %}
-               {% assign progenitorpage = ourpages[forloopindex0] %}
+               {% assign progenitor = ourpages[forloopindex0] %}
             {% endif %}
          {% endfor %}       
 
