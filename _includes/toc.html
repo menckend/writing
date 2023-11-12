@@ -18,10 +18,14 @@ $('#toc').on('click', 'a', function() {
 });
 </script>
 
+{% unless page.toc == false %}
+  {% assign tmparray = page.content | markdownify | split: '</h2>' | size %}
+  {% if tmparray > 2 %}
+    <details><summary >Table of Contents</summary><div id="toc"></div></details>
+  {% endif %}
+{% endunless %}
 
-<details>
-  <summary >Table of Contents</summary>
-  <div id="toc"></div>
-</details>
+
+
 
 {% comment %} Copyright 2021 Google LLC {% endcomment %}
