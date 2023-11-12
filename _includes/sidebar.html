@@ -20,7 +20,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
             {% unless heynong.l3idx%}
                {% assign progenitor = ourpages[heycount] %}
                {% assign sbtitle = heynong.title %}
-               {% assign sburl = heynon.url %}
+               {% assign sburl = heynong.url %}
             {% endunless %}
          {% endfor %}       
          <div class="productTitle" style="padding-top: 32px;"><p><a title="{{sbtitle}}" href="{{sburl | remove: '/'}}">{{sbtitle}}</a></p></div>
