@@ -17,7 +17,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
          {% for heynong in ourpages %}
             {% unless heynong.l3idx%}
                {% assign progenitor = ourpages[forloopindex0] %}
-               <p> {{heynong.title}} / {{heynong.url}}  / {{forloopindex0}} </p>
+               <p> {{heynong.title}} / {{heynong.url}}  / {{parentloopindex0}} </p>
             {% endunless %}
          {% endfor %}       
          {% assign sbtitle = progenitor.title[0] %}
