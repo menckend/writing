@@ -16,11 +16,9 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
          {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
 
          {% for heynong in ourpages %}
-            {% if heynong.l1idx == page.l1idx and heynong.l2idx == page.l2idx %}
-               {% unless heynong.l3idx or heynong.l4idx  %}
-                  {% assign progenitor = ourpages[forloopindex0] %}
-               {% endunless %}
-            {% endif %}
+            {% unless heynong.l3idx or heynong.l4idx  %}
+               {% assign progenitor = ourpages[forloopindex0] %}
+            {% endunless %}
          {% endfor %}       
 
          {% assign sbtitle = progenitor.title %}
