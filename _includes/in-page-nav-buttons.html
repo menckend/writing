@@ -90,9 +90,9 @@
   {% endfor %}
 
 <p>
-  <div class="seriesContext" style="padding-top: 8px; padding-bottom: 8px;">
-    <a href="{{ prvurl | remove: '/'}}"><button type="button" class="btn" style="float: left; border-style:solid; border-color: #347DBE;">Previous Page </button></a>
-    <a href="{{ nxturl | remove: '/'}}"><button type="button" class="btn" style="float: right; border-style:solid; border-color: #347DBE;">Next Page </button></a>
+  <div class="seriesContext" style="padding-bottom: 8px;">
+    <a href="{{ prvurl | remove: '/'}}"><button type="button" class="btn" style="float: left; border-style:solid; border-color: #347DBE; padding-left: 8px;">Previous Page </button></a>
+    <a href="{{ nxturl | remove: '/'}}"><button type="button" class="btn" style="float: right; border-style:solid; border-color: #347DBE; padding-right: 8px;">Next Page </button></a>
   </div>
 </p>
 {% endunless %}
