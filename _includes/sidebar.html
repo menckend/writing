@@ -41,7 +41,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                      {% assign myl3name = myl3pages | where_exp: 'page', 'page.l4idx == nil' | map: 'title'%}
                      {% assign myl3url = myl3pages | where_exp: 'page', 'page.l4idx == nil' | map: 'url' | array_to_sentence_string %}
                      <!-- Get all the unique L4 indices in pages with *current* L3 index -->
-                     {% assign myl4idxes = myl3pages | where_exp: 'page', 'page.l4name' | sort: 'l4idx' | map: 'l4idx' %}
+                     {% assign myl4idxes = myl3pages | where_exp: 'page', 'page.l5idx == nil' | sort: 'l4idx' | map: 'l4idx' %}
                      <!-- Testing to see if the current l3 index has any l4 children. -->
                      {% if myl4idxes.size > 0 %}
                         <details class="sbdeet" {% if page.l3idx == l3ix%}open{%endif%}><summary><a title="{{myl3name}}" href="{{myl3url | remove: '/'}}">{{myl3name}}</a></summary>
