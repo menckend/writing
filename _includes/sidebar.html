@@ -27,7 +27,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
       {% endunless %}
       {% unless page.url contains 'index.html' %}
             <!-- Get a list of all pages with l1/l2 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
-            {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | where_exp: 'page', 'page.13idx' %}
+            {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx | where_exp: 'page', 'page.l3idx' %}
             <!-- start building the tree if there *are* any other pages that match *this* page's l1|2 index values. -->
             {% if ourpages.size > 0 %}
                <!-- Get a list of all the unique/sorted l3 indices from sbpages -->
