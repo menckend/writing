@@ -15,14 +15,14 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
          <!-- Get a list of all pages with l1/l2 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
          {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
          {% assign heycount = -1 | plus: 0 %}
-         {% for heynong in ourpages %}
+         {% for heynong in site.pages %}
             {% assign heycount = heycount | plus: 1 %}
             {% unless heynong.l3idx%}
                {% assign progenitor = ourpages[forloopindex0] %}
-               <p> | {{heynong.title}} / {{heynong.url}}  / {{parentloopindex0}} / {{heycount}} |</p>
+               <p> | {{heynong.title}} .. {{heynong.url}}  .. {{parentloopindex0}} .. {{heycount}} |</p>
             {% endunless %}
          {% endfor %}       
-         {% assign sbtitle = progenitor.title[0] %}
+         {% assign sbtitle = progenitor.title %}
          {% assign sburl = progenitor.url[0] %}
          <div class="productTitle" style="padding-top: 32px;"><p><a title="{{sbtitle}}" href="{{sburl | remove: '/'}}">{{sbtitle}}</a></p></div>
       {% endunless %}
