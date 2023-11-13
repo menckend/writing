@@ -10,8 +10,8 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
 {% include social_media_icons.html %}
 </div>
 <!-- <div class="mydocsidebar"> -->
+{% unless page.url contains 'index.html' %}
    <div class="mencknav">
-      {% unless page.url contains 'index.html' %}
          <!-- Get a list of all pages with l1/l2 index values that match *this* page.  (these are *all* the pages that should be in the sidebar)  -->
          {% assign ourpages = site.pages | where: 'l1idx', page.l1idx | where: 'l2idx', page.l2idx %}
          {% assign heycount = -1 | plus: 0 %}
@@ -75,9 +75,10 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
             {% else %}
                <p> Nothing here yet; check back later</p>
             {% endif %}   
-      {% endunless %}
    </div>
    <div class="mencknav">
       {% include in-page-nav-buttons.html %}
    </div>
+{% endunless %}
+
 <!-- </div> -->
