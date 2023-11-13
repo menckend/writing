@@ -1259,6 +1259,11 @@ h4.panel-title {
     border-right-style: solid;
 }
 
+#main > div.row > #tg-sb-sidebar * {
+    border-style: hidden;
+    background: transparent;
+    color: var(--menck-sb-text);
+}
 
 
 
