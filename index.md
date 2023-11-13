@@ -4,7 +4,7 @@ permalink: index.html
 pagenav: false
 ---
 
-Hi there; I'm Mencken.  
+Hi there; I'm Mencken Davidson.  Pleased to meet you.  
 
 Amongst other things, I'm a: network architect; husband; parent; and musician.  I also enjoy writing, but I haven't really written *just because I wanted to* in about twenty years or so.
 
@@ -12,6 +12,9 @@ I made this site to start hosting some network-architecture-related articles.  I
 
 The inaugural document is a generalized reference architecture for DNS-based global load-balancing.  You'll find it (and the subsequent documents/articles from the "Articles" drop-down menu at the top of this page.)
 
-All works presented here are my own.  Ignore them or adore them as you best see fit.
+
+{% include note.html content="All works presented here are my own.  Ignore them or adore them as *you* best see fit." %}
+
+
 
 {% include links.html %}
