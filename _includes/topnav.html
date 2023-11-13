@@ -20,14 +20,14 @@
 
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
-                {% assign l1idxes = site.pages | sort: '11idx' | map: 'l1idx' | compact | uniq %}
+                {% assign l1idxes = site.pages | where_exp: 'page', 'page.l2idx == nil' | sort: '11idx' | map: 'l1idx' | compact | uniq %}
                 <!-- Loop through the unique l1idx values -->
                 {% for l1ix in l1idxes %}
                     <!-- Get all pages with this ("my") l1idx value -->
                     {% assign myl1pages = site.pages | where: 'l1idx', l1ix | sort: 'l1idx' | compact %}
                     <!-- Get l1name value that corresponds to the this("my") l1idx value -->
-                    {% assign thisl1name = myl1pages | map: 'l1name' | compact | uniq %}
-                    {% assign thisl1url = myl1pages | where: 'l1name', thisl1name[0] | map: 'url' %}
+                    {% assign thisl1name = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'title' | compact | uniq %}
+                    {% assign thisl1url = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'url' %}
                     <!-- Building a dropdown button for each unique l1idx value in our pages  -->
                     <li class="dropdown" style="background-color:#347DBE;">
                         <!-- Giving the dropdown button the same name as this("my") l1name -->
