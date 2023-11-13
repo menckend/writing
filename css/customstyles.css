@@ -1360,7 +1360,7 @@ details.deet4[open] summary:before {
 p.l10item > a:before,
 p.l9item > a:before,
 p.l8item > a:before,
-p.l7item > a:before {
+p.l7item > a:before 
 p.l6item > a:before,
 p.l5item > a:before,
 p.l4item > a:before,
@@ -1381,7 +1381,7 @@ p.l7itemactive > a:before,
 p.l6itemactive > a:before,
 p.l5itemactive > a:before,
 p.l4itemactive > a:before,
-p.l3itemactive > a:before {
+p.l3itemactive > a:before {} 
     content: '\f0c8';
     font-size: 14px;
     font-family: 'FontAwesome';
