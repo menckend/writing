@@ -16,8 +16,6 @@
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
 
-
-
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | where_exp: 'page', 'page.l2idx == nil' | sort: '11idx' | map: 'l1idx' | compact | uniq %}
@@ -29,7 +27,7 @@
                     {% assign thisl1name = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'title' | compact | uniq %}
                     {% assign thisl1url = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'url' %}
                     <!-- Building a dropdown button for each unique l1idx value in our pages  -->
-                    <li class="dropdown" style="background-color:#347DBE;">
+                    <li class="dropdown">
                         <!-- Giving the dropdown button the same name as this("my") l1name -->
                         <a href="{{thisl1url[0] | remove: "/"}}" class="dropdown-toggle" style="color: whitesmoke;" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
                         <!-- Starting the list of entries to go under this menu -->
