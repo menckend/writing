@@ -1228,15 +1228,6 @@ h4.panel-title {
 
 
 
-
-
-
-
-
-
-
-
-
 /* Mencken's customizations start here  */
 /*                                      */
 /*                                      */
@@ -1355,7 +1346,7 @@ details.deet4 summary:before {
     padding-right: 8px;
     text-decoration: none;
   }
-  
+
 /* minus */
 details.deet4[open] summary:before {
     content: '\f146';
@@ -1423,7 +1414,7 @@ div.medianav * {
 }
 
 div.mencknav {
-    background-color: var(--menck-sb-border);
+    background-color: var(--menck-sb-bg);
     color: var(--menck-sb-txt);
     text-decoration: none;
     border-style: none;
@@ -1442,14 +1433,9 @@ div.mencknav * {
     color: var(--menck-sb-txt);
 }
 
-
 /*                                      */
 /*                                      */
 /* Mencken's customizations end here    */
-
-
-
-
 
 
 
