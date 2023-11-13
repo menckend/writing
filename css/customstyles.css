@@ -1228,6 +1228,15 @@ h4.panel-title {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Mencken's customizations start here  */
 /*                                      */
 /*                                      */
@@ -1236,7 +1245,6 @@ h4.panel-title {
     --menck-content-bg: white
     --menck-content-txt: black
     --menck-tn-bg: #347DBE
-    --menck-tn-border: #347DBE
     --menck-tn-text: white
     --menck-tn-dd-border: whitesmoke
     --menck-tn-dd-txt: #347DBE
@@ -1253,25 +1261,28 @@ h4.panel-title {
     --menck-deets-border: whitesmoke
   }
 
+
+
+
 details.sbdeet {
     overflow: hidden;
     border-collapse: separate;
     border-style: hidden;
     margin-bottom: 0;
     padding: 0px 8px;
+/*    margin-bottom: 15px; */
     border: hidden;
 }
-
 details.sbdeet[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px;
+    border-color: #dcdcdc;
     margin-bottom: 0;
     border-style: hidden;
-    background-color: var(--menck-sb-bg);
+    background-color: whitesmoke;
     border-radius: 5px;
 }
-
 details.sbdeet summary {
     list-style: none;
     overflow: hidden;
@@ -1281,7 +1292,6 @@ details.sbdeet summary {
     background: none;
     border: hidden;
 }
-
 details.sbdeet summary::-webkit-details-marker {
     display: none;
    }
@@ -1294,18 +1304,16 @@ details {
     margin-bottom: 15px;
     border: hidden;
 }
-
 details[open] {
     overflow: hidden;
     border-collapse: separate;
     padding: 0px 8px;
-    border-color: var(--menck-deets-border);
+    border-color: #dcdcdc;
     margin-bottom: 15px;
     border-style: hidden;
-    background-color: var(--menck-deets-bg);
+    background-color: whitesmoke;
     border-radius: 5px;
 }
-
 details summary {
     list-style: none;
     overflow: hidden;
@@ -1315,12 +1323,13 @@ details summary {
     background: none;
     border: hidden;
 }
-
 details summary::-webkit-details-marker {
     display: none;
    }
 
+
 /* plus */
+  
 details summary:before {
   content: '\f0fe';
   font-family: 'FontAwesome';
@@ -1338,7 +1347,9 @@ details[open] summary:before {
   text-decoration: none;
 }
 
+
 /* plus */
+  
 details.deet4 summary:before {
     content: '\f0fe';
     font-family: 'FontAwesome';
@@ -1346,8 +1357,8 @@ details.deet4 summary:before {
     padding-right: 8px;
     text-decoration: none;
   }
-
-/* minus */
+  
+  /* minus */
 details.deet4[open] summary:before {
     content: '\f146';
     font-family: 'FontAwesome';
@@ -1356,14 +1367,16 @@ details.deet4[open] summary:before {
     text-decoration: none;
   }
 
+
+
 /* empty square*/
 p.l10item > a:before,
 p.l9item > a:before,
 p.l8item > a:before,
-p.l7item > a:before 
+p.l7item > a:before {
 p.l6item > a:before,
-p.l5itema:before,
-p.l4item:before,
+p.l5item > a:before,
+p.l4item > a:before,
 p.l3item > a:before {
     content: '\f096';
     font-family: 'FontAwesome';
@@ -1371,7 +1384,9 @@ p.l3item > a:before {
     padding-right: 8px;
     padding-left: 8px;
     text-decoration: bold;
+    /*text-indent: -1.5em;*/
   }
+
 
 /* full square*/
 p.l10itemactive > a:before,
@@ -1379,28 +1394,32 @@ p.l9itemactive > a:before,
 p.l8itemactive > a:before,
 p.l7itemactive > a:before,
 p.l6itemactive > a:before,
-p.l5itemactive:before,
-p.l4itemactive:before,
-p.l3itemactive > a:before {} 
+p.l5itemactive > a:before,
+p.l4itemactive > a:before,
+p.l3itemactive > a:before {
     content: '\f0c8';
     font-size: 14px;
     font-family: 'FontAwesome';
     padding-right: 8px;
     padding-left: 8px;
     text-decoration: none;
+  /*text-indent: -1.5em;*/
 }
 
+
+
 /* Try topnav color scheme in sidebar.  */
+
 div.medianav {
-    background-color: var(--menck-sb-bg) !important;
-    color: var(--menck-sb-txt);
+    background-color: whitesmoke !important;
+    color: #347DBE;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 8px;
     padding-left: 8px;
     border-style: none;
-    border-top-color: var(--menck-sb-border);
-    border-bottom-color: var(--menck-sb-border);
+    border-top-color: #347DBE;
+    border-bottom-color: #347DBE;
     border-top-width: 2px;
     border-bottom-width: 2px;
     border-top-style: solid;
@@ -1413,12 +1432,14 @@ div.medianav * {
     padding: 8px;
 }
 
+
 div.mencknav {
-    background-color: var(--menck-sb-bg);
-    color: var(--menck-sb-txt);
+    background-color: whitesmoke;
+    color: #347DBE;
     text-decoration: none;
+
     border-style: none;
-    border-bottom-color: var(--menck-sb-border);
+    border-bottom-color:#347DBE;
     border-bottom-width: 2px;
     border-bottom-width: 2px;
     border-bottom-style: solid;
@@ -1427,15 +1448,32 @@ div.mencknav {
 
 div.mencknav * {
     text-decoration: none;
-    background-color: var(--menck-sb-bg);
+    background-color: whitesmoke;
     padding-bottom: 2px;
     padding-top: 2px;
-    color: var(--menck-sb-txt);
+    color:#347DBE;
 }
+
+
 
 /*                                      */
 /*                                      */
 /* Mencken's customizations end here    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
