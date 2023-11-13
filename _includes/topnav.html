@@ -15,6 +15,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+
                 <!-- entries with drop-downs appear here -->
                 <!-- Get an array of all the unique "l1idx" values in all the pages on the site  -->
                 {% assign l1idxes = site.pages | where_exp: 'page', 'page.l2idx == nil' | sort: '11idx' | map: 'l1idx' | compact | uniq %}
@@ -26,11 +27,11 @@
                     {% assign thisl1name = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'title' | compact | uniq %}
                     {% assign thisl1url = myl1pages | where_exp: 'page', 'page.l2idx == nil' | map: 'url' %}
                     <!-- Building a dropdown button for each unique l1idx value in our pages  -->
-                    <li class="dropdown">
+                    <li class="dropdown" style="background-color:#347DBE;">
                         <!-- Giving the dropdown button the same name as this("my") l1name -->
-                        <a href="{{thisl1url[0] | remove: "/"}}" class="dropdown-toggle" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
+                        <a href="{{thisl1url[0] | remove: "/"}}" class="dropdown-toggle" style="color: whitesmoke;" data-toggle="dropdown">{{ thisl1name }}<b class="caret"></b></a>
                         <!-- Starting the list of entries to go under this menu -->
-                        <ul class="dropdown-menu" border-style: solid; border-radius: 5px; border-width: 1;" >
+                        <ul class="dropdown-menu" style="background-color:#347DBE; border-style: solid; border-radius: 5px; border-width: 1;" >
                             <!-- Get list of unique l2idx values from pages with the current l1ix value -->
                             {% assign l2idxes = myl1pages | sort: 'l2idx' | map: 'l2idx' | compact | uniq %}
                             <!-- Loop through the l2idxes to build the entries in the dropdown menu -->
@@ -43,6 +44,26 @@
                         </ul>
                     </li>
                 {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
 <!--			{% include feedback.html %} -->
