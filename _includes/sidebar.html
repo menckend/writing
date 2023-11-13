@@ -48,7 +48,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                            {% for l4ix in myl4idxes %}
                               <!-- Get a list of all the pages with *current* L4 index -->
                               {% assign myl4pages = myl3pages | where: 'l4idx', l4ix %}
-                              {% assign myl4name = myl4pages | where_exp: 'page', 'page.l5idx == nil' | map: 'l4name' | compact | uniq %}
+                              {% assign myl4name = myl4pages | where_exp: 'page', 'page.l5idx == nil' | map: 'title' | compact | uniq %}
                               {% assign myl4url  = myl4pages | where_exp: 'page', 'page.l5idx == nil' | map: 'url' | array_to_sentence_string %}
                               <!-- Get all the unique L5 indices in pages with *current* L3&L4 index -->
                               {% assign myl5idxes = myl4pages | where_exp: 'page', 'page.l6idx == nil' | map: 'l5idx' | compact | uniq %}
