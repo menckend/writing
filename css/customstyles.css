@@ -1253,6 +1253,20 @@ h4.panel-title {
     --menck-deets-border: whitesmoke;
   }
 
+  #main > div.row > #tg-sb-sidebar {
+    background-color: var(--menck-sb-bg);
+    border-right-color: var(--menck-sb-border);
+    border-right-style: solid;
+}
+
+
+
+
+
+
+
+
+
 details.sbdeet {
     overflow: hidden;
     border-collapse: separate;
