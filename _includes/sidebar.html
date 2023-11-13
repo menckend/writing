@@ -56,7 +56,7 @@ lvl5 = 3rd level of entries in sidebar  (e.g  page or sub-page)
                                  <details class="sbdeet deet4" {% if page.l4idx == l4ix and page.l3idx == l3ix %} open{%endif%}><summary><a title="{{myl4name}}" href="{{myl4url | remove: '/'}}">{{myl4name}}</a></summary>
                                     {% for l5ix in myl5idxes %}
                                        {% assign myl5name = myl4pages | where: 'l5idx', l5ix | where_exp: 'page', 'page.l6idx == nil' | map: 'title' | compact | uniq %}
-                                       {% assign myl5url myl4pages | where: 'l5idx', l5ix | where_exp: 'page', 'page.l6idx == nil' | map: 'url' | compact | uniq %}
+                                       {% assign myl5url = myl4pages | where: 'l5idx', l5ix | where_exp: 'page', 'page.l6idx == nil' | map: 'url' | compact | uniq %}
                                        <p class="l5item{% if page.l5idx == l5ix and page.l4idx == l4ix and page.l3idx == l3ix %}active{%endif%}"><a title="{{myl5name}}" href="{{myl5url[0] | remove: '/'}}">{{myl5name}}</a></p>
                                     {% endfor %}
                                  </details>
